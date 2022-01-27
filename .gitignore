@@ -1,0 +1,73 @@
+# ignore various files generated
+# by LaTeX and related tools
+
+# core latex/pdflatex auxiliary files
+*.aux
+*.fls
+*.lof
+*.log
+*.lot
+*.lox
+*.toc
+
+# bibliography auxiliary files (bibtex/biblatex/biber)
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*Notes.bib
+
+# glossary
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.lzo
+*.lzs
+
+# index
+*.idx
+*.ilg
+*.ind
+
+# MetaPost
+*.mpx
+mptextmp.mp
+mptextemp.mp
+mpxerr.mp
+mpxerr.tex
+
+# build tool and intermediate files
+*.dvi
+*.fdb_latexmk
+*.pdfsync
+*.synctex*
+*.xdv
+*-converted-to.*
+
+# other
+*~
+.DS_Store
+*.bk
+*.out
+*.swp
+*.tmp
+
+# directories
+_*/
+tmp/
+
+# ignore specific .pdf files until we're ready
+marylie.pdf
+
+### ???
+#*.cb
+#*.cb2
+#*.fmt
+#*.fot
+#.*.lb
+
