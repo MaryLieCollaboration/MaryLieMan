@@ -1,0 +1,1424 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: statespace.create
+%%Creator: Create
+%%CreationDate: Fri Jul 11 14:27:41 1997
+%%For: dabell
+%%DocumentFonts: (atend)
+%%Pages: 0 0
+%%BoundingBox: 116 475 497 752
+%%NXNextStepVersion: 3.0
+%%EndComments
+
+%%BeginProcSet: /usr/lib/NextStep/printPackage.ps 3.0
+%!
+% NeXT Printing Package
+% Version: 3.0
+% Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/_NXLevel2 systemdict /languagelevel known {languagelevel 2 ge}{false}ifelse __NXdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def
+/_NXfstr 128 string dup 0 (_NX) putinterval def
+/_NXfindfont /findfont load def
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {_NXfindfont}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {_NXfindfont dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXImageString {/__NXImageString where{pop}{/__NXImageString 4000 string __NXdef}ifelse __NXImageString}__NXbdef
+/_NXDoImageOp{
+	3 dict begin /parr 5 array def 1 index{dup}{1}ifelse /chans exch def
+	chans 2 add 2 roll parr 0 chans getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /totbytes exch def pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{0 1 chans 1 sub{parr exch get exec length totbytes exch sub /totbytes exch def}for totbytes 0 le{exit}if}loop end
+}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+_NXLevel2{ 
+	/NXCalibratedRGBColorSpace where{pop}{
+		/NXCalibratedRGBColorSpace
+		{mark /NXCalibratedRGB /ColorSpace findresource exch pop}stopped
+		{cleartomark /NXCalibratedRGB[/CIEBasedABC 2 dict dup begin 
+		/MatrixLMN[.4124 .2126 .0193 .3576 .7152 .1192 .1805 .0722 .9505]def
+		/WhitePoint[.9505 1 1.089] def end] /ColorSpace defineresource}if def}ifelse
+	/nxsetrgbcolor{NXCalibratedRGBColorSpace setcolorspace setcolor}__NXbdef
+	/nxsetgray{dup dup nxsetrgbcolor}__NXbdef
+	/_NXCalibratedImage{exch{array astore dup length true}{false}ifelse
+		8 -1 roll{NXCalibratedRGBColorSpace setcolorspace}if
+		8 dict dup 9 1 roll begin /ImageType 1 def /MultipleDataSources exch def
+		currentcolorspace 0 get /Indexed eq{pop /Decode[0 2 6 index exp 1 sub]def}
+		{2 mul dup array /Decode exch def 1 sub 0 1 3 -1 roll{Decode exch dup 2 mod put}for}ifelse
+		/DataSource exch def /ImageMatrix exch def 
+		/BitsPerComponent exch def /Height exch def /Width exch def end image}__NXbdef
+} {
+	/setcmykcolor{
+		1.0 exch sub dup dup 6 -1 roll sub dup 0 lt{pop 0}if 5 1 roll
+		4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll exch sub dup 0 lt{pop 0}if setrgbcolor}__NXbdef
+	/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+	/colorimage{_NXDoImageOp}__NXbdef
+	/nxsetrgbcolor{setrgbcolor}__NXbdef /nxsetgray{setgray}__NXbdef
+	/setpattern{pop .5 setgray}__NXbdef
+	/_NXCalibratedImage{dup 1 eq {pop pop image}{colorimage}ifelse pop}__NXbdef
+} ifelse
+/_NXSetCMYKOrRGB where{pop}{
+	mark{systemdict /currentwindow get exec}stopped
+	{{pop pop pop setcmykcolor}}{{nxsetrgbcolor pop pop pop pop}}ifelse /_NXSetCMYKOrRGB exch def cleartomark
+}ifelse
+%%EndProcSet
+
+_NXLevel2{/_NXsethsb where{pop}{/_NXsethsb /sethsbcolor load def}ifelse /sethsbcolor{_NXsethsb currentrgbcolor nxsetrgbcolor}def /setrgbcolor{nxsetrgbcolor}bind def /setgray{nxsetgray}bind def
+}if
+gsave
+-1 -9 translate
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+/acsRect {
+    moveto dup 0 exch rlineto exch 0 rlineto 0 exch neg rlineto closepath
+} def /oval {
+    translate scale newpath 0.5 0.5 0.5 0 360 arc
+} def /ovalPath {
+    4 copy oval closepath neg exch neg exch 4 -1 roll 1 exch div 4 -1 roll 1 exch div scale translate
+} def /ff02 {
+    oval gsave eofill grestore setgray matrix defaultmatrix setmatrix stroke
+} def /ffr2 {
+    4 copy rectfill 5 -1 roll setgray rectstroke
+} def /line {
+    moveto rlineto stroke
+} def /SU {
+    setmiterlimit setflat setlinewidth setlinecap setlinejoin gsave
+} def /arrow {
+    newpath moveto dup rotate -10 3 rlineto 3 -3 rlineto -3 -3 rlineto closepath gsave 0 setlinejoin stroke grestore fill neg rotate
+} def /plainarrow {
+    gsave /y2 exch def /x2 exch def /y1 exch def /x1 exch def /y0 exch def /x0 exch def newpath x0 y0 translate 0 0 moveto dup rotate x1 y1 lineto x2 y2 lineto x1 y1 neg lineto closepath gsave 0 setlinejoin stroke grestore fill grestore
+} def /frrb {
+    /rad exch def /IV exch rad 2 mul sub def /IH exch rad 2 mul sub def 0.5 0.5 translate exch rad add exch moveto rad neg 0 rad neg 0 rad neg rad rcurveto 0 IV rlineto 0 rad 0 rad rad rad rcurveto IH 0 rlineto rad 0 rad 0 rad rad neg rcurveto 0 IV neg rlineto 0 rad neg 0 rad neg rad neg rad neg rcurveto closepath stroke -0.5 -0.5 translate
+} def /firb {
+    /rad exch def /IV exch rad 2 mul sub def /IH exch rad 2 mul sub def 0.5 0.5 translate exch rad add exch moveto rad neg 0 rad neg 0 rad neg rad rcurveto 0 IV rlineto 0 rad 0 rad rad rad rcurveto IH 0 rlineto rad 0 rad 0 rad rad neg rcurveto 0 IV neg rlineto 0 rad neg 0 rad neg rad neg rad neg rcurveto closepath fill -0.5 -0.5 translate
+} def /rbp {
+    /rad exch def /IV exch rad 2 mul sub def /IH exch rad 2 mul sub def exch rad add exch moveto rad neg 0 rad neg 0 rad neg rad rcurveto 0 IV rlineto 0 rad 0 rad rad rad rcurveto IH 0 rlineto rad 0 rad 0 rad rad neg rcurveto 0 IV neg rlineto 0 rad neg 0 rad neg rad neg rad neg rcurveto closepath
+} def /ffrb {
+    5 copy firb 6 -1 roll setgray frrb
+} def /rbox {
+    /h exch def /w exch def h 2 div add exch w 2 div add exch translate rotate w 2 div neg h 2 div neg w h rectstroke
+} def /rboxfilled {
+    /h exch def /w exch def h 2 div add exch w 2 div add exch translate rotate w 2 div neg h 2 div neg w h rectfill
+} def /rffb {
+    5 copy gsave rboxfilled grestore 6 -1 roll setgray rbox
+} def /roval {
+    /h exch def /w exch def h 2 div add exch w 2 div add exch translate rotate w h w 2 div neg h 2 div neg gsave oval
+} def /rovalstroke {
+    roval matrix defaultmatrix setmatrix stroke grestore
+} def /rovalfill {
+    roval matrix defaultmatrix setmatrix fill grestore
+} def /rofs {
+    5 copy gsave rovalfill grestore 6 -1 roll setgray rovalstroke
+} def /flipH {
+    0 translate -1 1 scale
+} def /flipV {
+    0 exch translate 1 -1 scale
+} def /pathtextdict 28 dict def /pathtext {
+    pathtextdict begin /offset exch def /str exch def /pathdist 0 def /setdist offset def /charcount 0 def gsave flattenpath {
+        movetoproc
+    } {
+        linetoproc
+    } {
+        curvetoproc
+    } {
+        closepathproc
+    } pathforall grestore newpath end
+} def pathtextdict begin /movetoproc {
+    /newy exch def /newx exch def /firstx newx def /firsty newy def /ovr 0 def newx newy transform /cpy exch /cpx exch def
+} def /linetoproc {
+    /oldx newx def /oldy newy def /newy exch def /newx exch def /dx newx oldx sub def /dy newy oldy sub def /dist dx dup mul dy dup mul add sqrt def dist 0 ne {
+        /dsx dx dist div ovr mul def /dsy dy dist div ovr mul def oldx dsx add oldy dsy add transform /cpy exch def /cpx exch def /pathdist pathdist dist add def {
+            getNextWidth setdist nextCharHalfWidth add pathdist le {
+                charcount str length lt {
+                    setchar
+                } {
+                    exit
+                } ifelse
+            } {
+                /ovr setdist pathdist sub def exit
+            } ifelse
+        } loop
+    } if
+} def /curvetoproc {
+    (Error) print
+} def /closepathproc {
+    firstx firsty linetoproc firstx firsty movetoproc
+} def /getNextWidth {
+    charcount 1 add str length lt {
+        /nextCharHalfWidth str charcount 1 add 1 getinterval stringwidth pop 2 div def
+    } if
+} def /setchar {
+    /char str charcount 1 getinterval def /charcount charcount 1 add def /charwidth char stringwidth pop def gsave cpx cpy itransform translate dy dx atan rotate 0 0 moveto char show currentpoint transform /cpy exch def /cpx exch def grestore /setdist setdist charwidth add def
+} def end /c /curveto load def /l /lineto load def /m /moveto load def /s /stroke load def /f /fill load def /S /scale load def /R /rotate load def /T /translate load def /L /setlinewidth load def /N /newpath load def /C /closepath load def
+%%EndSetup
+gsave
+116 475 381 277 rectclip
+116 475 381 277 rectclip
+0 0 0.15 1 10 SU
+207 567 T
+N
+0.15 L
+0 nxsetgray
+252 0 0 0 line
+0 252 0 arrow
+0 0 T
+grestore
+0 0 0.15 1 10 SU
+207 567 T
+N
+0.15 L
+0 nxsetgray
+0 153 0 0 line
+90 0 153 arrow
+0 0 T
+grestore
+0 0 0.15 1 10 SU
+144 495 T
+N
+0.15 L
+0 nxsetgray
+63 72 0 0 line
+228.815521 0 0 arrow
+0 0 T
+grestore
+0 0 0.15 1 10 SU
+161 571 T
+10 32 T
+N
+2.5 L
+0 nxsetgray
+14 4 m
+51 60 101 48 128 24 c
+150 4 216 -11 247 27 c
+s
+grestore
+0 0 0.15 1 10 SU
+183 605 T
+[1 0 0 -1 0 6] concat
+3 3 T
+0.101695 0.101695 S
+-29.5 -29.5 T
+N
+0 nxsetgray
+gsave
+59 59 0 0 oval fill
+grestore
+0 0 T
+grestore
+0 0 0.15 1 10 SU
+416 628 T
+[1 0 0 -1 0 6] concat
+3 3 T
+0.101695 0.101695 S
+-29.5 -29.5 T
+N
+0 nxsetgray
+gsave
+59 59 0 0 oval fill
+grestore
+0 0 T
+grestore
+0 nxsetgray
+0 0 0.15 1 10 SU
+gsave
+321 664 T
+0.123894 0.097143 S
+0 0 0.15 1 10 SU
+1 1 T
+64 158 T
+1 1 S
+N
+gsave N
+-3 -10 m
+-6 -12 -14 -95 -28 -123 c
+-41 -148 -49 -111 -57 -134 c
+-61 -144 -63 -144 -40 -150 c
+-31 -152 -29 -137 -26 -130 c
+-16 -107 -3 -33 -1 -20 c
+1 -9 21 -97 31 -116 c
+52 -157 49 -140 71 -112 c
+82 -99 119 -30 127 -26 c
+136 -21 120 -47 119 -111 c
+119 -134 126.166664 -151.5 132 -150 c
+137.833344 -148.5 136 -151 142 -143 c
+159 -118 153 -131 142 -133 c
+138 -134 131.333344 -141 131 -116 c
+130.666656 -91 131 -73 134 -48 c
+139 -7 143 6 131 -11 c
+119 -28 123 -19 100 -57 c
+68 -110 69 -107 63 -115 c
+49 -134 57 -135 42 -107 c
+34 -92 18 -46 13 -18 c
+7 14 4 -5 -3 -10 c
+clip
+N
+0 setlinewidth
+0 nxsetgray
+-63 -157 11.1 171 rectfill
+0 nxsetgray
+-51.900002 -157 11.1 171 rectfill
+0 nxsetgray
+-40.800003 -157 11.1 171 rectfill
+0 nxsetgray
+-29.700003 -157 11.1 171 rectfill
+0 nxsetgray
+-18.600002 -157 11.1 171 rectfill
+0 nxsetgray
+-7.500002 -157 11.1 171 rectfill
+0 nxsetgray
+3.599998 -157 11.1 171 rectfill
+0 nxsetgray
+14.699999 -157 11.1 171 rectfill
+0 nxsetgray
+25.799999 -157 11.1 171 rectfill
+0 nxsetgray
+36.900002 -157 11.1 171 rectfill
+0 nxsetgray
+48 -157 11.1 171 rectfill
+0 nxsetgray
+59.099998 -157 11.1 171 rectfill
+0 nxsetgray
+70.199997 -157 11.1 171 rectfill
+0 nxsetgray
+81.299995 -157 11.1 171 rectfill
+0 nxsetgray
+92.399994 -157 11.1 171 rectfill
+0 nxsetgray
+103.499992 -157 11.1 171 rectfill
+0 nxsetgray
+114.599991 -157 11.1 171 rectfill
+0 nxsetgray
+125.699989 -157 11.1 171 rectfill
+0 nxsetgray
+136.799988 -157 11.1 171 rectfill
+0 nxsetgray
+147.899994 -157 11.1 171 rectfill
+N
+grestore
+0.15 L
+0 nxsetgray
+-3 -10 m
+-6 -12 -14 -95 -28 -123 c
+-41 -148 -49 -111 -57 -134 c
+-61 -144 -63 -144 -40 -150 c
+-31 -152 -29 -137 -26 -130 c
+-16 -107 -3 -33 -1 -20 c
+1 -9 21 -97 31 -116 c
+52 -157 49 -140 71 -112 c
+82 -99 119 -30 127 -26 c
+136 -21 120 -47 119 -111 c
+119 -134 126.166664 -151.5 132 -150 c
+137.833344 -148.5 136 -151 142 -143 c
+159 -118 153 -131 142 -133 c
+138 -134 131.333344 -141 131 -116 c
+130.666656 -91 131 -73 134 -48 c
+139 -7 143 6 131 -11 c
+119 -28 123 -19 100 -57 c
+68 -110 69 -107 63 -115 c
+49 -134 57 -135 42 -107 c
+34 -92 18 -46 13 -18 c
+7 14 4 -5 -3 -10 c
+s
+grestore
+grestore
+grestore
+gsave
+117.000000 583.000000 transform
+gsave __NXbasematrix setmatrix itransform translate
+0 0 66 24 rectclip
+
+/__NXEPSSave save def /showpage {} def
+_NXLevel2{/_NXsethsb where{pop}{/_NXsethsb /sethsbcolor load def}ifelse /sethsbcolor{_NXsethsb currentrgbcolor nxsetrgbcolor}def /setrgbcolor{nxsetrgbcolor}bind def /setgray{nxsetgray}bind def
+/_NXcimage where{pop}{/_NXcimage /colorimage load def}ifelse /colorimage{dup 3 eq{true 2 index{1 index}{1}ifelse 7 add 1 roll _NXCalibratedImage}{_NXcimage}ifelse}def}if
+0 setgray 0 setlinecap 1 setlinewidth
+0 setlinejoin 10 setmiterlimit [] 0 setdash newpath count /__NXEPSOpCount exch def /__NXEPSDictCount countdictstack def
+%%BeginDocument: 
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: 
+%%Creator: EquationBuilder
+%%CreationDate: Fri Jul 11 12:39:17 1997
+%%For: dabell
+%%DocumentFonts: (atend)
+%%Pages: 0 0
+%%BoundingBox: 0 0 66 24
+%%Baseline: 1 5.31991 64.345333 0
+%%NXNextStepVersion: 3.0
+%%EndComments
+
+%%BeginProcSet: /usr/lib/NextStep/printPackage.ps 3.0
+%!
+% NeXT Printing Package
+% Version: 3.0
+% Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/_NXLevel2 systemdict /languagelevel known {languagelevel 2 ge}{false}ifelse __NXdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def
+/_NXfstr 128 string dup 0 (_NX) putinterval def
+/_NXfindfont /findfont load def
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {_NXfindfont}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {_NXfindfont dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXImageString {/__NXImageString where{pop}{/__NXImageString 4000 string __NXdef}ifelse __NXImageString}__NXbdef
+/_NXDoImageOp{
+	3 dict begin /parr 5 array def 1 index{dup}{1}ifelse /chans exch def
+	chans 2 add 2 roll parr 0 chans getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /totbytes exch def pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{0 1 chans 1 sub{parr exch get exec length totbytes exch sub /totbytes exch def}for totbytes 0 le{exit}if}loop end
+}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+_NXLevel2{ 
+	/NXCalibratedRGBColorSpace where{pop}{
+		/NXCalibratedRGBColorSpace
+		{mark /NXCalibratedRGB /ColorSpace findresource exch pop}stopped
+		{cleartomark /NXCalibratedRGB[/CIEBasedABC 2 dict dup begin 
+		/MatrixLMN[.4124 .2126 .0193 .3576 .7152 .1192 .1805 .0722 .9505]def
+		/WhitePoint[.9505 1 1.089] def end] /ColorSpace defineresource}if def}ifelse
+	/nxsetrgbcolor{NXCalibratedRGBColorSpace setcolorspace setcolor}__NXbdef
+	/nxsetgray{dup dup nxsetrgbcolor}__NXbdef
+	/_NXCalibratedImage{exch{array astore dup length true}{false}ifelse
+		8 -1 roll{NXCalibratedRGBColorSpace setcolorspace}if
+		8 dict dup 9 1 roll begin /ImageType 1 def /MultipleDataSources exch def
+		currentcolorspace 0 get /Indexed eq{pop /Decode[0 2 6 index exp 1 sub]def}
+		{2 mul dup array /Decode exch def 1 sub 0 1 3 -1 roll{Decode exch dup 2 mod put}for}ifelse
+		/DataSource exch def /ImageMatrix exch def 
+		/BitsPerComponent exch def /Height exch def /Width exch def end image}__NXbdef
+} {
+	/setcmykcolor{
+		1.0 exch sub dup dup 6 -1 roll sub dup 0 lt{pop 0}if 5 1 roll
+		4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll exch sub dup 0 lt{pop 0}if setrgbcolor}__NXbdef
+	/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+	/colorimage{_NXDoImageOp}__NXbdef
+	/nxsetrgbcolor{setrgbcolor}__NXbdef /nxsetgray{setgray}__NXbdef
+	/setpattern{pop .5 setgray}__NXbdef
+	/_NXCalibratedImage{dup 1 eq {pop pop image}{colorimage}ifelse pop}__NXbdef
+} ifelse
+/_NXSetCMYKOrRGB where{pop}{
+	mark{systemdict /currentwindow get exec}stopped
+	{{pop pop pop setcmykcolor}}{{nxsetrgbcolor pop pop pop pop}}ifelse /_NXSetCMYKOrRGB exch def cleartomark
+}ifelse
+%%EndProcSet
+
+% EquationBuilder(TM) Expression
+% +.\Jr(=:/*V[StRFQAYmdjEEA;1nuN+[co.OZ7L#cq3iK9qVJ?-k`bIVT^%\'GF"d1C$ZF11
+% fO>,\5hi(c>mEciHs6;PAnY:_GHL1ai>I(bbsj0IR4#V$;>D,X_XRS2ihA"VLfK-6WLgVDQ[
+% K-Oh*sQ3\5X&jqDA/d.K[>m^Q5J[c<T!&,[T,,#3/b-4Id-4QN560Psq#Z>3m`?/MjP!k_D?
+% NNpL+:O>i5ah[Pf`LEt(I=6DCi\)u*I1TF9RT!R)A%57BYOtIa<?be9c,m9*]&Q0R^/jDZUa
+% gk0I9L60rTdrXuHR/Ds8C&9+$B#0-L?aQ\#Q`$"X)O'E`lA3!KA_oQgoXqG`kE+kZo`bICiX
+% ZE!>IS0B#"mLbV>.KtDJ?[n==G985[#me=kjh5kGJJ#G$8:UeC.#TPUW"K4\JM=D=-PQJ(?V
+% 3bo!QRIX_-fl`!(mMh!>QN/TS4?=80BCkJ1)Uu-DDmp.?aU!$\U#COoQ2=\=li[1E'>)LBV#
+% Z?:6?c-V@sj4ZIt4$qfO&PnX.q,DH6G+Wl,sSb\oYX:S8V0kaIPjc5!BBP1n$4r>H/(@p-NO
+% +]85jG5+RR%eu9<$nMZK2.6_Slm8+AqeSS-j_Sji9:Z6*,b%JViR.D-Ru'T2kH*SL'Rd2Q]N
+% !`?crmULE(BJ+\.LFod$K9C*"39UIFSs8LC)QT[k/Qog&T\#&LgM'nijAJeX,siPp5OCoIEC
+% D.kF&C1JG8,QO/BTLpmd)?Km=x
+% EndExpression N 594 252 E 0 S e5ba R 8a01d573
+gsave
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+50 dict dup begin /FontType 3 def /FontMatrix [0.001 0 0 0.001 0 0] def /FontBBox [15 -2950 1360 1045] def /Encoding 256 array def 0 1 255 {
+    Encoding exch /.notdef put
+} for Encoding dup <01> 0 get /rad1 put dup <02> 0 get /rad2 put dup <03> 0 get /rad3 put dup <04> 0 get /rad4 put dup <05> 0 get /rad5 put dup <06> 0 get /radext put dup <07> 0 get /int put dup <08> 0 get /pathint put dup <09> 0 get /sum put dup <0a> 0 get /prod put dup <0b> 0 get /cdot put dup <0c> 0 get /vdot put dup <0d> 0 get /ddot put dup <0e> 0 get /hbar put dup <0f> 0 get /bigcap put dup <10> 0 get /bigcup put <11> 0 get /parallel put /Metrics 18 dict def Metrics begin /.notdef 0 def /rad1 1000 def /rad2 1000 def /rad3 1000 def /rad4 1000 def /rad5 1048 def /radext 1048 def /int 500 def /pathint 500 def /sum 700 def /prod 700 def /cdot 1000 def /vdot 550 def /ddot 1000 def /hbar 500 def /bigcap 700 def /bigcup 700 def /parallel 500 def end /BBox 18 dict def BBox begin /.notdef [0 0 0 0] def /rad1 [110 -1150 1020 0] def /rad2 [110 -1750 1020 0] def /rad3 [110 -2350 1020 0] def /rad4 [110 -2950 1020 0] def /rad5 [128 -2890 740 0] def /radext [700 -600 740 0] def /int [20 0 425 1045] def /pathint [20 0 425 1045] def /sum [15 5 640 715] def /prod [15 0 670 715] def /cdot [110 215 890 325] def /vdot [165 -5 280 770] def /ddot [110 -5 890 770] def /hbar [20 -10 480 685] def /bigcap [0 0 680 720] def /bigcup [0 0 680 720] def /parallel [65 -175 400 675] def end /CharacterDefs 18 dict def CharacterDefs begin /.notdef {
+    
+} def /rad1 {
+    newpath 980 0 moveto 464 -1048 lineto 248 -560 lineto 110 -656 lineto 125 -675 lineto 200 -624 lineto 420 -1150 lineto 460 -1150 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad2 {
+    newpath 980 0 moveto 460 -1600 lineto 245 -864 lineto 110 -1000 lineto 128 -1023 lineto 200 -950 lineto 424 -1750 lineto 456 -1750 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad3 {
+    newpath 980 0 moveto 464 -2144 lineto 248 -1160 lineto 110 -1368 lineto 130 -1390 lineto 192 -1288 lineto 424 -2350 lineto 464 -2350 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad4 {
+    newpath 980 0 moveto 880 -488 lineto 672 -1600 lineto 464 -2696 lineto 248 -1464 lineto 110 -1728 lineto 130 -1750 lineto 192 -1616 lineto 424 -2950 lineto 464 -2950 lineto 768 -1312 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad5 {
+    newpath 700 0 moveto 700 -2628 lineto 248 -1284 lineto 128 -1564 lineto 150 -1580 lineto 215 -1425 lineto 688 -2890 lineto 740 -2890 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /radext {
+    newpath 700 0 moveto 700 -600 lineto 740 -600 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /int {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto closepath fill
+} def /pathint {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto fill 20 setlinewidth 220 400 moveto 290 400 340 455 340 500 curveto 340 585 290 640 220 640 curveto 155 640 100 585 100 500 curveto 100 455 155 400 220 400 curveto stroke
+} def /sum {
+    newpath 330 335 moveto 20 715 lineto 575 715 lineto 600 545 lineto 575 535 lineto 550 625 525 685 395 685 curveto 160 685 lineto 411 370 lineto 160 90 lineto 470 90 lineto 565 90 590 140 610 210 curveto 640 200 lineto 585 5 lineto 15 5 lineto 330 335 lineto closepath fill
+} def /prod {
+    newpath 590 90 moveto 590 30 620 20 670 20 curveto 670 0 lineto 410 0 lineto 410 20 lineto 460 20 495 30 495 90 curveto 495 670 lineto 190 670 lineto 190 90 lineto 190 30 225 20 275 20 curveto 275 0 lineto 15 0 lineto 15 20 lineto 65 20 100 30 100 90 curveto 100 615 lineto 100 690 40 700 20 700 curveto 20 715 lineto 670 715 lineto 670 700 lineto 645 700 590 690 590 615 curveto 590 90 lineto closepath fill
+} def /cdot {
+    110 270 moveto 110 300 135 325 165 325 curveto 195 325 220 300 220 270 curveto 220 235 185 215 165 215 curveto 145 215 110 235 110 270 curveto fill 445 270 moveto 445 300 470 325 500 325 curveto 530 325 555 300 555 270 curveto 555 235 520 215 500 215 curveto 480 215 445 235 445 270 curveto fill 775 270 moveto 775 300 800 325 830 325 curveto 860 325 890 300 890 270 curveto 890 235 850 215 830 215 curveto 810 215 775 235 775 270 curveto fill
+} def /vdot {
+    220 770 moveto 250 770 280 750 280 720 curveto 280 680 250 660 220 660 curveto 185 660 165 695 165 720 curveto 165 740 185 770 220 770 curveto fill 220 440 moveto 250 440 280 415 280 385 curveto 280 355 250 330 220 330 curveto 185 330 165 365 165 385 curveto 165 405 185 440 220 440 curveto fill 220 105 moveto 250 105 280 80 280 50 curveto 280 20 250 -5 220 -5 curveto 185 -5 165 30 165 50 curveto 165 70 185 105 220 105 curveto fill
+} def /ddot {
+    165 720 moveto 205 720 220 700 220 665 curveto 220 630 195 610 165 610 curveto 130 620 110 645 110 665 curveto 110 690 130 720 165 720 curveto fill 500 440 moveto 530 440 555 415 555 385 curveto 555 355 530 330 500 330 curveto 465 330 445 365 445 385 curveto 445 405 465 440 500 440 curveto fill 830 155 moveto 860 155 890 130 890 100 curveto 890 70 860 45 830 45 curveto 795 45 775 80 775 100 curveto 775 120 795 155 830 155 curveto fill
+} def /hbar {
+    480 105 moveto 440 55 400 -10 335 -10 curveto 300 -10 290 10 290 35 curveto 290 65 370 350 370 365 curveto 370 380 355 390 340 390 curveto 290 390 205 275 185 250 curveto 140 180 125 125 95 0 curveto 20 0 lineto 150 500 lineto 160 545 180 600 180 615 curveto 180 625 170 640 135 640 curveto 110 640 lineto 100 655 lineto 165 660 215 670 270 685 curveto 275 680 lineto 155 240 lineto 155 235 lineto 190 290 290 440 380 440 curveto 400 440 450 435 450 370 curveto 450 335 365 80 365 55 curveto 365 45 375 40 385 40 curveto 405 40 425 70 465 115 curveto 480 105 lineto fill 55 545 moveto 55 520 lineto 310 560 lineto 310 585 lineto 55 545 lineto fill
+} def /bigcap {
+    newpath 615 400 moveto 615 575 500 655 340 655 curveto 180 655 70 575 70 400 curveto 70 0 lineto 5 0 lineto 5 400 lineto 5 610 140 720 340 720 curveto 545 720 680 610 680 400 curveto 680 0 lineto 615 0 lineto 615 400 lineto closepath fill
+} def /bigcup {
+    newpath 65 320 moveto 65 145 180 65 340 65 curveto 500 65 615 145 615 320 curveto 615 720 lineto 680 720 lineto 680 320 lineto 680 110 540 0 340 0 curveto 140 0 0 110 0 320 curveto 0 720 lineto 65 720 lineto 65 320 lineto closepath fill
+} def /parallel {
+    135 675 moveto 135 -175 lineto 65 -175 lineto 65 675 lineto 135 675 lineto fill 335 675 moveto 335 -175 lineto 265 -175 lineto 265 675 lineto 335 675 lineto fill 400 675 moveto
+} def end /BuildChar {
+    0 begin /char exch def /fontdict exch def /charname fontdict /Encoding get char get def fontdict begin Metrics charname get 0 BBox charname get aload pop setcachedevice CharacterDefs charname get exec end end
+} def /BuildChar load 0 3 dict put /UniqueID 1 def end /EqBFont exch definefont pop
+%%EndSetup
+0 0 65.345337 23.77375 rectclip
+0 0 65.345337 23.77375 rectclip
+0 nxsetgray
+1 1.194434 scale
+/Symbol findfont 20 scalefont
+91
+exch
+defineuserobject
+91 execuserobject setfont
+1.94 4.657217 moveto
+(\() [0 0] xyshow
+1 0.837217 scale
+1 1.193053 scale
+91 execuserobject setfont
+56.805332 4.658185 moveto
+(\)) [0 0] xyshow
+1 0.838186 scale
+0 nxsetgray
+91 execuserobject setfont
+9.940001 4.65 moveto
+() [0 0] xyshow
+0 nxsetgray
+/Times-Roman findfont 20 scalefont
+86
+exch
+defineuserobject
+86 execuserobject setfont
+38.489334 6.319909 moveto
+(t,z) [-8.333334 4.768372e-07 -20.216 0 0 0 0 0] xyshow
+0 nxsetgray
+/Times-Roman findfont 12 scalefont
+102
+exch
+defineuserobject
+102 execuserobject setfont
+47.405334 14.577749 moveto
+(nini) [-3.335999 0 -21.913336 0 -3.336 0 0 0 0 0] xyshow
+0 nxsetgray
+/Symbol findfont 12 scalefont
+96
+exch
+defineuserobject
+96 execuserobject setfont
+0 0 moveto
+() [0 0] xyshow
+%%Trailer
+%%DocumentFonts: Times-Roman
+%%+ Symbol
+
+%%EndDocument
+count __NXEPSOpCount sub {pop} repeat countdictstack __NXEPSDictCount sub {end} repeat __NXEPSSave restore
+grestore
+grestore
+gsave
+421.000000 633.000000 transform
+gsave __NXbasematrix setmatrix itransform translate
+0 0 74 24 rectclip
+
+/__NXEPSSave save def /showpage {} def
+_NXLevel2{/_NXsethsb where{pop}{/_NXsethsb /sethsbcolor load def}ifelse /sethsbcolor{_NXsethsb currentrgbcolor nxsetrgbcolor}def /setrgbcolor{nxsetrgbcolor}bind def /setgray{nxsetgray}bind def
+/_NXcimage where{pop}{/_NXcimage /colorimage load def}ifelse /colorimage{dup 3 eq{true 2 index{1 index}{1}ifelse 7 add 1 roll _NXCalibratedImage}{_NXcimage}ifelse}def}if
+0 setgray 0 setlinecap 1 setlinewidth
+0 setlinejoin 10 setmiterlimit [] 0 setdash newpath count /__NXEPSOpCount exch def /__NXEPSDictCount countdictstack def
+%%BeginDocument: 
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: 
+%%Creator: EquationBuilder
+%%CreationDate: Fri Jul 11 12:39:55 1997
+%%For: dabell
+%%DocumentFonts: (atend)
+%%Pages: 0 0
+%%BoundingBox: 0 0 74 24
+%%Baseline: 1 5.31991 72.337334 0
+%%NXNextStepVersion: 3.0
+%%EndComments
+
+%%BeginProcSet: /usr/lib/NextStep/printPackage.ps 3.0
+%!
+% NeXT Printing Package
+% Version: 3.0
+% Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/_NXLevel2 systemdict /languagelevel known {languagelevel 2 ge}{false}ifelse __NXdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def
+/_NXfstr 128 string dup 0 (_NX) putinterval def
+/_NXfindfont /findfont load def
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {_NXfindfont}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {_NXfindfont dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXImageString {/__NXImageString where{pop}{/__NXImageString 4000 string __NXdef}ifelse __NXImageString}__NXbdef
+/_NXDoImageOp{
+	3 dict begin /parr 5 array def 1 index{dup}{1}ifelse /chans exch def
+	chans 2 add 2 roll parr 0 chans getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /totbytes exch def pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{0 1 chans 1 sub{parr exch get exec length totbytes exch sub /totbytes exch def}for totbytes 0 le{exit}if}loop end
+}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+_NXLevel2{ 
+	/NXCalibratedRGBColorSpace where{pop}{
+		/NXCalibratedRGBColorSpace
+		{mark /NXCalibratedRGB /ColorSpace findresource exch pop}stopped
+		{cleartomark /NXCalibratedRGB[/CIEBasedABC 2 dict dup begin 
+		/MatrixLMN[.4124 .2126 .0193 .3576 .7152 .1192 .1805 .0722 .9505]def
+		/WhitePoint[.9505 1 1.089] def end] /ColorSpace defineresource}if def}ifelse
+	/nxsetrgbcolor{NXCalibratedRGBColorSpace setcolorspace setcolor}__NXbdef
+	/nxsetgray{dup dup nxsetrgbcolor}__NXbdef
+	/_NXCalibratedImage{exch{array astore dup length true}{false}ifelse
+		8 -1 roll{NXCalibratedRGBColorSpace setcolorspace}if
+		8 dict dup 9 1 roll begin /ImageType 1 def /MultipleDataSources exch def
+		currentcolorspace 0 get /Indexed eq{pop /Decode[0 2 6 index exp 1 sub]def}
+		{2 mul dup array /Decode exch def 1 sub 0 1 3 -1 roll{Decode exch dup 2 mod put}for}ifelse
+		/DataSource exch def /ImageMatrix exch def 
+		/BitsPerComponent exch def /Height exch def /Width exch def end image}__NXbdef
+} {
+	/setcmykcolor{
+		1.0 exch sub dup dup 6 -1 roll sub dup 0 lt{pop 0}if 5 1 roll
+		4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll exch sub dup 0 lt{pop 0}if setrgbcolor}__NXbdef
+	/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+	/colorimage{_NXDoImageOp}__NXbdef
+	/nxsetrgbcolor{setrgbcolor}__NXbdef /nxsetgray{setgray}__NXbdef
+	/setpattern{pop .5 setgray}__NXbdef
+	/_NXCalibratedImage{dup 1 eq {pop pop image}{colorimage}ifelse pop}__NXbdef
+} ifelse
+/_NXSetCMYKOrRGB where{pop}{
+	mark{systemdict /currentwindow get exec}stopped
+	{{pop pop pop setcmykcolor}}{{nxsetrgbcolor pop pop pop pop}}ifelse /_NXSetCMYKOrRGB exch def cleartomark
+}ifelse
+%%EndProcSet
+
+% EquationBuilder(TM) Expression
+% +.\Jr(=:/*V[StRFQAYmdjEEA;1nuN+[co.OZ7L#cq3iK9qVJ?-k`bIVT^%\'GF"d1C$ZF11
+% fO>,\5hi(c>mEciHs6;PAnY:_GHL1ai>M(bbsj0IR4'V$;>D,X_XRS2ihA"VLfK-6WLgVDQ[
+% K-Oh*sQ3\5X&jqDA/d.K[>m^Q5J[c<T!&,[T,,#3/b-4Id-4QN560Psq#Z>3m`?/MjP!k_D?
+% NNpL+:O>i5ah[Pf`LEt(I=6DCi\)u*I1TF9RT!R)A%57BYOtIa<?be9c,m9*]&Q0R^/jDZUa
+% gk0I9L60rTdrXuHR/Ds8C&9+$B#0-L?aQ\#Q`$"X)O'E`lA3!KA_oQgoXqG`kE+kZs^Q`@-e
+% ]:i0_Olmc/WMhT1-1^Fn=b$0sZ58#kN*"k_"V(f1K)GELTnEMKpg-@+)"M$a'AB0Q!3-1<8K
+% c5._b#O]aHod:D87k;Ftf:]T8)>?0HkuO;CLOZ!i!!DM(,U[iert],"[9o3%-!p#s_@C)`lr
+% VUN&Cc=<rt17`9n+U/Z;@KD?+RTHqBraWZ@(VFQDhoMO0dReg$=N141#8-jf^lH/4MIU3j>A
+% U??1+Gh,Yai]^(U-]<P.^J7^N:Q(.fq#E#)PN4OFpP(6'4PIE,fE6ZV_qA48?.$6@d<6JZ&U
+% aaOsm%1J:X&K(B@gc%8hm#F1`Y$NnX0%kcB21\tV2r]Z=/$THKoY*_#`f!<WOR\,[7sZ.+@>
+% MhU-0HaA*u!4Zm%.g0Tt(l0F;QOof^0[^"&x
+% EndExpression N 603 25b E 62 S fc34 R 171d9c30
+gsave
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+50 dict dup begin /FontType 3 def /FontMatrix [0.001 0 0 0.001 0 0] def /FontBBox [15 -2950 1360 1045] def /Encoding 256 array def 0 1 255 {
+    Encoding exch /.notdef put
+} for Encoding dup <01> 0 get /rad1 put dup <02> 0 get /rad2 put dup <03> 0 get /rad3 put dup <04> 0 get /rad4 put dup <05> 0 get /rad5 put dup <06> 0 get /radext put dup <07> 0 get /int put dup <08> 0 get /pathint put dup <09> 0 get /sum put dup <0a> 0 get /prod put dup <0b> 0 get /cdot put dup <0c> 0 get /vdot put dup <0d> 0 get /ddot put dup <0e> 0 get /hbar put dup <0f> 0 get /bigcap put dup <10> 0 get /bigcup put <11> 0 get /parallel put /Metrics 18 dict def Metrics begin /.notdef 0 def /rad1 1000 def /rad2 1000 def /rad3 1000 def /rad4 1000 def /rad5 1048 def /radext 1048 def /int 500 def /pathint 500 def /sum 700 def /prod 700 def /cdot 1000 def /vdot 550 def /ddot 1000 def /hbar 500 def /bigcap 700 def /bigcup 700 def /parallel 500 def end /BBox 18 dict def BBox begin /.notdef [0 0 0 0] def /rad1 [110 -1150 1020 0] def /rad2 [110 -1750 1020 0] def /rad3 [110 -2350 1020 0] def /rad4 [110 -2950 1020 0] def /rad5 [128 -2890 740 0] def /radext [700 -600 740 0] def /int [20 0 425 1045] def /pathint [20 0 425 1045] def /sum [15 5 640 715] def /prod [15 0 670 715] def /cdot [110 215 890 325] def /vdot [165 -5 280 770] def /ddot [110 -5 890 770] def /hbar [20 -10 480 685] def /bigcap [0 0 680 720] def /bigcup [0 0 680 720] def /parallel [65 -175 400 675] def end /CharacterDefs 18 dict def CharacterDefs begin /.notdef {
+    
+} def /rad1 {
+    newpath 980 0 moveto 464 -1048 lineto 248 -560 lineto 110 -656 lineto 125 -675 lineto 200 -624 lineto 420 -1150 lineto 460 -1150 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad2 {
+    newpath 980 0 moveto 460 -1600 lineto 245 -864 lineto 110 -1000 lineto 128 -1023 lineto 200 -950 lineto 424 -1750 lineto 456 -1750 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad3 {
+    newpath 980 0 moveto 464 -2144 lineto 248 -1160 lineto 110 -1368 lineto 130 -1390 lineto 192 -1288 lineto 424 -2350 lineto 464 -2350 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad4 {
+    newpath 980 0 moveto 880 -488 lineto 672 -1600 lineto 464 -2696 lineto 248 -1464 lineto 110 -1728 lineto 130 -1750 lineto 192 -1616 lineto 424 -2950 lineto 464 -2950 lineto 768 -1312 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad5 {
+    newpath 700 0 moveto 700 -2628 lineto 248 -1284 lineto 128 -1564 lineto 150 -1580 lineto 215 -1425 lineto 688 -2890 lineto 740 -2890 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /radext {
+    newpath 700 0 moveto 700 -600 lineto 740 -600 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /int {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto closepath fill
+} def /pathint {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto fill 20 setlinewidth 220 400 moveto 290 400 340 455 340 500 curveto 340 585 290 640 220 640 curveto 155 640 100 585 100 500 curveto 100 455 155 400 220 400 curveto stroke
+} def /sum {
+    newpath 330 335 moveto 20 715 lineto 575 715 lineto 600 545 lineto 575 535 lineto 550 625 525 685 395 685 curveto 160 685 lineto 411 370 lineto 160 90 lineto 470 90 lineto 565 90 590 140 610 210 curveto 640 200 lineto 585 5 lineto 15 5 lineto 330 335 lineto closepath fill
+} def /prod {
+    newpath 590 90 moveto 590 30 620 20 670 20 curveto 670 0 lineto 410 0 lineto 410 20 lineto 460 20 495 30 495 90 curveto 495 670 lineto 190 670 lineto 190 90 lineto 190 30 225 20 275 20 curveto 275 0 lineto 15 0 lineto 15 20 lineto 65 20 100 30 100 90 curveto 100 615 lineto 100 690 40 700 20 700 curveto 20 715 lineto 670 715 lineto 670 700 lineto 645 700 590 690 590 615 curveto 590 90 lineto closepath fill
+} def /cdot {
+    110 270 moveto 110 300 135 325 165 325 curveto 195 325 220 300 220 270 curveto 220 235 185 215 165 215 curveto 145 215 110 235 110 270 curveto fill 445 270 moveto 445 300 470 325 500 325 curveto 530 325 555 300 555 270 curveto 555 235 520 215 500 215 curveto 480 215 445 235 445 270 curveto fill 775 270 moveto 775 300 800 325 830 325 curveto 860 325 890 300 890 270 curveto 890 235 850 215 830 215 curveto 810 215 775 235 775 270 curveto fill
+} def /vdot {
+    220 770 moveto 250 770 280 750 280 720 curveto 280 680 250 660 220 660 curveto 185 660 165 695 165 720 curveto 165 740 185 770 220 770 curveto fill 220 440 moveto 250 440 280 415 280 385 curveto 280 355 250 330 220 330 curveto 185 330 165 365 165 385 curveto 165 405 185 440 220 440 curveto fill 220 105 moveto 250 105 280 80 280 50 curveto 280 20 250 -5 220 -5 curveto 185 -5 165 30 165 50 curveto 165 70 185 105 220 105 curveto fill
+} def /ddot {
+    165 720 moveto 205 720 220 700 220 665 curveto 220 630 195 610 165 610 curveto 130 620 110 645 110 665 curveto 110 690 130 720 165 720 curveto fill 500 440 moveto 530 440 555 415 555 385 curveto 555 355 530 330 500 330 curveto 465 330 445 365 445 385 curveto 445 405 465 440 500 440 curveto fill 830 155 moveto 860 155 890 130 890 100 curveto 890 70 860 45 830 45 curveto 795 45 775 80 775 100 curveto 775 120 795 155 830 155 curveto fill
+} def /hbar {
+    480 105 moveto 440 55 400 -10 335 -10 curveto 300 -10 290 10 290 35 curveto 290 65 370 350 370 365 curveto 370 380 355 390 340 390 curveto 290 390 205 275 185 250 curveto 140 180 125 125 95 0 curveto 20 0 lineto 150 500 lineto 160 545 180 600 180 615 curveto 180 625 170 640 135 640 curveto 110 640 lineto 100 655 lineto 165 660 215 670 270 685 curveto 275 680 lineto 155 240 lineto 155 235 lineto 190 290 290 440 380 440 curveto 400 440 450 435 450 370 curveto 450 335 365 80 365 55 curveto 365 45 375 40 385 40 curveto 405 40 425 70 465 115 curveto 480 105 lineto fill 55 545 moveto 55 520 lineto 310 560 lineto 310 585 lineto 55 545 lineto fill
+} def /bigcap {
+    newpath 615 400 moveto 615 575 500 655 340 655 curveto 180 655 70 575 70 400 curveto 70 0 lineto 5 0 lineto 5 400 lineto 5 610 140 720 340 720 curveto 545 720 680 610 680 400 curveto 680 0 lineto 615 0 lineto 615 400 lineto closepath fill
+} def /bigcup {
+    newpath 65 320 moveto 65 145 180 65 340 65 curveto 500 65 615 145 615 320 curveto 615 720 lineto 680 720 lineto 680 320 lineto 680 110 540 0 340 0 curveto 140 0 0 110 0 320 curveto 0 720 lineto 65 720 lineto 65 320 lineto closepath fill
+} def /parallel {
+    135 675 moveto 135 -175 lineto 65 -175 lineto 65 675 lineto 135 675 lineto fill 335 675 moveto 335 -175 lineto 265 -175 lineto 265 675 lineto 335 675 lineto fill 400 675 moveto
+} def end /BuildChar {
+    0 begin /char exch def /fontdict exch def /charname fontdict /Encoding get char get def fontdict begin Metrics charname get 0 BBox charname get aload pop setcachedevice CharacterDefs charname get exec end end
+} def /BuildChar load 0 3 dict put /UniqueID 1 def end /EqBFont exch definefont pop
+%%EndSetup
+0 0 73.337334 23.77375 rectclip
+0 0 73.337334 23.77375 rectclip
+0 nxsetgray
+1 1.194434 scale
+/Symbol findfont 20 scalefont
+91
+exch
+defineuserobject
+91 execuserobject setfont
+1.94 4.657217 moveto
+(\() [0 0] xyshow
+1 0.837217 scale
+1 1.193053 scale
+91 execuserobject setfont
+64.797333 4.658185 moveto
+(\)) [0 0] xyshow
+1 0.838186 scale
+0 nxsetgray
+91 execuserobject setfont
+9.940001 4.65 moveto
+() [0 0] xyshow
+0 nxsetgray
+/Times-Roman findfont 20 scalefont
+86
+exch
+defineuserobject
+86 execuserobject setfont
+42.485336 6.319909 moveto
+(t,z) [-8.333336 4.768372e-07 -24.212 0 0 0 0 0] xyshow
+0 nxsetgray
+/Times-Roman findfont 12 scalefont
+102
+exch
+defineuserobject
+102 execuserobject setfont
+55.397339 14.577749 moveto
+(nifnif) [-3.336002 0 -3.995998 0 -21.913338 0 -3.336 0 -3.996 0 0 0 0 0] xyshow
+0 nxsetgray
+/Symbol findfont 12 scalefont
+96
+exch
+defineuserobject
+96 execuserobject setfont
+0 0 moveto
+() [0 0] xyshow
+%%Trailer
+%%DocumentFonts: Times-Roman
+%%+ Symbol
+
+%%EndDocument
+count __NXEPSOpCount sub {pop} repeat countdictstack __NXEPSDictCount sub {end} repeat __NXEPSSave restore
+grestore
+grestore
+gsave
+266.000000 664.000000 transform
+gsave __NXbasematrix setmatrix itransform translate
+0 0 110 21 rectclip
+
+/__NXEPSSave save def /showpage {} def
+_NXLevel2{/_NXsethsb where{pop}{/_NXsethsb /sethsbcolor load def}ifelse /sethsbcolor{_NXsethsb currentrgbcolor nxsetrgbcolor}def /setrgbcolor{nxsetrgbcolor}bind def /setgray{nxsetgray}bind def
+/_NXcimage where{pop}{/_NXcimage /colorimage load def}ifelse /colorimage{dup 3 eq{true 2 index{1 index}{1}ifelse 7 add 1 roll _NXCalibratedImage}{_NXcimage}ifelse}def}if
+0 setgray 0 setlinecap 1 setlinewidth
+0 setlinejoin 10 setmiterlimit [] 0 setdash newpath count /__NXEPSOpCount exch def /__NXEPSDictCount countdictstack def
+%%BeginDocument: 
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: 
+%%Creator: EquationBuilder
+%%CreationDate: Fri Jul 11 14:08:31 1997
+%%For: dabell
+%%DocumentFonts: (atend)
+%%Pages: 0 0
+%%BoundingBox: 0 0 110 21
+%%Baseline: 1 0 108.289337 0
+%%NXNextStepVersion: 3.0
+%%EndComments
+
+%%BeginProcSet: /usr/lib/NextStep/printPackage.ps 3.0
+%!
+% NeXT Printing Package
+% Version: 3.0
+% Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/_NXLevel2 systemdict /languagelevel known {languagelevel 2 ge}{false}ifelse __NXdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def
+/_NXfstr 128 string dup 0 (_NX) putinterval def
+/_NXfindfont /findfont load def
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {_NXfindfont}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {_NXfindfont dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXImageString {/__NXImageString where{pop}{/__NXImageString 4000 string __NXdef}ifelse __NXImageString}__NXbdef
+/_NXDoImageOp{
+	3 dict begin /parr 5 array def 1 index{dup}{1}ifelse /chans exch def
+	chans 2 add 2 roll parr 0 chans getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /totbytes exch def pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{0 1 chans 1 sub{parr exch get exec length totbytes exch sub /totbytes exch def}for totbytes 0 le{exit}if}loop end
+}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+_NXLevel2{ 
+	/NXCalibratedRGBColorSpace where{pop}{
+		/NXCalibratedRGBColorSpace
+		{mark /NXCalibratedRGB /ColorSpace findresource exch pop}stopped
+		{cleartomark /NXCalibratedRGB[/CIEBasedABC 2 dict dup begin 
+		/MatrixLMN[.4124 .2126 .0193 .3576 .7152 .1192 .1805 .0722 .9505]def
+		/WhitePoint[.9505 1 1.089] def end] /ColorSpace defineresource}if def}ifelse
+	/nxsetrgbcolor{NXCalibratedRGBColorSpace setcolorspace setcolor}__NXbdef
+	/nxsetgray{dup dup nxsetrgbcolor}__NXbdef
+	/_NXCalibratedImage{exch{array astore dup length true}{false}ifelse
+		8 -1 roll{NXCalibratedRGBColorSpace setcolorspace}if
+		8 dict dup 9 1 roll begin /ImageType 1 def /MultipleDataSources exch def
+		currentcolorspace 0 get /Indexed eq{pop /Decode[0 2 6 index exp 1 sub]def}
+		{2 mul dup array /Decode exch def 1 sub 0 1 3 -1 roll{Decode exch dup 2 mod put}for}ifelse
+		/DataSource exch def /ImageMatrix exch def 
+		/BitsPerComponent exch def /Height exch def /Width exch def end image}__NXbdef
+} {
+	/setcmykcolor{
+		1.0 exch sub dup dup 6 -1 roll sub dup 0 lt{pop 0}if 5 1 roll
+		4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll exch sub dup 0 lt{pop 0}if setrgbcolor}__NXbdef
+	/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+	/colorimage{_NXDoImageOp}__NXbdef
+	/nxsetrgbcolor{setrgbcolor}__NXbdef /nxsetgray{setgray}__NXbdef
+	/setpattern{pop .5 setgray}__NXbdef
+	/_NXCalibratedImage{dup 1 eq {pop pop image}{colorimage}ifelse pop}__NXbdef
+} ifelse
+/_NXSetCMYKOrRGB where{pop}{
+	mark{systemdict /currentwindow get exec}stopped
+	{{pop pop pop setcmykcolor}}{{nxsetrgbcolor pop pop pop pop}}ifelse /_NXSetCMYKOrRGB exch def cleartomark
+}ifelse
+%%EndProcSet
+
+% EquationBuilder(TM) Expression
+% +.\Jr(=:/*V[StRFQAYmdjEEA;1nuN+[co.OZ7L#cq3iK9qVJ?-k`bIVT^%\'GF"d1C$ZF11
+% fO>,\5hi(c>mEciHs6;PAnY:_GHL1ai>_'efXg0IR49V1X;k>3aQa+TapkbQ1TiO8qO%#pFg
+% SV27Z%C%),,7&[ne(c'<W+g@4!;?.76d#C!iJ0@Ju`AW"Z->/md+%'?D6K_'1OHq.`Q5l7lP
+% ;EOIYRQ\K^st"nJ92+Ai/&F/C#"B(PD?F'`1&)d!o++3JBp#>#?EN):E)$A>sDAK?jN4O_I6
+% 766lV@t63;rq"Vor.aoEn>"oo6T%"M:1ob\mKBmK:NUBl^FI&a_a;q%ds-\Nu"r(H)%95[P(
+% pA=X9JQL`VT]F.bH\T<@!-J=jB-2@1\RA$\!.Hk".KQ=X"=JaSZOA2hr\IkQ7C3*95fnR6ML
+% #.\8)]%'1cV.Y'.V)]GIV%Z+bq+j-qPhMZr`0DUohRi7NAt$+q,to2Hu+>_'n>rg@\k2LkI$
+% -"WUs0;9"d(3JjDgnd28TL)k`Qi!eXo,27D-Ppb6=bouQo%_;Zs=YXDeBP*!4RSsEHTWh"DS
+% s&UMjbl(s\RQb6&o&hhOsoT;ULcIl.#3qf3?G#_\k(tJRmK07Vha]nkCT,Q=)+XeI]D\-UX&
+% &fUTdKSl_V!M)X+0*Wjf%-IQBH\.Q.(ec'b('.jB8&dFk5oT?3aqIZf5fC88e#=.ld\BhN6H
+% 1D6ucZE+7d%^Tj^qQ)9rDB#@Q<2+t^U[6W7Bss2'j!(?$k$)S]+o\n(&9Z&K`uB&L3E]/<VG
+% $BYVuDqf.!?B17o=\B^d%r4/jMiDD6VNA'TRn+#)!DD>k/jd,XFp;CnrciKF55*Z4M\O@GfB
+% 2>XC\*_162)x
+% EndExpression N 700 2bc E ed S 1359f R cd3d7267
+gsave
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+50 dict dup begin /FontType 3 def /FontMatrix [0.001 0 0 0.001 0 0] def /FontBBox [15 -2950 1360 1045] def /Encoding 256 array def 0 1 255 {
+    Encoding exch /.notdef put
+} for Encoding dup <01> 0 get /rad1 put dup <02> 0 get /rad2 put dup <03> 0 get /rad3 put dup <04> 0 get /rad4 put dup <05> 0 get /rad5 put dup <06> 0 get /radext put dup <07> 0 get /int put dup <08> 0 get /pathint put dup <09> 0 get /sum put dup <0a> 0 get /prod put dup <0b> 0 get /cdot put dup <0c> 0 get /vdot put dup <0d> 0 get /ddot put dup <0e> 0 get /hbar put dup <0f> 0 get /bigcap put dup <10> 0 get /bigcup put <11> 0 get /parallel put /Metrics 18 dict def Metrics begin /.notdef 0 def /rad1 1000 def /rad2 1000 def /rad3 1000 def /rad4 1000 def /rad5 1048 def /radext 1048 def /int 500 def /pathint 500 def /sum 700 def /prod 700 def /cdot 1000 def /vdot 550 def /ddot 1000 def /hbar 500 def /bigcap 700 def /bigcup 700 def /parallel 500 def end /BBox 18 dict def BBox begin /.notdef [0 0 0 0] def /rad1 [110 -1150 1020 0] def /rad2 [110 -1750 1020 0] def /rad3 [110 -2350 1020 0] def /rad4 [110 -2950 1020 0] def /rad5 [128 -2890 740 0] def /radext [700 -600 740 0] def /int [20 0 425 1045] def /pathint [20 0 425 1045] def /sum [15 5 640 715] def /prod [15 0 670 715] def /cdot [110 215 890 325] def /vdot [165 -5 280 770] def /ddot [110 -5 890 770] def /hbar [20 -10 480 685] def /bigcap [0 0 680 720] def /bigcup [0 0 680 720] def /parallel [65 -175 400 675] def end /CharacterDefs 18 dict def CharacterDefs begin /.notdef {
+    
+} def /rad1 {
+    newpath 980 0 moveto 464 -1048 lineto 248 -560 lineto 110 -656 lineto 125 -675 lineto 200 -624 lineto 420 -1150 lineto 460 -1150 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad2 {
+    newpath 980 0 moveto 460 -1600 lineto 245 -864 lineto 110 -1000 lineto 128 -1023 lineto 200 -950 lineto 424 -1750 lineto 456 -1750 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad3 {
+    newpath 980 0 moveto 464 -2144 lineto 248 -1160 lineto 110 -1368 lineto 130 -1390 lineto 192 -1288 lineto 424 -2350 lineto 464 -2350 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad4 {
+    newpath 980 0 moveto 880 -488 lineto 672 -1600 lineto 464 -2696 lineto 248 -1464 lineto 110 -1728 lineto 130 -1750 lineto 192 -1616 lineto 424 -2950 lineto 464 -2950 lineto 768 -1312 lineto 1020 0 lineto 980 0 lineto closepath fill
+} def /rad5 {
+    newpath 700 0 moveto 700 -2628 lineto 248 -1284 lineto 128 -1564 lineto 150 -1580 lineto 215 -1425 lineto 688 -2890 lineto 740 -2890 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /radext {
+    newpath 700 0 moveto 700 -600 lineto 740 -600 lineto 740 0 lineto 700 0 lineto closepath fill
+} def /int {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto closepath fill
+} def /pathint {
+    newpath 245 390 moveto 225 235 195 145 180 100 curveto 165 60 150 50 140 40 curveto 135 30 85 0 50 20 curveto 35 25 25 45 25 55 curveto 20 80 30 100 55 110 curveto 80 125 93 110 110 90 curveto 135 60 155 135 160 195 curveto 165 270 170 340 190 510 curveto 205 650 lineto 220 810 230 890 265 960 curveto 275 980 295 1015 320 1030 curveto 350 1045 380 1030 395 1020 curveto 410 1010 425 980 400 955 curveto 385 940 347 925 330 950 curveto 310 970 290 955 290 940 curveto 280 900 285 745 270 610 curveto 245 390 lineto fill 20 setlinewidth 220 400 moveto 290 400 340 455 340 500 curveto 340 585 290 640 220 640 curveto 155 640 100 585 100 500 curveto 100 455 155 400 220 400 curveto stroke
+} def /sum {
+    newpath 330 335 moveto 20 715 lineto 575 715 lineto 600 545 lineto 575 535 lineto 550 625 525 685 395 685 curveto 160 685 lineto 411 370 lineto 160 90 lineto 470 90 lineto 565 90 590 140 610 210 curveto 640 200 lineto 585 5 lineto 15 5 lineto 330 335 lineto closepath fill
+} def /prod {
+    newpath 590 90 moveto 590 30 620 20 670 20 curveto 670 0 lineto 410 0 lineto 410 20 lineto 460 20 495 30 495 90 curveto 495 670 lineto 190 670 lineto 190 90 lineto 190 30 225 20 275 20 curveto 275 0 lineto 15 0 lineto 15 20 lineto 65 20 100 30 100 90 curveto 100 615 lineto 100 690 40 700 20 700 curveto 20 715 lineto 670 715 lineto 670 700 lineto 645 700 590 690 590 615 curveto 590 90 lineto closepath fill
+} def /cdot {
+    110 270 moveto 110 300 135 325 165 325 curveto 195 325 220 300 220 270 curveto 220 235 185 215 165 215 curveto 145 215 110 235 110 270 curveto fill 445 270 moveto 445 300 470 325 500 325 curveto 530 325 555 300 555 270 curveto 555 235 520 215 500 215 curveto 480 215 445 235 445 270 curveto fill 775 270 moveto 775 300 800 325 830 325 curveto 860 325 890 300 890 270 curveto 890 235 850 215 830 215 curveto 810 215 775 235 775 270 curveto fill
+} def /vdot {
+    220 770 moveto 250 770 280 750 280 720 curveto 280 680 250 660 220 660 curveto 185 660 165 695 165 720 curveto 165 740 185 770 220 770 curveto fill 220 440 moveto 250 440 280 415 280 385 curveto 280 355 250 330 220 330 curveto 185 330 165 365 165 385 curveto 165 405 185 440 220 440 curveto fill 220 105 moveto 250 105 280 80 280 50 curveto 280 20 250 -5 220 -5 curveto 185 -5 165 30 165 50 curveto 165 70 185 105 220 105 curveto fill
+} def /ddot {
+    165 720 moveto 205 720 220 700 220 665 curveto 220 630 195 610 165 610 curveto 130 620 110 645 110 665 curveto 110 690 130 720 165 720 curveto fill 500 440 moveto 530 440 555 415 555 385 curveto 555 355 530 330 500 330 curveto 465 330 445 365 445 385 curveto 445 405 465 440 500 440 curveto fill 830 155 moveto 860 155 890 130 890 100 curveto 890 70 860 45 830 45 curveto 795 45 775 80 775 100 curveto 775 120 795 155 830 155 curveto fill
+} def /hbar {
+    480 105 moveto 440 55 400 -10 335 -10 curveto 300 -10 290 10 290 35 curveto 290 65 370 350 370 365 curveto 370 380 355 390 340 390 curveto 290 390 205 275 185 250 curveto 140 180 125 125 95 0 curveto 20 0 lineto 150 500 lineto 160 545 180 600 180 615 curveto 180 625 170 640 135 640 curveto 110 640 lineto 100 655 lineto 165 660 215 670 270 685 curveto 275 680 lineto 155 240 lineto 155 235 lineto 190 290 290 440 380 440 curveto 400 440 450 435 450 370 curveto 450 335 365 80 365 55 curveto 365 45 375 40 385 40 curveto 405 40 425 70 465 115 curveto 480 105 lineto fill 55 545 moveto 55 520 lineto 310 560 lineto 310 585 lineto 55 545 lineto fill
+} def /bigcap {
+    newpath 615 400 moveto 615 575 500 655 340 655 curveto 180 655 70 575 70 400 curveto 70 0 lineto 5 0 lineto 5 400 lineto 5 610 140 720 340 720 curveto 545 720 680 610 680 400 curveto 680 0 lineto 615 0 lineto 615 400 lineto closepath fill
+} def /bigcup {
+    newpath 65 320 moveto 65 145 180 65 340 65 curveto 500 65 615 145 615 320 curveto 615 720 lineto 680 720 lineto 680 320 lineto 680 110 540 0 340 0 curveto 140 0 0 110 0 320 curveto 0 720 lineto 65 720 lineto 65 320 lineto closepath fill
+} def /parallel {
+    135 675 moveto 135 -175 lineto 65 -175 lineto 65 675 lineto 135 675 lineto fill 335 675 moveto 335 -175 lineto 265 -175 lineto 265 675 lineto 335 675 lineto fill 400 675 moveto
+} def end /BuildChar {
+    0 begin /char exch def /fontdict exch def /charname fontdict /Encoding get char get def fontdict begin Metrics charname get 0 BBox charname get aload pop setcachedevice CharacterDefs charname get exec end end
+} def /BuildChar load 0 3 dict put /UniqueID 1 def end /EqBFont exch definefont pop
+%%EndSetup
+0 0 109.289337 20.105408 rectclip
+0 0 109.289337 20.105408 rectclip
+0 nxsetgray
+/Times-Roman findfont 24 scalefont
+134
+exch
+defineuserobject
+134 execuserobject setfont
+85.897339 1 moveto
+(zz) [-84.897339 0 0 0 0 0] xyshow
+0 nxsetgray
+/Times-Roman findfont 12 scalefont
+102
+exch
+defineuserobject
+102 execuserobject setfont
+99.889328 10.909409 moveto
+(ninif) [-3.335999 0 -77.565331 0 -3.335999 0 -3.996 0 0 0 0 0] xyshow
+0 nxsetgray
+/Symbol findfont 12 scalefont
+96
+exch
+defineuserobject
+96 execuserobject setfont
+0 0 moveto
+() [0 0] xyshow
+0 nxsetgray
+/Symbol findfont 24 scalefont
+135
+exch
+defineuserobject
+135 execuserobject setfont
+34.054668 1 moveto
+(=) [0 0 0 0] xyshow
+%%Trailer
+%%DocumentFonts: Times-Roman
+%%+ Symbol
+
+%%EndDocument
+count __NXEPSOpCount sub {pop} repeat countdictstack __NXEPSDictCount sub {end} repeat __NXEPSSave restore
+grestore
+grestore
+0 nxsetgray
+0 0 0.15 1 10 SU
+gsave
+/Times-Roman findfont 24 scalefont [1 0 0 -1 0 0] makefont
+131
+exch
+defineuserobject
+131 execuserobject setfont
+0 nxsetgray
+[1 0 0 -1 0 1138] concat
+131 execuserobject setfont
+0 nxsetgray
+464 577 moveto (t) show
+grestore
+grestore
+0 nxsetgray
+0 0 0.15 1 10 SU
+gsave
+131 execuserobject setfont
+0 nxsetgray
+[1 0 0 -1 0 982] concat
+131 execuserobject setfont
+0 nxsetgray
+130 499 moveto (q) show
+grestore
+grestore
+0 nxsetgray
+0 0 0.15 1 10 SU
+gsave
+131 execuserobject setfont
+0 nxsetgray
+[1 0 0 -1 0 1474] concat
+131 execuserobject setfont
+0 nxsetgray
+202 745 moveto (p) show
+grestore
+grestore
+gsave
+0 0 612 792 rectclip
+[1 0 0 -1 0 792] concat
+grestore
+grestore
+%%Trailer
+%%DocumentFonts: Times-Roman
+%%+ Times-Roman

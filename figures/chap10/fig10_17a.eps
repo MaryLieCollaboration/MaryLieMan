@@ -1,0 +1,938 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 57 403 535 716
+%%Title: (Layout0:Graph0)
+%%Creator: (Igor1.26: LaserWriter 8 8.2)
+%%CreationDate: (4:02 PM Monday, January 4, 1999)
+%%For: (dsat)
+%%Pages: 1
+%%DocumentFonts: Helvetica
+%%DocumentNeededFonts: Helvetica
+%%DocumentSuppliedFonts:
+%%DocumentData: Clean7Bit
+%%PageOrder: Ascend
+%%Orientation: Portrait
+%%DocumentMedia: Default 612 792 0 () ()
+%ADO_ImageableArea: 30.96 30.96 582.96 761.04
+%%EndComments
+userdict begin/dscInfo 5 dict dup begin
+/Title(Layout0:Graph0)def
+/Creator(Igor1.26: LaserWriter 8 8.2)def
+/CreationDate(4:02 PM Monday, January 4, 1999)def
+/For(dsat)def
+/Pages 1 def
+end def end
+
+save 
+/version23-manualfeedpatch where { pop false } { true }ifelse
+ % we don't do an explicit 'get' since product and version MAY
+ % be in systemdict or statusdict - this technique gets the lookup
+ % without failure
+statusdict begin
+  product (LaserWriter) eq        % true if LaserWriter
+  version cvr 23.0 eq             % true if version 23
+end
+
+and  % only install this patch if both are true
+and  % true only if patch is not installed and is for this printer
+     % save object and boolean on stack
+dup { exch restore }if
+% either true OR saveobject false
+dup
+{
+  /version23-manualfeedpatch true def
+  /oldversion23-showpage /showpage load def
+  /showpage       % this showpage will wait extra time if manualfeed is true
+  {%
+     statusdict /manualfeed known
+     {% manualfeed known in statusdict
+        statusdict /manualfeed get
+        {% if true then we loop for 5 seconds
+           usertime 5000 add       % target usertime
+           { % loop
+             dup usertime sub 0 lt
+             { exit }if
+           }loop
+           pop             % pop the usertime off the stac
+        }if
+     }if
+     oldversion23-showpage
+  }bind def
+}if
+not{ restore }if
+
+/md 135 dict def md begin/currentpacking where {pop /sc_oldpacking currentpacking def true setpacking}if
+%%BeginFile: adobe_psp_basic
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/bd{bind def}bind def
+/xdf{exch def}bd
+/xs{exch store}bd
+/ld{load def}bd
+/Z{0 def}bd
+/T/true
+/F/false
+/:L/lineto
+/lw/setlinewidth
+/:M/moveto
+/rl/rlineto
+/rm/rmoveto
+/:C/curveto
+/:T/translate
+/:K/closepath
+/:mf/makefont
+/gS/gsave
+/gR/grestore
+/np/newpath
+14{ld}repeat
+/$m matrix def
+/av 81 def
+/por true def
+/normland false def
+/psb-nosave{}bd
+/pse-nosave{}bd
+/us Z
+/psb{/us save store}bd
+/pse{us restore}bd
+/level2
+/languagelevel where
+{
+pop languagelevel 2 ge
+}{
+false
+}ifelse
+def
+/featurecleanup
+{
+stopped
+cleartomark
+countdictstack exch sub dup 0 gt
+{
+{end}repeat
+}{
+pop
+}ifelse
+}bd
+/noload Z
+/startnoload
+{
+{/noload save store}if
+}bd
+/endnoload
+{
+{noload restore}if
+}bd
+level2 startnoload
+/setjob
+{
+statusdict/jobname 3 -1 roll put
+}bd
+/setcopies
+{
+userdict/#copies 3 -1 roll put
+}bd
+level2 endnoload level2 not startnoload
+/setjob
+{
+1 dict begin/JobName xdf currentdict end setuserparams
+}bd
+/setcopies
+{
+1 dict begin/NumCopies xdf currentdict end setpagedevice
+}bd
+level2 not endnoload
+/pm Z
+/mT Z
+/sD Z
+/realshowpage Z
+/initializepage
+{
+/pm save store mT concat
+}bd
+/endp
+{
+pm restore showpage
+}def
+/$c/DeviceRGB def
+/rectclip where
+{
+pop/rC/rectclip ld
+}{
+/rC
+{
+np 4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+clip np
+}bd
+}ifelse
+/rectfill where
+{
+pop/rF/rectfill ld
+}{
+/rF
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+fill
+gR
+}bd
+}ifelse
+/rectstroke where
+{
+pop/rS/rectstroke ld
+}{
+/rS
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+stroke
+gR
+}bd
+}ifelse
+%%EndFile
+%%BeginFile: adobe_psp_colorspace_level1
+%%Copyright: Copyright 1991-1993 Adobe Systems Incorporated. All Rights Reserved.
+/G/setgray ld
+/:F/setrgbcolor ld
+%%EndFile
+%%BeginFile: adobe_psp_uniform_graphics
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/@a
+{
+np :M 0 rl :L 0 exch rl 0 rl :L fill
+}bd
+/@b
+{
+np :M 0 rl 0 exch rl :L 0 rl 0 exch rl fill
+}bd
+/arct where
+{
+pop
+}{
+/arct
+{
+arcto pop pop pop pop
+}bd
+}ifelse
+/x1 Z
+/x2 Z
+/y1 Z
+/y2 Z
+/rad Z
+/@q
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+fill
+}bd
+/@s
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+:K
+stroke
+}bd
+/@i
+{
+np 0 360 arc fill
+}bd
+/@j
+{
+gS
+np
+:T
+scale
+0 0 .5 0 360 arc
+fill
+gR
+}bd
+/@e
+{
+np
+0 360 arc
+:K
+stroke
+}bd
+/@f
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 0 360 arc
+:K
+$m setmatrix
+stroke
+}bd
+/@k
+{
+gS
+np
+:T
+0 0 :M
+0 0 5 2 roll
+arc fill
+gR
+}bd
+/@l
+{
+gS
+np
+:T
+0 0 :M
+scale
+0 0 .5 5 -2 roll arc
+fill
+gR
+}bd
+/@m
+{
+np
+arc
+stroke
+}bd
+/@n
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 5 -2 roll arc
+$m setmatrix
+stroke
+}bd
+%%EndFile
+%%BeginFile: adobe_psp_basic_text
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/S/show ld
+/A{
+0.0 exch ashow
+}bd
+/R{
+0.0 exch 32 exch widthshow
+}bd
+/W{
+0.0 3 1 roll widthshow
+}bd
+/J{
+0.0 32 4 2 roll 0.0 exch awidthshow
+}bd
+/V{
+0.0 4 1 roll 0.0 exch awidthshow
+}bd
+/fcflg true def
+/fc{
+fcflg{
+vmstatus exch sub 50000 lt{
+(%%[ Warning: Running out of memory ]%%\r)print flush/fcflg false store
+}if pop
+}if
+}bd
+/$f[1 0 0 -1 0 0]def
+/:ff{$f :mf}bd
+/MacEncoding StandardEncoding 256 array copy def
+MacEncoding 39/quotesingle put
+MacEncoding 96/grave put
+/Adieresis/Aring/Ccedilla/Eacute/Ntilde/Odieresis/Udieresis/aacute
+/agrave/acircumflex/adieresis/atilde/aring/ccedilla/eacute/egrave
+/ecircumflex/edieresis/iacute/igrave/icircumflex/idieresis/ntilde/oacute
+/ograve/ocircumflex/odieresis/otilde/uacute/ugrave/ucircumflex/udieresis
+/dagger/degree/cent/sterling/section/bullet/paragraph/germandbls
+/registered/copyright/trademark/acute/dieresis/notequal/AE/Oslash
+/infinity/plusminus/lessequal/greaterequal/yen/mu/partialdiff/summation
+/product/pi/integral/ordfeminine/ordmasculine/Omega/ae/oslash
+/questiondown/exclamdown/logicalnot/radical/florin/approxequal/Delta/guillemotleft
+/guillemotright/ellipsis/space/Agrave/Atilde/Otilde/OE/oe
+/endash/emdash/quotedblleft/quotedblright/quoteleft/quoteright/divide/lozenge
+/ydieresis/Ydieresis/fraction/currency/guilsinglleft/guilsinglright/fi/fl
+/daggerdbl/periodcentered/quotesinglbase/quotedblbase/perthousand
+/Acircumflex/Ecircumflex/Aacute/Edieresis/Egrave/Iacute/Icircumflex/Idieresis/Igrave
+/Oacute/Ocircumflex/apple/Ograve/Uacute/Ucircumflex/Ugrave/dotlessi/circumflex/tilde
+/macron/breve/dotaccent/ring/cedilla/hungarumlaut/ogonek/caron
+MacEncoding 128 128 getinterval astore pop
+level2 startnoload
+/copyfontdict
+{
+findfont dup length dict
+begin
+{
+1 index/FID ne{def}{pop pop}ifelse
+}forall
+}bd
+level2 endnoload level2 not startnoload
+/copyfontdict
+{
+findfont dup length dict
+copy
+begin
+}bd
+level2 not endnoload
+md/fontname known not{
+/fontname/customfont def
+}if
+/Encoding Z
+/:mre
+{
+copyfontdict
+/Encoding MacEncoding def
+fontname currentdict
+end
+definefont :ff def
+}bd
+/:bsr
+{
+copyfontdict
+/Encoding Encoding 256 array copy def
+Encoding dup
+}bd
+/pd{put dup}bd
+/:esr
+{
+pop pop
+fontname currentdict
+end
+definefont :ff def
+}bd
+/scf
+{
+scalefont def
+}bd
+/scf-non
+{
+$m scale :mf setfont
+}bd
+/ps Z
+/fz{/ps xs}bd
+/sf/setfont ld
+/cF/currentfont ld
+/mbf
+{
+/makeblendedfont where
+{
+pop
+makeblendedfont
+/ABlend exch definefont
+}{
+pop
+}ifelse
+def
+}def
+%%EndFile
+/currentpacking where {pop sc_oldpacking setpacking}if end
+%%EndProlog
+%%BeginSetup
+md begin
+/mT[.24 0 0 -.24 30.959 761.009]def
+/sD 16 dict def
+%%IncludeFont: Helvetica
+/f0_1/Helvetica
+:mre
+/f1_1 f0_1 1.04 scf
+/f1_40 f1_1 40 scf
+/Courier findfont[10 0 0 -10 0 0]:mf setfont
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+initializepage
+%%EndPageSetup
+gS 0 0 2300 3042 rC
+1 G
+0 0 2295 3037 rC
+0 0 0 0 rF
+0 G
+-4 -4 328 1335 4 4 324 206 @b
+-4 -4 2054 1335 4 4 2050 206 @b
+296 1333 -4 4 328 1329 4 296 1329 @a
+186 1347 :M
+f1_40 sf
+8.116(-0.4)A
+310 1193 -4 4 328 1189 4 310 1189 @a
+296 1053 -4 4 328 1049 4 296 1049 @a
+186 1067 :M
+8.116(-0.2)A
+310 913 -4 4 328 909 4 310 909 @a
+296 773 -4 4 328 769 4 296 769 @a
+214 787 :M
+5.095(0.0)A
+310 632 -4 4 328 628 4 310 628 @a
+296 492 -4 4 328 488 4 296 488 @a
+214 506 :M
+5.095(0.2)A
+310 352 -4 4 328 348 4 310 348 @a
+296 212 -4 4 328 208 4 296 208 @a
+214 226 :M
+5.095(0.4)A
+gR
+4 lw
+gS 0 0 2300 3042 rC
+gS
+136 770 :T
+270 rotate
+-136 -770 :T
+124 786 :M
+f1_40 sf
+(X)S
+gR
+0 0 2295 3037 rC
+324 1339 -4 4 2054 1335 4 324 1335 @a
+324 206 -4 4 2054 202 4 324 202 @a
+-4 -4 2048 1367 4 4 2044 1335 @b
+2018 1419 :M
+f1_40 sf
+9.749(30)A
+-4 -4 1991 1353 4 4 1987 1335 @b
+-4 -4 1934 1353 4 4 1930 1335 @b
+-4 -4 1877 1353 4 4 1873 1335 @b
+-4 -4 1819 1353 4 4 1815 1335 @b
+-4 -4 1762 1367 4 4 1758 1335 @b
+1732 1419 :M
+9.749(25)A
+-4 -4 1705 1353 4 4 1701 1335 @b
+-4 -4 1648 1353 4 4 1644 1335 @b
+-4 -4 1591 1353 4 4 1587 1335 @b
+-4 -4 1534 1353 4 4 1530 1335 @b
+-4 -4 1477 1367 4 4 1473 1335 @b
+1447 1419 :M
+9.749(20)A
+-4 -4 1420 1353 4 4 1416 1335 @b
+-4 -4 1362 1353 4 4 1358 1335 @b
+-4 -4 1305 1353 4 4 1301 1335 @b
+-4 -4 1248 1353 4 4 1244 1335 @b
+-4 -4 1191 1367 4 4 1187 1335 @b
+1161 1419 :M
+9.749(15)A
+-4 -4 1134 1353 4 4 1130 1335 @b
+-4 -4 1077 1353 4 4 1073 1335 @b
+-4 -4 1020 1353 4 4 1016 1335 @b
+-4 -4 962 1353 4 4 958 1335 @b
+-4 -4 905 1367 4 4 901 1335 @b
+875 1419 :M
+9.749(10)A
+-4 -4 848 1353 4 4 844 1335 @b
+-4 -4 791 1353 4 4 787 1335 @b
+-4 -4 734 1353 4 4 730 1335 @b
+-4 -4 677 1353 4 4 673 1335 @b
+-4 -4 620 1367 4 4 616 1335 @b
+604 1419 :M
+(5)S
+-4 -4 563 1353 4 4 559 1335 @b
+-4 -4 505 1353 4 4 501 1335 @b
+-4 -4 448 1353 4 4 444 1335 @b
+-4 -4 391 1353 4 4 387 1335 @b
+-4 -4 334 1367 4 4 330 1335 @b
+318 1419 :M
+(0)S
+1177 1479 :M
+(S)S
+gR
+gS 0 0 2300 3042 rC
+330 1053 -4 4 337 1049 4 330 1049 @a
+333 1053 -4 4 340 1049 4 333 1049 @a
+336 1053 -4 4 343 1049 4 336 1049 @a
+339 1053 -4 4 346 1049 4 339 1049 @a
+342 1053 -4 4 348 1049 4 342 1049 @a
+344 1053 -4 4 351 1049 4 344 1049 @a
+347 1053 -4 4 354 1049 4 347 1049 @a
+350 1053 -4 4 357 1049 4 350 1049 @a
+353 1053 -4 4 360 1049 4 353 1049 @a
+356 1053 -4 4 363 1049 4 356 1049 @a
+359 1053 -4 4 366 1049 4 359 1049 @a
+362 1053 -4 4 368 1049 4 362 1049 @a
+364 1053 -4 4 371 1049 4 364 1049 @a
+367 1053 -4 4 374 1049 4 367 1049 @a
+370 1053 -4 4 377 1049 4 370 1049 @a
+373 1053 -4 4 380 1049 4 373 1049 @a
+376 1053 -4 4 383 1049 4 376 1049 @a
+379 1053 -4 4 385 1049 4 379 1049 @a
+381 1053 -4 4 388 1049 4 381 1049 @a
+384 1053 -4 4 391 1049 4 384 1049 @a
+387 1053 -4 4 400 1049 4 387 1049 @a
+-4 -4 400 1053 4 4 404 1048 @b
+-4 -4 408 1052 4 4 413 1046 @b
+-4 -4 417 1050 4 4 421 1045 @b
+-4 -4 425 1049 4 4 430 1042 @b
+-4 -4 434 1046 4 4 439 1039 @b
+-4 -4 443 1043 4 4 447 1036 @b
+-4 -4 451 1040 4 4 456 1032 @b
+-4 -4 460 1036 4 4 464 1028 @b
+-4 -4 468 1032 4 4 473 1023 @b
+-4 -4 477 1027 4 4 476 1021 @b
+-4 -4 480 1025 4 4 479 1019 @b
+-4 -4 483 1023 4 4 481 1018 @b
+-4 -4 485 1022 4 4 484 1016 @b
+-4 -4 488 1020 4 4 487 1014 @b
+-4 -4 491 1018 4 4 490 1013 @b
+-4 -4 494 1017 4 4 493 1011 @b
+-4 -4 497 1015 4 4 496 1009 @b
+-4 -4 500 1013 4 4 499 1008 @b
+-4 -4 503 1012 4 4 502 1006 @b
+-4 -4 506 1010 4 4 519 996 @b
+-4 -4 523 1000 4 4 536 989 @b
+-4 -4 540 993 4 4 553 983 @b
+-4 -4 557 987 4 4 570 978 @b
+-4 -4 574 982 4 4 587 975 @b
+-4 -4 591 979 4 4 604 973 @b
+604 977 -4 4 625 973 4 604 973 @a
+621 977 -4 4 643 975 4 621 973 @a
+639 979 -4 4 660 978 4 639 975 @a
+656 982 -4 4 677 982 4 656 978 @a
+673 986 -4 4 680 983 4 673 982 @a
+676 987 -4 4 683 984 4 676 983 @a
+679 988 -4 4 685 984 4 679 984 @a
+681 988 -4 4 688 985 4 681 984 @a
+684 989 -4 4 691 986 4 684 985 @a
+687 990 -4 4 694 987 4 687 986 @a
+690 991 -4 4 697 988 4 690 987 @a
+693 992 -4 4 700 989 4 693 988 @a
+696 993 -4 4 703 990 4 696 989 @a
+699 994 -4 4 706 990 4 699 990 @a
+702 994 -4 4 714 993 4 702 990 @a
+710 997 -4 4 723 995 4 710 993 @a
+719 999 -4 4 731 996 4 719 995 @a
+727 1000 -4 4 740 997 4 727 996 @a
+736 1001 -4 4 748 998 4 736 997 @a
+744 1002 -4 4 757 998 4 744 998 @a
+753 1002 -4 4 765 998 4 753 998 @a
+-4 -4 765 1002 4 4 770 997 @b
+-4 -4 774 1001 4 4 778 996 @b
+-4 -4 782 1000 4 4 787 995 @b
+-4 -4 791 999 4 4 844 983 @b
+-4 -4 848 987 4 4 901 972 @b
+-4 -4 905 976 4 4 959 961 @b
+-4 -4 963 965 4 4 1016 949 @b
+-4 -4 1020 953 4 4 1073 938 @b
+-4 -4 1077 942 4 4 1130 926 @b
+-4 -4 1134 930 4 4 1187 915 @b
+-4 -4 1191 919 4 4 1244 904 @b
+-4 -4 1248 908 4 4 1301 892 @b
+-4 -4 1305 896 4 4 1358 881 @b
+-4 -4 1362 885 4 4 1416 869 @b
+-4 -4 1420 873 4 4 1473 858 @b
+-4 -4 1477 862 4 4 1530 846 @b
+-4 -4 1534 850 4 4 1587 835 @b
+-4 -4 1591 839 4 4 1644 824 @b
+-4 -4 1648 828 4 4 1701 812 @b
+-4 -4 1705 816 4 4 1758 801 @b
+-4 -4 1762 805 4 4 1816 789 @b
+-4 -4 1820 793 4 4 1873 778 @b
+-4 -4 1877 782 4 4 1930 767 @b
+.033 0 0 :F
+0 0 2295 3037 rC
+gR
+.033 0 0 :F
+gS 0 0 2300 3042 rC
+330 492 -4 4 337 488 4 330 488 @a
+333 492 -4 4 340 488 4 333 488 @a
+336 492 -4 4 343 488 4 336 488 @a
+339 492 -4 4 346 488 4 339 488 @a
+342 492 -4 4 348 488 4 342 488 @a
+344 492 -4 4 351 488 4 344 488 @a
+347 492 -4 4 354 488 4 347 488 @a
+350 492 -4 4 357 488 4 350 488 @a
+353 492 -4 4 360 488 4 353 488 @a
+356 492 -4 4 363 488 4 356 488 @a
+359 492 -4 4 366 488 4 359 488 @a
+362 492 -4 4 368 488 4 362 488 @a
+364 492 -4 4 371 488 4 364 488 @a
+367 492 -4 4 374 488 4 367 488 @a
+370 492 -4 4 377 488 4 370 488 @a
+373 492 -4 4 380 488 4 373 488 @a
+376 492 -4 4 383 488 4 376 488 @a
+379 492 -4 4 385 488 4 379 488 @a
+381 492 -4 4 388 488 4 381 488 @a
+384 492 -4 4 391 488 4 384 488 @a
+387 492 -4 4 400 488 4 387 488 @a
+396 492 -4 4 408 489 4 396 488 @a
+404 493 -4 4 417 491 4 404 489 @a
+413 495 -4 4 425 492 4 413 491 @a
+421 496 -4 4 434 495 4 421 492 @a
+430 499 -4 4 443 498 4 430 495 @a
+439 502 -4 4 451 501 4 439 498 @a
+447 505 -4 4 460 505 4 447 501 @a
+456 509 -4 4 468 509 4 456 505 @a
+464 513 -4 4 477 514 4 464 509 @a
+473 518 -4 4 480 516 4 473 514 @a
+476 520 -4 4 483 518 4 476 516 @a
+479 522 -4 4 485 519 4 479 518 @a
+481 523 -4 4 488 521 4 481 519 @a
+484 525 -4 4 491 523 4 484 521 @a
+487 527 -4 4 494 524 4 487 523 @a
+490 528 -4 4 497 526 4 490 524 @a
+493 530 -4 4 500 528 4 493 526 @a
+496 532 -4 4 503 529 4 496 528 @a
+499 533 -4 4 506 531 4 499 529 @a
+502 535 -4 4 523 541 4 502 531 @a
+519 545 -4 4 540 548 4 519 541 @a
+536 552 -4 4 557 554 4 536 548 @a
+553 558 -4 4 574 559 4 553 554 @a
+570 563 -4 4 591 562 4 570 559 @a
+587 566 -4 4 608 564 4 587 562 @a
+604 568 -4 4 625 564 4 604 564 @a
+-4 -4 625 568 4 4 639 562 @b
+-4 -4 643 566 4 4 656 559 @b
+-4 -4 660 563 4 4 673 555 @b
+-4 -4 677 559 4 4 676 554 @b
+-4 -4 680 558 4 4 679 553 @b
+679 557 -4 4 685 553 4 679 553 @a
+-4 -4 685 557 4 4 684 552 @b
+-4 -4 688 556 4 4 687 551 @b
+-4 -4 691 555 4 4 690 550 @b
+-4 -4 694 554 4 4 693 549 @b
+-4 -4 697 553 4 4 696 548 @b
+-4 -4 700 552 4 4 699 547 @b
+699 551 -4 4 706 547 4 699 547 @a
+-4 -4 706 551 4 4 710 544 @b
+-4 -4 714 548 4 4 719 542 @b
+-4 -4 723 546 4 4 727 541 @b
+-4 -4 731 545 4 4 736 540 @b
+-4 -4 740 544 4 4 744 539 @b
+744 543 -4 4 757 539 4 744 539 @a
+753 543 -4 4 765 539 4 753 539 @a
+761 543 -4 4 774 540 4 761 539 @a
+770 544 -4 4 782 541 4 770 540 @a
+778 545 -4 4 791 542 4 778 541 @a
+787 546 -4 4 848 554 4 787 542 @a
+844 558 -4 4 905 565 4 844 554 @a
+901 569 -4 4 963 576 4 901 565 @a
+959 580 -4 4 1020 588 4 959 576 @a
+1016 592 -4 4 1077 599 4 1016 588 @a
+1073 603 -4 4 1134 611 4 1073 599 @a
+1130 615 -4 4 1191 622 4 1130 611 @a
+1187 626 -4 4 1248 633 4 1187 622 @a
+1244 637 -4 4 1305 645 4 1244 633 @a
+1301 649 -4 4 1362 656 4 1301 645 @a
+1358 660 -4 4 1420 668 4 1358 656 @a
+1416 672 -4 4 1477 679 4 1416 668 @a
+1473 683 -4 4 1534 691 4 1473 679 @a
+1530 695 -4 4 1591 702 4 1530 691 @a
+1587 706 -4 4 1648 713 4 1587 702 @a
+1644 717 -4 4 1705 725 4 1644 713 @a
+1701 729 -4 4 1762 736 4 1701 725 @a
+1758 740 -4 4 1820 748 4 1758 736 @a
+1816 752 -4 4 1877 759 4 1816 748 @a
+1873 763 -4 4 1934 770 4 1873 759 @a
+0 G
+0 0 2295 3037 rC
+gR
+0 G
+gS 0 0 2300 3042 rC
+330 913 -4 4 337 909 4 330 909 @a
+333 913 -4 4 340 909 4 333 909 @a
+336 913 -4 4 343 909 4 336 909 @a
+339 913 -4 4 346 909 4 339 909 @a
+342 913 -4 4 348 909 4 342 909 @a
+344 913 -4 4 351 909 4 344 909 @a
+347 913 -4 4 354 909 4 347 909 @a
+350 913 -4 4 357 909 4 350 909 @a
+353 913 -4 4 360 909 4 353 909 @a
+356 913 -4 4 363 909 4 356 909 @a
+359 913 -4 4 366 909 4 359 909 @a
+362 913 -4 4 368 909 4 362 909 @a
+364 913 -4 4 371 909 4 364 909 @a
+367 913 -4 4 374 909 4 367 909 @a
+370 913 -4 4 377 909 4 370 909 @a
+373 913 -4 4 380 909 4 373 909 @a
+376 913 -4 4 383 909 4 376 909 @a
+379 913 -4 4 385 909 4 379 909 @a
+381 913 -4 4 388 909 4 381 909 @a
+384 913 -4 4 391 909 4 384 909 @a
+-4 -4 391 913 4 4 396 908 @b
+396 912 -4 4 408 908 4 396 908 @a
+404 912 -4 4 417 908 4 404 908 @a
+-4 -4 417 912 4 4 421 906 @b
+-4 -4 425 910 4 4 430 905 @b
+-4 -4 434 909 4 4 439 904 @b
+-4 -4 443 908 4 4 447 902 @b
+-4 -4 451 906 4 4 456 900 @b
+-4 -4 460 904 4 4 464 898 @b
+-4 -4 468 902 4 4 473 896 @b
+-4 -4 477 900 4 4 476 895 @b
+-4 -4 480 899 4 4 479 894 @b
+-4 -4 483 898 4 4 481 893 @b
+-4 -4 485 897 4 4 484 892 @b
+-4 -4 488 896 4 4 487 891 @b
+487 895 -4 4 494 891 4 487 891 @a
+-4 -4 494 895 4 4 493 890 @b
+-4 -4 497 894 4 4 496 889 @b
+-4 -4 500 893 4 4 499 888 @b
+-4 -4 503 892 4 4 502 887 @b
+-4 -4 506 891 4 4 519 883 @b
+-4 -4 523 887 4 4 536 879 @b
+-4 -4 540 883 4 4 553 876 @b
+-4 -4 557 880 4 4 570 873 @b
+-4 -4 574 877 4 4 587 872 @b
+-4 -4 591 876 4 4 604 871 @b
+604 875 -4 4 625 871 4 604 871 @a
+621 875 -4 4 643 872 4 621 871 @a
+639 876 -4 4 660 873 4 639 872 @a
+656 877 -4 4 677 875 4 656 873 @a
+673 879 -4 4 680 876 4 673 875 @a
+676 880 -4 4 683 876 4 676 876 @a
+679 880 -4 4 685 877 4 679 876 @a
+681 881 -4 4 688 877 4 681 877 @a
+684 881 -4 4 691 877 4 684 877 @a
+687 881 -4 4 694 878 4 687 877 @a
+690 882 -4 4 697 878 4 690 878 @a
+693 882 -4 4 700 879 4 693 878 @a
+696 883 -4 4 703 879 4 696 879 @a
+699 883 -4 4 706 880 4 699 879 @a
+702 884 -4 4 714 881 4 702 880 @a
+710 885 -4 4 723 882 4 710 881 @a
+719 886 -4 4 731 883 4 719 882 @a
+727 887 -4 4 740 883 4 727 883 @a
+736 887 -4 4 748 883 4 736 883 @a
+744 887 -4 4 757 884 4 744 883 @a
+-4 -4 757 888 4 4 761 883 @b
+761 887 -4 4 774 883 4 761 883 @a
+770 887 -4 4 782 883 4 770 883 @a
+-4 -4 782 887 4 4 787 882 @b
+-4 -4 791 886 4 4 844 876 @b
+-4 -4 848 880 4 4 901 870 @b
+-4 -4 905 874 4 4 959 865 @b
+-4 -4 963 869 4 4 1016 859 @b
+-4 -4 1020 863 4 4 1073 853 @b
+-4 -4 1077 857 4 4 1130 848 @b
+-4 -4 1134 852 4 4 1187 842 @b
+-4 -4 1191 846 4 4 1244 836 @b
+-4 -4 1248 840 4 4 1301 831 @b
+-4 -4 1305 835 4 4 1358 825 @b
+-4 -4 1362 829 4 4 1416 819 @b
+-4 -4 1420 823 4 4 1473 814 @b
+-4 -4 1477 818 4 4 1530 808 @b
+-4 -4 1534 812 4 4 1587 802 @b
+-4 -4 1591 806 4 4 1644 797 @b
+-4 -4 1648 801 4 4 1701 791 @b
+-4 -4 1705 795 4 4 1758 785 @b
+-4 -4 1762 789 4 4 1816 780 @b
+-4 -4 1820 784 4 4 1873 774 @b
+-4 -4 1877 778 4 4 1930 768 @b
+0 0 2295 3037 rC
+gR
+gS 0 0 2300 3042 rC
+330 632 -4 4 337 628 4 330 628 @a
+333 632 -4 4 340 628 4 333 628 @a
+336 632 -4 4 343 628 4 336 628 @a
+339 632 -4 4 346 628 4 339 628 @a
+342 632 -4 4 348 628 4 342 628 @a
+344 632 -4 4 351 628 4 344 628 @a
+347 632 -4 4 354 628 4 347 628 @a
+350 632 -4 4 357 628 4 350 628 @a
+353 632 -4 4 360 628 4 353 628 @a
+356 632 -4 4 363 628 4 356 628 @a
+359 632 -4 4 366 628 4 359 628 @a
+362 632 -4 4 368 628 4 362 628 @a
+364 632 -4 4 371 628 4 364 628 @a
+367 632 -4 4 374 628 4 367 628 @a
+370 632 -4 4 377 628 4 370 628 @a
+373 632 -4 4 380 628 4 373 628 @a
+376 632 -4 4 383 628 4 376 628 @a
+379 632 -4 4 385 628 4 379 628 @a
+381 632 -4 4 388 628 4 381 628 @a
+384 632 -4 4 391 628 4 384 628 @a
+387 632 -4 4 400 629 4 387 628 @a
+396 633 -4 4 408 629 4 396 629 @a
+404 633 -4 4 417 629 4 404 629 @a
+413 633 -4 4 425 631 4 413 629 @a
+421 635 -4 4 434 632 4 421 631 @a
+430 636 -4 4 443 633 4 430 632 @a
+439 637 -4 4 451 635 4 439 633 @a
+447 639 -4 4 460 637 4 447 635 @a
+456 641 -4 4 468 639 4 456 637 @a
+464 643 -4 4 477 641 4 464 639 @a
+473 645 -4 4 480 642 4 473 641 @a
+476 646 -4 4 483 643 4 476 642 @a
+479 647 -4 4 485 644 4 479 643 @a
+481 648 -4 4 488 645 4 481 644 @a
+484 649 -4 4 491 646 4 484 645 @a
+487 650 -4 4 494 646 4 487 646 @a
+490 650 -4 4 497 647 4 490 646 @a
+493 651 -4 4 500 648 4 493 647 @a
+496 652 -4 4 503 649 4 496 648 @a
+499 653 -4 4 506 650 4 499 649 @a
+502 654 -4 4 523 654 4 502 650 @a
+519 658 -4 4 540 658 4 519 654 @a
+536 662 -4 4 557 661 4 536 658 @a
+553 665 -4 4 574 664 4 553 661 @a
+570 668 -4 4 591 665 4 570 664 @a
+587 669 -4 4 608 666 4 587 665 @a
+604 670 -4 4 625 666 4 604 666 @a
+-4 -4 625 670 4 4 639 665 @b
+-4 -4 643 669 4 4 656 664 @b
+-4 -4 660 668 4 4 673 662 @b
+-4 -4 677 666 4 4 676 661 @b
+676 665 -4 4 683 661 4 676 661 @a
+-4 -4 683 665 4 4 681 660 @b
+681 664 -4 4 688 660 4 681 660 @a
+684 664 -4 4 691 660 4 684 660 @a
+-4 -4 691 664 4 4 690 659 @b
+690 663 -4 4 697 659 4 690 659 @a
+-4 -4 697 663 4 4 696 658 @b
+696 662 -4 4 703 658 4 696 658 @a
+-4 -4 703 662 4 4 702 657 @b
+-4 -4 706 661 4 4 710 656 @b
+-4 -4 714 660 4 4 719 655 @b
+-4 -4 723 659 4 4 727 654 @b
+727 658 -4 4 740 654 4 727 654 @a
+736 658 -4 4 748 654 4 736 654 @a
+-4 -4 748 658 4 4 753 653 @b
+753 657 -4 4 765 654 4 753 653 @a
+761 658 -4 4 774 654 4 761 654 @a
+770 658 -4 4 782 654 4 770 654 @a
+778 658 -4 4 791 655 4 778 654 @a
+787 659 -4 4 848 661 4 787 655 @a
+844 665 -4 4 905 667 4 844 661 @a
+901 671 -4 4 963 672 4 901 667 @a
+959 676 -4 4 1020 678 4 959 672 @a
+1016 682 -4 4 1077 684 4 1016 678 @a
+1073 688 -4 4 1134 689 4 1073 684 @a
+1130 693 -4 4 1191 695 4 1130 689 @a
+1187 699 -4 4 1248 701 4 1187 695 @a
+1244 705 -4 4 1305 706 4 1244 701 @a
+1301 710 -4 4 1362 712 4 1301 706 @a
+1358 716 -4 4 1420 718 4 1358 712 @a
+1416 722 -4 4 1477 723 4 1416 718 @a
+1473 727 -4 4 1534 729 4 1473 723 @a
+1530 733 -4 4 1591 735 4 1530 729 @a
+1587 739 -4 4 1648 740 4 1587 735 @a
+1644 744 -4 4 1705 746 4 1644 740 @a
+1701 750 -4 4 1762 752 4 1701 746 @a
+1758 756 -4 4 1820 757 4 1758 752 @a
+1816 761 -4 4 1877 763 4 1816 757 @a
+1873 767 -4 4 1934 769 4 1873 763 @a
+endp
+%%Trailer
+end
+%%EOF

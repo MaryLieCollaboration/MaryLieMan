@@ -1,0 +1,706 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 31 398 567 716
+%%Title: (Layout0:Graph1)
+%%Creator: (Igor1.26: LaserWriter 8 8.2)
+%%CreationDate: (10:29 AM Tuesday, January 5, 1999)
+%%For: (dsat)
+%%Pages: 1
+%%DocumentFonts: Helvetica
+%%DocumentNeededFonts: Helvetica
+%%DocumentSuppliedFonts:
+%%DocumentData: Clean7Bit
+%%PageOrder: Ascend
+%%Orientation: Portrait
+%%DocumentMedia: Default 612 792 0 () ()
+%ADO_ImageableArea: 30.96 30.96 582.96 761.04
+%%EndComments
+userdict begin/dscInfo 5 dict dup begin
+/Title(Layout0:Graph1)def
+/Creator(Igor1.26: LaserWriter 8 8.2)def
+/CreationDate(10:29 AM Tuesday, January 5, 1999)def
+/For(dsat)def
+/Pages 1 def
+end def end
+
+save 
+/version23-manualfeedpatch where { pop false } { true }ifelse
+ % we don't do an explicit 'get' since product and version MAY
+ % be in systemdict or statusdict - this technique gets the lookup
+ % without failure
+statusdict begin
+  product (LaserWriter) eq        % true if LaserWriter
+  version cvr 23.0 eq             % true if version 23
+end
+
+and  % only install this patch if both are true
+and  % true only if patch is not installed and is for this printer
+     % save object and boolean on stack
+dup { exch restore }if
+% either true OR saveobject false
+dup
+{
+  /version23-manualfeedpatch true def
+  /oldversion23-showpage /showpage load def
+  /showpage       % this showpage will wait extra time if manualfeed is true
+  {%
+     statusdict /manualfeed known
+     {% manualfeed known in statusdict
+        statusdict /manualfeed get
+        {% if true then we loop for 5 seconds
+           usertime 5000 add       % target usertime
+           { % loop
+             dup usertime sub 0 lt
+             { exit }if
+           }loop
+           pop             % pop the usertime off the stac
+        }if
+     }if
+     oldversion23-showpage
+  }bind def
+}if
+not{ restore }if
+
+/md 136 dict def md begin/currentpacking where {pop /sc_oldpacking currentpacking def true setpacking}if
+%%BeginFile: adobe_psp_basic
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/bd{bind def}bind def
+/xdf{exch def}bd
+/xs{exch store}bd
+/ld{load def}bd
+/Z{0 def}bd
+/T/true
+/F/false
+/:L/lineto
+/lw/setlinewidth
+/:M/moveto
+/rl/rlineto
+/rm/rmoveto
+/:C/curveto
+/:T/translate
+/:K/closepath
+/:mf/makefont
+/gS/gsave
+/gR/grestore
+/np/newpath
+14{ld}repeat
+/$m matrix def
+/av 81 def
+/por true def
+/normland false def
+/psb-nosave{}bd
+/pse-nosave{}bd
+/us Z
+/psb{/us save store}bd
+/pse{us restore}bd
+/level2
+/languagelevel where
+{
+pop languagelevel 2 ge
+}{
+false
+}ifelse
+def
+/featurecleanup
+{
+stopped
+cleartomark
+countdictstack exch sub dup 0 gt
+{
+{end}repeat
+}{
+pop
+}ifelse
+}bd
+/noload Z
+/startnoload
+{
+{/noload save store}if
+}bd
+/endnoload
+{
+{noload restore}if
+}bd
+level2 startnoload
+/setjob
+{
+statusdict/jobname 3 -1 roll put
+}bd
+/setcopies
+{
+userdict/#copies 3 -1 roll put
+}bd
+level2 endnoload level2 not startnoload
+/setjob
+{
+1 dict begin/JobName xdf currentdict end setuserparams
+}bd
+/setcopies
+{
+1 dict begin/NumCopies xdf currentdict end setpagedevice
+}bd
+level2 not endnoload
+/pm Z
+/mT Z
+/sD Z
+/realshowpage Z
+/initializepage
+{
+/pm save store mT concat
+}bd
+/endp
+{
+pm restore showpage
+}def
+/$c/DeviceRGB def
+/rectclip where
+{
+pop/rC/rectclip ld
+}{
+/rC
+{
+np 4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+clip np
+}bd
+}ifelse
+/rectfill where
+{
+pop/rF/rectfill ld
+}{
+/rF
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+fill
+gR
+}bd
+}ifelse
+/rectstroke where
+{
+pop/rS/rectstroke ld
+}{
+/rS
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+stroke
+gR
+}bd
+}ifelse
+%%EndFile
+%%BeginFile: adobe_psp_colorspace_level1
+%%Copyright: Copyright 1991-1993 Adobe Systems Incorporated. All Rights Reserved.
+/G/setgray ld
+/:F/setrgbcolor ld
+%%EndFile
+%%BeginFile: adobe_psp_uniform_graphics
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/@a
+{
+np :M 0 rl :L 0 exch rl 0 rl :L fill
+}bd
+/@b
+{
+np :M 0 rl 0 exch rl :L 0 rl 0 exch rl fill
+}bd
+/arct where
+{
+pop
+}{
+/arct
+{
+arcto pop pop pop pop
+}bd
+}ifelse
+/x1 Z
+/x2 Z
+/y1 Z
+/y2 Z
+/rad Z
+/@q
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+fill
+}bd
+/@s
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+:K
+stroke
+}bd
+/@i
+{
+np 0 360 arc fill
+}bd
+/@j
+{
+gS
+np
+:T
+scale
+0 0 .5 0 360 arc
+fill
+gR
+}bd
+/@e
+{
+np
+0 360 arc
+:K
+stroke
+}bd
+/@f
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 0 360 arc
+:K
+$m setmatrix
+stroke
+}bd
+/@k
+{
+gS
+np
+:T
+0 0 :M
+0 0 5 2 roll
+arc fill
+gR
+}bd
+/@l
+{
+gS
+np
+:T
+0 0 :M
+scale
+0 0 .5 5 -2 roll arc
+fill
+gR
+}bd
+/@m
+{
+np
+arc
+stroke
+}bd
+/@n
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 5 -2 roll arc
+$m setmatrix
+stroke
+}bd
+%%EndFile
+%%BeginFile: adobe_psp_basic_text
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/S/show ld
+/A{
+0.0 exch ashow
+}bd
+/R{
+0.0 exch 32 exch widthshow
+}bd
+/W{
+0.0 3 1 roll widthshow
+}bd
+/J{
+0.0 32 4 2 roll 0.0 exch awidthshow
+}bd
+/V{
+0.0 4 1 roll 0.0 exch awidthshow
+}bd
+/fcflg true def
+/fc{
+fcflg{
+vmstatus exch sub 50000 lt{
+(%%[ Warning: Running out of memory ]%%\r)print flush/fcflg false store
+}if pop
+}if
+}bd
+/$f[1 0 0 -1 0 0]def
+/:ff{$f :mf}bd
+/MacEncoding StandardEncoding 256 array copy def
+MacEncoding 39/quotesingle put
+MacEncoding 96/grave put
+/Adieresis/Aring/Ccedilla/Eacute/Ntilde/Odieresis/Udieresis/aacute
+/agrave/acircumflex/adieresis/atilde/aring/ccedilla/eacute/egrave
+/ecircumflex/edieresis/iacute/igrave/icircumflex/idieresis/ntilde/oacute
+/ograve/ocircumflex/odieresis/otilde/uacute/ugrave/ucircumflex/udieresis
+/dagger/degree/cent/sterling/section/bullet/paragraph/germandbls
+/registered/copyright/trademark/acute/dieresis/notequal/AE/Oslash
+/infinity/plusminus/lessequal/greaterequal/yen/mu/partialdiff/summation
+/product/pi/integral/ordfeminine/ordmasculine/Omega/ae/oslash
+/questiondown/exclamdown/logicalnot/radical/florin/approxequal/Delta/guillemotleft
+/guillemotright/ellipsis/space/Agrave/Atilde/Otilde/OE/oe
+/endash/emdash/quotedblleft/quotedblright/quoteleft/quoteright/divide/lozenge
+/ydieresis/Ydieresis/fraction/currency/guilsinglleft/guilsinglright/fi/fl
+/daggerdbl/periodcentered/quotesinglbase/quotedblbase/perthousand
+/Acircumflex/Ecircumflex/Aacute/Edieresis/Egrave/Iacute/Icircumflex/Idieresis/Igrave
+/Oacute/Ocircumflex/apple/Ograve/Uacute/Ucircumflex/Ugrave/dotlessi/circumflex/tilde
+/macron/breve/dotaccent/ring/cedilla/hungarumlaut/ogonek/caron
+MacEncoding 128 128 getinterval astore pop
+level2 startnoload
+/copyfontdict
+{
+findfont dup length dict
+begin
+{
+1 index/FID ne{def}{pop pop}ifelse
+}forall
+}bd
+level2 endnoload level2 not startnoload
+/copyfontdict
+{
+findfont dup length dict
+copy
+begin
+}bd
+level2 not endnoload
+md/fontname known not{
+/fontname/customfont def
+}if
+/Encoding Z
+/:mre
+{
+copyfontdict
+/Encoding MacEncoding def
+fontname currentdict
+end
+definefont :ff def
+}bd
+/:bsr
+{
+copyfontdict
+/Encoding Encoding 256 array copy def
+Encoding dup
+}bd
+/pd{put dup}bd
+/:esr
+{
+pop pop
+fontname currentdict
+end
+definefont :ff def
+}bd
+/scf
+{
+scalefont def
+}bd
+/scf-non
+{
+$m scale :mf setfont
+}bd
+/ps Z
+/fz{/ps xs}bd
+/sf/setfont ld
+/cF/currentfont ld
+/mbf
+{
+/makeblendedfont where
+{
+pop
+makeblendedfont
+/ABlend exch definefont
+}{
+pop
+}ifelse
+def
+}def
+%%EndFile
+/currentpacking where {pop sc_oldpacking setpacking}if end
+%%EndProlog
+%%BeginSetup
+md begin
+/mT[.24 0 0 -.24 30.959 761.009]def
+/sD 16 dict def
+%%IncludeFont: Helvetica
+/f0_1/Helvetica
+:mre
+/f1_1 f0_1 1.04 scf
+/f1_40 f1_1 40 scf
+/f1_28 f1_1 28 scf
+/Courier findfont[10 0 0 -10 0 0]:mf setfont
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+initializepage
+%%EndPageSetup
+gS 0 0 2300 3042 rC
+1 G
+0 0 2295 3037 rC
+0 0 0 0 rF
+0 G
+-4 -4 220 1356 4 4 216 206 @b
+-4 -4 2188 1356 4 4 2184 206 @b
+188 212 -4 4 220 208 4 188 208 @a
+78 226 :M
+f1_40 sf
+5.022(0.04)A
+202 269 -4 4 220 265 4 202 265 @a
+202 326 -4 4 220 322 4 202 322 @a
+202 383 -4 4 220 379 4 202 379 @a
+202 440 -4 4 220 436 4 202 436 @a
+188 498 -4 4 220 494 4 188 494 @a
+78 512 :M
+5.022(0.03)A
+202 555 -4 4 220 551 4 202 551 @a
+202 612 -4 4 220 608 4 202 608 @a
+202 669 -4 4 220 665 4 202 665 @a
+202 726 -4 4 220 722 4 202 722 @a
+188 783 -4 4 220 779 4 188 779 @a
+78 797 :M
+5.022(0.02)A
+202 840 -4 4 220 836 4 202 836 @a
+202 897 -4 4 220 893 4 202 893 @a
+202 954 -4 4 220 950 4 202 950 @a
+202 1011 -4 4 220 1007 4 202 1007 @a
+188 1069 -4 4 220 1065 4 188 1065 @a
+78 1083 :M
+5.022(0.01)A
+202 1126 -4 4 220 1122 4 202 1122 @a
+202 1183 -4 4 220 1179 4 202 1179 @a
+202 1240 -4 4 220 1236 4 202 1236 @a
+202 1297 -4 4 220 1293 4 202 1293 @a
+188 1354 -4 4 220 1350 4 188 1350 @a
+78 1368 :M
+5.022(0.00)A
+gR
+4 lw
+gS 0 0 2300 3042 rC
+gS
+46 838 :T
+270 rotate
+-46 -838 :T
+16 854 :M
+f1_40 sf
+-1.799(< P)A
+gR
+gS
+62 799 :T
+270 rotate
+-62 -799 :T
+53 809 :M
+f1_28 sf
+(y)S
+gR
+gS
+22 781 :T
+270 rotate
+-22 -781 :T
+13 791 :M
+f1_28 sf
+(2)S
+gR
+gS
+46 762 :T
+270 rotate
+-46 -762 :T
+36 778 :M
+f1_40 sf
+(>)S
+gR
+gS
+22 723 :T
+270 rotate
+-22 -723 :T
+-7 733 :M
+f1_28 sf
+7.264 .726( 1/2)J
+gR
+0 0 2295 3037 rC
+216 1360 -4 4 2188 1356 4 216 1356 @a
+216 206 -4 4 2188 202 4 216 202 @a
+-4 -4 2182 1388 4 4 2178 1356 @b
+2152 1440 :M
+f1_40 sf
+9.749(30)A
+-4 -4 2117 1374 4 4 2113 1356 @b
+-4 -4 2052 1374 4 4 2048 1356 @b
+-4 -4 1986 1374 4 4 1982 1356 @b
+-4 -4 1921 1374 4 4 1917 1356 @b
+-4 -4 1856 1388 4 4 1852 1356 @b
+1826 1440 :M
+9.749(25)A
+-4 -4 1791 1374 4 4 1787 1356 @b
+-4 -4 1726 1374 4 4 1722 1356 @b
+-4 -4 1660 1374 4 4 1656 1356 @b
+-4 -4 1595 1374 4 4 1591 1356 @b
+-4 -4 1530 1388 4 4 1526 1356 @b
+1500 1440 :M
+9.749(20)A
+-4 -4 1465 1374 4 4 1461 1356 @b
+-4 -4 1400 1374 4 4 1396 1356 @b
+-4 -4 1334 1374 4 4 1330 1356 @b
+-4 -4 1269 1374 4 4 1265 1356 @b
+-4 -4 1204 1388 4 4 1200 1356 @b
+1174 1440 :M
+9.749(15)A
+-4 -4 1139 1374 4 4 1135 1356 @b
+-4 -4 1074 1374 4 4 1070 1356 @b
+-4 -4 1008 1374 4 4 1004 1356 @b
+-4 -4 943 1374 4 4 939 1356 @b
+-4 -4 878 1388 4 4 874 1356 @b
+848 1440 :M
+9.749(10)A
+-4 -4 813 1374 4 4 809 1356 @b
+-4 -4 748 1374 4 4 744 1356 @b
+-4 -4 682 1374 4 4 678 1356 @b
+-4 -4 617 1374 4 4 613 1356 @b
+-4 -4 552 1388 4 4 548 1356 @b
+536 1440 :M
+(5)S
+-4 -4 487 1374 4 4 483 1356 @b
+-4 -4 422 1374 4 4 418 1356 @b
+-4 -4 356 1374 4 4 352 1356 @b
+-4 -4 291 1374 4 4 287 1356 @b
+-4 -4 226 1388 4 4 222 1356 @b
+210 1440 :M
+(0)S
+1190 1500 :M
+(S)S
+gR
+gS 0 0 2300 3042 rC
+222 1283 -4 4 230 1279 4 222 1279 @a
+226 1283 -4 4 233 1279 4 226 1279 @a
+229 1283 -4 4 236 1279 4 229 1279 @a
+232 1283 -4 4 239 1279 4 232 1279 @a
+235 1283 -4 4 242 1279 4 235 1279 @a
+238 1283 -4 4 246 1279 4 238 1279 @a
+242 1283 -4 4 249 1279 4 242 1279 @a
+245 1283 -4 4 252 1279 4 245 1279 @a
+248 1283 -4 4 256 1279 4 248 1279 @a
+252 1283 -4 4 259 1279 4 252 1279 @a
+255 1283 -4 4 262 1279 4 255 1279 @a
+258 1283 -4 4 265 1279 4 258 1279 @a
+261 1283 -4 4 269 1279 4 261 1279 @a
+265 1283 -4 4 272 1279 4 265 1279 @a
+268 1283 -4 4 275 1279 4 268 1279 @a
+271 1283 -4 4 278 1279 4 271 1279 @a
+274 1283 -4 4 282 1279 4 274 1279 @a
+278 1283 -4 4 285 1279 4 278 1279 @a
+281 1283 -4 4 288 1279 4 281 1279 @a
+284 1283 -4 4 291 1279 4 284 1279 @a
+-4 -4 291 1283 4 4 287 1278 @b
+-4 -4 291 1282 4 4 297 1248 @b
+-4 -4 301 1252 4 4 307 1189 @b
+-4 -4 311 1193 4 4 317 1123 @b
+-4 -4 321 1127 4 4 326 1053 @b
+-4 -4 330 1057 4 4 336 982 @b
+-4 -4 340 986 4 4 346 910 @b
+-4 -4 350 914 4 4 356 837 @b
+-4 -4 360 841 4 4 366 762 @b
+-4 -4 370 766 4 4 375 686 @b
+-4 -4 379 690 4 4 385 609 @b
+-4 -4 389 616 4 4 385 609 @b
+385 616 -4 4 392 612 4 385 612 @a
+388 616 -4 4 396 612 4 388 612 @a
+392 616 -4 4 399 612 4 392 612 @a
+395 616 -4 4 402 612 4 395 612 @a
+398 616 -4 4 406 612 4 398 612 @a
+402 616 -4 4 409 612 4 402 612 @a
+405 616 -4 4 412 612 4 405 612 @a
+408 616 -4 4 415 612 4 408 612 @a
+411 616 -4 4 418 612 4 411 612 @a
+414 616 -4 4 422 612 4 414 612 @a
+-4 -4 422 619 4 4 418 612 @b
+418 619 -4 4 441 776 4 418 615 @a
+437 780 -4 4 461 941 4 437 776 @a
+457 945 -4 4 480 1107 4 457 941 @a
+476 1111 -4 4 500 1263 4 476 1107 @a
+-4 -4 500 1267 4 4 516 1231 @b
+-4 -4 520 1235 4 4 535 1069 @b
+-4 -4 539 1073 4 4 555 903 @b
+-4 -4 559 907 4 4 574 739 @b
+-4 -4 578 743 4 4 594 579 @b
+-4 -4 598 583 4 4 613 424 @b
+-4 -4 617 428 4 4 613 422 @b
+613 426 -4 4 621 422 4 613 422 @a
+617 426 -4 4 624 422 4 617 422 @a
+620 426 -4 4 627 422 4 620 422 @a
+623 426 -4 4 630 422 4 623 422 @a
+626 426 -4 4 634 422 4 626 422 @a
+630 426 -4 4 637 422 4 630 422 @a
+633 426 -4 4 640 422 4 633 422 @a
+636 426 -4 4 643 422 4 636 422 @a
+639 426 -4 4 647 422 4 639 422 @a
+643 426 -4 4 650 422 4 643 422 @a
+-4 -4 650 426 4 4 646 419 @b
+646 423 -4 4 660 491 4 646 419 @a
+656 495 -4 4 669 562 4 656 491 @a
+665 566 -4 4 679 631 4 665 562 @a
+675 635 -4 4 689 698 4 675 631 @a
+685 702 -4 4 699 764 4 685 698 @a
+695 768 -4 4 709 829 4 695 764 @a
+705 833 -4 4 718 893 4 705 829 @a
+714 897 -4 4 728 956 4 714 893 @a
+724 960 -4 4 738 1017 4 724 956 @a
+734 1021 -4 4 748 1077 4 734 1017 @a
+-4 -4 748 1082 4 4 744 1077 @b
+744 1082 -4 4 813 1078 4 744 1078 @a
+809 1082 -4 4 878 1078 4 809 1078 @a
+874 1082 -4 4 943 1078 4 874 1078 @a
+939 1082 -4 4 1009 1078 4 939 1078 @a
+1005 1082 -4 4 1074 1078 4 1005 1078 @a
+1070 1082 -4 4 1139 1078 4 1070 1078 @a
+1135 1082 -4 4 1204 1078 4 1135 1078 @a
+1200 1082 -4 4 1269 1078 4 1200 1078 @a
+1265 1082 -4 4 1335 1078 4 1265 1078 @a
+1331 1082 -4 4 1400 1078 4 1331 1078 @a
+1396 1082 -4 4 1465 1078 4 1396 1078 @a
+1461 1082 -4 4 1530 1078 4 1461 1078 @a
+1526 1082 -4 4 1595 1078 4 1526 1078 @a
+1591 1082 -4 4 1661 1078 4 1591 1078 @a
+1657 1082 -4 4 1726 1078 4 1657 1078 @a
+1722 1082 -4 4 1791 1078 4 1722 1078 @a
+1787 1082 -4 4 1856 1078 4 1787 1078 @a
+1852 1082 -4 4 1921 1078 4 1852 1078 @a
+1917 1082 -4 4 1986 1078 4 1917 1078 @a
+1982 1082 -4 4 2052 1078 4 1982 1078 @a
+endp
+%%Trailer
+end
+%%EOF

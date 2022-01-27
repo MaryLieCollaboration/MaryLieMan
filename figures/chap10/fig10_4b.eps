@@ -1,0 +1,838 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 71 327 483 714
+%%Title: (Layout0:Graph0)
+%%Creator: (Igor1.26: LaserWriter 8 8.2)
+%%CreationDate: (2:47 PM Monday, January 4, 1999)
+%%For: (dsat)
+%%Pages: 1
+%%DocumentFonts: Helvetica
+%%DocumentNeededFonts: Helvetica
+%%DocumentSuppliedFonts:
+%%DocumentData: Clean7Bit
+%%PageOrder: Ascend
+%%Orientation: Portrait
+%%DocumentMedia: Default 612 792 0 () ()
+%ADO_ImageableArea: 30.96 30.96 582.96 761.04
+%%EndComments
+userdict begin/dscInfo 5 dict dup begin
+/Title(Layout0:Graph0)def
+/Creator(Igor1.26: LaserWriter 8 8.2)def
+/CreationDate(2:47 PM Monday, January 4, 1999)def
+/For(dsat)def
+/Pages 1 def
+end def end
+
+save 
+/version23-manualfeedpatch where { pop false } { true }ifelse
+ % we don't do an explicit 'get' since product and version MAY
+ % be in systemdict or statusdict - this technique gets the lookup
+ % without failure
+statusdict begin
+  product (LaserWriter) eq        % true if LaserWriter
+  version cvr 23.0 eq             % true if version 23
+end
+
+and  % only install this patch if both are true
+and  % true only if patch is not installed and is for this printer
+     % save object and boolean on stack
+dup { exch restore }if
+% either true OR saveobject false
+dup
+{
+  /version23-manualfeedpatch true def
+  /oldversion23-showpage /showpage load def
+  /showpage       % this showpage will wait extra time if manualfeed is true
+  {%
+     statusdict /manualfeed known
+     {% manualfeed known in statusdict
+        statusdict /manualfeed get
+        {% if true then we loop for 5 seconds
+           usertime 5000 add       % target usertime
+           { % loop
+             dup usertime sub 0 lt
+             { exit }if
+           }loop
+           pop             % pop the usertime off the stac
+        }if
+     }if
+     oldversion23-showpage
+  }bind def
+}if
+not{ restore }if
+
+/md 136 dict def md begin/currentpacking where {pop /sc_oldpacking currentpacking def true setpacking}if
+%%BeginFile: adobe_psp_basic
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/bd{bind def}bind def
+/xdf{exch def}bd
+/xs{exch store}bd
+/ld{load def}bd
+/Z{0 def}bd
+/T/true
+/F/false
+/:L/lineto
+/lw/setlinewidth
+/:M/moveto
+/rl/rlineto
+/rm/rmoveto
+/:C/curveto
+/:T/translate
+/:K/closepath
+/:mf/makefont
+/gS/gsave
+/gR/grestore
+/np/newpath
+14{ld}repeat
+/$m matrix def
+/av 81 def
+/por true def
+/normland false def
+/psb-nosave{}bd
+/pse-nosave{}bd
+/us Z
+/psb{/us save store}bd
+/pse{us restore}bd
+/level2
+/languagelevel where
+{
+pop languagelevel 2 ge
+}{
+false
+}ifelse
+def
+/featurecleanup
+{
+stopped
+cleartomark
+countdictstack exch sub dup 0 gt
+{
+{end}repeat
+}{
+pop
+}ifelse
+}bd
+/noload Z
+/startnoload
+{
+{/noload save store}if
+}bd
+/endnoload
+{
+{noload restore}if
+}bd
+level2 startnoload
+/setjob
+{
+statusdict/jobname 3 -1 roll put
+}bd
+/setcopies
+{
+userdict/#copies 3 -1 roll put
+}bd
+level2 endnoload level2 not startnoload
+/setjob
+{
+1 dict begin/JobName xdf currentdict end setuserparams
+}bd
+/setcopies
+{
+1 dict begin/NumCopies xdf currentdict end setpagedevice
+}bd
+level2 not endnoload
+/pm Z
+/mT Z
+/sD Z
+/realshowpage Z
+/initializepage
+{
+/pm save store mT concat
+}bd
+/endp
+{
+pm restore showpage
+}def
+/$c/DeviceRGB def
+/rectclip where
+{
+pop/rC/rectclip ld
+}{
+/rC
+{
+np 4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+clip np
+}bd
+}ifelse
+/rectfill where
+{
+pop/rF/rectfill ld
+}{
+/rF
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+fill
+gR
+}bd
+}ifelse
+/rectstroke where
+{
+pop/rS/rectstroke ld
+}{
+/rS
+{
+gS
+np
+4 2 roll
+:M
+1 index 0 rl
+0 exch rl
+neg 0 rl
+:K
+stroke
+gR
+}bd
+}ifelse
+%%EndFile
+%%BeginFile: adobe_psp_colorspace_level1
+%%Copyright: Copyright 1991-1993 Adobe Systems Incorporated. All Rights Reserved.
+/G/setgray ld
+/:F/setrgbcolor ld
+%%EndFile
+%%BeginFile: adobe_psp_uniform_graphics
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/@a
+{
+np :M 0 rl :L 0 exch rl 0 rl :L fill
+}bd
+/@b
+{
+np :M 0 rl 0 exch rl :L 0 rl 0 exch rl fill
+}bd
+/arct where
+{
+pop
+}{
+/arct
+{
+arcto pop pop pop pop
+}bd
+}ifelse
+/x1 Z
+/x2 Z
+/y1 Z
+/y2 Z
+/rad Z
+/@q
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+fill
+}bd
+/@s
+{
+/rad xs
+/y2 xs
+/x2 xs
+/y1 xs
+/x1 xs
+np
+x2 x1 add 2 div y1 :M
+x2 y1 x2 y2 rad arct
+x2 y2 x1 y2 rad arct
+x1 y2 x1 y1 rad arct
+x1 y1 x2 y1 rad arct
+:K
+stroke
+}bd
+/@i
+{
+np 0 360 arc fill
+}bd
+/@j
+{
+gS
+np
+:T
+scale
+0 0 .5 0 360 arc
+fill
+gR
+}bd
+/@e
+{
+np
+0 360 arc
+:K
+stroke
+}bd
+/@f
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 0 360 arc
+:K
+$m setmatrix
+stroke
+}bd
+/@k
+{
+gS
+np
+:T
+0 0 :M
+0 0 5 2 roll
+arc fill
+gR
+}bd
+/@l
+{
+gS
+np
+:T
+0 0 :M
+scale
+0 0 .5 5 -2 roll arc
+fill
+gR
+}bd
+/@m
+{
+np
+arc
+stroke
+}bd
+/@n
+{
+np
+$m currentmatrix
+pop
+:T
+scale
+0 0 .5 5 -2 roll arc
+$m setmatrix
+stroke
+}bd
+%%EndFile
+%%BeginFile: adobe_psp_basic_text
+%%Copyright: Copyright 1990-1993 Adobe Systems Incorporated. All Rights Reserved.
+/S/show ld
+/A{
+0.0 exch ashow
+}bd
+/R{
+0.0 exch 32 exch widthshow
+}bd
+/W{
+0.0 3 1 roll widthshow
+}bd
+/J{
+0.0 32 4 2 roll 0.0 exch awidthshow
+}bd
+/V{
+0.0 4 1 roll 0.0 exch awidthshow
+}bd
+/fcflg true def
+/fc{
+fcflg{
+vmstatus exch sub 50000 lt{
+(%%[ Warning: Running out of memory ]%%\r)print flush/fcflg false store
+}if pop
+}if
+}bd
+/$f[1 0 0 -1 0 0]def
+/:ff{$f :mf}bd
+/MacEncoding StandardEncoding 256 array copy def
+MacEncoding 39/quotesingle put
+MacEncoding 96/grave put
+/Adieresis/Aring/Ccedilla/Eacute/Ntilde/Odieresis/Udieresis/aacute
+/agrave/acircumflex/adieresis/atilde/aring/ccedilla/eacute/egrave
+/ecircumflex/edieresis/iacute/igrave/icircumflex/idieresis/ntilde/oacute
+/ograve/ocircumflex/odieresis/otilde/uacute/ugrave/ucircumflex/udieresis
+/dagger/degree/cent/sterling/section/bullet/paragraph/germandbls
+/registered/copyright/trademark/acute/dieresis/notequal/AE/Oslash
+/infinity/plusminus/lessequal/greaterequal/yen/mu/partialdiff/summation
+/product/pi/integral/ordfeminine/ordmasculine/Omega/ae/oslash
+/questiondown/exclamdown/logicalnot/radical/florin/approxequal/Delta/guillemotleft
+/guillemotright/ellipsis/space/Agrave/Atilde/Otilde/OE/oe
+/endash/emdash/quotedblleft/quotedblright/quoteleft/quoteright/divide/lozenge
+/ydieresis/Ydieresis/fraction/currency/guilsinglleft/guilsinglright/fi/fl
+/daggerdbl/periodcentered/quotesinglbase/quotedblbase/perthousand
+/Acircumflex/Ecircumflex/Aacute/Edieresis/Egrave/Iacute/Icircumflex/Idieresis/Igrave
+/Oacute/Ocircumflex/apple/Ograve/Uacute/Ucircumflex/Ugrave/dotlessi/circumflex/tilde
+/macron/breve/dotaccent/ring/cedilla/hungarumlaut/ogonek/caron
+MacEncoding 128 128 getinterval astore pop
+level2 startnoload
+/copyfontdict
+{
+findfont dup length dict
+begin
+{
+1 index/FID ne{def}{pop pop}ifelse
+}forall
+}bd
+level2 endnoload level2 not startnoload
+/copyfontdict
+{
+findfont dup length dict
+copy
+begin
+}bd
+level2 not endnoload
+md/fontname known not{
+/fontname/customfont def
+}if
+/Encoding Z
+/:mre
+{
+copyfontdict
+/Encoding MacEncoding def
+fontname currentdict
+end
+definefont :ff def
+}bd
+/:bsr
+{
+copyfontdict
+/Encoding Encoding 256 array copy def
+Encoding dup
+}bd
+/pd{put dup}bd
+/:esr
+{
+pop pop
+fontname currentdict
+end
+definefont :ff def
+}bd
+/scf
+{
+scalefont def
+}bd
+/scf-non
+{
+$m scale :mf setfont
+}bd
+/ps Z
+/fz{/ps xs}bd
+/sf/setfont ld
+/cF/currentfont ld
+/mbf
+{
+/makeblendedfont where
+{
+pop
+makeblendedfont
+/ABlend exch definefont
+}{
+pop
+}ifelse
+def
+}def
+%%EndFile
+/currentpacking where {pop sc_oldpacking setpacking}if end
+%%EndProlog
+%%BeginSetup
+md begin
+/mT[.24 0 0 -.24 30.959 761.009]def
+/sD 16 dict def
+%%IncludeFont: Helvetica
+/f0_1/Helvetica
+:mre
+/f1_1 f0_1 1.04 scf
+/f1_48 f1_1 48 scf
+/f1_34 f1_1 34 scf
+/Courier findfont[10 0 0 -10 0 0]:mf setfont
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+initializepage
+%%EndPageSetup
+gS 0 0 2300 3042 rC
+1 G
+0 0 2295 3037 rC
+0 0 0 0 rF
+0 G
+-4 -4 390 1630 4 4 386 219 @b
+-4 -4 1830 1630 4 4 1826 219 @b
+353 1624 -4 4 390 1620 4 353 1620 @a
+245 1638 :M
+f1_48 sf
+9.943(-10)A
+370 1589 -4 4 390 1585 4 370 1585 @a
+370 1554 -4 4 390 1550 4 370 1550 @a
+370 1519 -4 4 390 1515 4 370 1515 @a
+353 1484 -4 4 390 1480 4 353 1480 @a
+277 1498 :M
+15.638(-8)A
+370 1450 -4 4 390 1446 4 370 1446 @a
+370 1415 -4 4 390 1411 4 370 1411 @a
+370 1380 -4 4 390 1376 4 370 1376 @a
+353 1345 -4 4 390 1341 4 353 1341 @a
+277 1359 :M
+15.638(-6)A
+370 1310 -4 4 390 1306 4 370 1306 @a
+370 1275 -4 4 390 1271 4 370 1271 @a
+370 1240 -4 4 390 1236 4 370 1236 @a
+353 1206 -4 4 390 1202 4 353 1202 @a
+277 1220 :M
+15.638(-4)A
+370 1171 -4 4 390 1167 4 370 1167 @a
+370 1136 -4 4 390 1132 4 370 1132 @a
+370 1101 -4 4 390 1097 4 370 1097 @a
+353 1066 -4 4 390 1062 4 353 1062 @a
+277 1080 :M
+15.638(-2)A
+370 1031 -4 4 390 1027 4 370 1027 @a
+370 996 -4 4 390 992 4 370 992 @a
+370 961 -4 4 390 957 4 370 957 @a
+353 926 -4 4 390 922 4 353 922 @a
+305 940 :M
+(0)S
+370 892 -4 4 390 888 4 370 888 @a
+370 857 -4 4 390 853 4 370 853 @a
+370 822 -4 4 390 818 4 370 818 @a
+353 787 -4 4 390 783 4 353 783 @a
+305 801 :M
+(2)S
+370 752 -4 4 390 748 4 370 748 @a
+370 717 -4 4 390 713 4 370 713 @a
+370 682 -4 4 390 678 4 370 678 @a
+353 648 -4 4 390 644 4 353 644 @a
+305 662 :M
+(4)S
+370 613 -4 4 390 609 4 370 609 @a
+370 578 -4 4 390 574 4 370 574 @a
+370 543 -4 4 390 539 4 370 539 @a
+353 508 -4 4 390 504 4 353 504 @a
+305 522 :M
+(6)S
+370 473 -4 4 390 469 4 370 469 @a
+370 438 -4 4 390 434 4 370 434 @a
+370 403 -4 4 390 399 4 370 399 @a
+353 368 -4 4 390 364 4 353 364 @a
+305 382 :M
+(8)S
+370 334 -4 4 390 330 4 370 330 @a
+370 299 -4 4 390 295 4 370 295 @a
+370 264 -4 4 390 260 4 370 260 @a
+353 229 -4 4 390 225 4 353 225 @a
+273 243 :M
+8.499(10)A
+gR
+4 lw
+gS 0 0 2300 3042 rC
+gS
+216 945 :T
+270 rotate
+-216 -945 :T
+36 961 :M
+f1_48 sf
+8.895 .89(Y, meters  x10)J
+gR
+gS
+191 744 :T
+270 rotate
+-191 -744 :T
+170 755 :M
+f1_34 sf
+10.577(-9)A
+gR
+0 0 2295 3037 rC
+386 1634 -4 4 1830 1630 4 386 1630 @a
+386 219 -4 4 1830 215 4 386 215 @a
+-4 -4 400 1667 4 4 396 1630 @b
+352 1725 :M
+f1_48 sf
+9.943(-10)A
+-4 -4 436 1650 4 4 432 1630 @b
+-4 -4 471 1650 4 4 467 1630 @b
+-4 -4 507 1650 4 4 503 1630 @b
+-4 -4 542 1667 4 4 538 1630 @b
+510 1725 :M
+15.638(-8)A
+-4 -4 578 1650 4 4 574 1630 @b
+-4 -4 613 1650 4 4 609 1630 @b
+-4 -4 649 1650 4 4 645 1630 @b
+-4 -4 684 1667 4 4 680 1630 @b
+652 1725 :M
+15.638(-6)A
+-4 -4 720 1650 4 4 716 1630 @b
+-4 -4 755 1650 4 4 751 1630 @b
+-4 -4 790 1650 4 4 786 1630 @b
+-4 -4 826 1667 4 4 822 1630 @b
+794 1725 :M
+15.638(-4)A
+-4 -4 862 1650 4 4 858 1630 @b
+-4 -4 897 1650 4 4 893 1630 @b
+-4 -4 932 1650 4 4 928 1630 @b
+-4 -4 968 1667 4 4 964 1630 @b
+936 1725 :M
+15.638(-2)A
+-4 -4 1004 1650 4 4 1000 1630 @b
+-4 -4 1039 1650 4 4 1035 1630 @b
+-4 -4 1074 1650 4 4 1070 1630 @b
+-4 -4 1110 1667 4 4 1106 1630 @b
+1092 1725 :M
+(0)S
+-4 -4 1146 1650 4 4 1142 1630 @b
+-4 -4 1181 1650 4 4 1177 1630 @b
+-4 -4 1216 1650 4 4 1212 1630 @b
+-4 -4 1252 1667 4 4 1248 1630 @b
+1234 1725 :M
+(2)S
+-4 -4 1288 1650 4 4 1284 1630 @b
+-4 -4 1323 1650 4 4 1319 1630 @b
+-4 -4 1358 1650 4 4 1354 1630 @b
+-4 -4 1394 1667 4 4 1390 1630 @b
+1376 1725 :M
+(4)S
+-4 -4 1430 1650 4 4 1426 1630 @b
+-4 -4 1465 1650 4 4 1461 1630 @b
+-4 -4 1500 1650 4 4 1496 1630 @b
+-4 -4 1536 1667 4 4 1532 1630 @b
+1518 1725 :M
+(6)S
+-4 -4 1572 1650 4 4 1568 1630 @b
+-4 -4 1607 1650 4 4 1603 1630 @b
+-4 -4 1642 1650 4 4 1638 1630 @b
+-4 -4 1678 1667 4 4 1674 1630 @b
+1660 1725 :M
+(8)S
+-4 -4 1714 1650 4 4 1710 1630 @b
+-4 -4 1749 1650 4 4 1745 1630 @b
+-4 -4 1784 1650 4 4 1780 1630 @b
+-4 -4 1820 1667 4 4 1816 1630 @b
+1786 1725 :M
+8.499(10)A
+907 1796 :M
+8.895 .89(X, meters  x10)J
+1267 1766 :M
+f1_34 sf
+10.577(-9)A
+391 220 1435 1410 rC
+-6 -6 1299 1441 6 6 1293 1435 @b
+-6 -6 1332 1429 6 6 1326 1423 @b
+-6 -6 1363 1414 6 6 1357 1408 @b
+-6 -6 1394 1398 6 6 1388 1392 @b
+-6 -6 1424 1379 6 6 1418 1373 @b
+-6 -6 1452 1359 6 6 1446 1353 @b
+-6 -6 1479 1337 6 6 1473 1331 @b
+-6 -6 1504 1314 6 6 1498 1308 @b
+-6 -6 1528 1289 6 6 1522 1283 @b
+-6 -6 1550 1262 6 6 1544 1256 @b
+-6 -6 1571 1235 6 6 1565 1229 @b
+-6 -6 1590 1206 6 6 1584 1200 @b
+-6 -6 1606 1176 6 6 1600 1170 @b
+-6 -6 1621 1144 6 6 1615 1138 @b
+-6 -6 1634 1113 6 6 1628 1107 @b
+-6 -6 1645 1080 6 6 1639 1074 @b
+-6 -6 1654 1047 6 6 1648 1041 @b
+-6 -6 1660 1013 6 6 1654 1007 @b
+-6 -6 1665 979 6 6 1659 973 @b
+-6 -6 1667 945 6 6 1661 939 @b
+-6 -6 1667 910 6 6 1661 904 @b
+-6 -6 1665 876 6 6 1659 870 @b
+-6 -6 1660 842 6 6 1654 836 @b
+-6 -6 1654 808 6 6 1648 802 @b
+-6 -6 1645 775 6 6 1639 769 @b
+-6 -6 1634 742 6 6 1628 736 @b
+-6 -6 1621 711 6 6 1615 705 @b
+-6 -6 1606 680 6 6 1600 674 @b
+-6 -6 1590 649 6 6 1584 643 @b
+-6 -6 1571 620 6 6 1565 614 @b
+-6 -6 1550 593 6 6 1544 587 @b
+-6 -6 1528 566 6 6 1522 560 @b
+-6 -6 1504 541 6 6 1498 535 @b
+-6 -6 1479 518 6 6 1473 512 @b
+-6 -6 1452 496 6 6 1446 490 @b
+-6 -6 1424 476 6 6 1418 470 @b
+-6 -6 1394 457 6 6 1388 451 @b
+-6 -6 1364 441 6 6 1358 435 @b
+-6 -6 1332 426 6 6 1326 420 @b
+-6 -6 1299 414 6 6 1293 408 @b
+-6 -6 1266 403 6 6 1260 397 @b
+-6 -6 1232 394 6 6 1226 388 @b
+-6 -6 1198 388 6 6 1192 382 @b
+-6 -6 1163 384 6 6 1157 378 @b
+-6 -6 1129 381 6 6 1123 375 @b
+-6 -6 1094 381 6 6 1088 375 @b
+-6 -6 1059 384 6 6 1053 378 @b
+-6 -6 1024 388 6 6 1018 382 @b
+-6 -6 990 394 6 6 984 388 @b
+-6 -6 956 403 6 6 950 397 @b
+-6 -6 923 414 6 6 917 408 @b
+-6 -6 890 426 6 6 884 420 @b
+-6 -6 859 441 6 6 853 435 @b
+-6 -6 828 457 6 6 822 451 @b
+-6 -6 798 476 6 6 792 470 @b
+-6 -6 770 496 6 6 764 490 @b
+-6 -6 743 518 6 6 737 512 @b
+-6 -6 718 541 6 6 712 535 @b
+-6 -6 694 566 6 6 688 560 @b
+-6 -6 672 593 6 6 666 587 @b
+-6 -6 651 620 6 6 645 614 @b
+-6 -6 632 649 6 6 626 643 @b
+-6 -6 616 679 6 6 610 673 @b
+-6 -6 601 711 6 6 595 705 @b
+-6 -6 588 742 6 6 582 736 @b
+-6 -6 577 775 6 6 571 769 @b
+-6 -6 568 808 6 6 562 802 @b
+-6 -6 562 842 6 6 556 836 @b
+-6 -6 557 876 6 6 551 870 @b
+-6 -6 555 910 6 6 549 904 @b
+-6 -6 555 945 6 6 549 939 @b
+-6 -6 557 979 6 6 551 973 @b
+-6 -6 562 1013 6 6 556 1007 @b
+-6 -6 568 1047 6 6 562 1041 @b
+-6 -6 577 1080 6 6 571 1074 @b
+-6 -6 588 1113 6 6 582 1107 @b
+-6 -6 601 1144 6 6 595 1138 @b
+-6 -6 616 1175 6 6 610 1169 @b
+-6 -6 632 1206 6 6 626 1200 @b
+-6 -6 651 1235 6 6 645 1229 @b
+-6 -6 672 1262 6 6 666 1256 @b
+-6 -6 694 1289 6 6 688 1283 @b
+-6 -6 718 1314 6 6 712 1308 @b
+-6 -6 743 1337 6 6 737 1331 @b
+-6 -6 770 1359 6 6 764 1353 @b
+-6 -6 798 1379 6 6 792 1373 @b
+-6 -6 828 1398 6 6 822 1392 @b
+-6 -6 858 1414 6 6 852 1408 @b
+-6 -6 890 1429 6 6 884 1423 @b
+-6 -6 923 1441 6 6 917 1435 @b
+-6 -6 956 1452 6 6 950 1446 @b
+-6 -6 990 1461 6 6 984 1455 @b
+-6 -6 1024 1467 6 6 1018 1461 @b
+-6 -6 1059 1471 6 6 1053 1465 @b
+-6 -6 1093 1474 6 6 1087 1468 @b
+-6 -6 1128 1474 6 6 1122 1468 @b
+-6 -6 1163 1471 6 6 1157 1465 @b
+-6 -6 1198 1467 6 6 1192 1461 @b
+-6 -6 1232 1461 6 6 1226 1455 @b
+-6 -6 1266 1452 6 6 1260 1446 @b
+-6 -6 1134 992 6 6 1128 986 @b
+-6 -6 1139 990 6 6 1133 984 @b
+-6 -6 1143 988 6 6 1137 982 @b
+-6 -6 1146 986 6 6 1140 980 @b
+-6 -6 1150 984 6 6 1144 978 @b
+-6 -6 1154 981 6 6 1148 975 @b
+-6 -6 1157 979 6 6 1151 973 @b
+-6 -6 1160 976 6 6 1154 970 @b
+-6 -6 1163 973 6 6 1157 967 @b
+-6 -6 1166 969 6 6 1160 963 @b
+-6 -6 1169 966 6 6 1163 960 @b
+-6 -6 1171 962 6 6 1165 956 @b
+-6 -6 1173 959 6 6 1167 953 @b
+-6 -6 1175 955 6 6 1169 949 @b
+-6 -6 1176 951 6 6 1170 945 @b
+-6 -6 1178 947 6 6 1172 941 @b
+-6 -6 1179 942 6 6 1173 936 @b
+-6 -6 1180 938 6 6 1174 932 @b
+-6 -6 1180 934 6 6 1174 928 @b
+-6 -6 1180 930 6 6 1174 924 @b
+-6 -6 1180 925 6 6 1174 919 @b
+-6 -6 1180 921 6 6 1174 915 @b
+-6 -6 1180 917 6 6 1174 911 @b
+-6 -6 1179 913 6 6 1173 907 @b
+-6 -6 1178 908 6 6 1172 902 @b
+-6 -6 1176 904 6 6 1170 898 @b
+-6 -6 1175 900 6 6 1169 894 @b
+-6 -6 1173 896 6 6 1167 890 @b
+-6 -6 1171 893 6 6 1165 887 @b
+-6 -6 1169 889 6 6 1163 883 @b
+-6 -6 1166 886 6 6 1160 880 @b
+-6 -6 1163 882 6 6 1157 876 @b
+-6 -6 1160 879 6 6 1154 873 @b
+-6 -6 1157 876 6 6 1151 870 @b
+-6 -6 1154 874 6 6 1148 868 @b
+-6 -6 1150 871 6 6 1144 865 @b
+-6 -6 1146 869 6 6 1140 863 @b
+-6 -6 1143 867 6 6 1137 861 @b
+-6 -6 1139 865 6 6 1133 859 @b
+-6 -6 1135 863 6 6 1129 857 @b
+-6 -6 1130 862 6 6 1124 856 @b
+-6 -6 1126 861 6 6 1120 855 @b
+-6 -6 1122 860 6 6 1116 854 @b
+-6 -6 1118 860 6 6 1112 854 @b
+-6 -6 1113 859 6 6 1107 853 @b
+-6 -6 1109 859 6 6 1103 853 @b
+-6 -6 1104 860 6 6 1098 854 @b
+-6 -6 1100 860 6 6 1094 854 @b
+-6 -6 1096 861 6 6 1090 855 @b
+-6 -6 1092 862 6 6 1086 856 @b
+-6 -6 1088 863 6 6 1082 857 @b
+-6 -6 1083 865 6 6 1077 859 @b
+-6 -6 1079 867 6 6 1073 861 @b
+-6 -6 1076 869 6 6 1070 863 @b
+-6 -6 1072 871 6 6 1066 865 @b
+-6 -6 1068 874 6 6 1062 868 @b
+-6 -6 1065 876 6 6 1059 870 @b
+-6 -6 1062 879 6 6 1056 873 @b
+-6 -6 1059 882 6 6 1053 876 @b
+-6 -6 1056 886 6 6 1050 880 @b
+-6 -6 1053 889 6 6 1047 883 @b
+-6 -6 1051 893 6 6 1045 887 @b
+-6 -6 1049 896 6 6 1043 890 @b
+-6 -6 1047 900 6 6 1041 894 @b
+-6 -6 1046 904 6 6 1040 898 @b
+-6 -6 1044 908 6 6 1038 902 @b
+-6 -6 1043 913 6 6 1037 907 @b
+-6 -6 1042 917 6 6 1036 911 @b
+-6 -6 1042 921 6 6 1036 915 @b
+-6 -6 1042 925 6 6 1036 919 @b
+-6 -6 1042 930 6 6 1036 924 @b
+-6 -6 1042 934 6 6 1036 928 @b
+-6 -6 1042 938 6 6 1036 932 @b
+-6 -6 1043 942 6 6 1037 936 @b
+-6 -6 1044 947 6 6 1038 941 @b
+-6 -6 1046 951 6 6 1040 945 @b
+-6 -6 1047 955 6 6 1041 949 @b
+-6 -6 1049 959 6 6 1043 953 @b
+-6 -6 1051 962 6 6 1045 956 @b
+-6 -6 1053 966 6 6 1047 960 @b
+-6 -6 1056 969 6 6 1050 963 @b
+-6 -6 1059 973 6 6 1053 967 @b
+-6 -6 1062 976 6 6 1056 970 @b
+-6 -6 1065 979 6 6 1059 973 @b
+-6 -6 1068 981 6 6 1062 975 @b
+-6 -6 1072 984 6 6 1066 978 @b
+-6 -6 1076 986 6 6 1070 980 @b
+-6 -6 1079 988 6 6 1073 982 @b
+-6 -6 1083 990 6 6 1077 984 @b
+-6 -6 1087 992 6 6 1081 986 @b
+-6 -6 1092 993 6 6 1086 987 @b
+-6 -6 1096 994 6 6 1090 988 @b
+-6 -6 1100 995 6 6 1094 989 @b
+-6 -6 1104 995 6 6 1098 989 @b
+-6 -6 1109 996 6 6 1103 990 @b
+-6 -6 1113 996 6 6 1107 990 @b
+-6 -6 1118 995 6 6 1112 989 @b
+-6 -6 1122 995 6 6 1116 989 @b
+-6 -6 1126 994 6 6 1120 988 @b
+-6 -6 1130 993 6 6 1124 987 @b
+endp
+%%Trailer
+end
+%%EOF
