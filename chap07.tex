@@ -1,0 +1,2983 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter{Catalog of Simple Commands}
+\Mary 3.0 is capable of executing a wide variety of commands.  For
+simplicity of presentation, these commands are divided into the two
+categories of {\em simple } and {\em advanced}.  Simple commands are described in this
+section, and advanced commands are described in section 8.  The simple
+commands and their type code mnemonics, as currently available in \Mary
+3.0, are listed below.\index{commands} \index{simple commands} \index{catalog} Also listed are the subsections that describe them
+in detail.
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}end   &        Halt execution.  Must occur somewhere         & \hspace{2em}7.1\\
+                    & in the \#labor listing.                  &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rt    &        Perform a ray trace.                  & \hspace{2em}7.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}circ  &         Set parameters and circulate.        & \hspace{2em}7.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmif  & Print contents of Master Input File (file 11). & \hspace{2em}7.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmi   &        Input matrix elements and polynomial  & \hspace{2em}7.5\\
+                    & coefficients from an external file.          &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmo   &        Output matrix elements and polynomial & \hspace{2em}7.6\\
+                    & coefficients to an external file.            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ptm   &        Print transfer map.                   & \hspace{2em}7.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}iden  &         Replace existing transfer map by the & \hspace{2em}7.8\\
+                    & identity map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inv   & Replace existing transfer map by its inverse. & \hspace{2em}7.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tran  &Replace existing transfer map by         &\hspace{2em}7.10\\
+                    & its ''transpose''.                            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rev   &        Replace existing transfer map by      & \hspace{2em}7.11\\
+                    & its reversed map.                            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}revf  &         Replace existing transfer map by     & \hspace{2em}7.12\\
+                    & reverse factorized form.                     &\\
+\hspace{1.5em}mask  &      Mask off selected portions of existing & \hspace{2em}7.13\\
+                    & transfer map.                                &\\
+\end{tabular}
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}symp  & Symplectify matrix portion of transfer map. & \hspace{2em}7.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sqr   &        Square the existing transfer map.     & \hspace{2em}7.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}stm   &        Store the existing transfer map.      & \hspace{2em}7.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gtm   &        Get a transfer map from storage.      & \hspace{2em}7.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rapt  & Aperture the beam with a rectangular aperture.& \hspace{2em}7.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}eapt  & Aperture the beam with an elliptic aperture. & \hspace{2em}7.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnd  &         Window a beam.                & \hspace{2em}7.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}whst  &         Write history of beam loss.          & \hspace{2em}7.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ftm   &        Filter the existing transfer map.     & \hspace{2em}7.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cf    &        Close files.                          & \hspace{2em}7.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}of   &         Open files.                          & \hspace{2em}7.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ps1   &        Parameter set specification.          & \hspace{2em}7.25\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}ps9   & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rps1  &         Random parameter set specification.  & \hspace{2em}7.26\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}rps9  & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}num   &        Number lines in a file.               & \hspace{2em}7.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wps   &    Write out parameters in a parameter set.  & \hspace{2em}7.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}time  &         Write out execution time.            & \hspace{2em}7.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cdf   &        Change drop file.                     & \hspace{2em}7.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bell  &         Ring bell at terminal.               & \hspace{2em}7.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wmrt  &         Write out value of merit function.   & \hspace{2em}7.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wcl   &         Write contents of a loop.            & \hspace{2em}7.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}paws  &         Pause.                               & \hspace{2em}7.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inf  &     Change or write out values of infinities. & \hspace{2em}7.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}zer  &     Change or write out values of zeroes.    & \hspace{2em}7.36\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tpol  &         Twiss polynomial.      & \hspace{2em}7.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dpol  &         Dispersion polynomial.      & \hspace{2em}7.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cbm  &    Change or write out beam parameters.      &
+\hspace{2em}7.39 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dims  &         Dimensions.      & \hspace{2em}7.40\\
+%\vspace{-3mm}& & \\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}wuca & Write out contents of ucalc array.   & \hspace{2em}7.41 \\
+\vspace{-3mm}& & \\
+\hspace{1.5em}wnda & Window a beam in all planes.   &  \hspace{2em}7.42 \\
+\vspace{-3mm}& & \\
+\hspace{1.5em}pli & Path length information. & \hspace{2em}7.43 \\
+\vspace{-3mm}& & \\
+\hspace{1.5em}shoa & Show contents of arrays. & \hspace{2em}7.44
+
+\end{tabular}
+\end{center}
+
+%\newpage
+\noindent Note that the type codes are given in lower case.  If entries are made in
+upper case, they are automatically converted to lower case by PREP and
+\Maryend.
+
+     The purpose of this section is to outline the use of these simple
+commands by \Maryend, and to describe the parameters required to specify
+these commands in the \#menu component of the Master Input File.
+
+\newpage
+\section{Halt Execution}
+\begin{quotation}
+\noindent Type Code:  end \index{end}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+\vspace{5mm}
+
+\noindent Example:
+\begin{verbatim}
+         stop    end
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em stop}.  It terminates a
+\Mary run.  A command with the type code {\em end } must always occur
+somewhere in the \#labor listing.  See section 5.11.
+
+\newpage
+\section{Perform a Ray Trace}
+\begin{quotation}
+\noindent Type Code:  rt\index{ray trace}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  ICFILE (file number from which initial conditions are to be read)
+
+             = 0 to use data currently stored in the initial conditions buffer.
+
+             = NFILE $\geq$1 to read initial conditions from file number NFILE.
+
+             = $-$J (with J an integer from 1 to 9) to read an initial
+               condition from the \hspace*{1em}parameter set array associated with
+               the type code {\em psj}.  See section 7.25.
+
+      \item  NFCFILE (file number on which final conditions are to be written)
+
+= 0 to not write final conditions on a file.
+
+             = MFILE $\geq$1 to write final conditions on file number
+               MFILE in standard \hspace*{1em}format (see section 4.5.2).
+
+             = $-$MFILE (with MFILE $\geq$1) to write final conditions on
+               file number \hspace*{1em}MFILE in full precision (see section 4.5.2).
+      \item  NORDER
+
+             = $-1$ to simply read in initial conditions without performing
+               a ray trace.
+
+             = 0 to write contents of initial conditions buffer on file
+               MFILE.  (Equivalent \hspace*{1em}to tracing rays using the identity
+               map.)
+
+             = 1 to trace rays using only linear matrix portion $R$ of maps.
+
+             = 2 to trace rays using only $R$ and $f_3$ portions of maps
+			   through $2^{\mbox{\scriptsize nd}}$ order.
+
+             = 3 to trace rays using $R$, $f_3$, and $f_4$ portions of maps
+			   through $3^{\mbox{\scriptsize rd}}$ order.
+
+             = 4 to trace rays using $R$, $f_3$, and $f_4$ portions of maps through
+               $4^{\mbox{\scriptsize th}}$ order.
+
+			 $\geq$ 5 for a symplectic ray trace using a mixed variable generating
+			 function.
+
+
+      \item  NTRACE
+
+             = 0 to perform a single ray trace of all initial rays stored in the
+             initial \hspace*{1em}conditions buffer.  Leaves initial conditions
+             unchanged.
+
+             $\geq 1$ to perform NTRACE ray traces of all initial rays {\em with
+               tracking}.  When \hspace*{1em} tracking occurs, the stored initial
+               conditions are replaced each time by \hspace*{1em}the results of the
+               previous ray trace.
+      \item  NWRITE
+
+             Write the final conditions on file unit MFILE after every
+             $\mbox{NWRITE}^{\mbox{\scriptsize th}}$ raytrace.
+
+      \item  IBRIEF (to suppress or redirect output):
+
+             = 0 to be ``very brief'' (useful when tracking).  In this mode,
+               nothing con- \hspace*{1em}cerning a ray trace will be printed at the
+               terminal.  The final conditions \hspace*{1em}of a ray trace will be on
+               file unit MFILE.
+
+             = 1 to be ``brief''.  The initial and final conditions of a ray
+               trace will be \hspace*{1em}printed at the terminal.
+
+             = 2 to be ``not brief''.  Initial conditions, intermediate
+               calculations, and final \hspace*{1em}conditions will be printed at the
+               terminal.
+\end{enumerate}
+\vspace{5mm}
+
+             Note: If IBRIEF = $-1$ or $-2$, information is printed on an
+external file (file unit 12), not at the terminal.  Apart from the choice
+of output file, the resulting output is the same as when IBRIEF = 1 and
+IBRIEF = 2, respectively.
+\vspace{5mm}
+
+\noindent     Example:
+\begin{verbatim}
+         rays    rt
+          13, 14, 5, 100, 10, 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user specified name {\em rays}.  It calls for reading
+initial conditions from file 13 and the performance of a symplectic ray
+trace.  Each initial ray in the initial conditions buffer will be tracked
+through the current total transfer map 100 times; the results will be
+written on file 14 every $10^{\mbox{\scriptsize th}}$ trace.  No other information concerning the
+tracing of rays is printed at the terminal or written on file 12.
+
+\vspace{5mm}
+     NOTE WELL:
+\vspace{2mm}
+
+         The initial conditions buffer cannot be empty if its contents are
+to be written out or if an actual ray trace is to occur.  If either action
+is attempted with ICFILE = 0 and the initial conditions buffer {\em empty},
+\Mary will terminate.  Before terminating, it writes a diagnostic message
+at the terminal and on file 12.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+     If ICFILE = NFILE $\geq$1, \Mary reads from file NFILE and stores in
+memory (the initial conditions buffer called {\em zblock}) the initial conditions of all rays
+to be traced (up to a maximum of 10,000 rays).\index{zblock z(i,j)} \index{initial conditions buffer}  If ICFILE = 0, it is
+presumed that the initial conditions buffer is already nonempty as a result
+of some previous command.  Initial conditions are conveniently read from
+file 13.  However, other files may also be used if desired.  See section
+4.4.2.
+
+     When initial conditions are to be read from file NFILE, it is rewound
+prior to reading.  Thus, the same file or several files can be used
+repeatedly to change the contents of the initial conditions buffer during a
+\Mary run.
+
+     \Mary traces all of the rays in the initial conditions buffer using
+the current transfer map.  Initial conditions, intermediate calculations,
+and final conditions are printed if desired.  Final conditions alone are
+always written on file unit MFILE for future use by plotting and other
+routines.  The file unit MFILE is often conveniently taken to be file unit
+14.  However, other file units may also be used if desired.  See section
+4.5.2.
+
+     When NFCFILE = MFILE, final conditions are written on file MFILE in a
+standard 6 column format.  See section 4.5.2.  This format is useful for
+plotting and other post-processing routines.
+
+     However, use of this format gives only 6 digit precision.  Upon
+occasion it may be desirable to have full precision.  (For example, one may
+wish to write out the initial conditions buffer in full precision to be
+used in a subsequent \Mary run to continue a tracking study.  (See
+sections 4.4.2, 4.5.2.)  This may be accomplished by setting NFCFILE =
+$-$MFILE with MFILE $\geq$1.  When this is done, final conditions are written on
+file unit MFILE in full precision.\index{precision}
+
+     When NORDER = $-1$, initial conditions are read in and stored in the
+initial conditions buffer, but no ray trace is performed.  In this case,
+only the parameters ICFILE and NORDER are used.  However, the other
+parameters must be present to satisfy format requirements.  Moreover, one
+must have ICFILE $\geq$1.  If this requirement is violated, the \Mary run is
+terminated, and error messages are printed at the terminal (file 6) and on
+file 12.
+
+     When NORDER = 0, again no ray trace is actually performed.  Instead,
+the contents of the initial conditions buffer are simply written on file unit
+MFILE.  In this case only the parameters ICFILE, NFCFILE, and NORDER are
+used.  However, the other parameters must again be present to satisfy
+format requirements.
+
+     When NORDER = 1, {\em only } the transfer matrix is used to perform a ray
+trace.  In this case the result is correct only through first (linear)
+order. It is exactly symplectic because the transfer matrix is symplectic.  (If the transfer matrix is not symplectic, it may be symplectified.  See section 7.14.)
+
+     When NORDER = 2, the transfer matrix and $e^{:f_3:}$ are used to perform
+the ray trace with $e^{:f_3:}$ expanded and truncated as
+\begin{equation}
+                            e^{:f_3:} \simeq 1 + \Lieop(f_3).
+\end{equation}
+In this case the result is correct through second order and symplectic
+through second order.
+
+     When NORDER = 3, the transfer matrix and $e^{:f_3:} e^{:f_4:}$ are used
+to perform the ray trace with $e^{:f_3:} e^{:f_4:}$ expanded and truncated as
+\begin{equation}
+e^{:f_3:} e^{:f_4:} \simeq 1 + \Lieop(f_3) + \frac{\Lieop(f_3)^2}{2} + \Lieop(f_4).
+\end{equation}
+In this case, the result is correct through third order and symplectic
+through third order.
+
+     When NORDER = 4, the truncated expansion (3.11.6) is used.  As
+explained in section 3.11.3, this procedure gives a result that is correct
+through third order and symplectic through fourth order.
+
+     Finally, when NORDER$\geq 5$, ray traces are performed in such a way that
+results are correct through third order, but are symplectic to all orders
+(to machine precision).  This is achieved by two means.  First, prior to
+the initiation of ray trace calculations, the matrix portion of the
+transfer map is ``symplectified'' using ``symplectic polar decomposition''
+symplectification (see section 7.14) to remove any nonsymplectic matrix part that
+may have been produced by round off error in the process of building up the
+map by concatenation.
+
+Second, each time a ray is traced, the {\em nonlinear} portion of the map is treated using a transformation function of mixed
+variables.  As described in section 3.11.3, a transformation function
+$F(q,P)$ is computed.\index{nonlinear part} \index{symplectic ray trace} \index{transformation function} \index{nonlinear part}  This function is of the form
+\begin{equation}
+F(q,P) = \sum^3_{j=1} q_j P_j + G(q,P)
+\end{equation}
+where $G$ is a polynomial in $q,P$ computed from $f_3$ and $f_4$.  The
+transformation function (7.2.3) leads to the implicit relations
+\begin{equation}
+Q_i = \partial F/\partial P_i = q_i + \partial G/\partial P_i = q_i +
+A_i(q,P),
+\end{equation}
+\begin{equation}
+p_i = \partial F/\partial q_i = P_i + \partial G/\partial q_i = P_i +
+B_i(q,P).
+\end{equation}
+Here $A_i$ and $B_i$ (with $i = 1,2,3$) are composed of polynomials of
+degrees 2 and 3 in the components of $q,P$.  The three implicit nonlinear
+relations (7.2.5) are rewritten in the form
+\begin{equation}
+P_i = p_i - B_i(q,P),
+\end{equation}
+and solved numerically by Newton's method (using $P_i = p_i$ as an
+initial guess) to find the explicit results $P_i(q,p)$.  These results
+are then substituted numerically into (7.2.4) to give $Q_i(q,p)$.\index{Newton's method}
+
+Sometimes the Newton procedure fails to converge properly.  When this
+happens, the symplectic ray trace procedure goes into a {\em diagnostic } mode.
+Diagnostic messages appear at the terminal (file 6), and are also written
+on file 12.  If the convergence problem becomes severe, that particular ray is
+marked as ``lost'', and is no longer tracked.  Convergence failure
+generally indicates that nonlinear effects are very important, and that
+escape to distant regions of phase space is imminent.
+
+When a ray trace occurs, the final spatial and temporal phase space coordinates
+are also checked to see if they exceed certain {\em infinities}.  See
+section 7.35.  Should this occur, that particular ray is also marked as
+lost.  Lost rays are not tracked or traced.  That is, their phase space
+coordinates are left unchanged.  A history of what rays are lost, and when and why, is kept in \Mary
+arrays whose contents can be examined by use of a command with type code
+{\em whst}.  See section 7.21.
+
+\newpage
+\section{Circulate Around a Loop}
+\begin{quotation}
+\noindent     Type Code:  circ \index{circulate}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  ICFILE (file number from which initial conditions are to be
+             read)
+
+             = 0 to use data currently stored in the initial conditions buffer.
+
+             = NFILE $\geq 1$ to read initial conditions from file number NFILE.
+
+             = $-$J (with J an integer from 1 to 9) to read an initial
+               condition from the parameter set array associated with the
+               type code {\em psj}.  See section 7.25.
+
+      \item  NFCFILE (file number on which final conditions are to be
+             written)
+
+             = MFILE $\geq 1$ to write final conditions on file number MFILE in
+               standard \hspace*{1em}format (see section 4.5.2).
+
+             = $-$MFILE (with MFILE $\geq 1$) to write final conditions on file
+               number \hspace*{1em}MFILE in full precision (see section 4.5.2).
+
+      \item  NORDER
+
+             = 1 to trace rays using only linear matrix portion $R$ of maps.
+
+             = 2 to trace rays using only $R$ and $f_3$  portions of maps.
+
+             = 3 to trace rays using $R$, $f_3$, and $f_4$  portions of maps.
+
+             = 4 to trace rays using $R$, $f_3$, and $f_4$  portions of maps
+               through $4^{\mbox{\scriptsize th}}$ order.
+
+             $\geq 5$ for symplectic rays traces.
+
+      \item  NTIMES
+
+             Specifies the number of times \Mary is to circulate about a loop.
+
+      \item  NWRITE
+
+             Write the final conditions on file MFILE after every
+NWRITE$^{{\rm th}}$
+             circulation.
+
+      \item  ISEND
+
+             = 0 to suppress writing of items in loop.
+
+             = 1 to write items in loop at the terminal.
+
+             = 2 to write items in loop on file 12.
+
+             = 3 to write items in loop at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         track     circ
+         13 , 14 , 5 , 50000 , 10 , 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em track}.  It calls for circulation
+around the (last) loop proceeding it in the \#labor component of the
+Master Input File.  Initial conditions are to be read from file 13, and ray
+traces are to be carried out using the symplectic ray trace procedure.
+Tracking will occur for 50,000 circulations, and results will be written on
+file 14 every $10^{\mbox{\scriptsize th}}$ circulation.  The items in the loop will not be written
+out.
+
+\vspace{5mm}
+     NOTE WELL:
+\vspace{2mm}
+
+     The initial conditions buffer cannot be empty if a circulation is
+to occur.  If a circulation is attempted with ICFILE = 0 and the initial
+conditions buffer empty, \Mary will terminate.  Before terminating, it
+will write a diagnostic message at the terminal and on file 12.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+In some cases, rather than use the net concatenated map for a collection
+of elements, it is more accurate (but slower) to track rays element by
+element, or perhaps through a small collection of elements and/or lumps.\index{element by element}
+That is one of the purposes of loops.  See section 5.10.  To use a loop
+for tracking, the name and contents of the loop must be defined in the
+\#loops component of the Master Input File.  The name of the loop is
+invoked in the \#labor component of the Master Input File followed (not
+necessarily immediately) by a command having the type code {\em circ}.
+Loops along with a command having the type code {\em circ} are useful for
+long-term tracking studies of circular machines.  See sections 2.7 and 10.8.  They
+can also be used to carry out single-pass element-by-element tracking
+through a beam line.  See section 10.3.  In this case, a command with the type code {\em
+circ} is used with NTIMES = 1.
+
+Whenever an {\em element} is encountered in a loop in the course of executing
+a command having type code {\em circ} with NORDER $\geq 5$, the required
+map ${\cal M}$, transformation function $F$, and polynomials $A_i, B_i$ are
+computed and used to perform a symplectic ray trace.  See sections 3.11.3
+and 7.2.  At the end of the ray trace through {\em this element}, the
+map, transformation function, and polynomials are all discarded.  Thus,
+if they are needed again, they must all be recomputed.
+
+However, in the case of a {\em lump}, the map, transformation function,
+and polynomials are computed (if not already computed previously) and
+stored for possible future use.  Thus, if many passes are to be made
+through a loop (as in long-term tracking studies for which NTIMES is
+large), it is desirable to have as many maps in the loop as possible
+stored in the form of lumps.  See section 5.9.
+
+\newpage
+\section{Print the Contents of the Master Input File}
+\begin{quotation}
+\noindent     Type Code:  pmif \index{print master input file} \index{master input file}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  ITYPE
+
+             = 0 to print the contents just as they are without suppression
+               of interspersed \hspace*{1em}comments and ``commented out'' entries.  See
+               section 5.5.4.
+
+             = 1 to print the contents as interpreted by \Maryend.
+
+             = 2 to print only the \#labor component as interpreted by \Maryend.
+
+      \item  IFILE (external output file).
+
+      \item  ISEND
+
+              = 1 to write at the terminal.
+
+              = 2 to write on file IFILE.
+
+              = 3 to write at the terminal and on file IFILE.
+
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         fileout    pmif
+            1 , 12 , 3
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em fileout}.  It calls for the
+printing of the Master Input File (file 11), as interpreted by \Maryend, at
+the terminal and on file 12.
+
+\vspace{5mm}
+     NOTE WELL:
+\vspace{2mm}
+
+           Even if not used, an external file number must be present for
+format reasons.  The external file is conveniently taken to be file 12.
+See section 4.2.  However, other files may also be used if desired.
+
+\vspace{5mm}
+     Comment:
+\vspace{2mm}
+
+           A command having the type code {\em pmif} can be used at the end
+of a \Mary run involving fitting or optimization to produce a revised
+Master Input File for subsequent use.  See sections 9.7 and 9.8.
+
+\newpage
+\section{Input of a Transfer Map}
+\begin{quotation}
+\noindent     Type Code:  tmi \index{input transfer map} \index{transfer map}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IOPT
+
+             = 1 to concatenate existing map with the input map.
+
+             = 2 to replace existing map with the input map.
+
+      \item  IFILE (file number from which map is to be read).
+
+      \item  NOPT (Rewind Option)
+
+             = 0 to read (from file IFILE) in its current position.
+
+             = 1 to first rewind file unit IFILE, then read.
+
+      \item  NSKIP
+
+             Number of data sets (maps) to be skipped in file IFILE
+             (starting from the current position) before a read actually
+             occurs.
+\end{enumerate}
+
+\vspace{5mm}
+     NOTE:  If NOPT = 1 and NSKIP = $-1$, file IFILE is simply rewound, but
+not read.  Thus, when employed with these parameter values, the type code
+{\em tmi } can be used simply to rewind files.
+
+\vspace{5mm}
+\noindent     Example 1:
+\begin{verbatim}
+         mapin1    tmi
+         1, 15 , 0 , 0
+\end{verbatim}
+\end{quotation}
+The above describes a command with the user specified name {\em mapin1}.  It
+would cause \Mary to read into program memory (and then use) the nonzero
+matrix elements and polynomial coefficients of a map written on the current
+position of file unit 15.
+\begin{quotation}
+\noindent     Example 2:
+\begin{verbatim}
+         mapin2    tmi
+         1, 15 , 0 , 2
+\end{verbatim}
+\end{quotation}
+The above describes a command with the user specified name {\em mapin2}.  It
+would cause \Mary to skip over the next 2 transfer maps on file 15, and
+then read in (and use) the subsequent transfer map.
+\begin{quotation}
+\noindent     Example 3:
+\begin{verbatim}
+         mapin3    tmi
+         1, 15 , 1 , 2
+\end{verbatim}
+\end{quotation}
+The above describes a command with the user specified name {\em mapin3}.  It
+would cause \Mary to first rewind file 15, and then read in (and use) the
+3rd transfer map stored on file 15.
+\begin{quotation}
+\noindent     Example 4:
+\begin{verbatim}
+         rewind15    tmi
+         1, 15 , 1 , -1
+\end{verbatim}
+\end{quotation}
+The above describes a command with the user specified name {\em rewind15}.  It
+would cause \Mary to simply rewind file 15, and would not read in any
+map.  Indeed, file 15 need not even contain a map.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+         The type code {\em tmi } is used primarily to read the nonzero matrix
+elements $R_{ij}$ and nonzero coefficients of the polynomials $f_3$  and $f_4$ for a map
+and path length $f(0)$ from a file.  It can also be used to read in a complete set of
+polynomials $f_1$, $f_2$, $f_3$, $f_4$.  File 15 is conveniently used for this purpose.  However,
+other files may also be used if desired.  See section 4.4.3 for the format of a
+transfer map input file.
+
+         This type code could be used to read in a transfer map produced by
+the current or some other \Mary run.  See, for example, the use of a normal form map in
+section 2.6, and section 7.6.  It could also be used to read in transfer maps calculated by
+hand or obtained from another source such as another \Mary run or some
+external GENMAP routine.  (See section 1.4.1).
+In this way, \Mary can be used to manipulate and/or trace rays through
+{\em any } system (say, an ordinary light
+optical system) for which $R$, $f_3$, and $f_4$ are explicitly known.
+
+         If NSKIP = 0, \Mary will read whatever transfer map occurs next
+on file IFILE.  In the case that file IFILE contains several transfer maps,
+it is possible to read any one of them by setting NOPT = 1 and then setting
+NSKIP to skip over the appropriate number of maps before actually reading.
+Finally, as illustrated in Example 4 above, the type code {\em tmi } may be used
+simply to rewind a file (including files containing information other than
+transfer maps).\index{rewind}
+
+\newpage
+\section{Output of a Transfer Map}
+\begin{quotation}
+\noindent Type Code:  tmo \index{output transfer map} \index{transfer map}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item IFILE (file number on which map is to be written).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         ritemap    tmo
+          16
+\end{verbatim}
+\end{quotation}
+The above specifies a command with the user given name {\em ritemap}.  It would
+cause \Mary to write the current transfer map on file 16.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+     This type code is used to write on a file the nonzero matrix
+elements and the nonzero coefficients of the polynomials $f_3$  and $f_4$
+(and also $f_1$ and $f_2$, if present) plus path length $f(0)$  for the
+current transfer map.  File 16 is conveniently used for this purpose.
+However, other files may also be used for this purpose if desired.  See
+section 4.5.3 for the format of a transfer map output file.
+
+         This type code could be used at the end of or during a \Mary
+run, for example, to store one or several transfer maps on a file for
+future use. It can also be used to store maps on a file for subsequent use
+during the current \Mary run.
+
+         Whenever a map is to be written on a file as a result of a command
+with type code {\em tmo}, the file is first brought to its end, and then the map
+is written.  Therefore, if {\em tmo } is used on a file several times, several
+maps will be written, one after the other, without overwriting.  This is
+true even if the file has been repositioned (by the use of {\em tmi}\/) once or
+several times during the course of a \Mary run.
+
+         Note that the file handling procedure associated with {\em tmo} also
+implies that if a file written by {\em tmo } is to be read within the same \Mary
+run using {\em tmi}, it must first be rewound using the option NOPT = 1.  See
+section 7.5.
+
+     Since \Mary $\!\!$, when executing a command with type code {\em tmo},
+first reads the file IFILE in order to bring it to its end, the file must
+either be pre-existing (but perhaps empty), or must be opened using a
+command having the type code {\em of}.  See section 7.24.
+
+\newpage
+\section{Print Transfer Map}
+\begin{quotation}
+\noindent Type Code:  ptm \index{print transfer map} \index{transfer map} \index{R matrix} \index{matrix}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  NM (controls output of the transfer matrix $R$)
+
+             = 0 to not print $R$.
+
+             = 1 to write $R$ at the terminal.
+
+             = 2 to write $R$ on file 12.
+
+             = 3 to write $R$ at the terminal and on file 12.
+
+      \item  NF (controls output of the polynomials $f_1$ through $f_4$ )
+
+             = 0 to not print $f_1$ through $f_4$.
+
+             = 1 to write at the terminal the nonzero coefficients in the
+               polynomials \linebreak \hspace*{1em} $f_1$ and $f_2$ (if
+any), and $f_3$ and $f_4$.
+
+             = 2 to write nonzero coefficients of $f_1$ and $f_2$ (if
+any), and $f_3$ and $f_4$ on file \linebreak \hspace*{1em} 12.
+
+             = 3 to write coefficients at the terminal and on file 12.
+
+      \item  NT  (controls output of the second order transfer matrix $T$) \index{T matrix}
+
+             = 0 to not print $T$.
+
+             = 1 to write $T$ at the terminal.
+
+             = 2 to write $T$ on file 12.
+
+             = 3 to write $T$ at the terminal and on file 12.
+
+      \item  NU (controls output of the third order transfer matrix $U$) \index{U matrix}
+
+             = 0 to not print $U$.
+
+             = 1 to write $U$ at the terminal.
+
+             = 2 to write $U$ on file 12.
+
+             = 3 to write $U$ at the terminal and on file 12.
+
+      \item  IBASIS
+
+             = 1 for cartesian basis.
+
+             = 2 for static resonance basis.
+
+             = 3 for dynamic resonance basis.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         mapout    ptm
+           1, 1, 0, 0 , 1
+\end{verbatim}
+\end{quotation}
+The above specifies a command with the user given name {\em mapout}.  It calls
+for a printing at the terminal of the matrix and $f_3$  and $f_4$  for the current
+total transfer map.  The map is presumed to be in the cartesian basis.
+
+\vspace{5mm}
+     NOTE WELL:
+\vspace{2mm}
+
+         The use of NT$\neq0$ and NU$\neq 0$ is meaningful only if the map is in
+the cartesian basis.  In this case one should have IBASIS = 1.  If the map
+is in a static resonance or dynamic resonance basis, only the matrix $R$ and
+the polynomials $f$ are meaningful.  In this case, the $f$'s are given in one
+of these bases, and one must set IBASIS = 2 or 3, respectively.  The matrix
+$R$ is always given in terms of the cartesian basis.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+     This type code is used to print information about the current
+total transfer map.  For a description of the labeling of $f_3$ and $f_4$, see
+section 3.10.  For a description of $R$, $T$, and $U$, see section 3.6.  The
+arrays for $z$, $R$, $T$, and $U$ are formatted in the following fashion:
+
+
+\begin{center}
+\underline{Coordinate Array}
+\[\begin{array}{ccccccc}
+       z = & (X, & P_x, & Y, & P_y, & \tau, & P_\tau)\\
+           &  1  &  2   & 3  &  4   &   5   &   6
+\end{array}\]
+
+\vspace{5mm}
+
+\underline{$R$ Matrix Array}
+\[  R= \left( \begin{array}{cccc}
+R_{11} & R_{12} & \cdots & R_{16} \\
+R_{21} & R_{22} &        & R_{26} \\
+\vdots &        &        & \vdots \\
+R_{61} & R_{62} & \cdots & R_{66}
+\end{array}
+\right) \]
+
+\vspace{5mm}
+
+\underline{$T$ Matrix Array}
+\end{center}
+
+     According to section 3.6, the contributions to the quantities $z_a^{\mbox{\scriptsize fin}}$
+arising from the $T$ array are expressions of the form
+\begin{equation}
+\sum_{b,c} T_{abc} z_b^{\mbox{\scriptsize in}} z_c^{\mbox{\scriptsize in}}.
+\end{equation}
+That is, for each value of the index $a$, the quantities (7.7.1) are second
+order polynomials.  These second order polynomials may be decomposed into
+second order monomials, and these monomials may be labeled using the scheme
+of section 3.10.  Thus, for example,
+
+\begin{tabbing}
+  t1(7) \= = t1(20 00 00)\\
+        \> = coefficient of $(X^{\mbox{\scriptsize in}})^2$  in the expression for
+$X^{\mbox{\scriptsize fin}}$,\\
+\vspace{5mm}\\
+  t4(8) \> = t4(11 00 00)\\
+        \> = coefficient of $(X^{\mbox{\scriptsize in}}  P_x^{\mbox{\scriptsize in}})$ in the expression for $P_y^{\mbox{\scriptsize fin}}$, etc.
+\end{tabbing}
+\pagebreak
+\begin{center}
+\underline{$U$ Matrix Array}
+\end{center}
+
+     According to section 3.6, the contribution to the quantities $z_a^{\mbox{\scriptsize fin}}$ arising from the $U$ array are expressions of the form
+\begin{equation}
+\sum_{b,c,d} U_{abcd} z_b^{\mbox{\scriptsize in}} z_c^{\mbox{\scriptsize in}}
+z_d^{\mbox{\scriptsize in}}.
+\end{equation}
+That is, for each value of the index $a$, the quantities (7.7.2) are third
+order polynomials.  These third order polynomials may be decomposed into
+third order monomials, and these monomials may be labeled using the scheme
+of section 3.10.  Thus, for example,
+
+\begin{tabbing}
+  u1(29) \= = u1(21 00 00)\\
+        \> = coefficient of $(X^{\mbox{\scriptsize in}})^2 (P_x^{\mbox{\scriptsize in}}) $ in the expression for $X^{\mbox{\scriptsize fin}}$,\\
+\vspace{5mm}\\
+  u4(82) \> = u4(00 00 12)\\
+        \> = coefficient of $(\tau^{\mbox{\scriptsize in}}) (P_\tau^{\mbox{\scriptsize in}})^2$ in the expression for $P_y^{\mbox{\scriptsize fin}}$, etc.
+\end{tabbing}
+
+\begin{center}
+\underline{Cartesian and Resonance Bases}
+\end{center}
+
+For a description of cartesian, static resonance, and dynamic resonance
+bases, see sections 14.1 through 14.3.  See also section 8.6.
+
+\newpage
+\section{Replace with Identity Map}
+\begin{quotation}
+\noindent Type Code:  iden\index{identity map}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+\vspace{5mm}
+
+\noindent Example:
+\begin{verbatim}
+         resetmap    iden
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em resetmap}.  It causes the
+current transfer map to be replaced by the identity map.  It also sets the path length to zero.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+         From time to time in a \Mary run, it may be necessary to reset
+the current transfer map to the identity map.  This can be done with a
+command having the type code {\em iden}.
+
+\newpage
+\section{Invert a Map}
+\begin{quotation}
+\noindent Type Code:  inv\index{invert}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         invert    inv
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em invert}.  It causes the
+current transfer map to be replaced by its inverse.  It also changes the sign of the path length.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+         From time to time in a \Mary run, it may be necessary to invert
+the current transfer map.  This can be done with a command having the type
+code {\em inv}.  The calculation of the inverse of $R$, the matrix portion of the
+map, is made on the assumption that $R$ is symplectic.
+
+To check whether two maps are the same, it is convenient to invert one
+and then multiply by the other.  The two maps are the same if the result
+of this operation is the identity map.
+
+\newpage
+\section{``Transpose'' a Map}
+\begin{quotation}
+\noindent Type Code:  tran\index{transpose}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+\vspace{5mm}
+
+\noindent Example:
+\begin{verbatim}
+         trnspose    tran
+\end{verbatim}
+\end{quotation}
+This is a command with the user specified name {\em trnspose}.  When invoked, it
+causes the matrix part of the current transfer map to be replaced by its
+transpose.  The polynomials $f_3$  and $f_4$  are unaffected.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+         It is useful to be able to transpose a matrix in order to check
+and exploit the symplectic condition.  See sections 3.5 and 6.18.
+
+\newpage
+\section{Reverse a Map}
+\begin{quotation}
+\noindent Type Code:  rev\index{reverse}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         reverse    rev
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em reverse}.  It causes the
+current transfer map ${\cal M}$ to be replaced by the reversed map ${\cal M}^r$.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+	Suppose ${\cal M}$ is the transfer map relating the initial conditions at
+the entrance of some element to the final conditions at the exit of the
+element.  That is, ${\cal M}$ describes {\em direct} passage from the
+entrance to the exit.  Then, roughly speaking, the reversed map ${\cal
+M}^r$ describes the hypothetical result of {\em reverse} passage from the
+exit to the entrance.
+
+	For many elements the direct and reverse maps are the same.  Such
+elements are said to be {\em reversible}.  Now suppose ${\cal M}$ is the
+map for a collection of elements $A, B, C \cdots$, and that each of the
+elements separately is reversible.  Then ${\cal M}^r$ is the map for the
+reverse order collection $\cdots C, B, A$.
+
+\newpage
+\section{Reverse Factorize a Map}
+\begin{quotation}
+\noindent Type Code:  revf \index{reverse factorize}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IORD
+
+             \ = 0 to go from the normal \Mary order to the reversed order.
+
+             \ = 1 to go from the reversed order to the normal \Mary order.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         revfact    revf
+            0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em revfact}.  Because IORD =
+0, it assumes that the current transfer map has the normal \Mary order
+representation.  It replaces the polynomials $f_3$  and $f_4$  of the normal
+\Mary order representation of the map by the polynomials $g_3$  and $g_4$  of the
+reversed factorized representation.  The matrix part $R$ of the map is left
+unchanged.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+As described in section 3.9, an arbitrary symplectic map ${\cal M}$ can be
+written in the form (3.9.1).  It can also be written in reversed
+factorized form.  That is, the map ${\cal M}$ can be written in the forms
+\begin{center}
+${\cal M} = e^{:f_2:} e^{:f_3:} e^{:f_4:} \cdots$ (normal \Mary order),
+\end{center}
+\begin{center}
+${\cal M} = \cdots e^{:g_4:} e^{:g_3:} e^{:g_2:}$ (reversed order) .
+\end{center}
+The polynomials $f_2$ and $g_2$ are identical and both lead to the same
+matrix $R$ as given by (3.9.3).  However, $f_3$ and $g_3$, and $f_4$ and
+$g_4$, generally differ.
+
+If IORD = 0, it is presumed that the polynomials associated with the
+current transfer map are $f_3$ and $f_4$.  In that case, $g_3$ and $g_4$
+are computed, and $f_3$ and $f_4$ are then replaced by $g_3$ and $g_4$,
+respectively.
+
+If IORD = 1, it is presumed that the polynomials associated with the
+current transfer map are $g_3$ and $g_4$.  In that case, $f_3$ and $f_4$
+are computed, and $g_3$ and $g_4$ are then replaced by $f_3$ and $f_4$,
+respectively.
+
+\newpage
+\section{Mask a Map}
+\begin{quotation}
+\noindent     Type Code:  mask\index{mask}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+
+      \item  IMAT
+
+             = 0 to replace the matrix portion $R$ of the map by the
+			 identity
+matrix.
+
+             = 1 to leave the matrix portion $R$ of the map unaffected.
+
+      \item  IF0
+
+             = 0 to replace the $f_0$  polynomial of the map by the zero polynomial.
+
+		= 1 to leave the $f_0$  polynomial of the map unaffected.
+
+	  \item  IF1
+
+             = 0 to replace the $f_1$  polynomial of the map by the zero polynomial.
+
+             = 1 to leave the $f_1$  polynomial of the map unaffected.
+
+      \item  IF2
+
+             = 0 to replace the $f_2$  polynomial of the map by the zero
+			   polynomial.
+
+             = 1 to leave the $f_2$  polynomial of the map unaffected.
+
+      \item  IF3
+
+             = 0 to replace the $f_3$  polynomial of the map by the zero polynomial.
+
+             = 1 to leave the $f_3$  polynomial of the map unaffected.
+
+      \item  IF4
+
+             = 0 to replace the $f_4$  polynomial of the map by the zero polynomial.
+
+             = 1 to leave the $f_4$  polynomial of the map unaffected.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         linear    mask
+          1 , 0 , 0 , 0 , 0 , 0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em linear}.  It
+removes all the
+polynomial parts of the current transfer map, and
+leaves the linear part $R$ unchanged.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+     Upon occasion in a \Mary run, it is useful to be able to examine
+the effect of various orders of nonlinearity separately.  For example, the
+above command {\em linear } could be used for a tracking study that employed only
+the linear part of the transfer map.  For a more refined way of removing terms from the current transfer map, see section 7.22.
+
+\newpage
+\section{Symplectify a Matrix}
+\begin{quotation}
+\noindent     Type Code:  symp \index{symplectify a matrix}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IOPT
+
+             = 1 for a static map.
+
+             = 2 for a dynamic (time dependent) map.
+
+      \item  KIND
+
+             = 1 for symplectic polar decomposition symplectification.
+
+             = 2 for ``modified Darboux'' symplectification.\index{Darboux}
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         makesymp    symp
+           1  2
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em makesymp}.  It replaces
+the matrix part $R$ of the current transfer map by a matrix that is
+symplectic to machine precision.  Since IOPT = 1, the map is assumed to be
+static.  Since KIND = 2, ``modified Darboux''
+symplectification is used.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Due to the roundoff error incurred in concatenating many maps or to the
+truncation error incurred in the use of numerical integration routines
+(e.g. GENMAP, see section 1.4.1), the matrix part of the current transfer
+map may become slightly nonsymplectic.  Commands having the type code
+{\em symp} can be used to replace such matrices with nearby matrices that
+are exactly symplectic (to machine precision).  For further detail, see
+references listed in Chapter 11.
+
+\newpage
+\section{Square a Map}
+\begin{quotation}
+\noindent Type Code:  sqr\index{square}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         pow2    sqr
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em pow2}.  It squares the
+existing transfer map ${\cal M}$.  That is, ${\cal M}$ is replaced by ${\cal M}^2$.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+     Repeated invocations of the square command produce successively
+higher powers.  Thus, if the current transfer map were ${\cal M}$, two invocations
+of the square command would replace ${\cal M}$ by ${\cal M}^4 \ \{=({\cal M}^2)^2\}$, etc.  This feature
+makes it possible to produce very high powers of ${\cal M}$ with relatively few
+steps.
+
+\newpage
+\section{Store Transfer Map}
+\begin{quotation}
+\noindent Type Code:  stm\index{store transfer map}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  NMAP (an integer from 1 through 9).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         stormap3   stm
+            3
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em stormap3}.  It
+stores the current transfer map in location 3.  In so doing, it writes
+over (destroys) any other map that might happen to be in location 3.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+There are three ways to store a transfer map for possible later use
+within a \Mary run.  First, it can be written to a file using a comand
+with type code {\em tmo}, and read in later using a command wth type code
+{\em tmi}.  See sections 7.5 and 7.6.  Second, the map can be made into a
+lump.  See section 5.9.  In this case, not only is the map stored, but
+also all associated functions required for a symplectic ray trace are
+stored.  See section 7.3.  Finally, the map can be stored (in any one of
+nine storage locations set aside for this purpose) by using a command
+having type code {\em stm}.  In that case, the map can be retrieved by
+use of a command with type code {\em gtm}.  See section 7.17.
+
+\newpage
+\section{Get Transfer Map}
+\begin{quotation}
+\noindent     Type Code:  gtm\index{get transfer map}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IOPT
+
+             = 1 to concatenate existing map with map stored in location NMAP.
+
+             = 2 to replace the existing map with map stored in location NMAP.
+
+      \item  NMAP (an integer from 1 through 9).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         getmap2   gtm
+         1, 2
+\end{verbatim}
+\end{quotation}
+This specifies a command having the user given name {\em getmap2}.  It
+gets a map from storage location 2 (a map presumably placed there by an earlier
+use of a command having type code {\em stm}) and concatenates it with the
+existing map.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Nine internal storage locations are set aside in \Mary for the storage
+and retrieval of transfer maps.  Maps are stored in these locations using
+commands having type code {\em stm}.  See section 7.16.
+
+\newpage
+\section{Aperture Beam with Rectangular Aperture}
+\begin{quotation}
+\noindent Type Code:  rapt\index{aperture}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+\item JOB
+
+             = 0 to simply remove particles outside the aperture.
+
+             = 1 to also write out the phase-space coordinates of the removed particles  \hspace*{1em} on the file IFILE.
+
+\item IFILE
+
+             = 0 to not write out phase-space coordinates of removed particles.
+
+             = MFILE $\geq 1$ to write phase-space coordinates of removed particles  on file \hspace*{1em}number MFILE in standard format (see section 4.5.2).
+
+              = $-$MFILE (with MFILE $\geq 1$) to write phase-space coordinates of removed   \hspace*{1em} particles on file number MFILE in full precision (see section 4.5.2).
+
+      \item  XMIN
+      \item  XMAX
+      \item  YMIN
+      \item  YMAX
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         scrape     rapt
+       1  16  -.01  .01  -.005  .005
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em scrape}.  It
+``removes'' particles whose transverse coordinates X,Y lie outside the
+rectangle (XMIN, XMAX), (YMIN, YMAX).  It also writes on file 16 (in standard format) the phase-space coordinates of the removed particles.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+This command examines the particles in the initial conditions buffer and marks
+as {\em lost} all those particles whose (dimensionless) transverse coordinates
+X,Y lie {\em outside} the rectangle
+\[
+X \in \ {\rm (XMIN, XMAX)},
+\]
+\[
+Y \in \ {\rm (YMIN, YMAX)}.
+\]
+Such lost particles are then no longer traced in subsequent ray traces.  See
+sections 7.2 and 7.3.  If JOB=1, the phase-space coordinates of the removed particles are also written on file IFILE.  This feature makes it possible to model a {\em septum}\index{septum} using the type code {\em rapt} since the phase-space coordinates of the removed particles can be used as initial conditions for ray tracing these particles through some extraction beam line later in a \Mary run or in some subsequent \Mary run.
+
+\newpage
+\section{Aperture Beam with Elliptic Aperture}
+\begin{quotation}
+\noindent Type Code:  eapt\index{aperture}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  SMAS (semi-major axis squared)
+
+      \item  RAXS (ratio of axes squared)
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         pipe    eapt
+           4.e-4 , 1.
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em pipe}.  It ``removes'' particles whose transverse coordinates $X,Y$ lie outside an ellipse whose semi-major axis squared is SMAS and ratio of axes squared is RAXS.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+This command examines the particles in the initial conditions buffer and marks as {\em lost} all those particles whose (dimensionless) transverse coordinates $X,Y$ lie {\em outside} the ellipse
+\[
+X^2 + RAXS * Y^2 < SMAS.
+\]
+Such lost particles are then no longer traced in subsequent ray traces.  See sections 7.2 and 7.3.
+
+\newpage
+\section{Window a Beam}
+\begin{quotation}
+\noindent Type Code:  wnd\index{aperture} \index{window}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IPLANE
+
+             = 1 for $X, P_x$ plane.
+
+             = 2 for $Y, P_y$ plane.
+
+             = 3 for ${\tau}, P_{\tau}$ plane.
+
+      \item  QMIN
+      \item  QMAX
+      \item  PMIN
+      \item  PMAX
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+           xwind    wnd
+           1, -.01, .01, -.02, .02
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em xwind}.  It
+``removes'' particles whose $X, P_x$ phase-space coordinates lie outside the
+rectangular region (QMIN, QMAX), (PMIN, PMAX).
+
+\vspace{5mm}
+    Description:
+\vspace{2mm}
+
+This command examines the particles in the initial conditions buffer to see if
+they lie outside various rectangular regions in phase space.  Suppose,
+for example, that IPLANE = 1.  Then this command marks as {\em lost} all those particles whose phase-space coordinates $X, P_x$ lie {\em outside} the rectangular
+region
+\begin{center}
+X $\in$ (QMIN, QMAX), \\
+P$_x$ $\in$ (PMIN, PMAX).
+\end{center}
+Such lost particles are then no longer traced in subsequent ray traces.  See
+sections 7.2 and 7.3.  See also section 7.42.
+
+\newpage
+\section{Write History}
+\begin{quotation}
+\noindent Type Code:  whst\index{history}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IFILE (number of file on which history is to be written).
+      \item  JOB
+
+              = 1 to write out contents of the array {\em istat}.
+
+              = 2 to write out the contents of the array {\em ihist}.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         lost    whst
+          22       1
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em lost}.  It writes out
+the contents of the array {\em istat} on file 22.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+\Mary uses three arrays to treat phase-space data.  The first, {\em zblock(i,j)}, stores the {\em i}'th coordinate of the {\em j}'th particle.  It is the ``initial conditions buffer''.  Here $i$ ranges from 1 to 6, and $j$ ranges from 1 to {\em maxray}.
+
+The second, {\em istat(j)}, describes the ``status'' of the {\em j}'th particle.  When phase-space data is read into {\em zblock}, the corresponding entry in {\em istat} for each particle is set to zero.  Then, when a particle is ``lost'' either due to some aperturing command or failure of a symplectic ray trace to converge, the corresponding entry in {\em istat} is set to the ``turn number'' for which the particle is lost.  (Successive passages through a given element are counted to produce a ``turn number''.)  Thus, at the end of a ray tracing or aperturing operation, {\em istat} describes the status of each particle with $istat(j) = 0$ if the {\em j}'th particle was not lost, and $istat(j) = iturn$ if this particle was lost on turn {\em  iturn}.
+
+The third, $ihst(m,n)$, records the ``history'' of lost particles.\index{lost particles}  Here $m$ ranges from 1 to {\em nlost} where {\em nlost} is the total number of particles lost, and $n$ ranges from 1 to 2.  Suppose the {\em m}'th particle to be lost is lost on turn {\em iturn}, and that this particle is the {\em j}'th particle in the initial distribution.  Then $ihst(m,1) = iturn$ and $ihst(m,2) = j$.
+
+See section 10.8 for an example of the use of {\em whst} to display the contents of both the arrays {\em istat} and {\em ihst}.
+
+\newpage
+\section{Filter Transfer Map}
+\begin{quotation}
+\noindent     Type Code:  ftm\index{filter}
+\vspace{5mm}
+
+\noindent     Required Parameters:
+\begin{enumerate}
+      \item  IFILE [file number from which filter (in the form of a map) is
+             to be read].
+
+      \item  NOPT (Rewind Option)
+
+             = 0 to read (from file IFILE) in its current position.
+
+             = 1 to first rewind file unit IFILE, then read.
+
+      \item  NSKIP
+
+             Number of records (maps) to be skipped in file IFILE (starting
+             from the current position) before a read actually occurs.
+
+      \item  KIND
+
+             = 0 for normal filter.
+
+             = 1 for reversed filter.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example 1:
+\begin{verbatim}
+         keepterm    ftm
+          19 , 0 , 0 , 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em keepterm}.  It keeps  in the current transfer map all the terms that are indicated in file IFILE.  The rest are set to zero.
+\begin{quotation}
+\noindent     Example 2:
+\begin{verbatim}
+         killterm    ftm
+          19 , 0 , 0 , 1
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em killterm}.  It removes from the current transfer map all the terms that are indicated in file IFILE.  That is, they are set to zero.  The rest are left unchanged.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+During the course of a \Mary run it may be useful to remove various terms from the current transfer map.  This can be done either by keeping specified terms and setting the rest to zero, or by removing (setting to zero) specified terms and leaving the rest unchanged.  The file IFILE specifies what terms are to be kept or removed.  It is written in map format.  See section 4.4.3.  Items to kept (or removed) are indicated by setting the corresponding polynomial entries in IFILE to 1.  For example,  suppose IFILE contains the lines
+\begin{verbatim}
+6, 6, 0
+28, 1
+209, 0
+\end{verbatim}
+Then, if KIND = 0, the term in the current transfer map with \Mary
+index 28 will be kept, and all others will be set to zero.  And, if
+KIND = 1, the term in the current transfer map with MaryLie index 28 will be set to zero.  Note that in this application all matrix entries
+in IFILE are ignored.  However, the 6,6 entry must be present to satisfy format requirements.
+
+\newpage
+\section{Close Files}
+\begin{quotation}
+\noindent Type Code:  cf\index{close files} \index{files}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IFILE1
+      \item  IFILE2
+      \item  IFILE3
+      \item  IFILE4
+      \item  IFILE5
+      \item  IFILE6
+\end{enumerate}
+\end{quotation}
+Note:  All six parameters must be present to satisfy format requirements.
+However, some of them may be zero.  Parameters having the value zero are
+ignored.
+\begin{quotation}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         endfiles     cf
+          14 , 16 , 0 , 0 , 0 , 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em endfiles}.  It closes files 14 and 16.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+For some operating systems and some circumstances it is useful to close files while in a \Mary run.  This command invokes, among others, the following FORTRAN statements for files IFILE1
+through IFILE6:
+\begin{footnotesize}
+\begin{verbatim}
+      subroutine cf(p)
+c  subroutine to close files
+c
+         .
+         .
+c set up control indices
+      do 10 j=1,6
+      ip(j)=nint(p(j))
+   10 continue
+c
+c close indicated files
+      do 20 j=1,6
+      n=ip(j)
+      if( n.gt.0) close(unit=n, err=30)
+      go to 20
+   30 write(jof,*) 'error in closing file unit ',n
+   20 continue
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Open Files}
+\begin{quotation}
+\noindent Type Code:  of\index{open files} \index{files}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IFILE1
+      \item  IFILE2
+      \item  IFILE3
+      \item  IFILE4
+      \item  IFILE5
+      \item  IFILE6
+\end{enumerate}
+\end{quotation}
+Note:  All six parameters must be present to satisfy format requirements.
+However, some of them may be zero.  Parameters having the value zero are
+ignored.
+
+\begin{quotation}
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         openfile    of
+          14 , 16 , 0 , 0 , 0 , 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em openfile}.  It opens files 14 and 16.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+For some operating systems and some circumstances it is useful to be able to open files while in a \Mary run.  This command makes it possible to open files in the range 1 through 50.  It invokes, among others, the following FORTRAN statements for files IFILE1
+through IFILE6:
+\begin{footnotesize}
+\begin{verbatim}
+      subroutine of(p)
+c  subroutine to open files
+c
+      character*6 unit
+      dimension unit(50)
+           .
+           .
+c set up file names
+      data (unit(i),i=1,50)/
+     #'unit01','unit02','unit03','unit04','unit05',
+           .
+           .
+     #'unit46','unit47','unit48','unit49','unit50'/
+c
+c set up control indices
+      do 10 j=1,6
+      ip(j)=nint(p(j))
+   10 continue
+c
+c open indicated files
+      do 20 j=1,6
+      n=ip(j)
+     if( n.gt.0 .and. n.le.50 .and. n.ne.lf .and. n.ne.jof
+    # .and. n.ne.jodf) then
+      open(unit=n, file=unit(n), status='unknown', err=30)
+      endif
+      go to 20
+   30 write(jof,*) 'error in opening file unit ',n
+   20 continue
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Parameter Set Specification}\index{parameter set}
+\begin{quotation}
+\noindent Type Code:  ps1, ps2, ps3, ps4, ps5, ps6, ps7, ps8, ps9
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  P1
+      \item  P2
+      \item  P3
+      \item  P4
+      \item  P5
+      \item  P6
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         data    ps1
+          .1 , .3 , 4 , 0 , 0 , 0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em data}.  It gives the
+parameters P1 through P6 in parameter set 1 the values .1, .3, 4, 0, 0, 0,
+respectively
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Some elements require more than six parameters, and take these additional
+parameter values from parameter sets.  Parameter sets can also be used to
+specify initial conditions for ray traces.  See sections 7.2 and 7.3.  This
+feature is useful because the {\em vary} command (see section 9.6) can vary
+the parameter values in commands having the type codes {\em ps1} through
+{\em ps9} in connection with fitting, optimization, and
+scanning operations.  Also, random elements can take their values from parameter
+sets.  See section 6.19.  Finally, constraint commands having type codes
+{\em con1} through {\em con5} have access to the contents of parameter
+sets.
+
+\vspace{5mm}
+Note:
+\vspace{2mm}
+
+Parameter set commands must be invoked explicitly or
+implicitly in \#labor to have an effect.  See, for example, section 6.8.
+
+\newpage
+\section{Random Parameter Set Specification}
+\begin{quotation}
+\noindent     Type Code:  rps1, rps2, rps3, rps4, rps5, rps6, rps7, rps8, rps9
+\vspace{5mm}
+
+\noindent Required Parameters:\index{random parameter set} \index{parameter set}
+\begin{enumerate}
+      \item  ISOURCE
+
+             = $-$J (with J an integer from 1 to 9) to take parameters from a
+               parameter \hspace*{1em}set associated with the type code {\em psj}.
+
+             = NFILE (with NFILE $\geq 1$) to read parameters from the file unit NFILE.
+
+      \item  IECHO
+
+             = 0 not to echo back parameter set values.
+
+             = 1 to write parameter set values at the terminal.
+
+             = 2 to write parameter set values on file 12.
+
+             = 3 to write parameter set values at the terminal and on
+			 file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         rdata    rps1
+           17      0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em rdata}.  It reads in from
+file 17 six parameter values for parameter set 1.  They are not echoed
+back.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Upon occasion it is useful to set parameter values by reading an external
+file, or by referencing some other parameter set.  This feature is
+analogous to that for random elements.  See section 6.19.
+
+\newpage
+\section{Number Lines in a File}
+\begin{quotation}
+\noindent     Type Code:  num\index{number}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IOPT
+
+             = $-1$ to read into the initial conditions buffer.
+
+             = $+1$ to write out of the initial conditions buffer with line numbers.
+
+      \item  NFILE (file to be read from or written on).
+
+      \item  NCOL (number of items per line, must not exceed 6, ignored when IOPT = 1).
+
+      \item  IFIRST (number of first line in initial conditions buffer, ignored when IOPT = -1).
+
+      \item  ISTEP (difference between successive line numbers in initial conditions buffer, ignored when IOPT = -1).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         numfile     num
+          1 , 19 , 0 , 1 , 5
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em numfile}.  It writes out the lines IFIRST + n*ISTEP (with $n = 0, 1, 2, \cdots$) of the initial conditions buffer.  Each line begins with a line number $m$ (with $m = 1, 2, 3, \cdots$) followed by 6 entries.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+      Sometimes it is useful to have a file in which the lines are numbered.  That is, the first entry in a line is a line number $m$ (with $m = 1, 2, 3, \cdots $) followed by additional entries.  (For example, when a single particle is tracked for several turns in a storage ring, it is sometimes useful to be able to make plots of some phase-space coordinate versus turn number.)  This can be accomplished by the use of a command with type code {\em num}.
+
+      When IOPT = 1, lines from the initial conditions buffer are written on file NFILE as described above.  The format is (1x, i5, 6(1x, 1pe11.4)).
+
+      When IOPT $= -$1, the contents of file NFILE are read into the initial conditions  buffer under the assumption that each line has NCOL entries with NCOL $\leq$ 6.  If NCOL $< 6$, the line is padded with additional entries of zero so as to have a total of 6 entries.  See section 4.4.2.  If the contents of the initial conditions buffer are then written on another file (using IOPT $= 1$), the result will be a line-numbered version of (perhaps selected portions of) the original file.
+
+\newpage
+\section{Write Out Parameter Values in a Parameter Set}
+\begin{quotation}
+\noindent     Type Code:  wps\index{write out parameter values} \index{parameter set}
+\vspace{5mm}
+
+\noindent     Required Parameters:
+\begin{enumerate}
+      \item  IPSET (an integer from 1 to 9 specifying a particular
+             parameter set).
+
+      \item  ISEND
+
+             = 0 to do nothing.
+
+             = 1 to write parameter values at the terminal.
+
+             = 2 to write parameter values on file 12.
+
+             = 3 to write parameter set values at the terminal and on
+			 file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         showpar     wps
+           3          1
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em showpar}.  It displays
+the values of the parameters in parameter set 3 by writing them at the
+terminal.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Upon occasion, it is useful to check what parameter values are present in
+a particular parameter set.  This can be done by using a command having
+the type code {\em wps}.
+
+\newpage
+\section{Write Out Execution Time}
+\begin{quotation}
+\noindent Type Code:  time\index{time}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IOPT
+
+             = 0 to not reset time to zero after being called.
+
+             = 1 to reset time.
+
+      \item  IFILE (file to be written on).
+
+      \item  ISEND
+
+              = 0 to not write execution time.
+
+              = 1 to write execution time at the terminal.
+
+              = 2 to write execution time on file IFILE.
+
+              = 3 to write execution time at the terminal and on IFILE.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         cputime     time
+          0     12     3
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em cputime}.  It writes
+the execution time at the terminal and on file 12.  The time is not reset.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Upon occasion it may be useful to have cpu timing information during the
+course of a \Mary run.  When a \Mary run begins, an internal cpu time
+clock is set to zero.  The status of this clock can then be examined
+using a command having type code {\em time}.  This command can also be
+used to reset the clock to zero.
+
+\vspace{5mm}
+Note:
+\vspace{2mm}
+
+This feature of \Mary is not FORTRAN 77 standard.  Its implementation
+within \Mary depends on the computer operating system being used.
+
+\newpage
+\section{Change Drop File}
+\begin{quotation}
+\noindent Type Code:  cdf\index{drop file}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  IFILE
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         resetdf     cdf
+           32
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em resetdf}.  It sets
+the dropfile, nominally file 12, to be file 32.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Several \Mary commands write extensive output to an external file rather
+than the terminal.  By default, file 12 is used for this purpose.  See
+section 4.2.  However, some other file can be designated for this purpose
+by use of a command having type code {\em cdf}.
+
+\newpage
+\section{Ring Bell at Terminal}
+\begin{quotation}
+\noindent Type Code:  bell\index{bell}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         wakeup     bell
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em wakeup}.  It causes
+the bell to ring at the terminal.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+A command having type code {\em bell} can be used to alert the \Mary user
+that a particular calculation has been completed.
+
+\newpage
+\section{Write Out Value of Merit Function}
+\begin{quotation}
+\noindent Type code:  wmrt\index{merit function}
+\vspace{5mm}
+
+\noindent Required Parameters
+\begin{enumerate}
+       \item  IFN (an integer from 0 to 5 specifying a particular merit
+              function).
+
+       \item  ISEND
+
+              = 1 to write value at the terminal.
+
+              = 2 to write value on file 12.
+
+              = 3 to write value at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         wmerit2     wmrt
+              2 ,  3
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em wmerit2}.  It causes the value of the merit function {\em mrt2} to be written both at the terminal and on file 12.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+\Mary allows the user to construct merit functions and, if desired, to use these functions in connection with an optimizer.  See sections 9.8 through 9.11 and 10.3.2.  Sometimes it is useful to examine the value of some or several merit functions during the course of a \Mary calculation.  This can be done with the use of a {\em wmrt} command.
+
+\newpage
+\section{Write Contents of a Loop}
+\begin{quotation}
+\noindent Type Code:  wcl\index{write contents of loop} \index{loops}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  IOPT
+
+              = 1 to simply write names of loop contents at the terminal
+			  and/or file 12.  \linebreak \hspace*{1em} In this case IFILE is ignored.
+
+		  = 2 to write on file IFILE names of loop contents and append an
+		    \lq\lq \&'' sign \hspace*{1em}at the end of each written line save
+		    for the last.
+
+		  = 3 to write on file IFILE names of loop contents in such a way that each \hspace*{1em}entry is
+		    preceded and followed by a \lq\lq \%'' sign.
+		    An \lq\lq \&'' sign is also \hspace*{1em}appended at the end of each
+		    written line save for the last.
+
+		  = 4 to write on file IFILE full loop contents.
+
+		  = 5 to write on file IFILE full loop contents along with control indices.
+
+       \item  IFILE (file to be written on, an integer greater than 0).
+       \item  ISEND
+
+              = 1 to write at the terminal.
+
+              = 2 to write on file 12.
+
+              = 3 to write at the terminal and on file 12.
+
+               Nothing is written at the terminal and/or file 12 if IOPT $\neq 1$.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         wcl1     wmrt
+             1, 21, 3
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em wcl1}.  It causes the contents of the current loop to be printed at the terminal and on file 12.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+It is often useful to list the contents of a loop.  This can be done by invoking the name of a loop in the \#labor component of the master input file and then invoking some command having type code {\em wcl}.  See Exhibit 7.33 below.  The IOPT $= 1$ option is useful for checking the contents of a loop.  The IOPT $= 2$ option produces \Mary readable data that can be used in preparing some other \Mary master input file.  The IOPT $= 3$ option also produces \Mary readable data with ``\%'' signs surrounding each entry.  This data can be used to prepare a \Mary master input file for a \Mary run that performs elaborate operations of the user's construction every time a ``\%'' sign is encountered.  See, for example, section 10.11.  The options IOPT $= 4$ and IOPT $= 5$ prepare ``flat files'' that the advanced \Mary user might find helpful.\index{flat file}
+
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 7.33.
+  This is an example,for the nsex line of the PSR, of the use of the
+  command with type code wcl.  All options are illustrated.
+#beam
+   4.86914813175970
+  0.849425847892200
+   1.00000000000000
+   1.00000000000000
+#menu
+  drvs     drft
+   0.300000000000000
+  drs      drft
+   0.450000000000000
+  drml     drft
+    1.48646000000000
+  drl      drft
+    2.28646000000000
+  bend     pbnd
+    36.0000000000000      0.000000000000000E+00  0.500000000000000
+    1.20000000000000
+  hfq      quad
+   0.500000000000000       2.72000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  hdq      quad
+   0.500000000000000      -1.92000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  hcs      sext
+   0.500000000000000      0.000000000000000E+00
+  vcs      sext
+   0.500000000000000      0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  wcl1     wcl
+    1.00000000000000       21.0000000000000       3.00000000000000
+  wcl2     wcl
+    2.00000000000000       22.0000000000000       3.00000000000000
+  wcl3     wcl
+    3.00000000000000       23.0000000000000       3.00000000000000
+  wcl4     wcl
+    4.00000000000000       24.0000000000000       3.00000000000000
+  wcl5     wcl
+    5.00000000000000       25.0000000000000       3.00000000000000
+  fin      end
+#lines
+  nsex
+      1*drl         1*hdq         1*drs         1*bend        1*drs      &
+      1*hfq         1*drl
+  tsex
+      1*drl         1*hdq         1*drs         1*bend        1*drs      &
+      1*hfq         1*drvs        1*hcs         1*drml
+  lsex
+      1*drml        1*vcs         1*drvs        1*hdq         1*drs      &
+      1*bend        1*drs         1*hfq         1*drl
+  half
+      1*nsex        1*tsex        1*lsex        1*nsex        1*nsex
+  ring
+      2*half
+#lumps
+#loops
+  lring
+      1*ring
+  lnsex
+      1*nsex
+#labor
+     1*fileout
+     1*lnsex
+     1*wcl1
+     1*wcl2
+     1*wcl3
+     1*wcl4
+     1*wcl5
+     1*fin
+
+contents of loop lnsex   ;     7 items:
+  drl      hdq      drs      bend     drs
+  hfq      drl
+
+end of MARYLIE run
+
+Contents of file 22
+
+   drl      hdq      drs      bend     drs      &
+   hfq      drl
+
+
+Contents of file 23
+
+   % drl      % hdq      % drs      % bend     % drs      &
+   % hfq      % drl      %
+
+
+Contents of file 24
+
+#comment
+  contents of loop lnsex
+#beam
+   4.86914813175970
+  0.849425847892200
+   1.00000000000000
+   1.00000000000000
+#biglist
+  drl      drft
+    2.28646000000000
+  hdq      quad
+   0.500000000000000      -1.92000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  drs      drft
+   0.450000000000000
+  bend     pbnd
+    36.0000000000000      0.000000000000000E+00  0.500000000000000
+    1.20000000000000
+  drs      drft
+   0.450000000000000
+  hfq      quad
+   0.500000000000000       2.72000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  drl      drft
+    2.28646000000000
+
+
+Contents of file 25
+
+#comment
+  contents of loop lnsex
+#beam
+   4.86914813175970
+  0.849425847892200
+   1.00000000000000
+   1.00000000000000
+#biglist
+  drl      drft         1     1     1
+    2.28646000000000
+  hdq      quad         4     1     9
+   0.500000000000000      -1.92000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  drs      drft         1     1     1
+   0.450000000000000
+  bend     pbnd         4     1     3
+    36.0000000000000      0.000000000000000E+00  0.500000000000000
+    1.20000000000000
+  drs      drft         1     1     1
+   0.450000000000000
+  hfq      quad         4     1     9
+   0.500000000000000       2.72000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  drl      drft         1     1     1
+    2.28646000000000
+
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Pause}
+\begin{quotation}
+\noindent Type Code:  paws\index{pause}
+\vspace{5mm}
+
+\noindent Required Parameters:  None
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         pause     paws
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em pause}.  It causes
+a \Mary run to pause.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+During a \Mary run it may be useful to have the program pause.  This can
+be accomplished by using a command having the type code {\em paws}.  When ``paused'', the
+program can be made to resume by entering any character at the terminal.
+
+\newpage
+\section{Change or Write Out Values of Infinities}
+\begin{quotation}
+\noindent     Type Code:  inf\index{infinities}
+\vspace{5mm}
+
+\noindent     Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 0 to change values of infinities.
+
+              = 1 to write current values at the terminal.
+
+              = 2 to write current values on file 12.
+
+              = 3 to write current values at the terminal and on file 12.
+
+       \item  xinf
+       \item  yinf
+       \item  tinf
+       \item  ginf
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+             chinf     inf
+           0, 100, 100, 100, 100
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em chinf}.  It sets the values of xinf, yinf, tinf, and ginf to 100.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The quantities xinf, yinf, tinf, and ginf are set internally to the value 1000 at the beginning of a \Mary run.  The values of xinf, yinf, and tinf are used in the raytrace routines: \ particles whose $X$, $Y$, $\tau$ coordinates  exceed (in absolute value) xinf, yinf, tinf are marked as lost and not traced.  This is done to prevent arithmetic overflow and subsequent computer crash of a \Mary run.  The quantity ginf is a ``general'' infinity, and is not currently used.
+
+\newpage
+\section{Change or Write Out Values of Zeroes}
+\begin{quotation}
+\noindent Type Code:  zer\index{zeroes} \index{determinant}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  JOB
+
+             = 0 to change values of zeroes.
+
+             = 1 to write current values at the terminal.
+
+             = 2 to write current values on file 12.
+
+             = 3 to write current values at the terminal and on file 12.
+	  \item  rzero
+      \item  fzero
+      \item  detzero
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+             czer     zer
+               0, 1.d-10, 1.d-10, 1.d-10
+\end{verbatim}
+\end{quotation}
+
+               This is a command with the user given name {\em czer}.  It sets  the values of rzero, fzero, and detzero to 1.d-10.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The quantities rzero, fzero, and detzero are set internally to zero at the beginning of a \Mary run.  When a map is printed using a command with type code {\em ptm}, entries of the $R$ matrix are printed as zeroes if their absolute values are less than rzero, and entries in the polynomials $f_1$ through $f_4$ are not printed if their absolute values are less than fzero.
+
+Various ``purifying'' routines in \Mary try to ``remove'' various ``offensive'' terms from the transfer map, and in an attempt to do so compute various determinants.  Some of these determinants vanish if tunes are resonant or equal.  (\Mary normally warns if this occurs.)  The purifying routines are constructed in such a way that ``offensive'' terms are ``removed'' only if their associated determinants, in absolute value, exceed detzero.  See sections 8.1 through 8.5, 8.8 through 8.11, and 8.15, 8.16.
+
+\newpage
+\section{Twiss Polynomial}
+\begin{quotation}
+\noindent Type Code:  tpol\index{Twiss polynomial}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+     \item  ALPHAX
+     \item  BETAX
+     \item  ALPHAY
+     \item  BETAY
+     \item  ALPHA$\tau$
+     \item  BETA$\tau$
+
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Note:  If the BETA for some plane is specified to be $\leq 0$, all
+coefficients for that plane are set to zero.
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         twisspol  tpol
+          -7, 20, -5, 30, 0, -1
+\end{verbatim}
+\end{quotation}
+This is a command with user given name {\em twisspol}.  It is used to set up
+a quadratic polynomial in the $f_2$ array of the current transfer map.
+See the description below.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+In order to study the propagation of twiss parameters, it is useful to be
+able to set up the quadratic polynomial
+\begin{eqnarray}
+f_2 &=& \gamma_x X^2 + 2\alpha_x XP_x + \beta_x P_x^2 \nonumber \\
+&+& \gamma_y Y^2 + 2\alpha_y YP_y + \beta_y P_y^2 \nonumber \\
+&+& \gamma_{\tau} \tau^2 + 2\alpha_{\tau} \tau P_{\tau} +
+\beta_{\tau} P_{\tau}^2.
+\end{eqnarray}
+
+Here $\gamma_x, \gamma_y, \gamma_{\tau}$ are defined by the relations
+\[
+\gamma_x = (1 + \alpha_x^2)/\beta_x,
+\]
+\[
+\gamma_y = (1 + \alpha^2_y)/\beta_y,
+\]
+\begin{equation}
+\gamma_{\tau} = (1 + \alpha^2_{\tau})/\beta_{\tau}.
+\end{equation}
+When a command having type code {\em tpol} is executed, the $f_2$ portion
+of the current transfer map is replaced by the $f_2$ given by (7.37.1).
+This polynomial is then available to be acted on by a command having type
+code {\em amap} and as input for a command having type code {\em exp}.
+See sections 8.17 and 8.7.  See also section 6.15.
+
+\newpage
+\section{Dispersion Polynomial}
+\begin{quotation}
+\noindent Type Code:  dpol\index{dispersion polynomial}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+     \item  $\mbox{R}_{16}$
+     \item  $\mbox{R}_{26}$
+     \item  $\mbox{R}_{36}$
+     \item  $\mbox{R}_{46}$
+     \item  $\mbox{R}_{56}$
+
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         dispol     dpol
+         .1 , .2 , .3 , .4 , .5
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em dispol}.  It is used
+to set up a quadratic polynomial in the $f_2$ array of the current
+transfer map.  See the description below.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+In order to study the propagation of dispersion functions, it is useful
+to be able to set up the quadratic polynomial
+\begin{equation}
+f_2 = (R_{26}) XP_{\tau} - (R_{16}) P_x P_{\tau} + (R_{46})
+YP_{\tau} - (R_{36}) P_y P_{\tau} - (1/2)(R_{56}) P^2_{\tau}.
+\end{equation}
+When a command having type code {\em dpol} is executed, the $f_2$ portion
+of the current transfer map is replaced by the $f_2$ given by (7.38.1).
+This polynomial is then available to be acted on by a command having type
+code {\em amap} and as input for a command having type code {\em exp}.
+See sections 8.17 and 8.7.  See also section 6.22.
+
+\newpage
+\section{Change or Write Out Beam Parameters}
+\begin{quotation}
+\noindent Type Code:  cbm\index{beam parameters}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  JOB
+
+= 0 to write out beam parameters and fill related arrays.
+
+             = 1 to compute beam parameters (save for scale length) based on values of \hspace*{1em}energy and particle KIND and fill related arrays.
+
+= 2 to compute beam parameters (save for scale length) based on values of \hspace*{1em}momentum and particle KIND and fill related arrays.
+
+
+			 = 3 to compute beam parameters (save for scale length) based on values \hspace*{1em}of BRHO and particle KIND and fill related arrays.
+
+      \item  ISEND
+
+             = 0 to not write out results.
+
+             = 1 to write at the terminal.
+
+             = 2 to write on file 12.
+
+             = 3 to do both.
+
+      \item  Energy or Momentum or BRHO.  If JOB$=$1, this third parameter is interpreted as kinetic energy (in MeV).  If JOB$=$2, this third parameter is interpreted as momentum (in MeV/c).  If JOB$=$3, this third parameter is interpreted as BRHO (in Tesla-meters).
+
+      \item  KIND
+
+             KIND = 0 to use mass and charge values specified by parameters 5 and 6.
+
+             KIND = 1 for electron/positron.
+
+             KIND = 2 for proton/antiproton.
+
+             KIND = 3 for $H^-$ ion.
+
+             KIND = 4 for deuteron.
+
+             KIND = 5 for triton.
+
+             KIND = 6 for alpha (singly ionized He 4).
+
+             KIND = 7 for muon.
+
+             KIND = 8 for pion.
+
+      \item  Particle mass (in MeV/c$^2$).
+
+      \item  $|$(Particle charge)/e$|$, the absolute value of the charge of the particle in units of $e$.
+
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         newbm     cbm
+           1.0 , 1.0 , 800.0, 0 , 7.0, 8.0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em newbm}.  It is used to specify a beam having a kinetic energy of 800 MeV.  The beam consists of fictitious particles having a mass of 7 MeV/c$^2$ and charge 8.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+It is sometimes convenient to be able to change the beam parameters during the course of a \Mary run.  In particular, it may be desirable to fit on beam energy, beam momentum, or particle mass, etc.  This can be done using a command with type code {\em cbm}.  Exhibit 7.39 illustrates the use of this type code simply to specify beam parameters.\index{beta} \index{design energy} \index{design momentum} \index{scale length} \index{mass} \index{charge} \index{brho} \index{gamma}
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 7.39.
+  This is an example of the use of the type code cbm.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+   1.00000000000000
+#menu
+  cbme     cbm
+    1.00000000000000       1.00000000000000      800.000000000000
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmp     cbm
+    2.00000000000000       1.00000000000000       1463.00000000000
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmr     cbm
+    3.00000000000000       1.00000000000000       4.88103064647049
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmmc    cbm
+    1.00000000000000       1.00000000000000       800.000000000000
+   0.000000000000000E+00   7.00000000000000       8.00000000000000
+  qcbmmc   cbm
+    1.00000000000000      0.000000000000000E+00   800.000000000000
+   0.000000000000000E+00   7.00000000000000       8.00000000000000
+  seebeam  cbm
+   0.000000000000000E+00   1.00000000000000      0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  qseebeam cbm
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*seebeam
+     1*cbmmc
+     1*seebeam
+     1*fileout
+     1*end
+     1*cbme
+     1*seebeam
+     1*fileout
+     1*cbmp
+     1*seebeam
+     1*fileout
+     1*cbmr
+     1*seebeam
+     1*fileout
+     1*end
+
+brho, gamm1, and achg beam parameters are:
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+
+design energy and momentum:
+KIND =            0
+rest mass (MeV/c*c) =    7.00000000000000
+kinetic energy (MeV) =    800.000000000000
+momentum (MeV/c) =    806.969640073281
+values for brho, beta, gamma, (gamma-1), |q/e|, and scale length are
+  0.336470122304278
+  0.999962379272962
+   115.285714285714
+   114.285714285714
+   8.00000000000000
+   1.00000000000000
+
+brho, gamm1, and achg beam parameters are:
+  0.336470122304278        114.285714285714        8.00000000000000
+
+#comment
+  Exhibit 7.39.
+  This is an example of the use of the type code cbm.
+#beam
+  0.336470122304278
+   114.285714285714
+   8.00000000000000
+   1.00000000000000
+#menu
+  cbme     cbm
+    1.00000000000000       1.00000000000000      800.000000000000
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmp     cbm
+    2.00000000000000       1.00000000000000       1463.00000000000
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmr     cbm
+    3.00000000000000       1.00000000000000       4.88103064647049
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+  cbmmc    cbm
+    1.00000000000000       1.00000000000000       800.000000000000
+   0.000000000000000E+00   7.00000000000000       8.00000000000000
+  qcbmmc   cbm
+    1.00000000000000      0.000000000000000E+00   800.000000000000
+   0.000000000000000E+00   7.00000000000000       8.00000000000000
+  seebeam  cbm
+   0.000000000000000E+00   1.00000000000000      0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  qseebeam cbm
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*seebeam
+     1*cbmmc
+     1*seebeam
+     1*fileout
+     1*end
+     1*cbme
+     1*seebeam
+     1*fileout
+     1*cbmp
+     1*seebeam
+     1*fileout
+     1*cbmr
+     1*seebeam
+     1*fileout
+     1*end
+
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Dimensions}
+\begin{quotation}
+\noindent Type Code:  dims\index{dimensions} \index{geometry} \index{POSTER}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  DIM1
+      \item  DIM2
+      \item  DIM3
+      \item  DIM4
+	  \item  DIM5
+	  \item  DIM6
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         size     dims
+           1 , 1 , 2 , 2 , 3 , 3
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em size}.  It specifies six dimensions.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Commands with the type code {\em dims} have no effect on a \Mary run.  In this regard they are like markers.  See section 6.25.  However they are recognized by {\em geom} commands and can be used to provide information such as aperture size to plotting routines such as POSTER.  See sections 1.4.2 and 8.38.
+
+\newpage
+\section{Write Out Contents of the UCALC Array}
+\begin{quotation}
+\noindent Type Code:  wuca\index{user calculated array}\index{ucalc}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  KMIN (index of first entry in UCALC to be written out).
+
+	  \item  KMAX (index of last entry in UCALC to be written out).
+
+      \item  ISEND
+
+             = 0 to do nothing.
+
+             = 1 to write UCALC values at the terminal.
+
+			 = 2 to write UCALC values on file 12.
+
+			 = 3 to write UCALC values at the terminal and on file 12.
+      \item  IFILE
+
+	         = 0 to not write.
+
+			 = positive integer to write UCALC values to that file.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         results     wuca
+            2 , 5 , 3 , 0
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em results}.  When invoked, it causes the values in locations 2 through 5 of the UCALC array to be written at the terminal and on file 12.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+User written subroutines and merit functions have access to a UCALC array.  See sections 6.20, 6.21, and 9.11.  The contents of this array can be used in fitting.  See section 9.7.  Commands with type code {\em wuca} allow the examination and writing out of the contents of this array.
+
+Exhibit 7.41 below shows a simple user-written program that inserts values into UCALC and a simple \Mary program that prints them out.  See also Exhibit 8.38.
+
+\begin{footnotesize}
+\begin{verbatim}
+Exhibit 7.41
+
+Simple user14 program that puts values in ucalc
+
+***********************************************************************
+c
+       subroutine user14(p,fa,fm)
+c
+       include 'impli.inc'
+       include 'usrdat.inc'
+c
+       do i=1,5
+       ucalc(i)=i
+       enddo
+c
+       return
+       end
+c
+***********************************************************************
+
+Simple MaryLie run
+
+#comment
+  Exhibit 7.41.
+  This is a MARYLIE run to test the wuca command
+#beam
+   1.00000000000000
+   1.00000000000000
+   1.00000000000000
+   1.00000000000000
+#menu
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  fill     usr14
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  look     wuca
+    1.00000000000000       10.0000000000000       3.00000000000000
+   0.000000000000000E+00
+  wfile21  wuca
+    1.00000000000000       10.0000000000000      0.000000000000000E+00
+    21.0000000000000
+  end      end
+#labor
+     1*fileout
+     1*fill
+     1*look
+     1*end
+  k and ucalc(k) for nonzero values of array
+           1   1.00000000000000
+           2   2.00000000000000
+           3   3.00000000000000
+           4   4.00000000000000
+           5   5.00000000000000
+
+end of MARYLIE run
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Window a Beam in All Planes}
+\begin{quotation}
+\noindent Type Code:  wnda\index{window} \index{aperture}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  AX (largest allowed value of $|X|$).
+
+	  \item  APX (largest allowed value of $|P_x|$).
+
+      \item  AY (largest allowed value of $|Y|$).
+
+      \item  APY (largest allowed value of $|P_y|$).
+
+      \item  AT (largest allowed value of $|\tau |$).
+
+	  \item  APT (largest allowed value of $|P_{\tau}|$).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         allwnd     wnda
+          .1, .2, .15, .25, .01, .02
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em allwnd}.  It removes particles whose $X$ coordinates lie outside $(-AX,AX)$, or whose $P_x$ coordinates lie outside $(-APX,APX)$, etc.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+\noindent This command is similar to that of section 7.20 except that all planes are treated at once at the expense of the window being centered on the phase-space origin.  See section 7.20.
+
+\newpage
+\section{Path Length Information}
+\begin{quotation}
+\noindent Type Code:  pli\index{path length} \index{time of flight} \index{length}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item SEND
+
+             = 0 simply to compute real and scaled time of flight and
+			 place path length \hspace*{1em}and time of flight information in the
+			 fitting/writing array.
+
+			 = 1 to do the same and also write results at the terminal.
+
+			 = 2 to do the same and also write results on file 12.
+
+			 = 3 to do the same and also write results at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         sinfo     pli
+            3
+\end{verbatim}
+
+This specifies a command with the user name {\em sinfo}.  It causes the real and scaled time of flight to be computed, the placement of path length and time of flight information in the fitting/writing array, and the writing of results at the terminal and file 12.
+\end{quotation}
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+When \Mary computes the map for an element, it also finds the path length of the design orbit through this element, and regards this information as part of the map.  When maps are concatenated, their path lengths are added.  See sections 7.9 and 7.8 for the effect of commands with the type codes {\em inv} and {\em iden} on path length information.
+
+When a command with type code {\em pli} is invoked, real and scaled time of flight are computed from the path length.  They are defined by the relations
+\begin{center}
+real time of flight $=$ (path length)/$v^0$,
+\end{center}
+\begin{center}
+scaled time of flight $=$ (real time of flight)($c/\ell$).
+\end{center}
+Here $v^0$, $c$, and $\ell$ are the design velocity, the velocity of light, and the scale length.\index{design velocity} \index{velocity}  See sections 4.1.1 and 4.1.2.  Path length and time of flight information are also placed in the fitting/writing array.  Finally, they may also be written at the terminal and/or file 12.  See Exhibit 7.43 below.
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 7.43.
+  This is a MaryLie run that illustrates use of the pli command.  It
+  computes the path length for the ring of Exhibit 2.5.1.  It also
+  illustrates that inverting the map changes the sign of the  path
+  length, and setting the map to the identity sets the path length
+  to zero.  The beam parameters are those for 800 MeV protons.
+#beam
+   4.86914813175970
+  0.849425847892200
+   1.00000000000000
+   1.00000000000000
+#menu
+  drvs     drft
+   0.300000000000000
+  drs      drft
+   0.450000000000000
+  drml     drft
+    1.48646000000000
+  drl      drft
+    2.28646000000000
+  bend     pbnd
+    36.0000000000000      0.000000000000000E+00  0.500000000000000
+    1.20000000000000
+  hfq      quad
+   0.500000000000000       2.72000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  hdq      quad
+   0.500000000000000      -1.92000000000000      0.000000000000000E+00
+   0.000000000000000E+00
+  hcs      sext
+   0.500000000000000      0.000000000000000E+00
+  vcs      sext
+   0.500000000000000      0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  mapout   ptm
+    3.00000000000000       3.00000000000000      0.000000000000000E+00
+   0.000000000000000E+00   1.00000000000000
+  iden     iden
+  inv      inv
+  sinfo    pli
+    3.00000000000000
+  fin      end
+#lines
+  nsex
+      1*drl         1*hdq         1*drs         1*bend        1*drs      &
+      1*hfq         1*drl
+  tsex
+      1*drl         1*hdq         1*drs         1*bend        1*drs      &
+      1*hfq         1*drvs        1*hcs         1*drml
+  lsex
+      1*drml        1*vcs         1*drvs        1*hdq         1*drs      &
+      1*bend        1*drs         1*hfq         1*drl
+  half
+      1*nsex        1*tsex        1*lsex        1*nsex        1*nsex
+  ring
+      2*half
+#lumps
+#loops
+#labor
+     1*fileout
+     1*sinfo
+     1*ring
+     1*sinfo
+     1*inv
+     1*sinfo
+     1*ring
+     1*sinfo
+     1*iden
+     1*sinfo
+     1*fin
+
+   path length            real time of flight      scaled time of flight:
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+
+   path length            real time of flight      scaled time of flight:
+   90.2239999999613       3.577642009201167E-007   107.255009178248
+
+   path length            real time of flight      scaled time of flight:
+  -90.2239999999613      -3.577642009201167E-007  -107.255009178248
+
+   path length            real time of flight      scaled time of flight:
+-2.975397705995420E-014 -1.179831067903725E-022 -3.537044558716225E-014
+
+   path length            real time of flight      scaled time of flight:
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+
+end of MARYLIE run
+
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Show Contents of Arrays}
+\begin{quotation}
+\noindent Type Code:  shoa\index{contents of arrays} \index{array} \index{extra array}
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+
+      \item  JOB
+
+             = 1 to show dispersion and phase-slip array.
+
+             = 2 to show betatron amplitudes array.
+
+			 = 3 to show tunes array.
+
+			 = 4 to show twiss parameter array.
+
+      			 = 5 to show envelope array.
+
+			 = 6 to show EX array.
+
+			 			 = 7 to show fitdat array.
+
+      \item  ISEND
+
+             = 0 to do nothing.
+
+             = 1 to write array values at the terminal.
+
+			 = 2 to write array values on file 12.
+
+			 = 3 to write array values at the terminal and on file 12.
+      \item  IFILE
+
+	         = 0 to not write.
+
+			 = positive integer to write array values to that file.
+\end{enumerate}
+
+						 \vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         display     shoa
+              1 , 1 , 0
+\end{verbatim}
+\end{quotation}
+
+This is a command with the user given name {\em display}.  When invoked, it causes the values in the dispersion and phase-slip array to be written at the terminal.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The commands {\em cod}, {\em tasm}, and {\em tadm} fill various arrays for subsequent fitting, optimization, or writing.  See sections 9.5, 9.7, 8.26, 8.1, 8.3, and 8.2.  An {\em extra} array is used to store various quantities computed by invoking various other commands.  These quantities and commands are listed below.
+\begin{quotation}
+\item ex(1) $=$ momentum compaction.  See {\em cod}, section 8.1.
+\item ex(2) $=$ transition gamma.  See {\em cod}, section 8.1.
+\item ex(3) $=$ polynomial scalar product.  See {\em psp}, section 8.32.
+\item ex(4) $=$ symplectic violation.  See {\em csym}, section 8.31.
+\item ex(5) $=$ matrix norm.  See {\em mn}, section 8.33.
+\end{quotation}
+The fitdat array contains the quantities listed below:
+
+\begin{verbatim}
+       common/fitdat/
+      $tux, tuy, tut, cx, cy, qx, qy, hh, vv, tt,
+      $hv,  ht,  vt,  fx, xb, xa, xu, xd, fy, yb,
+      $ya,  yu,  yd,  pl, rt, st, ek, pd, br, be,
+      $ga,  gm
+       dimension fitval(32)
+       equivalence (fitval,tux)
+\end{verbatim}
+
+\noindent Commands with type code {\em shoa} allow the examination and writing of the contents of these arrays.
+
+
+
+
+
+

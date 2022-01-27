@@ -1,0 +1,121 @@
+%%!TEX root = ./marylie.tex
+
+\begin{titlepage}
+\begin{center}
+{\Huge MARYLIE 3.0}
+
+\vspace{.15in}
+{\huge Users' Manual}
+
+\vspace{10mm}
+{\LARGE  A Program for Charged Particle Beam Transport}
+
+\vspace{.15in}
+{\LARGE  Based on Lie Algebraic Methods
+\footnote{Work supported in part by U.S. Department of Energy
+Grant DEFG02-96ER40949.}}
+
+\vspace{20mm}
+
+
+\begin{tabular}{cc}
+\large Alex J. Dragt                  & \large Robert D. Ryne \\
+\vspace{-2mm}\\
+Center for Theoretical Physics        & Lawrence Berkeley National
+Laboratory \\
+University of Maryland                & Berkeley, California  94720 \\
+College Park, Maryland  20742
+
+\vspace{5mm}\\
+                                      & \large Filippo Neri\\
+\large David R. Douglas               & \large C. Thomas Mottershead \\
+\vspace{-2mm}\\
+Thomas Jefferson National             & Los Alamos National Laboratory \\
+Accelerator Facility                  & Los Alamos, New Mexico \ 87545 \\
+Newport News, Virginia \ 23606        \\
+
+\vspace{5mm}\\
+\large \'Etienne Forest               & \large Liam M. Healy\\
+\vspace{-2mm}\\
+KEK Laboratory                        & Naval Research Laboratory\\
+Tsukuba, Ibaraki, Japan \ 305         & Washington, DC \ 20375\\
+\vspace{5mm}\\
+
+{\large Petra Sch\"{u}tt}             & {\large Dan T. Abell}\\
+\vspace{-2mm}\\
+Technische Universit\"{a}t Darmstadt  & RadiaSoft LLC\\
+D-64289 Darmstadt, Germany            & Boulder, Colorado \ 80303\\
+
+\end{tabular}
+
+\vspace{10mm}
+{\large October 2021}
+\end{center}
+\end{titlepage}
+
+{\small
+\centerline{\bf Disclaimer}
+MaryLie 3.0 consists of a Main Program and approximately 500 Subroutines.
+Together they comprise approximately 40,000 lines of what is intended,
+wherever practical, to be standard FORTRAN 77 code.  As time has
+permitted, considerable care has been expended in checking many of these
+subroutines, and some are at least partially self checking.  (For
+example, the product of two one-meter drift maps should be a two-meter
+drift map.)  Other MaryLie features and their associated subroutines are
+still under development.
+
+Wherever possible, the user should also make both independent and
+internal consistency checks of his/her own.  Programs should not be run
+blindly.  There is no substitute for understanding.  The authors would
+appreciate receiving information concerning any detected errors or
+difficulties.  A form for this purpose is provided in Chapter 12.
+
+In any case, the MaryLie 3.0 program is provided ``as is'' without any
+warranty of any kind.  No warranties, expressed or implied, are made
+that the program and its procedures are free of error, or are consistent
+with any particular standard of merchantability or fitnesss for a
+particular purpose, or that they will meet
+your requirements for any particular application.  They should not be
+relied on for solving a problem whose incorrect solution could result in
+injury to a person or loss of property.  If you use the program in such
+a manner, it is at your own risk.  The authors and their agencies
+disclaim all liability for direct, incidental, or consequential damage
+resulting from your use of the program.
+
+\vspace{.2in}
+\centerline{\bf Acknowledgement}
+Initial work on the use of Lie methods in the general area of Nonlinear
+Dynamics began when the first author (AJD) was a sabbatical visitor in
+spring 1973 at the Institut des Hautes Etudes Scientifiques (IHES) in the Paris suburb
+Bures-sur-Yvette.  He is indebted to Louis Michel and the IHES for this
+opportunity and their fine hospitality.  Some years later, during a
+sabbatical visit to the Accelerator Technology Division of the Los Alamos National
+Laboratory, he realized that Lie methods could be applied to the
+computation and analysis of Charged Particle Beam Transport.  He is is
+indebted to
+Richard Cooper and all the other accelerator physicists at Los Alamos for their
+hospitality then, and for their continued support and encouragement over
+the ensuing years.  He is also grateful to the University of Maryland for
+its continued support.  Finally, research on Lie algebraic methods has been
+supported by the United States Department of Energy since 1980.  All the authors are
+grateful to DOE and the American people for their nurture of fundamental and applied
+science.
+
+\vspace{.2in}
+\centerline{\bf Assistance}
+Several have made major contributions to the preparation of this manual
+and its exhibits including Rachel Needle, Glenn Vanderwoude, and Maura and
+Patrick Roberts.
+
+\vspace{.2in}
+\centerline{\bf Revision Record}
+June 1998, February 1999, April 1999, October 1999, March 2000, May 2000, October 2002, May 2003, December 2003.
+
+\vspace{.2in}
+\centerline{\bf Availability}
+See section 1.5.
+
+\vspace{.35in}
+
+\copyright 2003 Alex J. Dragt.  All rights reserved.}
+

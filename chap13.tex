@@ -1,0 +1,1248 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter[Quick Reference Guide to Elements, Commands, $\cdots$]{Quick Reference Guide to Elements, Commands, Files, and Messages}\index{quick reference guide} \index{type code} \index{mnemonic}
+\section{Alphabetical Listing of All Type-Code Mnemonics}
+     All type-code mnemonics, as currently
+available in \Mary 3.0, are listed below alphabetically along with the
+subsections that describe them in detail and/or give examples of their
+use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Purpose}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}aim  &  Specify quantities to be fit or  &  \hspace{2em}9.5\\
+           &   optimized and set target values. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}amap  &  Apply map to a function or moments.  &   \hspace{2em}8.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}arc  &  Arc for accounting purposes.  &   \hspace{2em}6.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}arot  &  Axial rotation.                      &  \hspace{2em}6.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}asni  &    Apply script $N$ inverse.     &   \hspace{2em}8.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bell  &   Ring bell at terminal.               & \hspace{2em}7.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bgen  &        Generate beam.     &   \hspace{2em}8.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bip  &  Begin inner procedure.            &       \hspace{2em}9.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bop  &  Begin outer procedure.            &       \hspace{2em}9.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cbm  &  Change or write out beam parameters.    & \hspace{2em}7.39\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cdf   &   Change drop file.           & \hspace{2em}7.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cf    &   Close files.         & \hspace{2em}7.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfbd    &   Combined function bend.         &  \hspace{2em}6.8 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfqd  &  Combined function magnetic quadrupole. & \hspace{2em}6.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfrn  & Change or write out values of fringe field parameters &  \hspace{2em}6.29\\
+               &  for combined function dipole.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}circ  &    Set parameters and circulate.        & \hspace{2em}7.3\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Purpose}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}cod   & Compute off-momentum closed orbit data.  & \hspace{2em}8.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}con1   & Constraints.     & \hspace{2em}9.12\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}con5 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cplm  &    ``Compressed'' approximation to low   &\hspace{2em}6.17\\
+               &   order multipoles.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cps1  &  Capture parameter set.        &          \hspace{2em}9.15\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}cps9 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}csym  &  Check symplectic condition.    &   \hspace{2em}8.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ctr     &    Change tune range.    &   \hspace{2em}8.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cxp     &    Chromatic expansion.    &   \hspace{2em}8.24\\
+\vspace{-3mm}& &\\\hspace{1.5em}dia     &     Dynamic invariant analysis.  &  \hspace{2em}8.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dims  &  Dimensions.  &   \hspace{2em}7.40\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dism    &    Dispersion matrix.            &  \hspace{2em}6.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dnor    &     Dynamic normal form analysis.  &  \hspace{2em}8.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dp  &         Data point.      & \hspace{2em}6.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dpol  &         Dispersion polynomial.      & \hspace{2em}7.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}drft    &         Drift space.       &  \hspace{2em}6.1 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}eapt  & Aperture the beam with an elliptic aperture. & \hspace{2em}7.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}end   &    Halt execution.  Must be an     & \hspace{2em}7.1\\
+                    & entry of a \#labor list.               &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}exp     &    Compute exponential.           &  \hspace{2em}8.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fadm    &   Fourier analyze dynamic map.   &  \hspace{2em}8.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fasm    &     Fourier analyze static map.    &  \hspace{2em}8.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fit    &  Carry out fitting operation.    &        \hspace{2em}9.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}flag   &   Change or write out values of &    \hspace{2em}9.17\\
+           &   flags and defaults. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fps   &  Free parameter set.          &          \hspace{2em}9.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}frng    &    Used for hard-edge dipole     &  \hspace{2em}6.7 \\
+               &             fringe fields.                  &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ftm   &   Filter the existing transfer map.     & \hspace{2em}7.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fwa     &     Copy file to working array.    &  \hspace{2em}8.39\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Purpose}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}gbdy    &    Used for the body of a general  &  \hspace{2em}6.6 \\
+               &             bending magnet.                 &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbnd    &     General bending magnet.   &  \hspace{2em}6.4 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbuf    &     Get buffer contents.     &  \hspace{2em}8.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}geom    &  Compute geometry of a loop.    &  \hspace{2em}8.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}grad    &    Compute gradient matrix.      &     \hspace{2em}9.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gtm   &  Get a transfer map from storage.    & \hspace{2em}7.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}iden  &   Replace existing transfer map by the & \hspace{2em}7.8\\
+                    & identity map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inf  & Change or write out values of infinities. & \hspace{2em}7.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inv & Replace existing transfer map by its inverse. & \hspace{2em}7.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}jmap    &      Map with matrix part J.      &  \hspace{2em}6.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}lnf    &      Compute logarithm of normal form.      &
+\hspace{2em}8.41\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mark    &    Marker.              &  \hspace{2em}6.25\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mask  &  Mask off selected portions of existing & \hspace{2em}7.13\\
+                    & transfer map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}merf    &      Merge files.      &  \hspace{2em}8.40\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mn      & Compute matrix norm.       &   \hspace{2em}8.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}moma    &   Moment analysis.  &   \hspace{2em}8.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt0   &  Merit function (sum of squares).   &   \hspace{2em}9.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt1    &  Merit functions (user written).   &  \hspace{2em}9.11\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}mrt5 & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mss  &  Minimize sum of squares optimization. & \hspace{2em}9.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}nbnd    &   Normal entry bending magnet,    &  \hspace{2em}6.2 \\
+               &             with or without fringe fields.  &      \\
+\vspace{-3mm}& &\\
+ \hspace{1.5em}num   &    Number lines in a file.      & \hspace{2em}7.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octe    &     Electric octupole.            &  \hspace{2em}6.12\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octm    &   Magnetic octupole.            &  \hspace{2em}6.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em} of   &   Open files.                & \hspace{2em}7.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}opt    &   General optimization.        &    \hspace{2em}9.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}padd    &      Add two polynomials.       &   \hspace{2em}8.19\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Purpose}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}paws  &         Pause.        & \hspace{2em}7.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pb      &   Poisson bracket two polynomials. &  \hspace{2em}8.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pbnd    &   Parallel faced bending magnet,  &  \hspace{2em}6.3 \\
+               &             with fringe fields and equal    &      \\
+               &             entry and exit angles.          &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pdnf   & Compute power of dynamic normal form.&  \hspace{2em}8.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pli   & Path length information.&  \hspace{2em}7.43\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmif  & Print contents of Master Input File (file 11). & \hspace{2em}7.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmul    &  Multiply two polynomials.   &   \hspace{2em}8.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pnlp   & Compute power of nonlinear part. &  \hspace{2em}8.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pold    &  Polar decomposition of a map.  & \hspace{2em}8.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ppa  &  Principal planes analysis.  & \hspace{2em}8.36\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}prot   &  Used for leading and trailing   &  \hspace{2em}6.5 \\
+               &    pole face rotations.            &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ps1   &   Parameter set specification.    & \hspace{2em}7.25\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}ps9   & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}psnf    & Compute power of static normal form. &  \hspace{2em}8.12\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}psp    &   Polynomial scalar product. & \hspace{2em}8.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ptm   &  Print transfer map.             & \hspace{2em}7.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pval    &   Evaluate a polynomial.       &  \hspace{2em}8.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}quad    &    Magnetic quadrupole.   &  \hspace{2em}6.9 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}radm    &    Resonance analyze dynamic map. &  \hspace{2em}8.5\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rapt  & Aperture the beam with a rectangular aperture.& \hspace{2em}7.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rasm    &    Resonance analyze static map.  &  \hspace{2em}8.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rbnd    &    Rectangular bending magnet.  &  \hspace{2em}6.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}recm    &   REC quadrupole multiplet.   & \hspace{2em}6.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rev   &  Replace existing transfer map by      & \hspace{2em}7.11\\
+                    & its reversed map.            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}revf  &  Replace existing transfer map by     & \hspace{2em}7.12\\
+                    & reverse factorized form.                     &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rmap    &   Random map.    & \hspace{2em}6.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rps1  &  Random parameter set specification.  & \hspace{2em}7.26\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}rps9  & &\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Purpose}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}rset   &  Reset menu entries.    &        \hspace{2em}9.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rt    &     Perform a ray trace.  & \hspace{2em}7.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}r****   &  Random counterpart of the element   &  \hspace{2em}6.19\\
+               &         with type-code mnemonic ****.        &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sbnd    &    Sector bending magnet.  &  \hspace{2em}6.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}scan   &   Scan parameter space.   &        \hspace{2em}9.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sext    &   Magnetic sextupole.       &  \hspace{2em}6.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}shoa    &   Show contents of arrays.       &  \hspace{2em}7.44\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sia     &    Static invariant analysis.     &  \hspace{2em}8.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}smul    &  Multiply a polynomial by a scalar.   & \hspace{2em}8.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}snor    &  Static normal form analysis.   &  \hspace{2em}8.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sol    &    Solenoid.             &  \hspace{2em}6.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}spce    &   Space for accounting purposes.   &  \hspace{2em}6.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sq      &   Select quantities.       &      \hspace{2em}8.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sqr   &    Square the existing transfer map.   & \hspace{2em}7.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}srfc    &    Short RF cavity.           &  \hspace{2em}6.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}stm   &   Store the existing transfer map.    & \hspace{2em}7.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}symp & Symplectify matrix portion of transfer map. & \hspace{2em}7.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tadm    &  Twiss analyze dynamic map.     &  \hspace{2em}8.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tasm    &  Twiss analyze static map.      &  \hspace{2em}8.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tbas    &   Translate basis.               &  \hspace{2em}8.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}thlm  &   ``Thin lens'' approximation to low    &\hspace{2em}6.16\\
+               &         order multipoles.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tic     &  Translate initial conditions.     &  \hspace{2em}8.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}time  &     Write out execution time.        & \hspace{2em}7.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tip    &  Terminate inner procedure.        &     \hspace{2em}9.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmi   &   Input matrix elements and polynomial  & \hspace{2em}7.5\\
+                    & coefficients from an external file.          &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmo   &  Ouptut matrix elements and polynomial & \hspace{2em}7.6\\
+                    & coefficients to an external file.            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}top    &  Terminate outer procedure.         &     \hspace{2em}9.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tpol  & Twiss polynomial.          & \hspace{2em}7.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tqm  & Transfer quadratic moments. & \hspace{2em}8.25\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tran  & Replace existing transfer map by its ``transpose''. & \hspace{2em}7.10\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Element}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}twsm  &  Linear matrix transformation specified & \hspace{2em}6.15\\
+               &         in terms of twiss parameters.        &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr1    &  User specified subroutines that   &  \hspace{2em}6.20\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &  act on phase space data.             &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr10    &                                      &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr11    &  User specified subroutines that   &  \hspace{2em}6.21\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &   produce or act on maps.              &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr20    & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}vary   &  Specify quantities to be varied.     &  \hspace{2em}9.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wcl   &   Write contents of a loop.       & \hspace{2em}7.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}whst  &    Write history of beam loss.      & \hspace{2em}7.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wmrt  &   Write out value of merit function.   & \hspace{2em}7.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnd  &    Window a beam.  & \hspace{2em}7.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnda  &    Window a beam in all planes.  & \hspace{2em}7.42\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wps   & Write out parameters in a parameter set.  & \hspace{2em}7.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wsq     &           Write selected quantities.  & \hspace{2em}8.27 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wuca  &   Write out contents of ucalc array.       &
+\hspace{2em}7.41\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}zer  &   Change or write out values of zeroes.       &
+\hspace{2em}7.36\\
+\vspace{-3mm}& &\\
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Element Type-Code Mnemonics \protect\newline (Alphabetical Order)}
+     The beam-line elements and their type code mnemonics, as currently
+available in \Mary 3.0, are listed below alphabetically along with the
+subsections that describe them in detail and/or give examples of their
+use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Element}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}arc  &  Arc for accounting purposes.  &   \hspace{2em}6.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}arot    &         Axial rotation.                      &  \hspace{2em}6.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfbd    &         Combined function bend.         &  \hspace{2em}6.8 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfqd    &       Combined function magnetic quadrupole. &  \hspace{2em}6.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfrn    &   Change or write out values of fringe field parameters &  \hspace{2em}6.29\\
+               &          for combined function dipole.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cplm    &         ``Compressed'' approximation to low   &\hspace{2em}6.17\\
+               &         order multipoles.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dism    &         Dispersion matrix.                   &  \hspace{2em}6.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dp      &         Data point.                          &  \hspace{2em}6.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}drft    &         Drift space.                         &  \hspace{2em}6.1 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}frng    &         Used for hard-edge dipole       &  \hspace{2em}6.7 \\
+               &             fringe fields.                  &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbdy    &         Used for the body of a general  &  \hspace{2em}6.6 \\
+               &             bending magnet.                 & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbnd    &         General bending magnet.         &  \hspace{2em}6.4 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}jmap    &         Map with matrix part J.              &  \hspace{2em}6.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mark    &         Marker.                              &  \hspace{2em}6.25\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}nbnd    &         Normal entry bending magnet,    &  \hspace{2em}6.2 \\
+               &             with or without fringe fields.  &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octe    &         Electric octupole.                   &  \hspace{2em}6.12\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octm    &         Magnetic octupole.                   &  \hspace{2em}6.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pbnd    &         Parallel faced bending magnet,  &  \hspace{2em}6.3 \\
+               &             with fringe fields and equal    &      \\
+               &             entry and exit angles.          &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}prot    &         Used for leading and trailing   &  \hspace{2em}6.5 \\
+               &             pole face rotations.            &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}quad    &         Magnetic quadrupole.                 &  \hspace{2em}6.9 \\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\newpage
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Element}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}rbnd    &         Rectangular bending magnet.              & \hspace{2em}6.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}recm    &         REC quadrupole multiplet.              & \hspace{2em}6.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rmap    &         Random map.              & \hspace{2em}6.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}r****   &         Random counterpart of the element   &  \hspace{2em}6.19\\
+               &         with type-code mnemonic ****.        &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sbnd    &         Sector bending magnet.              & \hspace{2em}6.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sext    &         Magnetic sextupole.                  &  \hspace{2em}6.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sol    &         Solenoid.                            &  \hspace{2em}6.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}spce    &         Space for accounting purposes.   &  \hspace{2em}6.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}srfc    &         Short RF cavity.                     &  \hspace{2em}6.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}thlm    &         ``Thin lens'' approximation to low    &\hspace{2em}6.16\\
+               &         order multipoles.                    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}twsm    &      Linear matrix transformation specified &  \hspace{2em}6.15\\
+               &         in terms of twiss parameters.        &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr1    &         User specified subroutines that     &  \hspace{2em}6.20\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &         act on phase space data.             &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr10    &                                             &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr11    &         User specified subroutines that     &  \hspace{2em}6.21\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &         produce or act on maps.              &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr20    &                                             &
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Element Type-Code Mnemonics \protect\newline (Functional Order)}
+     The beam-line elements and their type code mnemonics, as currently
+available in \Mary 3.0, are listed below according to function along with
+the subsections that describe them in detail and/or give examples of their
+use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Element}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}drft    &         Drift space                         &  \hspace{2em}6.1 \\
+\vspace{-3mm}& &\\
+               &         \underline{dipole bend magnets}    &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}nbnd    &  \makebox[1em][l]{a)} Normal entry (sector) bending magnet,    &  \hspace{2em}6.2 \\
+\hspace{1.5em}sbnd               &         \hspace*{1em} with or without fringe fields.  &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pbnd    &  \makebox[1em][l]{b)} Parallel faced (rectangular) bending magnet,  &  \hspace{2em}6.3 \\
+\hspace{1.5em}rbnd               &         \hspace*{1em} with fringe fields and equal    &      \\
+               &         \hspace*{1em} entry and exit angles.          &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbnd    &  \makebox[1em][l]{c)} General bending magnet.         &  \hspace{2em}6.4 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}prot    &  \makebox[1em][l]{d)} Used for leading and trailing   &  \hspace{2em}6.5 \\
+               &         \hspace*{1em} pole face rotations.            &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbdy    &  \makebox[1em][l]{e)} Used for the body of a general  &  \hspace{2em}6.6 \\
+               &         \hspace*{1em} bending magnet.                 &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}frng    &  \makebox[1em][l]{f)} Used for hard-edge dipole fringe fields. &  \hspace{2em}6.7 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfbd    &  \makebox[1em][l]{g)}  Combined function bend.         &  \hspace{2em}6.8 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfrn    &  \makebox[1em][l]{h)}  Change or write out values of fringe field &  \hspace{2em}6.29\\
+               &         \hspace*{1em} parameters for combined function dipole.   &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sol    &         Solenoid.                            &  \hspace{2em}6.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}quad    &         Magnetic quadrupole.                 &  \hspace{2em}6.9 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cfqd    &       Combined function magnetic quadrupole. &  \hspace{2em}6.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}recm    &         REC quadrupole multiplet.              & \hspace{2em}6.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sext    &         Magnetic sextupole.                  &  \hspace{2em}6.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octm    &         Magnetic octupole.                   &  \hspace{2em}6.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}octe    &         Electric octupole.                   &  \hspace{2em}6.12\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}srfc    &         Short RF cavity.                     &  \hspace{2em}6.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}arot    &         Axial rotation.                      &  \hspace{2em}6.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}thlm    &         ``Thin lens'' approximation to low    &\hspace{2em}6.16\\
+               &         order multipoles.                    &      \\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Element}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}cplm    &         ``Compressed'' approximation to low   &\hspace{2em}6.17\\
+               &         order multipoles.                    &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}twsm    &      Linear matrix transformation specified &  \hspace{2em}6.15\\
+               &         in terms of twiss parameters.        &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dism    &         Dispersion matrix.                   &  \hspace{2em}6.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}jmap    &         Map with matrix part J.              &  \hspace{2em}6.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rmap    &         Random map.              &  \hspace{2em}6.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mark    &         Marker.                              &  \hspace{2em}6.25\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dp      &         Data point.                          &  \hspace{2em}6.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}spce    &         Space for accounting purposes.      & \hspace{2em}6.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}arc  &  Arc for accounting purposes.  &   \hspace{2em}6.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr1    &         User specified subroutines that     &  \hspace{2em}6.20\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &         act on phase space data .            &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr10    &                                             &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}usr11    &         User specified subroutines that     &  \hspace{2em}6.21\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ &         produce or act on maps.              &      \\
+\vspace{-7mm}& &\\
+\hspace{1.5em}usr20    &                                             &      \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}r****   &         Random counterpart of the element   &  \hspace{2em}6.19\\
+                      &         with type-code mnemonic ****.        &
+\end{tabular}
+\end{center}
+
+
+\newpage
+\section[Simple Command Type-Code $\cdots$ (Alphabetical Order)]{Simple Command Type-Code Mnemonics \protect\newline (Alphabetical Order)}
+     Simple commands and their type code mnemonics, as currently available
+in \Mary 3.0, are listed below alphabetically along with the subsections
+that describe them in detail and/or give examples of their use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}bell  &         Ring bell at terminal.               & \hspace{2em}7.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cbm  &     Change or write out beam parameters.      & \hspace{2em}7.39\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cdf   &        Change drop file.                     & \hspace{2em}7.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cf    &        Close files.                          & \hspace{2em}7.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}circ  &         Set parameters and circulate.        & \hspace{2em}7.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dims  &  Dimensions.  &   \hspace{2em}7.40\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dpol  &         Dispersion polynomial.        & \hspace{2em}7.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}eapt  & Aperture the beam with an elliptic aperture. & \hspace{2em}7.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}end   &        Halt execution.  Must be an         & \hspace{2em}7.1\\
+                    & entry of a \#labor list.                  &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ftm   &        Filter the existing transfer map.     & \hspace{2em}7.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gtm   &        Get a transfer map from storage.      & \hspace{2em}7.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}iden  &         Replace existing transfer map by the & \hspace{2em}7.8\\
+                    & identity map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inf  &   Change or write out values of infinities.   & \hspace{2em}7.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inv   & Replace existing transfer map by its inverse. & \hspace{2em}7.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mask  &      Mask off selected portions of existing & \hspace{2em}7.13\\
+                    & transfer map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}num   &        Number lines in a file.               & \hspace{2em}7.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em} of   &         Open files.                          & \hspace{2em}7.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}paws  &         Pause.                               & \hspace{2em}7.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pli  &         Path length
+information.                               & \hspace{2em}7.43\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmif  & Print contents of Master Input File (file 11). & \hspace{2em}7.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ps1   &        Parameter set specification.          & \hspace{2em}7.25\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}ps9   & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ptm   &        Print transfer map.                   & \hspace{2em}7.7
+\end{tabular}
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}rapt  & Aperture the beam with a rectangular aperture.& \hspace{2em}7.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rev   &        Replace existing transfer map by      & \hspace{2em}7.11\\
+                    & its reversed map.                            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}revf  &         Replace existing transfer map by     & \hspace{2em}7.12\\
+                    & reverse factorized form.                     &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rps1  &         Random parameter set specification.  & \hspace{2em}7.26\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}rps9  & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rt    &        Perform a ray trace.                  & \hspace{2em}7.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}shoa    &   Show contents of arrays.       &  \hspace{2em}7.44\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sqr   &        Square the existing transfer map.     & \hspace{2em}7.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}stm   &        Store the existing transfer map.      & \hspace{2em}7.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}symp  & Symplectify matrix portion of transfer map. & \hspace{2em}7.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}time  &         Write out execution time.            & \hspace{2em}7.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmi   &        Input matrix elements and polynomial  & \hspace{2em}7.5\\
+                    & coefficients from an external file.          &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmo   &        Ouptut matrix elements and polynomial & \hspace{2em}7.6\\
+                    & coefficients to an external file.            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tpol  & Twiss polynomial.                            & \hspace{2em}7.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tran  & Replace existing transfer map by its ``transpose''. & \hspace{2em}7.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wcl   &         Write contents of a loop.            & \hspace{2em}7.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}whst  &         Write history of beam loss.          & \hspace{2em}7.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wmrt  &         Write out value of merit function.   & \hspace{2em}7.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnd  &         Window a beam.                & \hspace{2em}7.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnda  &         Window a beam in all planes.
+& \hspace{2em}7.42\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wps   &    Write out parameters in a parameter set.  & \hspace{2em}7.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wuca  &   Write out contents of ucalc array.       &
+\hspace{2em}7.41 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}zer  &   Change or write out values of zeroes.       & \hspace{2em}7.36
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Simple Command Type-Code Mnemonics \protect\newline (Functional Order)}
+     Simple commands and their type code mnemonics, as currently available
+in \Mary 3.0, are listed below according to function along with the
+subsections that describe them in detail and/or give examples of their use.
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}end   &        Halt execution.  Must be an         & \hspace{2em}7.1\\
+                    & entry of a \#labor list.                  &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}of   &         Open files.                          & \hspace{2em}7.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cf    &        Close files.                          & \hspace{2em}7.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rt    &        Perform a ray trace.                  & \hspace{2em}7.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}num   &        Number lines in a file.               & \hspace{2em}7.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}circ  &         Set parameters and circulate.        & \hspace{2em}7.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wcl   &         Write contents of a loop.            & \hspace{2em}7.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rapt  & Aperture the beam with a rectangular aperture.& \hspace{2em}7.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}eapt  & Aperture the beam with an elliptic aperture. & \hspace{2em}7.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnd  &         Window a beam.                & \hspace{2em}7.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wnda  &         Window a beam in all planes.       &
+\hspace{2em}7.42\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}whst  &         Write history of beam loss.          & \hspace{2em}7.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dims  &         Dimensions.         & \hspace{2em}7.40\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmif  & Print contents of Master Input File (file 11). & \hspace{2em}7.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ptm   &        Print transfer map.                   & \hspace{2em}7.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pli   &        Path length information.                   &
+\hspace{2em}7.43\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmi   &        Input matrix elements and polynomial  & \hspace{2em}7.5\\
+                    & coefficients from an external file.          &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tmo   &        Ouptut matrix elements and polynomial & \hspace{2em}7.6\\
+                    & coefficients to an external file.            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ps1   &        Parameter set specification.          & \hspace{2em}7.25\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}ps9   & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rps1  &         Random parameter set specification.  & \hspace{2em}7.26\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}rps9  & &\\
+\hspace{1.5em}wps   &    Write out parameters in a parameter set.  & \hspace{2em}7.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}stm   &        Store the existing transfer map.      & \hspace{2em}7.16
+\end{tabular}
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}gtm   &        Get a transfer map from storage.      & \hspace{2em}7.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mask  &      Mask off selected portions of existing & \hspace{2em}7.13\\
+                    & transfer map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ftm   &        Filter the existing transfer map.     & \hspace{2em}7.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sqr   &        Square the existing transfer map.     & \hspace{2em}7.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}symp  & Symplectify matrix portion of transfer map. & \hspace{2em}7.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}iden  &         Replace existing transfer map by the & \hspace{2em}7.8\\
+                    & identity map.                                &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inv   & Replace existing transfer map by its inverse. & \hspace{2em}7.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rev   &        Replace existing transfer map by      & \hspace{2em}7.11\\
+                    & its reversed map.                            &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}revf  &         Replace existing transfer map by     & \hspace{2em}7.12\\
+                    & reverse factorized form.                     &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tran  & Replace existing transfer map by its         & \hspace{2em}7.10\\
+                    & ``transpose''.                               &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tpol  &         Twiss polynomial.                    & \hspace{2em}7.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dpol  &         Dispersion polynomial.               & \hspace{2em}7.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}time  &         Write out execution time.            & \hspace{2em}7.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cdf   &        Change drop file.                     & \hspace{2em}7.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bell  &         Ring bell at terminal.               & \hspace{2em}7.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wmrt  &         Write out value of merit function.   & \hspace{2em}7.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}paws  &         Pause.                               & \hspace{2em}7.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}inf  &     Change or write out values of infinities. & \hspace{2em}7.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}zer  &     Change or write out values of zeroes.     & \hspace{2em}7.36\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cbm  &     Change or write out beam parameters.      &
+\hspace{2em}7.39\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wuca  &     Write out contents of ucalc array.      &
+\hspace{2em}7.41 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}shoa    &   Show contents of arrays.       &  \hspace{2em}7.44\\
+\end{tabular}
+\end{center}
+
+\newpage
+\section[Advanced Command Type-Code $\cdots$ (Alphabetical Order)]{Advanced Command Type-Code Mnemonics \protect\newline (Alphabetical Order)}
+     Advanced commands and their type code mnemonics, as currently
+available in \Mary 3.0, are listed below alphabetically along with the
+subsections that describe them in detail and/or give examples of their use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}amap    &     Apply map to a function or moments.  &   \hspace{2em}8.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}asni    &           Apply script $N$ inverse.     &   \hspace{2em}8.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bgen    &           Generate beam.     &   \hspace{2em}8.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cod     &   Compute off-momentum closed orbit data.  & \hspace{2em}8.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}csym    &           Check symplectic condition.    &   \hspace{2em}8.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ctr     &           Change tune range.         &   \hspace{2em}8.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cxp  & Chromatic expansion. & \hspace{2em}8.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dia     &           Dynamic invariant analysis.    &  \hspace{2em}8.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dnor    &           Dynamic normal form analysis.  &  \hspace{2em}8.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}exp     &           Compute exponential.           &  \hspace{2em}8.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fadm    &           Fourier analyze dynamic map.   &  \hspace{2em}8.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fasm    &           Fourier analyze static map.    &  \hspace{2em}8.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fwa     &           Copy file to working array.    &  \hspace{2em}8.39\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbuf    &           Get buffer contents.           &  \hspace{2em}8.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}geom    &           Compute geometry of a loop.    &  \hspace{2em}8.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}lnf    &           Compute logarithm of normal form.    &
+\hspace{2em}8.40\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}merf    &           Merge files.    &  \hspace{2em}8.41\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mn      &           Compute matrix norm.       &   \hspace{2em}8.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}moma      &         Moment analysis.  &   \hspace{2em}8.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}padd    &           Add two polynomials.       &   \hspace{2em}8.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pb      &         Poisson bracket two polynomials. &  \hspace{2em}8.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pdnf    &    Compute power of dynamic normal form.&  \hspace{2em}8.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmul    &           Multiply two polynomials.   &    \hspace{2em}8.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pnlp    &           Compute power of nonlinear part. & \hspace{2em}8.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pold    &           Polar decomposition of a map.  & \hspace{2em}8.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ppa    &          Principal planes analysis.  & \hspace{2em}8.36\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}psnf    &    Compute power of static normal form. &  \hspace{2em}8.12\\
+\vspace{-3mm}& &\\\hspace{1.5em}psp    &           Polynomial scalar product. & \hspace{2em}8.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pval    &           Evaluate a polynomial.       &  \hspace{2em}8.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}radm    &           Resonance analyze dynamic map. &  \hspace{2em}8.5\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rasm    &           Resonance analyze static map.  &  \hspace{2em}8.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sia     &           Static invariant analysis.     &  \hspace{2em}8.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}smul    &      Multiply a polynomial by a scalar.   & \hspace{2em}8.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}snor    &           Static normal form analysis.   &  \hspace{2em}8.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sq      &           Select quantities.       &      \hspace{2em}8.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tadm    &           Twiss analyze dynamic map.     &  \hspace{2em}8.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tasm    &           Twiss analyze static map.      &  \hspace{2em}8.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tbas    &           Translate basis.               &  \hspace{2em}8.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tic     &    Translate initial conditions.         &  \hspace{2em}8.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tqm  & Transfer quadratic moments. & \hspace{2em}8.25\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wsq     &           Write selected quantities.  &    \hspace{2em}8.27
+\end{tabular}
+\end{center}
+
+\newpage
+\section[Advanced Command Type-Code $\cdots$
+(Functional Order)]{Advanced Command Type-Code Mnemonics \protect\newline (Functional Order)}
+     Advanced commands and their type code mnemonics, as currently
+available in \Mary 3.0, are listed below according to function along with
+the subsections that describe them in detail and/or give examples of their
+use.
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}cod     &   Compute off-momentum closed orbit data.  & \hspace{2em}8.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tasm    &           Twiss analyze static map.      &  \hspace{2em}8.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cxp  & Chromatic expansion. & \hspace{2em}8.24\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tadm    &           Twiss analyze dynamic map.     &  \hspace{2em}8.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ctr     &           Change tune range.         &   \hspace{2em}8.28\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}snor    &           Static normal form analysis.   &  \hspace{2em}8.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dnor    &           Dynamic normal form analysis.  &  \hspace{2em}8.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}asni    &           Apply script $N$ inverse.     &   \hspace{2em}8.29\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rasm    &           Resonance analyze static map.  &  \hspace{2em}8.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}radm    &           Resonance analyze dynamic map. &  \hspace{2em}8.5\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sia     &           Static invariant analysis.     &  \hspace{2em}8.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}dia     &           Dynamic invariant analysis.    &  \hspace{2em}8.11\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}psnf    &    Compute power of static normal form.&  \hspace{2em}8.12\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pdnf    &    Compute power of dynamic normal form.&  \hspace{2em}8.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pnlp    &           Compute power of nonlinear part. & \hspace{2em}8.30\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fasm    &           Fourier analyze static map.    &  \hspace{2em}8.15\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fadm    &           Fourier analyze dynamic map.   &  \hspace{2em}8.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pold    &           Polar decomposition of a map.  & \hspace{2em}8.22\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}ppa    &         Principal planes analysis.  & \hspace{2em}8.36\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tbas    &           Translate basis.               &  \hspace{2em}8.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}exp     &           Compute exponential.           &  \hspace{2em}8.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}lnf     &           Compute logarithm of normal
+form.           &  \hspace{2em}8.41\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}gbuf    &           Get buffer contents.           &  \hspace{2em}8.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}amap    &     Apply map to a function or moments.  &   \hspace{2em}8.17\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}moma      &         Moment analysis.  &   \hspace{2em}8.37\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tqm  & Transfer quadratic moments. & \hspace{2em}8.25\\
+\vspace{-3mm}& &\\
+\end{tabular}
+
+
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline{Type Code}} &
+\multicolumn{1}{c}{\underline{Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}bgen    &     Generate beam.                       &   \hspace{2em}8.34\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tic     &    Translate initial conditions.         &  \hspace{2em}8.35\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}smul    &      Multiply a polynomial by a scalar.   & \hspace{2em}8.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}padd    &           Add two polynomials.       &   \hspace{2em}8.19\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pmul    &           Multiply two polynomials.   &    \hspace{2em}8.20\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pb      &         Poisson bracket two polynomials. &  \hspace{2em}8.21\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mn    &           Compute matrix norm. & \hspace{2em}8.33\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}psp    &           Polynomial scalar product. & \hspace{2em}8.32\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}pval    &           Evaluate a polynomial.       &  \hspace{2em}8.23\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}sq      &           Select quantities.       &      \hspace{2em}8.26\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}wsq     &           Write selected quantities.  &    \hspace{2em}8.27\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}csym    &           Check symplectic condition.    &   \hspace{2em}8.31\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}geom    &            Compute geometry of a loop.    &   \hspace{2em}8.38\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fwa  &           Copy file to working array.    &    \hspace{2em}8.39\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}merf    &           Merge files.    &  \hspace{2em}8.40\\
+\end{tabular}
+\end{center}
+
+\newpage
+\section[Procedures and Fitting and Optimization $\cdots$
+(Alphabetical Order)]{Procedures and Fitting and Optimization Commands \protect\newline
+(Alphabetical Order)}
+     Procedures and fitting and optimization commands and their type code
+mnemonics, as currently available in \Mary 3.0, and listed below
+alphabetically along with the subsections that describe them in detail
+and/or give examples of their use.
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Procedure/Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}aim    &     Specify quantities to be fit or  &  \hspace{2em}9.5\\
+           &   optimized and set target values. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bip    &     Begin inner procedure.       &       \hspace{2em}9.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bop    &     Begin outer procedure.       &       \hspace{2em}9.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}con1   &     Constraints.                 &        \hspace{2em}9.12\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}con5 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cps1   &  Capture parameter set.         &          \hspace{2em}9.15\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}cps9 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fit    &     Carry out fitting operation.         &  \hspace{2em}9.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}flag   &     Change or write out values of &       \hspace{2em}9.17\\
+           &   flags and defaults. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fps     &    Free parameter set.              &    \hspace{2em}9.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}grad    &    Compute gradient matrix.            & \hspace{2em}9.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt0   &     Merit function (sum of squares).   &   \hspace{2em}9.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt1    &    Merit functions (user written).   &     \hspace{2em}9.11\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}mrt5 & &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mss    &  Minimize sum of squares optimization. &  \hspace{2em}9.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}opt    &     General optimization.          &     \hspace{2em}9.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rset   &     Reset menu entries.              &     \hspace{2em}9.18\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}scan   &     Scan parameter space.         &      \hspace{2em}9.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tip    &     Terminate inner procedure.            &       \hspace{2em}9.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}top    &     Terminate outer procedure.              &     \hspace{2em}9.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}vary   &     Specify quantities to be varied.     &        \hspace{2em}9.6
+\end{tabular}
+\end{center}
+
+\newpage
+\section[Procedures and Fitting $\cdots$
+(Functional Order)]{Procedures and Fitting and Optimization Commands \protect\newline
+(Functional Order)}
+     Procedures and fitting and optimization commands and their type code
+mnemonics, as currently availably in \Mary 3.0, are listed below
+according to function along with the subsections that describe them in
+detail and/or give examples of their use.
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Procedure/Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}bip    &     Begin inner procedure.        &    \hspace{2em}9.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bop    &     Begin outer procedure.        &       \hspace{2em}9.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tip    &     Terminate inner procedure.    &       \hspace{2em}9.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}top    &     Terminate outer procedure.      &     \hspace{2em}9.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}aim    &     Specify quantities to be fit or  &  \hspace{2em}9.5\\
+           &   optimized and set target values. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}vary   &     Specify quantities to be varied.  &    \hspace{2em}9.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fit    &     Carry out fitting operation.    &    \hspace{2em}9.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mss    &  Minimize sum of squares optimization. & \hspace{2em}9.8\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}opt    &     General optimization.        &     \hspace{2em}9.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt0   &     Merit function (sum of squares).   &   \hspace{2em}9.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt1    &    Merit functions (user written).   &    \hspace{2em}9.11\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}mrt5 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}con1   &     Constraints.               &        \hspace{2em}9.12\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}con5 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}grad    &    Compute gradient matrix.       &     \hspace{2em}9.13\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}scan    &    Scan parameter space.         &     \hspace{2em}9.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cps1   &  Capture parameter set.       &          \hspace{2em}9.15\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}cps9 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fps     &    Free parameter set.       &          \hspace{2em}9.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}flag    &  Change or write out values of &   \hspace{2em}9.17\\
+           &   flags and defaults. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}rset    &    Reset menu entries.        &     \hspace{2em}9.18
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Input File Functions and Formats}\index{input} \index{files} \index{format}
+     Listed below are input files used by \Mary (and PREP) along with the
+subsections that describe them in detail.
+
+\begin{center}
+\begin{tabular}{cll}
+\underline{File} & \underline{Function} & \underline{Subsections}\\
+           5  &       Terminal input to PREP         &     5.1.1\\
+              &       Terminal input to MARYLIE      &     9.5, 9.6\\
+\vspace{-3mm}& &\\
+           9   &      Restart for PREP                &    5.3, 5.14\\
+\vspace{-3mm}& &\\
+       11   &      Master Input File for MARYLIE   &    4.2, 4.4.1, 5.5.1, 5.6.3\\
+             &                                    & 5.7.2, 5.7.4, 5.8.2, 5.9.2\\
+             &                                    & 5.10.2, 5.11.2\\
+\vspace{-3mm}& &\\
+     $\ast$    &     Phase Space Initial Conditions   &   4.2, 4.4.2, 7.2, 7.3 \\
+\vspace{-3mm}& &\\
+     $\ast$    &     Matrix and Polynomial Input       &  4.2, 4.4.3, 7.5, 7.6 \\
+\vspace{-3mm}& &\\
+     $\ast$   &      Data for Random Elements and  Parameter Sets    &  4.2, 6.19, 7.27\\
+\vspace{-3mm}& &\\
+          $\ast$    &     Data for Select Quantities Command & 8.26\\
+\vspace{-3mm}& &\\
+          $\ast$    &     Data for Moment Analysis & 8.37\\
+\vspace{-3mm}& &\\
+           $\ast$    &     Data for Fitting and Optimization Commands  & 9.5, 9.6\\
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Output File Functions and Formats} \index{output} \index{files} \index{format}
+     Listed below are output files used by \Mary (and PREP) along with
+the subsections that describe them in detail.
+
+\begin{center}
+\begin{tabular}{cll}
+\underline{File} & \underline{Function} & \underline{Subsections}\\
+           6    &  Terminal output from PREP and \Mary & 4.2, 4.5.1, 4.5.2, 5.5.1\\
+                &                                      & 7.2, 7.3, 7.7\\
+\vspace{-3mm}& &\\
+          10    &        Output from PREP             &   5.1.2\\
+\vspace{-3mm}& &\\
+          12    &        Extensive MARYLIE Output     &   4.2, 4.5.1, 4.5.2, \\
+                &                                      &  7.2, 7.3, 7.4, 7.7, 7.31\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Final Conditions from Ray Trace   &   4.2, 4.5.2, 7.2, 7.3\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Matrix and Polynomial Output &   4.2, 4.4.3, 4.5.3, 7.6\\
+\vspace{-3mm}& &\\
+           $\ast$    &        History of Beam Loss         &   7.22\\
+\vspace{-3mm}& &\\
+       $\ast$    &        Results of Numbering Lines in a File  &   7.28\\
+\vspace{-3mm}& &\\
+        $\ast$    &       Contents of a Loop           &   7.34\\
+\vspace{-3mm}& &\\
+           $\ast$     &       Results of Evaluating a Polynomial     &   8.23\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Values of Selected Quantities &  8.27\\
+\vspace{-3mm}& &\\
+           $\ast$    &       Moment Data &  8.34\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Transformed Moments &  8.37\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Geometrical Information &  8.38\\
+\vspace{-3mm}& &\\
+           $\ast$    &        Data for Fitting and Optimization Commands   &    9.5, 9.6
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Warning and Error Messages}\index{messages} \index{warning messages} \index{error messages}
+Several \Mary routines issue warning or error messages if there are detectable errors in the master input file or various quantities are out of bounds.  Most messages are meant to be self explanatory.  Some that may require further explanation are listed below.
+\begin{enumerate}
+\item ``Eig4: Eigenvalues off the unit circle!'';``Eig6: Eigenvalues off the unit
+circle!'':  The commands {\em tasm}, {\em tadm}, {\em snor}, {\em dnor}, {\em pold}, and {\em moma} require the calculation of the eigenvalues of $4 \times 4$ or $6 \times 6$ symplectic matrices, and these eigenvalues are expected to lie on the unit circle.  If they do not, an error message is issued and the calculations associated with these commands are terminated.  However, for whatever it is worth, the \Mary run itself is not terminated.\index{eigenvalues}
+\end{enumerate}
+
+
+

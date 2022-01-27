@@ -1,0 +1,1794 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter[Catalog of Procedures and Fitting and $\cdots$]{Catalog of Procedures and Fitting and Optimization Commands}
+     \Mary 3.0 at present has a fairly extensive repertoire of procedures
+and fitting and optimization commands.  Their type code mnemonics and the
+subsections that describe them in more detail are listed below.  Some
+examples of the use of procedures and fitting commands are given in chapter
+10. \index{procedure} \index{fitting commands} \index{optimization commands}
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Procedure/Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}bip    &     Begin inner procedure.          &       \hspace{2em}9.1\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}bop    &     Begin outer procedure.          &       \hspace{2em}9.2\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}tip    &     Terminate inner procedure.      &       \hspace{2em}9.3\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}top    &     Terminate outer procedure.       &     \hspace{2em}9.4\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}aim    &     Specify quantities to be fit or optimized  &  \hspace{2em}9.5\\
+           &   and set target values. &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}vary   &     Specify quantities to be varied.     &   \hspace{2em}9.6\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fit    &     Carry out fitting operation.         &   \hspace{2em}9.7\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mss    &   Minimize sum of squares optimization. &   \hspace{2em}9.8\\\vspace{-3mm}& &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}opt    &     General optimization.              &    \hspace{2em}9.9\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt0   &     Merit function (sum of squares).   &    \hspace{2em}9.10\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}mrt1    &    Merit functions (user written).   &     \hspace{2em}9.11\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}mrt5 & & \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}con1   &     Constraints.                          &  \hspace{2em}9.12\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}con5 & & \\   \vspace{-3mm}& &\\
+\hspace{1.5em}grad    &    Compute gradient matrix.         &      \hspace{2em}9.13\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{lll}
+\multicolumn{1}{c}{\underline {Type Code}} &
+\multicolumn{1}{c}{\underline{Procedure/Command}}   &
+\multicolumn{1}{c}{\underline{Subsection}} \\
+\hspace{1.5em}scan    &    Scan parameter space. & \hspace{2em}9.14\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}cps1   &  Capture parameter set.               &      \hspace{2em}9.15\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}\ \ \,$\vdots$ & &\\
+\vspace{-7mm}& &\\
+\hspace{1.5em}cps9 \\
+\vspace{-3mm}& &\\
+\hspace{1.5em}fps     &    Free parameter set.           &     \hspace{2em}9.16\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}flag    &    Change or write out values of   & \hspace{2em}9.17\\
+           &   flags and defaults. &\\
+ \vspace{-3mm}& &\\
+ \hspace{1.5em}rset    &    Reset menu entries.         &          \hspace{2em}9.18\\
+\vspace{-3mm}& &\\
+\vspace{-3mm}& &\\
+\hspace{1.5em}---     &    Spare.         &     \hspace{2em}9.19\\
+\end{tabular}
+\end{center}
+Note that the type codes are given in lower case.  If entries are made in
+upper case, they are automatically converted to lower case by PREP and
+\Maryend.
+
+     The purpose of this section is to outline the use of these procedures
+and commands by \Maryend, and to describe the parameters required to specify
+them in the \#menu component of the Master Input File.
+
+\newpage
+\section{Begin Inner Procedure} \index{inner procedure} \index{procedure} \index{do loop} \index{logical do loop}
+\begin{quotation}
+\noindent Type Code:  bip
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  NTIMES (number of times procedure is to be executed).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         startido    bip
+           5
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em startido}.  When invoked it marks the beginning of an inner procedure that is to be carried out 5 times.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+It is possible to set up a logical ``do loop'' (procedure) within the {\em labor} component of a \Mary master input file.  This loop begins with a {\em bip} command and ends with a {\em tip} command.  Such loops are useful for fitting or optimization or scanning or other purposes.  See, for examples, sections 10.2.1, 10.3.1, and 10.4.
+
+\newpage
+\section{Begin Outer Procedure} \index{procedure} \index{outer procedure} \index{nested procedures}
+\begin{quotation}
+\noindent Type Code:  bop
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  NTIMES (number of times procedure is to be executed).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         startodo     bop
+             5
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em startodo}.  When invoked it marks the beginning of an outer procedure that is to be carried out 5 times.
+
+\vspace{5mm}
+     Description
+\vspace{2mm}
+
+It is possible to set up two nested logical ``do loops'' (procedures) within the {\em labor} component of a \Mary master input file.  The inner loop begins with a {\em bip} command and ends with a {\em tip} command.  The outer surrounding loop begins with a {\em bop} command and ends with a {\em top} command.  This flexibility makes it possible to fit in an inner loop while optimizing or scanning in an outer loop.  See, for examples, sections 10.3.2 and 10.3.3.
+
+\newpage
+\section{Terminate Inner Procedure}\index{inner procedure} \index{procedure}
+\begin{quotation}
+\noindent Type Code:  tip
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+  \item  IOPT
+
+         = 0 to not run interactively.
+
+         = 1 to allow user to terminate an inner procedure interactively.
+\end{enumerate}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+          stopido     tip
+             0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em stopido}.  It marks the end of an inner loop.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+As described in section 9.1, a {\em tip} command marks the end of an inner logical ``do loop''.  When this command is reached in the {\em labor} component of the master input file and IOPT = 0, \Mary returns to the {\em bip} command at the beginning of the procedure unless NTIMES has been achieved or some other (perhaps fitting or optimization) criterion has been met.  If IOPT = 1, the user is asked whether or not to make another pass through the procedure.
+
+\newpage
+\section{Terminate Outer Procedure}\index{outer procedure} \index{procedure}
+\begin{quotation}
+\noindent Type Code:  top
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+   \item  IOPT
+
+          = 0 to not run interactively.
+
+          = 1 to allow user to terminate an outer procedure interactively.
+\end{enumerate}
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+          stopodo     top
+             1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em stopodo}.  It marks the end of an outer loop.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+As described in section 9.2, a {\em top} command marks the end of an outer logical ``do loop''.  When this command is reached in the {\em labor} component of the master input file and IOPT = 0, \Mary returns to the {\em bop} command at the beginning of the procedure unless NTIMES has been achieved or some other (perhaps optimization or scanning) criterion has been met.  If IOPT = 1, the user is asked whether or not to make another pass through the procedure.
+
+\newpage
+\section{Specify Quantities to be Fit or Optimized and Set Target Values} \index{aim} \index{fit} \index{optimize} \index{target values}
+\begin{quotation}
+\noindent    Type Code:  aim
+\vspace{5mm}
+
+\noindent     Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 1 to specify aims only.
+
+              = 2 to specify aims and set targets.
+
+              = 3 to specify aims and set targets and weights.
+
+       \item  INFILE (File number from which specifications are to be
+              read.)
+
+              = 0 or 5 to read interactively from the terminal.
+
+              = IFILE (any positive integer) to read from that file,
+after rewinding that \hspace*{1em}file.
+
+			  = $-$IFILE (any negative integer) to read from file IFILE at its
+			current \hspace*{1em}position without first rewinding.
+
+       \item  LOGFILE (File number to which specifications are to be
+	   written.  Ignored unless INFILE = 0 or 5, but still required.)
+
+	          = 0 to not write out specifications.
+
+	          = JFILE (any positive integer) to write specifications to that
+			  file.
+
+       \item  IQUIET
+
+ 			  = 0 for no effect.
+
+			  = 1 to run in quiet mode.
+
+       \item  ISTORE
+
+              = 1 to put selections in storage associated with inner
+              procedure.
+
+              = 2 to put selections in storage associated with outer
+              procedure.
+
+              = 3 to put selections in auxiliary storage.
+
+       \item  ISEND (Ignored, but still required, when INFILE = 0 or 5.)
+
+              = 0 to write out nothing.
+
+              = 1 to write out aims at the terminal.
+
+              = 2 to write out aims on file 12.
+
+              = 3 to write out aims at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         desires     aim
+           2 1 25 0 1 0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em desires}.  When invoked it specifies aims and sets targets using the contents of file 1 and puts these selections in storage associated with an inner procedure.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The {\em aim} command may be used for fitting and optimization procedures as well as the construction of merit functions.  It gives the user access to all quantities computed by \Mary and the ability to set target values for any subset of these quantities.  This can be done interactively at run time or in advance by the use of external files.  A convenient procedure is to run interactively at first, and then write whatever instructions were employed onto a log file for subsequent automatic use.  For examples of the use of {\em aim}, see sections 10.2.1, 10.3, and 10.4 through 10.6.  The Exhibit below shows the responses to {\em aim} when invoked interactively and help is requested.\index{zblock z(i,j)} \index{extra array} \index{array}
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 9.5.
+  This is a fragmentary MaryLie run to illustrate the initial responses
+  to a command with type code aim when invoked interactively and help
+  is requested.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  aim      aim
+    2.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00   1.00000000000000      0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*aim
+     1*end
+
+  Enter aim(s) in the form:  symbol = target value
+  (Enter a # sign when finished, or type help to review the defined
+
+       symbols)
+help
+
+  Symbols are defined for the following categories:
+   1. Path length and related quantities, the current map,
+      various stored maps, and work buffers in map format.
+   2. Standard quantities derived from the current map including
+      dispersions and phase slip factors, tunes, chromaticities,
+      anharmonicities, twiss parameters, and envelope data.
+   3. Particle and Beam parameters.
+   4. User calculated quantities, merit functions, miscellany.
+   -----Select help category-----
+1
+                  ***  Quantities in Map Format  ***
+
+   The current transfer map:
+      pl, rt, and st = path length, (real) time of
+      flight, and scaled time of flight, respectively.
+      r(i,j) = first order (linear) matrix elements i,j=1,6.
+      f(i) = Lie polynomial coefficients, i=0,209.
+
+   Stored maps in locations 1 through 9:
+      sm1(i,j) ... sm9(i,j) = first order (linear) matrix elements
+
+      i,j=1,6.
+      sf1(i) ... sf9(i) = Lie polynomial coefficients, i=0,209.
+
+   Result arrays in buffers 1 through 6:
+      bm1(i,j) ... bm6(i,j) = first order (linear) matrix elements
+
+      i,j=1,6.
+      bf1(i) ... bf6(i) = Lie polynomial coefficients, i=0,209.
+
+  Enter aim(s) in the form:  symbol = target value
+  (Enter a # sign when finished, or type help to review the defined
+
+  symbols)
+help
+
+  Symbols are defined for the following categories:
+   1. Path length and related quantities, the current map,
+      various stored maps, and work buffers in map format.
+   2. Standard quantities derived from the current map including
+      dispersions and phase slip factors, tunes, chromaticities,
+      anharmonicities, twiss parameters, and envelope data.
+   3. Particle and Beam parameters.
+   4. User calculated quantities, merit functions, miscellany.
+   -----Select help category-----
+2
+       ***  Standard quantities computed by COD, TASM, and TADM ***
+
+  Dispersions and Phase Slip Factors d(i,m):
+    d(i,m) = mth order expansion coefficient of the
+             ith closed orbit coordinate for m=1,3
+             and i=1,4.
+    d(5,m) = mth order scaled time of flight
+             expansion coefficient for m=1,3.
+    d(6,m) = mth order path length expansion
+             coefficient for m=1,3.
+    d(i,4) = Summed net deviation in the ith closed
+             orbit coordinate for the specified
+             value of epsilon.
+    d(5,4) = Summed net deviation in scaled time of
+             flight for the specified value of
+             epsilon.
+    d(6,4) = Summed net deviation in path length for
+             the specified value of epsilon.
+    d(5,5) = Total value of the scaled time of
+             flight for the specified value of
+             epsilon.
+    d(6,5) = Total value of the path length for
+             the specified value of epsilon.
+    d(5,6) = Total value of the scaled time of
+             flight for the design orbit
+             (i.e. when epsilon=0).
+    d(6,6) = Total value of the path length for
+             the design orbit (i.e. when epsilon=0).
+
+  Design Tunes:
+     tx,ty,ts = horizontal,vertical,synchrotron (temporal) tunes.
+
+  Chromaticities:
+     cx, cy = horizontal and vertical 1st order chromaticities.
+     qx, qy = horizontal and vertical 2nd order (quadratic)
+
+       	      chromaticities.
+
+  Anharmonicities:
+     hh, vv, tt, hv, ht, vt = 2nd order anharmonicities.
+
+  Betatron amplitudes ba(i,j):
+     i = 1,2,3 for horizontal, vertical, and temporal.
+     j = 1,2 for 1st and 2nd powers.
+
+  True Tunes tn(i,j):
+     i = 1,2,3 for horizontal, vertical, and temporal.
+     j = 1,2,3 for design, chromatically corrected
+         zero amplitude, and finite amplitude.
+
+  Twiss parameters tp(i,j):
+     j = 1,2,3 for alpha,beta,gamma.
+     When computed by TADM:
+     i = 1,2,3 for horizontal, vertical, and temporal.
+         e.g., tp(1,2) = horizontal beta, etc.
+     When computed by TASM:
+     i = 1,2, for on energy/momentum horizontal, vertical.
+     i = 3,4, for actual horizontal, vertical.
+         e.g., tp(1,2) = on energy/momentum horizontal beta, etc.;
+               tp(3,2) = actual horizontal beta, etc.
+
+  Envelope coefficients and envelopes en(i,j):
+     i = 1,2,3 for horizontal, vertical, and temporal.
+     j = 1,2,3 for horizontal, vertical, and temporal.
+       = 4 for finite amplitude envelopes;
+         e.g., en(1,2) = xevc, en(1,4) = xe, etc.
+
+  Enter aim(s) in the form:  symbol = target value
+  (Enter a # sign when finished, or type help to review the defined
+  symbols)
+help
+
+  Symbols are defined for the following categories:
+   1. Path length and related quantities, the current map,
+      various stored maps, and work buffers in map format.
+   2. Standard quantities derived from the current map including
+      dispersions and phase slip factors, tunes, chromaticities,
+      anharmonicities, twiss parameters, and envelope data.
+   3. Particle and Beam parameters.
+   4. User calculated quantities, merit functions, miscellany.
+   -----Select help category-----
+3
+       ***  Particle and Beam Parameters  ***
+
+  Design Beam Parameters:
+     ek = design kinetic energy,
+     pd = design momentum,
+     br = B*rho.
+
+  Relativistic factors:
+     be = beta,
+     ga = gamma,
+     gm = gamma-1.
+
+  Particle coordinates from tracking:
+     z(i,j) = ith component of jth particle in tracking buffer.
+
+  Moments and Emittances:
+     These are stored in various buffers.
+     See item 1 above.
+
+  Enter aim(s) in the form:  symbol = target value
+  (Enter a # sign when finished, or type help to review the defined
+  symbols)
+help
+
+  Symbols are defined for the following categories:
+   1. Path length and related quantities, the current map,
+      various stored maps, and work buffers in map format.
+   2. Standard quantities derived from the current map including
+      dispersions and phase slip factors, tunes, chromaticities,
+      anharmonicities, twiss parameters, and envelope data.
+   3. Particle and Beam parameters.
+   4. User calculated quantities, merit functions, miscellany.
+   -----Select help category-----
+4
+    ***  User defined and miscellaneous quantities  ***
+    ***  computed by USER and MERIT routines, etc.  ***
+
+     u(i) = ucalc(i) for i=1 to 1024, stored in common/usrdat/
+
+     umi = val(i) for i=1 to 5, computed by user merit functions
+           MRT1 through MRT5 and stored in common/merit/
+
+     lsi = val(i) for i=1 to 3, for least squares merit function
+           specified by earlier calls to aim
+
+     ex(i) = contents of extra array for i=1 to 1 to 5:
+        ex(1) = momentum compaction,
+        ex(2) = transition gamma or its square if imaginary,
+        ex(3) = polynomial scalar product,
+        ex(4) = symplectic violation,
+        ex(5) = matrix norm.
+
+     Quantities associated with ppa:
+        fx,fy = ?
+        xb,yb = ?
+        xa,ya = ?
+        xu,yu = ?
+        xd,yd = ?
+
+  Enter aim(s) in the form:  symbol = target value
+  (Enter a # sign when finished, or type help to review the defined
+  symbols)
+#
+
+  Do you wish to start over? (y/n) <n>:
+n
+
+end of MARYLIE run
+
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Specify Quantities to be Varied} \index{fit} \index{vary} \index{optimize} \index{scan}
+\begin{quotation}
+\noindent     Type Code:  vary
+\vspace{5mm}
+
+\noindent     Required Parameters:
+\begin{enumerate}
+       \item  JOB (Controls relation between NV, the number of quantities to be varied, and NA, the number of aims set in {\em aim }).
+
+              = 1 if NV = NA.  (This condition is required for a fitting process.)
+
+              = 2 if NV $\leq$ NA.  (This condition is required for a least squares optimiza-
+ \hspace*{1em}tion.)
+
+              = 3 if NV is not constrained.
+
+              = $-$N, with N=1, 2, or 3.  These values cause the same restrictions as above
+              \hspace*{1em}on the number of independent variables NV.  However, they also allow
+              \hspace*{1em}any number of dependent variables to be attached to the independent
+              \hspace*{1em}variables in a linear way.
+
+
+       \item  INFILE (File number from which specifications are to be read).
+
+              = 0 or 5 to read interactively from the terminal.
+
+              = IFILE (any positive integer) to read from that file, after rewinding that
+              \hspace*{1em}file.
+
+              = $-$IFILE (any negative integer) to read from file IFILE at its current
+              \hspace*{1em}position without first rewinding.
+
+       \item  LOGFILE (File number to which specifications are to be
+written.  Ignored unless INFILE = 0 or 5, but still required.)
+
+              = 0 to not write out specifications.
+
+              = JFILE (any positive integer) to write specifications to
+               that file.
+
+       \item  ISB (Scaling and Bounds).
+
+              = 0 for default (unit) scaling and no bounds.
+
+              = 1 to scan command lines for override scale factors (e.g. Amps/Tesla,
+              or \hspace*{1em}simply more uniform size) for each independent variable as used
+              in {\em fit}, \hspace*{1em}{\em opt}, {\em grad}, and
+			  {\em scan}.  The dependent variables, if any, are
+              still computed \hspace*{1em}from the independent ones in the original MKS units.
+
+              = 2 to scan command lines for bounds XMIN,XMAX for each independent
+              \hspace*{1em}variable as used in {\em fit}, {\em opt}, {\em grad}, and
+			  {\em scan}.  Note that bounds
+              for the \hspace*{1em}dependent variables, if any, are implied by the bounds on
+              the independent \hspace*{1em}variables to which they are attached.
+
+              = 3 to scan command lines for both scales and bounds.
+
+      \item   ISTORE
+
+              = 1 to put selections in storage associated with inner
+              procedure.
+
+              = 2 to put selections in storage associated with outer
+              procedure.
+
+              = 3 to put selections in auxiliary storage.
+
+       \item  ISEND (Ignored, but still required, when INFILE = 0 or 5).
+
+              = 0 to write out nothing.
+
+              = 1 to write out at the terminal items to be varied.
+
+              = 2 to write out on file 12 items to be varied.
+
+              = 3 to write out items at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         adjust    vary
+          1 1 27 0 1 0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em adjust}.  When invoked it specifies the quantities to be varied using the contents of file 1 and puts these selections in storage associated with an inner procedure.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The {\em vary} command may be used for fitting, optimization, and scanning.  It gives the user access to all parameters of all items in the {\em menu} component of the \Mary master input file.  See, for example, sections 10.2.1 and 10.3 through 10.6.  Note that if JOB $<$ 0, one may have NV {\em independent} variables and any number of {\em dependent} variables whose {\em increments} are tied to those of the independent variables by a linear relation.  For example, see section 10.3.1.
+
+The Exhibit below shows the \Mary response to {\em vary} when invoked interactively.  It presents in alphabetical order the user-given names of all entries in the {\em menu} component of the master input file, and invites selection.
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 9.6.
+  This is a fragmentary MaryLie run to illustrate the initial response
+  to a command with type code vary.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  vary     vary
+    3.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00   1.00000000000000       1.00000000000000
+  drft     drft
+    2.00000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*vary
+     1*end
+MARYLIE #menu entries available to be varied:
+-----------------------------------------------------------------------
+drft     end      fileout  vary
+
+Enter name and (optional) parameter index for #menu element(s) to be
+varied.
+Elements named following a $ may be reset only.  Type * to relist
+Select up to 100 element(s): (Enter a # sign when finished)
+
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Carry Out Fitting Operation} \index{fit}
+\begin{quotation}
+\noindent Type Code:  fit
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+      \item  JOB
+
+             = 1 to use standard fitting algorithm and inner procedure storage.
+
+             = $-$1 to use standard fitting algorithm and outer procedure storage.
+
+             = N ( N an integer $> 1$).  In this case inner procedure storage is used, and \hspace*{1em}the meaning of N is determined by the sign of MPRINT.  If MPRINT = \hspace*{1em}M (M an integer $\geq$ 1), the fitter halves the reach up to N$-$1 times if \hspace*{1em}there are convergence difficulties.  See the description below.  If MPRINT \hspace*{1em}= $-$M (M an integer $\geq$ 1), the fitter {\em damps} the step that Newton would \hspace*{1em}prescribe for the first N steps after the feeler steps.  See the description \hspace*{1em}below.
+
+             = $-$N ( N an integer $> 1$) to use outer procedure storage, but otherwise act \hspace*{1em}as in the $+$N case described above.
+
+      \item  AUX
+
+	         = 0 to use default value of ANTOL = 10$^{-9}$ when MPRINT = M with \hspace*{1em}M $>$ 0, and to use the default damping coefficient value of (1/2) when  \hspace*{1em}MPRINT = $-$M.  See the description below.
+
+			 $>$ 0 to set ANTOL = AUX when MPRINT = M, and to use AUX for the \hspace*{1em}damping coefficient when MPRINT = $-$M.  See the description below.
+
+      \item  ERROR
+
+      \item  DELTA (Controls feeler step size.  See the description below.)
+
+      \item  MPRINT
+
+             = 0 for no output.
+
+             = $+$M to allow halvings of the reach if there are convergence problems \hspace*{1em}and to print intermediate aims and variables every Mth iteration.  See the \hspace*{1em}description below.
+
+             = $-$M to forbid halvings of the reach if there are convergence problems, and \hspace*{1em}instead damp the feeler steps.  Also, print intermediate aims and variables \hspace*{1em}every Mth iteration.  See the description below.
+
+      \item  ISEND
+
+		 = 0 to write out nothing.
+
+		 = 1 to write brief output at the terminal.
+
+		 = 2 to write brief output on file 12.
+
+		 = 3 to write brief output both at the terminal and on file 12.
+
+		 = 4 to write brief output at the terminal and extensive output on file
+		   12.
+
+		 = $-$J (with J = 1,2,3,4) to achieve the same results as above except
+		   the \hspace*{1em}words ``brief'' and ``extensive'' are interchanged.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         fitit    fit
+         1  0  1.e-15  1.e-3  1  1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given number {\em fitit}.  When invoked it seeks to achieve with an error of less than $10^{-15}$ the goals specified in a previous {\em aim} command.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+A {\em fit} command is used inside a procedure (a logical loop) in conjunction with {\em aim} and {\em vary} commands.  See, for example, sections 10.2.1, 10.3, 10.4.1, 10.5, and 10.6.  The fitter employed in \Mary uses a modified Newton's method.  It usually displays (particularly once a fit is well underway) nearly the quadratic convergence of Newton's method, but is considerably faster.
+
+To facilitate further explanation, it is useful to introduce two definitions.  The {\em aim} command specifies NA quantities to be fit and a target value for each of these quantities (see section 9.5).  We view any collection of values for these quantities as a point in an NA-dimensional ``{\em aim}'' space.  Thus the set of target values is a particular point in {\em aim} space, which we will call the {\em target} point.  Similarly, the {\em vary} command specifies NV (with NV = NA) parameters to be varied (see section 9.6).  We view any collection of values for these parameters as a point in an NV-dimensional ``{\em vary}'' space.  Thus, the {\em initial} set of parameter values before a {\em fit} has begun is a particular point in vary space.  Corresponding to this point in vary space is an initial point in aim space that describes the values of the quantities to be fit when the parameters have their initial values.  The goal of a fit command is to find a point in vary space that will produce a corresponding point in aim space that is the desired target point.
+
+When invoked, the fitter begins by making NV independent {\em feeler} steps in vary space by varying the selected parameters one at a time.  If the parameter to be varied is initially zero, the corresponding feeler step has size DELTA.  If the parameter is initially nonzero, the corresponding feeler step has size DELTA*(Initial Value of Parameter).  For each feeler step to a new point in vary space in the vicinity of the initial point, the corresponding point in aim space is found.  Thus, at the end of the feeler step process there are (NV $+$ 1) points in vary space (the initial point $+$ NV feeler-step points) and (NV $+$ 1) corresponding points in aim space.  Next the fitter makes a {\em Newton} step in vary space to a point whose corresponding point in aim space is supposed to be nearer the target point than the initial point in aim space.  It also finds the corresponding point in aim space.\index{Newton's method}
+
+At this stage there are (NV $+$ 2) points in vary space and (NV $+$ 2) corresponding points in aim space.  The usual Newton procedure would now be to discard all of these points save for the result of the Newton step, and then again repeat the original process by again making NV feeler steps, etc.
+
+The fitter in \Mary does something else: \ One of these (NV $+$ 2) points in aim space will be farthest from the target point.  The corresponding point in vary space is discarded so that what remains is a set of (NV $+$ 1) points. These points  are now used to make a second Newton step, etc.  The process is repeated until convergence is achieved in aim space.  By {\em convergence} it is meant that a point is found in vary space whose corresponding point in aim space is a distance less than ERROR away from the target point.
+
+It may happen that successive points found by the fitter in aim space do not seem to be converging to the target point.  The fitter senses this problem if it occurs.  Suppose JOB $=$ $\pm$N with N $>$ 1 and MPRINT $=$ M with M $>$ 0.  The fitter then selects the point in aim space that is midway between the initial point and the target point, and treats this point as a new {\em interim target}.   This process is called {\em halving} the {\em reach}.  The fitter now begins its operation anew trying to achieve the interim target.  If convergence problems continue, a new interim target is selected that is midway between the initial point and the previous interim target.  A maximum of (N$-$ 1) halvings of the reach is allowed if convergence problems persist.  Thus, the aim-space journey from the initial point to the target point can be subdivided up to (N $-$ 1) times.  On the other hand, if convergence is achieved for two successive Newton steps, the reach is {\em doubled} (provided that so doing does not produce an interim target that is beyond the original target).
+
+The whole problem resembles that of getting a dog to move from point A to point B.  One places a wiener before its nose at point A, and then drags the wiener to point B in the hope that the dog will follow.  This is a very powerful approach that makes the \Mary fitter remarkably effective.
+
+When the reach is subdivided, there is no need to achieve intermediate targets with high precision.  (While the wiener is being dragged, the dog's nose doesn't have to touch the wiener.  It only has to remain close.)  When operating in the halving mode, the fitter employs a small quantity called ANTOL, and the attempt to achieve an intermediate target is deemed converged when that target is achieved within an error of 10$^4$ * ANTOL.  When AUX = 0, ANTOL is taken to have the default value ANTOL = 10$^{-9}$.  When AUX $>$ 0, ANTOL is taken to have the value ANTOL = AUX.
+
+There is also a perhaps more familiar alternate way to deal with convergence problems.  Rather than subdividing the reach in aim space, one hopes that the Newton process is stepping in the right direction, but perhaps with steps that are too large.  In that case it might help to compute what step Newton would prescribe, but then actually take a step that is the prescribed step scaled (multiplied) by some {\em damping} factor.  The \Mary fitter can also employ this option.  If MPRINT = $-$M and there are convergence problems, the fitter does not subdivide the reach, but instead takes steps that are damped compared to what Newton would prescribe.  If AUX = 0, the damping factor has a default value of (1/2).  If AUX $>$ 0, the value of AUX is used as the damping factor.  Damping is employed for the first N steps after the feeler steps.
+
+\newpage
+\section{Minimize Sum of Squares Optimization} \index{optimize} \index{sum of squares optimization} \index{MSS optimizer} \index{minimize}
+\begin{quotation}
+\noindent     Type Code:  mss
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 1 to use nonlinear least squares optimizer.
+
+              Note:  When JOB $>$ 0, the inner procedure storage is
+used.  When JOB $<$ 0, the result is the same as when JOB $>$ 0, except
+that the outer procedure storage is used.
+
+        \item  VTOL (Error tolerance on value of merit function.)
+
+        \item  STOL (Error tolerance on step size.)
+
+        \item  GTOL (Error tolerance on estimated gradients.)
+
+	    \item  DELTA (Feeler step size control.)
+
+       \item  ISEND
+
+              = 0 to write out nothing.
+
+              = 1 to write brief output at the terminal.
+
+              = 2 to write brief output on file 12.
+
+              = 3 to write brief output both at the terminal and on file 12.
+
+              = 4 to write brief output at the terminal and extensive output on file 12.
+
+              = $-$N (with N = 1,2,3,4) to achieve the same results as above except the
+               \hspace*{1em}words ``brief'' and ``extensive'' are interchanged.
+\end{enumerate}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+          mssopt     mss
+        -1  1.E-10  1.E-4  1.E-4  .1  1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em mssopt}.  When invoked it seeks to make the merit function within 10$^{-10}$ of its smallest possible value.
+
+\vspace{5mm}
+     Description:
+
+The {\em mss} optimizer is designed to work with weighted sum of squares merit functions described by a command with type code {\em mrt0}.  Such merit functions are set up using an {\em aim} command with JOB = 3.  See sections 9.5 and 9.10.  For an example of the use of {\em mss}, see section 10.3.3.
+
+The roles of parameters 2 through 5 are indicated below:
+
+	 VTOL =  Error tolerance on the decrease in the {\em value} of the merit
+	 function.  The \hspace*{6.15em}iteration is considered converged, and the optimization
+	 process terminated, \hspace*{6.15em}when the merit function decrease is $<$ VTOL for NV
+	 steps after a full quadratic \hspace*{6.15em}estimate is formed.
+
+	 STOL =  Error tolerance on step size.  The iteration is considered
+	 converged, and the \hspace*{6.15em}optimization
+	 process terminated, when all components of the computed step \hspace*{6.15em}are
+	 $<$ STOL.
+
+	 GTOL =  Error tolerance on estimated gradients.  The iteration is
+	 considered converged, \hspace*{6.15em}and the optimization
+	 process terminated, when all components of the gradient \hspace*{6.15em}are $<$ GTOL.
+
+	 DELTA = Feeler step size control.  To compute the initial numerical
+	 derivatives, on the \hspace*{6.15em}first NV iterations, any quantity $X$ that is to be
+	 varied is set to $X$ = \\
+	 \hspace*{6.15em}XINITIAL*(1.0 + DELTA), unless XINITIAL = 0.0,
+	 in which case $X$ = \hspace*{6.15em}DELTA.
+\vspace{2mm}
+
+\newpage
+\section{General Optimization} \index{optimize} \index{general optimization}
+\begin{quotation}
+\noindent Type Code:  opt
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 11 to use quadratic step optimizer to minimize first ``aim''.
+
+			  = 12 to use quadratic step optimizer to minimize weighted sum of
+			  squares \hspace*{1em}merit function.
+
+			  = 13 to use quadratic step optimizer to minimize the square root
+			   of weighted \hspace*{1em}sum of squares merit function.
+
+			   = 21 to use downhill simplex optimizer to minimize first ``aim''.
+
+			   = 22 to use downhill simplex optimizer to minimize weighted sum of
+			  squares \hspace*{1em}merit function.
+
+			  = 23 to use downhill simplex optimizer to minimize the square root
+			  of \hspace*{1em} weighted sum of squares merit function.
+
+			  = 31 to use * optimizer to minimize first ``aim''.
+
+			 = 32 to use * optimizer to minimize weighted sum of
+			  squares merit function.
+
+			 = 33 to use * optimizer to minimize the square root of
+			 weighted sum of \hspace*{1em}squares merit function.
+
+
+			  Note:  When JOB $>$ 0, the inner procedure storage is used.  When JOB $<$ 0, the result is
+the same as when JOB $>$ 0, except that the outer procedure storage is used.
+
+
+       \item  VTOL (Error tolerance on value of merit function.)
+
+       \item  STOL (Error tolerance on step size.)
+
+       \item  GTOL (Error tolerance on estimated gradients.)
+
+       \item  DELTA (Feeler step size control.)
+
+       \item  ISEND
+
+              = 0 to write out nothing.
+
+              = 1 to write brief output at the terminal.
+
+              = 2 to write brief output on file 12.
+
+              = 3 to write brief output both at the terminal and on file 12.
+
+              = 4 to write brief output at the terminal and extensive output on file 12.
+
+              = $-$N (with N = 1,2,3,4) to achieve the same results as above except the
+               \hspace*{1em}words ``brief'' and ``extensive'' are interchanged.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+          optit     opt
+        -11  1.E-10  1.E-4  1.E-4  .1  1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em optit}.  When invoked it seeks to make the merit function within 10$^{-10}$ of its smallest possible value using the quadratic step optimizer.
+
+\vspace{5mm}
+     Description:
+
+The {\em opt} command is intended to allow the user to employ a variety of optimizers for any kind of merit function.  For an example of the use of {\em opt}, see section 10.3.2.
+
+The roles of the parameters 2 through 5 are indicated below:
+
+    	 VTOL =  Error tolerance on the decrease in the {\em value} of the merit
+	 function.  The \hspace*{6.15em}iteration is considered converged, and the optimization
+	 process terminated, \hspace*{6.15em}when the merit function decrease is $<$ VTOL for NV
+	 steps after a full quadratic \hspace*{6.15em}estimate is formed.
+
+	 STOL =  Error tolerance on step size.  The iteration is considered
+	 converged, and the \hspace*{6.15em}optimization
+	 process terminated, when all components of the computed step \hspace*{6.15em}are
+	 $<$ STOL.
+
+	 GTOL =  Error tolerance on estimated gradients.  The iteration is
+	 considered converged, \hspace*{6.15em}and the optimization
+	 process terminated, when all components of the gradient \hspace*{6.15em}are $<$ GTOL.
+
+	 DELTA = Feeler step size control.  To compute the initial numerical
+	 derivatives, on the \hspace*{6.15em}first NV iterations, any quantity $X$ that is to be
+	 varied is set to $X$ = \\
+	 \hspace*{6.15em}XINITIAL*(1.0 + DELTA), unless XINITIAL = 0.0,
+	 in which case $X$ = \hspace*{6.15em}DELTA.
+\vspace{2mm}
+\vspace{2mm}
+
+      When JOB=11, 21, 31, etc., the optimizer attempts to minimize the
+	  first ``aim'' associated with the current procedure and specified by
+	  a command with type code {\em aim}.  To achieve that some quantity is the first ``aim'', it should
+be entered first, and on a separate line if multiple quantities are to be
+entered.  Other aims may be selected on subsequent input lines.  They
+will be ignored by OPT, but may, for example, be written out by WSQ on
+each iteration.
+
+When JOB=12, 22, 32, etc., the optimizer attempts to minimize the
+weighted sum of squares merit function associated with the current
+procedure and specified by a command with type code {\em aim}.
+
+When JOB=13, 23, 33, etc., the optimizer attempts to minimize the square
+root of weighted sum of squares merit function associated with the
+current procedure and specified by a command with type code {\em aim}.
+
+\newpage
+\section{Merit Function (Sum of Squares)}\index{merit function} \index{sum of squares merit function}
+\begin{quotation}
+\noindent Type Code:  mrt0
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+\item KIND
+
+= 1 for weighted sum of squares merit function.
+
+= 2 for square root of weighted sum of squares merit function.
+
+       \item IPROC
+
+	    = 1 to use merit function associated with the inner procedure
+		and specified \hspace*{1em}by a command with type code {\em
+		aim}.
+
+        = 2 to use merit function associated with the outer procedure
+		and specified \hspace*{1em}by a command with type code {\em
+		aim}.
+
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         merit0    mrt0
+            1  2
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em merit0}.  When invoked it computes the value of a weighted sum of squares merit function based on information provided by an {\em aim} command associated with an outer procedure.\index{rms merit function}
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+The {\em mss} optimizer (see section 9.8) is designed to work with a merit function based on a weighted sum of squares.  Such a merit function may be set up using an {\em aim} command with JOB = 3 (see section 9.5).  For an example of where this is done, see section 10.3.3.  One may also use {\em mrt0} in connection with {\em opt}.  See section 9.9.  Finally, one may set up and use {\em mrt0} simply to monitor what is going on during the course of some procedure.
+
+\newpage
+\section{Merit Functions (User Written)}\index{merit function} \index{user written merit function}
+\begin{quotation}
+\noindent Type Code:  mrt1, mrt2, mrt3, mrt4, mrt5
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  P1
+       \item  P2
+       \item  P3
+       \item  P4
+       \item  P5
+       \item  P6
+\end{enumerate}
+
+\vspace{5mm}
+\noindent     Example:
+\begin{verbatim}
+         merit2    mrt2
+         0  0  0  0  0  0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em merit2}.  When invoked it computes the value of the merit function specified in the user-written subroutine {\em mrt2(p)}.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Merit functions are written by the user to work in conjunction with fitting and/or optimizing procedures, or for other purposes of the user's devising.  See, for example, Exhibit 10.3.2a.
+
+\newpage
+\section{Constraints (User Written)}\index{constraints} \index{user written constraints}
+\begin{quotation}
+\noindent Type Code:  con1, con2, con3, con4, con5
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  P1
+       \item  P2
+       \item  P3
+       \item  P4
+       \item  P5
+       \item  P6
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         couple    con1
+         0  0  0  0  0  0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em couple}.  When invoked it sets up some relation between the parameters in parameter sets 1 through 9.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Constraint routines are written by the user.  Simple constraints can be specified in the {\em vary} command.  See section 9.6.  Completely general relations among parameters can be achieved by user-written constraint routines.  These routines have access to all the parameters in parameter sets 1 through 9 (see section 7.25) and can be written to set up any desired relation among them.  The values in these parameter sets can then be used to specify the parameter values in any element by using the {\em random} element option.  See section 6.18.  Thus, one can set-up any desired relation among all the parameters of all beam-line elements.
+
+The Exhibit below shows a simple constraint routine.  In point of fact, it sets up a condition whose net effect could have also been achieved using a suitable {\em vary} command.
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+Exhibit 9.12, a simple user written constraint subroutine.
+
+c
+************************************************************************
+c
+       subroutine con2(p)
+c impose constraints among parameters in the various parameter sets
+       include 'impli.inc'
+       include 'param.inc'
+       include 'parset.inc'
+c
+       dimension p(6)
+c
+c this constraint relates parameter set p2 to parameter set p1 by
+c putting parameter p4 of parameter set p2 equal to minus
+c parameter p3 of parameter set p1.
+c
+c set up control indices
+       ipset1=nint(p(1))
+       ipset2=nint(p(2))
+       ipar1=nint(p(3))
+       ipar2=nint(p(4))
+c
+c relate parameter values
+       pst(ipar2,ipset2)=-pst(ipar1,ipset1)
+c
+       return
+       end
+c
+************************************************************************
+c
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Compute Gradient Matrix} \index{gradient matrix}
+\begin{quotation}
+\noindent     Type Code:  grad
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 1 to find partial derivatives of all quantities specified
+in {\em aim} with respect \hspace*{1em}to all variables specified in {\em vary}.
+
+			  = 2 to find the partial derivatives of the weighted squares merit
+function \hspace*{1em}associated with all the ``aims'' related to the current
+process.
+
+               = 3 to do both.
+
+               Note:  When JOB $>$ 0, the inner procedure storage is
+used.  When JOB $<$ 0, the result is the same as when JOB $>$ 0, except
+that the outer procedure storage is used.
+
+       \item  ISIDES
+
+              = 1 for single sided gradient.
+
+              = 2 for double sided gradient.
+
+       \item  IFILE
+
+              = 0 to not write out gradient matrix.
+
+              = any suitable integer to write gradient matrix on file $\mid \mbox{IFILE} \mid$.
+
+              Note:  When IFILE is a negative integer, the effect is the same as when IFILE has the corresponding positive value, except that the entries in the matrix are labeled.
+
+      \item   DELTA
+
+       \item  SCALE
+
+       \item  ISEND
+
+              = 0 to write out nothing.
+
+              = 1 to write gradient matrix at the terminal.
+
+              = 2 to write gradient matrix on file 12.
+
+              = 3 to write gradient matrix at the terminal and on file 12.
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         partials    grad
+         1 1 0 1.e-4 0 1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em partials}.  When invoked inside a procedure, it computes partial derivatives numerically using {\em feeler} steps of size DELTA.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+A command with type code {\em grad} can be used to find numerically the partial derivative of any \Mary computed quantity with respect to any parameter.  This is done within a {\em procedure}.  The quantities to be differentiated are specified with an {\em aim} command, and the independent differentiation variables are specified with a {\em vary} command.  The Exhibit below illustrates the use of a {\em grad} command for the simple case of quantities that result from a function of three variables.  This function, which happens to be linear, is computed in the user routine {\em usr14}.  (Of course, one could equally well specify any other set of \Mary computed quantities.)  This routine is displayed as well as the \Mary run that invokes it and computes its gradient matrix of partial derivatives.  Observe that the computed derivatives  are indeed what is expected.  The entries appearing next to the derivatives are the quantities
+\[
+{\rm (scale)}*{\rm (derivative/delta)}^{1/2}.
+\]
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+       subroutine user14(p,fa,fm)
+c
+       include 'impli.inc'
+       include 'param.inc'
+       include 'usrdat.inc'
+c
+c Calling arrays
+       dimension p(6),fa(0:monoms),fm(6,6)
+c
+       ucalc(1)=p(3)*p(1) + p(4)*p(2)
+       ucalc(2)=p(5)*p(1) + p(6)*p(2)
+c
+       return
+       end
+
+*************************************
+
+#comment
+  Exhibit 9.13.
+  This is a simple MaryLie run to illustrate the use of
+  a command with type code grad.  The routine usr14 computes
+  a simple linear function (lf) and puts the results in the ucalc
+  array according to the rule:
+
+    u(1) = p(3)*p(1) + p(4)*p(2),
+    u(2) = p(5)*p(1) + p(6)*p(2).
+
+The aim commands selects u(1) and u(2) as the quantities to
+be differentiated.  The vary command selects p(1), p(2), and p(3)
+as the variables.  Thus the gradient matrix should contain
+the entries below:
+
+1 1    p(3)
+2 1    p(5)
+1 2    p(4)
+2 2    p(6)
+1 3    p(1)
+2 3    0
+
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  bip      bip
+    10.0000000000000
+  tip      tip
+   0.000000000000000E+00
+  aim      aim
+    1.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00   1.00000000000000       1.00000000000000
+  vary     vary
+    3.00000000000000      0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00   1.00000000000000       1.00000000000000
+  grad     grad
+    1.00000000000000       1.00000000000000      0.000000000000000E+00
+   1.000000000000000E-03   10.0000000000000       1.00000000000000
+  lf       usr14
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+  wuca     wuca
+    1.00000000000000       2.00000000000000       1.00000000000000
+   0.000000000000000E+00
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*lf
+     1*wuca
+     1*aim
+     1*vary
+     1*bip
+     1*lf
+     1*grad
+     1*tip
+     1*end
+  k and ucalc(k) for nonzero values of array
+           1   11.0000000000000
+           2   17.0000000000000
+
+  Select quantities by entering their symbols
+  (Enter a # sign when finished, or type help to review the defined
+symbols)
+u(1) u(2) #
+accept  1:      u(  1)
+accept  2:      u(  2)
+
+  Aims/quantities selected :
+No.     item      present value
+----------------------------------
+  1    u(  1) =       11.0000000
+  2    u(  2) =       17.0000000
+
+  Do you wish to start over? (y/n) <n>:
+
+MARYLIE #menu entries available to be varied:
+-----------------------------------------------------------------------
+aim      end      grad     tip      wuca
+bip      fileout  lf       vary
+
+Enter name and (optional) parameter index for #menu element(s) to be
+varied.
+Elements named following a $ may be reset only.  Type * to relist
+Select up to 100 element(s): (Enter a # sign when finished)
+lf 1 lf 2 lf 3 #
+No.  1 is lf       usr14   .  Parameter 1 out of 6 selected.
+        lf(1) =   1.0000000000000
+No.  2 is lf       usr14   .  Parameter 2 out of 6 selected.
+        lf(2) =   2.0000000000000
+No.  3 is lf       usr14   .  Parameter 3 out of 6 selected.
+        lf(3) =   3.0000000000000
+
+   Variable #menu elements selected:
+No.  Element    Type     Parameter   Present value
+-----------------------------------------------------------
+  1    lf         usr14        1       1.0000000000000
+  2    lf         usr14        2       2.0000000000000
+  3    lf         usr14        3       3.0000000000000
+
+  Do you wish to start over? (y/n) <n>:
+
+    1    1   3.000000       547.7226        u(  1) /        lf(1)
+    2    1   5.000000       707.1068        u(  2) /        lf(1)
+    1    2   4.000000       632.4555        u(  1) /        lf(2)
+    2    2   6.000000       774.5967        u(  2) /        lf(2)
+    1    3   1.000000       316.2278        u(  1) /        lf(3)
+  gradient loop is finished
+
+end of MARYLIE run\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Scan Parameter Space}\index{scan parameter space}
+\begin{quotation}
+\noindent     Type Code:  scan
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  JOB
+
+              = 1 to restore scanned variables to original values on
+completion of scan.
+
+               = 2 to leave scanned variables in their final state on
+completion of scan.
+
+               Note:  When JOB $>$ 0, the inner procedure storage is
+used.  When JOB $<$ 0, the result is the same as when JOB $>$ 0, except
+that the outer procedure storage is used.
+
+        \item  NXSTEP
+
+               = $+$N to step from X to X + N$\ast$DX.
+
+               = $-$N to step from X $-$ $\mid$ N$\mid \ast$DX to X + $\mid$ N$\mid \ast$DX.
+
+        \item  NYSTEP
+
+               = $+$M to step from Y to Y + M$\ast$DY.
+
+               = $-$M to step from Y $-$ $\mid$ M$\mid \ast$DY to Y + $\mid$ M$\mid \ast$DY.
+
+        \item  DX
+
+        \item  DY
+
+        \item  ISEND
+
+               = 0 to write out nothing.
+
+               = 1 to write out at the terminal.
+
+               = 2 to write out on file 12.
+
+               = 3 to write out at the terminal and on file 12.
+\end{enumerate}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         scanit    scan
+         1  -15  0  10  0  1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em scanit}.  When invoked it steps the quantity ``X'' from X $-$ 150 to X $+$ 150 in increments of 10.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+It is sometimes useful to study how some or several quantities change as one or two parameters are varied.  This can be done using a {\em scan} command within a {\em procedure}.  See, for example, section 10.4.2.  The quantities to be varied are set up using a {\em vary} command.  If one quality is selected, it is interpreted as being ``X''.  If two are selected, the first is taken to be ``X'' and the second to be ``Y''.  The quantities to be studied must be computed within the procedure and are specified using a {\em sq} command.  See section 8.26.
+
+\newpage
+\section{Capture Parameter Set}\index{capture parameter set} \index{parameter set}
+\begin{quotation}
+\noindent Type Code:  cps1, cps2, \ldots, cps8, cps9
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  P1
+       \item  P2
+       \item  P3
+       \item  P4
+       \item  P5
+       \item  P6
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example and Description:
+\begin{verbatim}
+         capps1     cps1
+           0  0  0  0  0  0
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em capps1}.  Suppose parameter set 1 has not previously been {\em captured} by invoking a command with type code {\em cps1}.  Then, upon invoking {\em capps1}, its parameter values (in this case 0  0  0  0  0  0) are replaced by those in parameter set 1.  At the same time \Mary sets an internal flag to indicate that parameter set 1 has been captured.
+
+Suppose on the contrary, that parameter set 1 has been captured previously.  In that case, invoking {\em capps1} replaces the parameters in parameter set 1 with those in {\em capps1}.  The internal flag is left unchanged.
+
+\vspace{5mm}
+     Application:
+\vspace{2mm}
+
+Suppose that one wishes to vary the contents of parameter set 1 in connection with a fitting or optimization or scanning operation, and then return the contents to their original values.  This can be done by invoking {\em capps1} before the operation, and then invoking it again after the operation.
+
+\vspace{5mm}
+     Exhibit:
+\vspace{2mm}
+
+The Exhibit below illustrates the action of a command with type code {\em cps1}.  To explain what is being done, it is easiest to list the {\em labor} portion of the master input file along with an explanation of what each entry does.  Then, by looking at the output of the \Mary run, one can see that what has been commanded in {\em labor} has actually occurred.
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#labor
+     1*fileout  (write out master input file)
+     1*oldps1 (set the contents of parameter set 1)
+     1*capps1 (capture these values from the parameter set, and flag the
+     parameter set as captured)
+     1*fileout (again write out master input file to see that the
+     parameters in capps1 have changed)
+     1*setps1 ( capture parameter set 1 with a different command having
+     type code cps1)
+     1*wps1 (observe that this command has now reset the contents of
+     parameter set 1)
+     1*newps1 (again reset the contents using a ps1 command)
+     1*wps1 (observe that this command has now reset the contents of
+     parameter set 1
+     1*capps1 ( capture parameter set 1 with the command  capps1)
+     1*wps1 (observe that  the contents of parameter set 1 have been
+     restored to the old values)
+     1*newps1 (set the contents of parameter set 1 to new values)
+     1*fps1 (free parameter set 1; see section 9.16)
+     1*wps1 (observe that the command newps1 has had the intended effect)
+     1*capps1 (recapture parameter set 1)
+     1*fileout (again write out master input file to see that the
+     parameters in capps1 have changed)
+     1*end
+
+#comment
+  Exhibit 9.15.
+  This is a fragmentary MaryLie run to illustrate a simple use of the cpsj
+  type code.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  capps1   cps1
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+  setps1   cps1
+    8.00000000000000       9.00000000000000       10.0000000000000
+    11.0000000000000       12.0000000000000       13.0000000000000
+  fps1     fps
+    1.00000000000000
+  wps1     wps
+    1.00000000000000       1.00000000000000
+  oldps1   ps1
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+  newps1   ps1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*oldps1
+     1*capps1
+     1*fileout
+     1*setps1
+     1*wps1
+     1*newps1
+     1*wps1
+     1*capps1
+     1*wps1
+     1*newps1
+     1*fps1
+     1*wps1
+     1*capps1
+     1*fileout
+     1*end
+
+#comment
+  Exhibit 9.15.
+  This is a fragmentary MaryLie run to illustrate a simple use of the cpsj
+  type code.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  capps1   cps1
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+  setps1   cps1
+    8.00000000000000       9.00000000000000       10.0000000000000
+    11.0000000000000       12.0000000000000       13.0000000000000
+  fps1     fps
+    1.00000000000000
+  wps1     wps
+    1.00000000000000       1.00000000000000
+  oldps1   ps1
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+  newps1   ps1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*oldps1
+     1*capps1
+     1*fileout
+     1*setps1
+     1*wps1
+     1*newps1
+     1*wps1
+     1*capps1
+     1*wps1
+     1*newps1
+     1*fps1
+     1*wps1
+     1*capps1
+     1*fileout
+     1*end
+values of parameters in the parameter set           1
+    8.00000000000000       9.00000000000000       10.0000000000000
+    11.0000000000000       12.0000000000000       13.0000000000000
+values of parameters in the parameter set           1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+values of parameters in the parameter set           1
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+values of parameters in the parameter set           1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+
+#comment
+  Exhibit 9.15.
+  This is a fragmentary MaryLie run to illustrate a simple use of the cpsj
+  type code.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  capps1   cps1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+  setps1   cps1
+    8.00000000000000       9.00000000000000       10.0000000000000
+    11.0000000000000       12.0000000000000       13.0000000000000
+  fps1     fps
+    1.00000000000000
+  wps1     wps
+    1.00000000000000       1.00000000000000
+  oldps1   ps1
+    1.00000000000000       2.00000000000000       3.00000000000000
+    4.00000000000000       5.00000000000000       6.00000000000000
+  newps1   ps1
+    14.0000000000000       15.0000000000000       16.0000000000000
+    17.0000000000000       18.0000000000000       19.0000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*oldps1
+     1*capps1
+     1*fileout
+     1*setps1
+     1*wps1
+     1*newps1
+     1*wps1
+     1*capps1
+     1*wps1
+     1*newps1
+     1*fps1
+     1*wps1
+     1*capps1
+     1*fileout
+     1*end
+
+end of MARYLIE run
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Free Parameter Set}\index{parameter set} \index{free parameter set}
+\begin{quotation}
+\noindent     Type Code:  fps
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+       \item  IPSET (an integer from 1 to 9 specifying a particular
+              parameter set).
+\end{enumerate}
+
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         fps1     fps
+           1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em fps1}.  When invoked it frees parameter set 1.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+When a parameter set is captured using a command with type code {\em cps1}, {\em cps2}, $\cdots$, {\em cps9}, an internal flag (associated with the respective parameter set) is set to indicate that it has been captured.  See section 9.15.  A command with type code {\em fps} sets this flag back to its uncaptured value.  See Exhibit 9.15.
+
+\newpage
+\section{Change or Write Out Values of Flags and Defaults}\index{flags} \index{defaults}
+\begin{quotation}
+\noindent     Type Code:  flag
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+        \item  JOB
+
+               = 0 to change control flags and/or defaults.
+
+               = 1 to write values at the terminal.
+
+               = 2 to write values on file 12.
+
+               = 3 to write values at the terminal and on file 12.
+
+        \item  IMBAD
+        \item  IQUIET
+        \item  0
+        \item  0
+        \item  0
+\end{enumerate}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         seeflags    flag
+           1  0  0  0  0  0
+\end{verbatim}
+\end{quotation}
+This is a command with the user given name {\em seeflags}.  When invoked it displays the current values of the flags at the terminal.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+\Mary has various internal flags used for control and to indicate the outcome of various operations.  The following flags or default values may be interest to the user:
+
+\newpage
+\begin{tabular}{ccl}
+\underline{Flag} & \hspace{.5in}  \underline{Default Value} & \hspace{.5in}  \underline{Other Values} \\
+IMBAD & 0 &  \hspace{.5in} = 1 if there is a {\em dhqr2} return error flag \\
+&&  \hspace{.71in} when it is called by {\em eig4} (a routine \\
+&&  \hspace{.71in} that finds the eigenvalues and vectors\\
+&&  \hspace{.71in} of a $4 \times 4$ matrix).\\
+&& \\
+&&  \hspace{.5in} = 2 if {\em eig4} finds eigenvalues off the unit\\
+&&  \hspace{.71in} circle. \\
+&& \\
+&&  \hspace{.5in} = 3 if there is a {\em dhqr2} return error flag \\
+&&  \hspace{.71in} when it is called  by {\em eig6} (a routine \\
+&&  \hspace{.71in} that finds the eigenvalues and vectors\\
+&&  \hspace{.71in} of a $6 \times 6$ matrix).\\
+&& \\
+&&  \hspace{.5in} = 4 if {\em eig6} finds eigenvalues off the unit\\
+&&  \hspace{.71in} circle.\\
+&& \\
+IQUIET & 0 &  \hspace{.5in} = 1 to inhibit writing in the {\em ppa} \\
+&&  \hspace{.71in} subroutine.  See section 8.36.\\
+&& \\
+&&  \hspace{.5in} = 1 to inhibit writing in the {\em aim} \\
+&&  \hspace{.71in} subroutine.  See section 9.5.\\
+&& \\
+\end{tabular}
+
+\vspace{5mm}
+\noindent A command with type code {\em flag} can be used to examine or change these values.  Its operation is similar to type codes {\em inf} and {\em zer}.  See sections 7.35 and 7.36.
+
+\newpage
+\section{Reset Menu Entries}\index{menu} \index{reset menu entries}
+\begin{quotation}
+\noindent     Type Code:  rset
+\vspace{5mm}
+
+\noindent Required Parameters:
+\begin{enumerate}
+        \item  JOB (Selects task to be done within {\em rset}.  Must be
+		present, but not yet used.)
+
+        \item  INFILE (File number from which specifications are to be
+		read).
+
+              = 0 or 5 to read interactively from the terminal.
+
+              = IFILE (any positive integer) to read from that file,
+			  after rewinding that \hspace*{1em}file.
+
+              = $-$IFILE (any negative integer) to read from file IFILE at
+			  its current \hspace*{1em}position without first rewinding.
+
+        \item  LOGFILE (File number to which specifications are to be
+		written).
+
+              = 0 to not write out specifications.
+
+              = JFILE (any positive integer to write specifications to
+			  that file.
+
+        \item  LISTFILE (Extra file to which reset information may be written).
+
+              = 0 to not write out additional information.
+
+              = KFILE (any positive integer) to write additional
+			  information to that file.
+
+        \item  ISEND (Ignored, but still required, when INFILE=0 or 5).
+
+              = 0 to write out nothing.
+
+              = 1 to write out responses at the terminal.
+
+              = 2 to write out responses on file 12.
+
+              = 3 to write out responses at the terminal and on file 12.
+
+\end{enumerate}
+\vspace{5mm}
+\noindent Example:
+\begin{verbatim}
+         restart     rset
+           0  0  0  15  1
+\end{verbatim}
+\end{quotation}
+This specifies a command with the user given name {\em restart}.  When invoked it accepts instructions from the terminal about which {\em menu} entries are to be reset and with what values.  It also writes responses at the terminal and on file 15.
+
+\vspace{5mm}
+     Description:
+\vspace{2mm}
+
+Upon occasion during a \Mary run the user may wish to reset the parameter values of various menu entries.  This can be done with a command having type code {\em rset}.  Information as to what to reset and to what values may be read from an external file or provided interactively.  When {\em rset} is invoked interactively, \Mary presents in alphabetical order the user-given names of all entries in the {\em menu} component of the master input file, and invites instructions.
+
+The exhibit below shows the \Mary responses to {\em rset} when invoked interactively.  It also puts out the master input file after accepting instructions to illustrate that the instructions have been followed.  Finally, the contents of LISTFILE are also shown.
+
+\vspace{5mm}
+\begin{footnotesize}
+\begin{verbatim}
+#comment
+  Exhibit 9.18.
+  This is a fragmentary MaryLie run to illustrate the response to a
+  command with type code rset.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  restart  rset
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+    15.0000000000000       1.00000000000000
+  drift    drft
+    2.00000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*restart
+     1*fileout
+     1*end
+MARYLIE #menu entries available to be varied:
+-----------------------------------------------------------------------
+drift    end      fileout  restart
+
+To RESET #menu items, enter name and (optional) parameter index.
+Type * to relist, or a # sign when finished.
+drift 1 #
+Enter new value for parameter 1 of drift    <   2.0000000    >:
+2.5
+
+The following  1 #menu item(s) have been reset:
+No.   Item       Type     Parameter   New value
+-----------------------------------------------------------
+  1    drift      drft         1       2.5000000000000
+
+#comment
+  Exhibit 9.18.
+  This is a fragmentary MaryLie run to illustrate the response to a
+command
+  with type code rset.
+#beam
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+  0.000000000000000E+000
+#menu
+  restart  rset
+   0.000000000000000E+00  0.000000000000000E+00  0.000000000000000E+00
+    15.0000000000000       1.00000000000000
+  drift    drft
+    2.50000000000000
+  fileout  pmif
+    1.00000000000000       12.0000000000000       3.00000000000000
+  end      end
+#labor
+     1*fileout
+     1*restart
+     1*fileout
+     1*end
+
+end of MARYLIE run
+
+contents of LISTFILE (file 15)
+
+The following  1 #menu item(s) have been reset:
+No.   Item       Type     Parameter   New value
+-----------------------------------------------------------
+  1    drift      drft         1       2.5000000000000
+\end{verbatim}
+\end{footnotesize}
+
+\newpage
+\section{Spare}
+%\begin{quotation}
+\noindent     Type Code:
+\vspace{5mm}
+
+\noindent Required Parameters:
+
+\vspace{5mm}
+Not yet available.
+

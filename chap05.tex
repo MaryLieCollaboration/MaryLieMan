@@ -1,0 +1,1767 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter[Format of MaryLie Master Input File \& Use of PREP]{Format of
+MaryLie Master Input File and Use of PREP}\index{PREP} \index{master input file}
+
+\section{General Instructions} As indicated in section 4.3.1, file 11 may
+be prepared with the aid of the program PREP\@. The use of PREP is not
+required, but for the beginner it will ease the labor of initially inputing a large lattice.
+Slight modifications of an existing lattice are more easily accomplished by
+directly editing the file (usually file 11) in which it is stored. Once the
+reader has observed the Master Input File as prepared by PREP, she or he
+will be able to infer its format, and if desired, will be able to make up
+such a file directly.
+
+%\numberbysubsection
+\subsection{PREP Input} PREP runs interactively, and receives input and
+communicates with the user through the terminal (files 5 and 6). Also, if
+desired, PREP can receive information from file 9. See section 5.3. As
+indicated in section 4.3.2, PREP uses free format input.
+
+\subsection{PREP Output} The output of PREP is written on file 10. The
+contents of file 10 must subsequently be copied into file 11 to be used for
+a \Mary run, or into file 9 to restart a PREP run.
+
+\section{Use of Help Feature} For the convenience of the user, PREP
+contains help information that can be accessed at any time through
+appropriate help commands.
+
+When PREP is executed, the first thing it replies is
+\begin{footnotesize}
+\begin{verbatim}
+**PREP 3.0** Master Input File preparation for MARYLIE 3.0
+Copyright 1987 Alex J. Dragt
+All rights reserved
+\end{verbatim}
+\end{footnotesize}
+\pagebreak It then provides opportunity to receive brief instructions about
+the use of the help feature:
+\begin{footnotesize}
+\begin{verbatim}
+Do you want instructions? (y,n) <n> y
+\end{verbatim}
+\end{footnotesize} PREP runs interactively, and help is available at any
+time. Help may be obtained in any of three ways depending on the
+circumstances:
+\begin{itemize}
+\item If PREP expects an answer or requests input in the form of a
+character string, you may type ? or ?help instead of the expected response.
+After the help session, PREP will return to where it was and re-ask the
+same question or re-request the same input.
+
+\item If PREP is expecting a number, you may get help by responding with a
+number that equals 1.e+30 or more. Again, after the help session, PREP will
+return to where it was.
+
+\item At various places in a PREP run, as will be evident, you will be able
+to ask for help directly.
+\end{itemize} There are several levels in help. To return directly from
+help, type `exit'. To backtrack through the various levels, type `back'. To
+re-view a current level, type `see'.
+
+The further operation of the help feature is meant to be self explanatory.
+The user is urged to try this feature whenever a question arises.
+
+
+\section{Input From External File} At the user's option, PREP can receive
+information from file 9. The structure of file 9 is the same as that of
+files 10 and 11. This feature makes it possible for a user to begin a PREP
+run with the results of a previous PREP run, or a user prepared file 11.
+For an example of the use of file 9, see section 5.14. PREP gives
+opportunity to use file 9 by asking the following question at the beginning
+of a run:
+\begin{footnotesize}
+\begin{verbatim}
+Read a PREP data set from file 9? (y,n,?) <n>
+\end{verbatim}
+\end{footnotesize}
+
+\section{Modes, Editors, and Related Commands} After offering the options
+of instructions and the use of a data set at the beginning of a run, PREP
+goes into {\em control} mode as indicated by the lines below:
+\begin{footnotesize}
+\begin{verbatim}
+ Control mode. Type
+cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+\end{verbatim}
+\end{footnotesize} PREP runs in several modes. These modes enable the user
+to specify information concerning the comment, beam, menu, lines, lumps,
+loops, and labor components of file 11. These components have already been
+described briefly in section 4.4.1. Listed below are the associated modes,
+their purpose, and the sections describing these modes in more detail.
+
+\begin{center}
+\begin{tabular}{|c|l|} \hline Mode & Purpose/Section \\ \hline comment
+(cmts) & To allow the user to write comments about the \\ & system under
+study and the computations to be made.\\ & Section 5.5. \\ & \\ beam & To
+input the \#beam component which describes \\ & the magnetic rigidity and
+relativistic $\beta$ and \\ & $\gamma$ factors of the beam, and its charge,
+and \\ & to specify the scale length to be used. \\ & Section 5.6. \\ & \\
+menu & To input the \#menu component which contains \\ & a list of
+beam-line elements and commands. \\ & Section 5.7. \\ & \\ line & To input
+the \#lines component which contains \\ & a list of names for collections
+of elements \\ & and/or commands drawn from the menu. \\ & Section 5.8. \\
+& \\ lump & To input the \#lumps component which contains a \\ & list of
+items from the menu and/or lines that are \\ & to be combined together to
+form individual maps.\\ & Section 5.9. \\ & \\ loop & To input the \#loops
+component which contains \\ & information about special tracking or other
+\\ & operations. Section 5.10. \\ & \\ labor & To input the \#labor
+component which \\ & specifies the system to be studied, and the \\ &
+operations and calculations to be performed.\\ & Section 5.11. \\ \hline
+\end{tabular}
+\end{center}
+
+In addition to the modes listed above, PREP has a {\em control} mode. It is
+activated by typing {\em ctrl}. Its purpose is to give access to the other
+modes as well as the special commands {\em summ}, {\em file}, {\em exit},
+{\em abort}, and {\em ?help}. The {\em ?help} command has already been
+described in section 5.2. The purpose of the other commands, and the
+sections in which they are described in fuller detail, are listed below.
+
+\begin{center}
+\begin{tabular}{|c|l|} \hline Command & Purpose/Section \\ \hline summ & To
+obtain a listing (summary) of what has been \\ & accomplished to date in a
+PREP session. \\ & Section 5.12. \\ & \\ file & To write on file 10
+whatever has been specified \\ & to date about the comments, beam, menu,
+lines, \\ & lumps, loops, and labor components. \\ & Section 5.13. \\ & \\
+exit & To cause normal termination of a PREP run. \\ & Section 5.14 \\ & \\
+abort & To cause abnormal termination of a PREP run. \\ & Section 5.14. \\
+\hline
+\end{tabular}
+\end{center}
+
+The use of beam mode is relatively simple, and any mistakes made while in
+this mode are easily rectified by rerunning the mode. See section 5.6. The
+use of the comments, menu, lines, lumps, loops, and labor modes is more
+complex. Each of these modes has a special editor that enables the user to
+see what has been accomplished, make changes, and return to the control
+mode. These special editors are described in the same sections as their
+respective modes.
+
+\section{Comment (cmts) Mode}\index{comment} The {\em comment} mode allows the user to
+write a comments section about the system under study and the calculations
+to be performed. The use of the \#comments component of the Master Input
+File is optional.
+
+\subsection{Format of \#comment Component} As presently configured, the
+\#comment component may contain up to 100 lines. Each line may contain up
+to 72 characters.
+
+\subsection{Sample Conversation in Comments Mode} Below is a sample
+conversation with PREP while in {\em comment} mode. The user has put in a
+one line comment, returned to {\em control} mode by way of the {\em
+comment} editor, and issued a {\em summ} command to see the proposed
+contents of the Master Input File up to this point.
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+cmts
+comments input mode:
+input next comment line (type '#' to edit)
+This is a demonstration of the use of PREP.
+input next comment line (type '#' to edit)
+#
+Comment edit mode
+type p,pc,pl,u,n,d,dl,ud,i,ib,?, or ctrl :
+ctrl
+Control mode.
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort
+or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+ 0.0000000000000000E+00
+ 0.0000000000000000E+00
+ 0.0000000000000000E+00
+ 0.0000000000000000E+00
+#menu
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+\subsection{Comment Editor} PREP has a simple line editor for correcting
+mistakes in the \#comment component. To assist the user, the editor has a
+``viewing window'' that sits over what is referred to as the ``current''
+line. The editor for \#comment is activated by typing `\#'. The available
+commands for the \#comment editor are listed below. Here (CR) denotes
+``Carriage Return''.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+\multicolumn{3}{|c|}{Comments Editor Commands} \\ \hline Command & Usage &
+Result \\ \hline p & p(CR) & {\underline p}rint all of \#comment component
+with line \\ & & numbers. After this command is executed \\ & & the current
+line is the last line. \\ & & \\ pc & pc(CR) & {\underline p}rint
+{\underline c}urrent line. \\ & & \\ pl & pl(CR) & {\underline p}rint
+{\underline l}ines m through n. After this \\ & m,n(CR) & command is
+executed, the current line \\ & & is line n. Thus, this command may be \\ &
+& used with m=n to place the viewing \\ & & window over line n. \\ & & \\ u
+& u(CR) & Move viewing window {\underline u}p one line. \\ & & \\ n & n(CR)
+& Move viewing window to the {\underline n}ext line. \\ & & \\ d & d(CR) &
+{\underline d}elete the current line. Viewing \\ & & window now sits over
+the next line. \\ & & \\ dl & dl(CR) & {\underline d}elete {\underline
+l}ines m through n. Viewing \\ & m,n(CR) & window now sits over the old
+line n+1. \\ & & \\ ud & ud(CR) & {\underline u}n{\underline d}elete before
+line m. Inputs before\\ & m(CR) & line m the most recently deleted set \\ &
+& of lines (by the command {\em d} or {\em dl}).\\ & & Viewing window now
+sits over the old line m. \\ & & \\ i & i(CR) & {\underline i}nput after
+the current line. PREP \\ & & goes into {\em comments} input mode. To \\ &
+& return to the {\em comments} editor, type \#. \\ & & \\ ib & ib(CR) &
+{\underline i}nput {\underline b}efore line m. PREP goes into\\ & m(CR) &
+{\em comments} input mode. To return to the \\ & & {\em comments} editor,
+type \#. \\ & & \\ ? & ?(CR) & Get help from PREP. \\ & & \\ ctrl &
+ctrl(CR) & Return to {\em control} mode. \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+To leave the {\em comments} editor and return to {\em control} mode, type
+{\em ctrl}. The proposed contents of the Master Input File as prepared by
+PREP up to this point may then be examined by entering the command {\em
+summ}. Modifications in the \#comment component may be made at any time by
+returning to the {\em comments} mode by way of the {\em control} mode.
+
+If extensive changes in the \#comment component are required, it may be
+easier to make them by using a local Editor on files 10 or 11 after
+completion of a PREP run.
+
+\subsection{Interspersed Comments}\index{interspersed comments} Any line in the \Mary Master Input File
+beginning with an ! (explanation mark) is ignored by \Maryend. This feature
+may be used to place comment lines (almost) anywhere in the Master Input
+File. It may also be used to temporarily ``comment out'' various portions
+of the Master Input File. This application is particularly useful for
+making temporary changes in the \#labor component of the Master Input
+File.\index{comment out}
+
+There is one caution with the use of interspersed comments. They must not
+be inserted between the name line for an element/command (in the \#menu
+component) and the parameter line or parameter lines associated with that
+name line. See section 5.7.2. Correspondingly, if a name line is to be
+``commented out'', its associated parameter line or parameter lines must
+also be ``commented out''.
+
+\section{Beam Mode} The \#beam component is a required component for every
+Master Input File. PREP automatically sets all the entries of the \#beam
+component equal to zero at the beginning of a PREP run. (This is a
+permissible set of values for certain kinds of \Mary runs.) The user can
+modify the contents of the \#beam component by using PREP in {\em beam}
+mode.
+
+When in beam mode, PREP first asks for a Particle Type Code, as shown
+below:
+
+\begin{center}
+\begin{tabular}{cl} Particle & \\ Type Code & Particle \\ \hline e &
+electron or positron \\ p & proton or antiproton \\ h & H minus ion \\ d &
+deuteron \\ mu & muon \\ pi & pion \\ o & other
+\end{tabular}
+\end{center} When type code {\em o} is used, the user is asked to specify
+charge (in units of e) and mass (in MeV/$\mbox{c}^2$). The charge should be
+input as a positive number. (\Mary works with the absolute value of the
+input charge in any case.)
+
+Next PREP will request that the user input the design momentum (in MeV/c)
+or the design {\em kinetic} energy (in MeV) of the beam. Using these
+values, PREP computes the magnetic rigidity and design relativistic beta
+and gamma factors of the beamline. There is also provision for altering
+these values.
+
+Finally, PREP requests that the scale length be input (see section 4.1.2).
+It then returns to {\em control} mode.
+
+\subsection{Beam Editor}\index{beam} There is no editor for the \#beam component. The
+proposed content of the Master Input File as prepared by PREP up to any
+given point may be examined by entering the command {\em summ}. The \#beam
+component can be changed at any time, if desired, by entering the command
+{\em beam}, and then repeating the procedure of section 5.6 above.
+
+If one wishes to bypass the use of PREP, as most experienced \Mary users do, the contents of the \#beam component can be set directly within a \Mary run by using a command with type code {\em cbm}.  See section 7.3.9.
+
+\subsection{Sample Conversation in Beam Mode} A sample conversation with
+PREP, specifying a proton beam with an energy of 800 MeV, and specifying a
+scale length of 2 meters, is shown below:
+\begin{footnotesize}
+\begin{verbatim}
+Typecmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+beam
+beam input mode.
+choose particle from listing:
+     e (electron, positron)
+     p (proton, anti-proton)
+     h (H- ion)
+     d (deuteron)
+     mu (muon)
+     pi (pion)
+     o (other)
+p
+
+Absolute change (in units of e) is    1.000000000000000
+Mass (in MeV/c*c) is   938.2723100000000
+input design momentum in MeV/c
+(note: if < 0, this will be assumed to be the design
+         kinetic energy in MeV) :
+-800
+
+design energy and momentum:
+kinetic energy (MeV) =     800.0000000000000
+momentum (MeV/c) =     1463.296175078716
+prep results:
+values for brho,beta,gamma,(gamma-1), and abs(q/e) are
+    4.881030646470486
+   0.8418106683634142
+    1.852630938240094
+   0.8526309382400936
+    1.000000000000000
+type 1 if these are ok; type 0 to input your own values
+1
+lastly, input the scale length in meters :
+2
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+\subsection{Format of \#beam Component}\index{beam} If the {\em summ} command is issued
+at this point, one obtains the result shown below for the proposed contents
+of the Master Input File:
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+  This is a demonstration of the use of PREP.
+#beam
+   4.881030646470486
+  0.8526309382400936
+   1.000000000000000
+   2.000000000000000
+#menu
+Control mode.
+\end{verbatim}
+\end{footnotesize} Observe that the \#beam component consists of 4
+numbers:\index{beta} \index{design energy} \index{design momentum} \index{scale length} \index{mass} \index{charge}
+
+\begin{tabbing}
+\indent \= Second number \= - \= \kill \> First number \> - \> Brho, the
+magnetic rigidity, in Tesla meters.\index{brho} \index{rigidity}\\ \> Second number \> - \> the quantity
+(gamma-1) where gamma is the \\ \> \> \> relativistic gamma factor.\\ \>
+Third number \> - \> the quantity $\mid$q/e$\mid$ , the absolute value of
+the\\ \> \> \> charge in units of the electron charge.\\ \> Fourth number
+\> - \> the scale length in meters.\index{scale length} \index{gamma}
+\end{tabbing}
+\noindent Since \Mary reads file 11 in free format, these numbers may be
+put on separate lines if space for full precision is required, or may be
+truncated and put on a single line if compactness is desired. PREP puts one
+number on each line.
+
+The reader may be curious why the quantity (gamma-1) is specified rather
+than simply gamma. The answer has to do with numerical precision and round
+off. \Mary computations require both the relativistic beta and the
+relativistic gamma factors. Both these quantities can be computed to
+machine precision from a knowledge of (gamma-1) even in extreme cases of
+very small or very large particle energy.
+
+Finally, note that the quantity Brho is related to the particle charge $q$ and the design momentum $p^0$ (see Section 4.1.2) by the equation
+\begin{equation}
+{\rm Brho} = p^0/|q|.
+\end{equation}
+
+\section{Menu Mode} Much of PREP is devoted to the specification of the
+contents of a beam line or accelerator lattice, and the commands to be
+executed. Elements of a lattice (as well as of lines, lumps, and loops) and
+commands are drawn from a user specified {\em menu}.\index{menu}  A {\em menu} is a
+table of elements, commands, and procedures. Each element, command, or
+procedure is given a user specified name, a type code mnemonic, and various
+required parameters.\index{mnemonic} \index{type code} The user specified name may be composed of one to
+eight alpha-numeric characters. (It must, however, not begin with a number
+or with the symbols , + $-$ \# ! * .) Subsequent references to each
+element, command, or procedure are made by the user specified name. Thus,
+the user may refer to elements, commands, or procedures in a way that
+identifies their particular purpose.
+
+User specified names must be unique. That is, {\em menu} entries, {\em
+lines}, {\em lumps}, and {\em loops} must all have different names. (See
+sections 5.8, 5.9, and 5.10 for discussion of {\em lines}, {\em lumps}, and
+{\em loops}, respectively.)
+
+Every Master Input File must have a \#menu component. It can be prepared by
+using PREP in {\em menu} mode. As presently configured, the total number of
+elements, commands, and procedures placed in the \#menu component should
+not exceed 400.
+
+When in the {\em menu} mode, PREP asks for the user specified name, then
+the type code mnemonic, and finally the required parameters. A list of
+currently available type codes is given below. Element type codes are
+described in detail in section 6, and command type codes are described in
+detail in sections 7 and 8. The type codes for procedures and fitting and
+optimization commands are described in section 9. Note that all type codes
+are given in lower case. If entries are made in upper case, they are
+automatically converted to lower case by PREP and \Maryend.
+
+
+\newpage
+\noindent {\large{\bf Currently available type codes:}}
+\vspace{5mm}
+\begin{table}[h]
+
+\noindent Mnemonics for elements (see Sect. 6):
+
+\begin{center}
+\begin{tabular}{lll} drft &: & drift\\ nbnd &: & normal entry and exit
+bending magnet\\ pbnd &: & parallel faced bending magnet\\ gbnd &: &
+general bending magnet\\ prot &: & rotation of reference plane\\ gbdy &: &
+body of a general bending magnet\\ frng &: & hard edge dipole fringe
+fields\\ cfbd &: & combined function bend\\ cfrn &: & combined function
+dipole fringe fields\\ sol &: & solenoid\\ quad &: & quadrupole\\ cfqd &: &
+combined function quadrupole\\ recm &: & REC quadrupole multiplet\\ sext &:
+& sextupole\\ octm &: & mag. octupole\\ octe &: & elec. octupole\\ srfc &:
+& short rf cavity\\ arot &: & axial rotation\\ thlm &: & thin lens low
+order multipole\\ cplm &: & ``compressed'' low order multipole\\ twsm &: &
+linear matrix via twiss parameters\\ dism &: & dispersion matrix\\ jmap &:
+& j mapping\\ rmap &: & random map\\ mark &: & marker\\ dp &: & data
+point\\ spce &: & space\\ arc &: & arc\\ usr1 \ldots usr10 &: & user
+subroutines that act on phase space data\\ usr11 \ldots usr20 &: & user
+subroutines that produce or act on maps\\ r**** &: & random counterpart of
+element ****
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}
+
+Mnemonics for simple commands (see Sect. 7):
+
+\begin{center}
+\begin{tabular}{lll} end &: & halt execution\\ of &: & open files\\ cf &: &
+close files\\ rt &: & ray trace\\ num &: & number lines in a file\\ circ &:
+& circulate\\ wcl &: & write contents of a loop\\ rapt &: & aperture
+particle distribution with rectangular aperture\\ eapt &: & aperture
+particle distribution with elliptic aperture\\ wnd &: & window a beam\\
+wnda &: & window a beam in all planes\\ whst &: & write history of beam
+loss\\ pmif &: & print contents of master input file\\ ptm &: & print
+transfer map\\ tmi &: & input transfer map from an external file\\ tmo &: &
+output transfer map to an external file\\ ps1 \ldots ps9 &: & parameter
+sets\\ rps1 \ldots rps9 &: & random parameter sets\\ wps &: & write
+parameter set\\ stm &: & store the existing transfer map\\ gtm &: & get
+transfer map from storage\\ mask &: & mask off selected portions of
+transfer map\\ ftm &: & filter transfer map\\ sqr &: & square the existing
+map\\ symp &: & symplectify matrix in transfer map\\ iden &: & identity
+mapping\\ inv &: & invert\\ rev &: & reverse map\\ revf &: & reverse
+factorize\\ tran &: & transpose\\ tpol &: & twiss polynomial\\ dpol &: &
+dispersion polynomial\\ time &: & write time\\ cdf &: & change output drop
+file\\ bell &: & ring bell at terminal\\ wmrt &: & write out value of merit
+function\\ paws &: & pause\\ inf &: & change or write out values of
+infinities\\ zer &: & change or write out values of zeroes \\ cbm
+&: & change or write out beam parameters\\ dims &: & dimensions\\ wuca &: &
+write out contents of ucalc array\\ pli &: & path length information \\ shoa &: & show contents of arrays
+\end{tabular} \end{center} \end{table}
+
+\begin{table} Mnemonics for advanced commands (see Sect. 8):
+
+\begin{center}
+\begin{tabular}{lll} cod &: & compute off-momentum closed orbit data\\ tasm
+&: & twiss analyze static map\\ tadm &: & twiss analyze dynamic map\\ ctr
+&: & change tune range\\ snor &: & static normal form analysis\\ dnor &: &
+dynamic normal form analysis\\ asni &: & apply script $N$ inverse\\ rasm &:
+& resonance analyze static map\\ radm &: & resonance analyze dynamic map\\
+sia &: & static invariant analysis\\ dia &: & dynamic invariant analysis\\
+psnf &: & compute power of static normal form\\ pdnf &: & compute power of
+dynamic normal form\\ pnlp &: & compute power of nonlinear part\\ fasm
+&: & fourier analyze static map\\ fadm &: & fourier analyze dynamic map\\
+pold &: & polar decompose matrix portion of transfer map\\ ppa &: &
+principal planes analysis\\ tbas &: & translate basis\\ exp &: & compute
+exponential\\ gbuf &: & get buffer contents\\ amap &: & apply map to a
+function or moments\\ moma &: & moment analysis\\ bgen &: & generate beam\\
+tic &: & translate initial conditions\\ smul &: & multiply polynomial by a
+scalar\\ padd &: & add two polynomials\\ pmul &: & multiply two
+polynomials\\ pb &: & Poisson bracket two polynomials\\ mn &: & compute
+matrix norm\\ psp &: & polynomial scalar product\\ pval &: & evaluate a
+polynomial\\ sq &: & select quantities\\ wsq &: & write selected
+quantities\\ csym &: & check symplectic condition\\ geom &: & compute
+geometry of a loop\\ fwa &: & copy file to a working array\\ lnf &: &
+compute logarithm of normal form\\ merf &: & merge files \end{tabular}
+\end{center} \end{table}
+
+\begin{table}
+\indent Mnemonics for procedures and fitting and optimization commands (see
+Sect. 9):
+
+\begin{center}
+\begin{tabular}{lll} bip &: & begin inner procedure\\ bop &: & begin outer
+procedure\\ tip &: & terminate inner procedure\\ top &: & terminate outer
+procedure\\ aim &: & specify aims\\ vary &: & specify quantities to be
+varied\\ fit &: & fit to achieve aims\\ mss &: & minimize sum of squares
+optimization\\ opt &: & general optimization\\ mrt0 &: & merit function
+(least squares)\\ mrt1 ... mrt5 &: & merit functions (user written)\\ con1
+... con5 &: & constraints\\ grad &: & compute gradient matrix\\ scan &: &
+scan parameter space\\ cps1 ... cps9 &: & capture parameter set\\ fps &: &
+free parameter set\\ flag &: & change or write out values of flags and
+defaults\\rset &: & reset menu entries
+\end{tabular}
+\end{center}
+\end{table}
+\clearpage
+
+\subsection{Sample Conversation in Menu Mode} Below is a sample
+conversation with PREP while in menu mode. The user has prepared a menu
+consisting of elements and commands.
+
+The elements are a long and short drift (user names {\em drl\/} and {\em
+drs}\/), a horizontally focusing and a horizontally defocusing quadrupole
+(user names {\em hfq} and {\em hdq}\/), and a parallel faced dipole (user
+name {\em bend}\/).
+
+The commands are to print the Master Input File (user name {\em
+fileout}\/), to print the transfer map (user name {\em mapout}\/), to write
+the transfer map on an external file (user name {\em wrtmap}\/), to replace
+the transfer map by the identity map (user name {\em clear}\/), and an end
+command (user name {\em bye}\/).
+
+Also shown is the return to {\em control} mode by way of the {\em menu}
+editor.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+menu
+menu input mode
+input name and mnemonic for menu item#   1
+(or type# to go to menu edit mode)
+drl drft
+input length of drift in meters
+2.28
+ drl      drft      parameters:
+  2.280000000000000
+input name and mnemonic for menu item#   2
+(or type # to go to menu edit mode)
+drs drft
+input length 1 of drift in meters
+.45
+ drs      drft      parameters:
+ 0.4500000000000000
+input name and mnemonic for menu item #   3
+(or type # to go to menu edit mode)
+hfq quad
+input length(m), field grad.(t/m), lfrn, tfrn
+where: field grad .ge. 0 for hor focussing quad,
+       field grad .lt. 0 for hor defocussing quad
+       lfrn=1 for leading edge fr fields, =0 otherwise
+       tfrn=1 for trailing edge fr fields,=0 otherwise
+.5  2.7  1  1
+ hfq     quad    parameters:
+ 0.5000000000000000     2.700000000000000     1.000000000000000
+  1.000000000000000
+input name and mnemonic for menu item #   4
+(or type # to go to menu edit mode)
+hdq quad
+input length(m), field grad.(t/m), lfrn, tfrn
+where: field grad .ge. 0 for hor focussing quad,
+       field grad .lt. 0 for hor defocussing quad
+       lfrn=1 for leading edge fr fields, =0 otherwise
+       tfrn=1 for trailing edge fr fields,=0 otherwise
+.5  -1.9 1 1
+ hdq    quad    parameters:
+ 0.5000000000000000      -1.900000000000000      1.000000000000000
+  1.000000000000000
+input name and mnemonic for menu item #   5
+(or type # to go to menu edit mode)
+bend  pbnd
+input bend angle(deg), gap size (m), normalized field integral, b(tesla)
+36  0  .5  1.2
+ bend    pbnd   parameters:
+  36.00000000000000   0.0000000000000000E+00   0.5000000000000000
+  1.200000000000000
+input name and mnemonic for menu item #   6
+(or type # to go to menu edit mode)
+fileout pmif
+input itype,ifile,isend where:
+     itype=0 to print contents as they are
+          =1 to print as interpreted by MARYLIE
+          =2 to print (interpreted) #labor component
+      ifile= external output file number
+      isend=1 to print on file6 (tty)
+           =2 to print on file ifile
+           =3 to do both
+1 12  3
+ fileout    pmif    parameters:
+  1.000000000000000    12.00000000000000   3.000000000000000
+input name and mnemonic for menu item #   7
+(or type # to go to menu edit mode)
+mapout ptm
+input nm,nf,nt,nu,ibasis for ptm
+1 1 0 0 1
+ mapout     ptm     parameters:
+  1.000000000000000         1.000000000000000   0.0000000000000000E+00
+ 0.0000000000000000E+00     1.000000000000000
+input name and mnemonic for menu item #   8
+(or type # to go to menu edit mode)
+trace rt
+input icfile,nfcfile,norder,ntrace,nwrite,ibrief:
+13  14  5  1000  5  0
+ rays     rt     parameters:
+  13.00000000000000     14.00000000000000     5.000000000000000
+  1000.000000000000     5.000000000000000     0.0000000000000000E+00
+input name and mnemonic for menu item #   9
+(or type # to go to menu edit mode)
+wrtmap tmo
+there are  1 parameters for type tmo
+input ifile, the file number on which map is to be written.
+16
+ wrtmap   tmo   parameters:
+  16.00000000000000
+input name and mnemonic for menu item #   10
+(or type # to go to menu edit mode)
+clear iden
+there are  0 parameters for type iden
+no parameters needed for reset to identity
+ clear   iden   parameters:
+ none
+input name and mnemonic for menu item #   11
+(or type # to go to menu edit mode)
+bye end
+there are 0 parameters for type end
+no parameters for end command
+ bye     end     parameters:
+ none
+input name and mnemonic for menu item #   12
+(or type # to go to menu edit mode)
+#
+menu edit mode
+type p, pl, i, ? or ctrl :
+ctrl
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+
+\subsection{Format of \#menu Component} If the {\em summ} command is issued
+at this point one obtains the results shown below for the proposed contents
+of the Master Input File:
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl     drft
+   2.28000000000000
+ drs    drft
+  0.450000000000000
+ hfq    quad
+  0.500000000000000       2.70000000000000          1.00000000000000
+   1.00000000000000
+  hdq   quad
+   0.500000000000000     -1.90000000000000          1.00000000000000
+    1.00000000000000
+  bend    pbnd
+   36.00000000000000     0.0000000000000000E+00     0.5000000000000000
+   1.200000000000000
+  fileout    pmif
+    1.00000000000000     12.0000000000000          3.00000000000000
+  mapout    ptm
+    1.00000000000000        1.00000000000000     0.000000000000000E+00
+   0.000000000000000E+00    1.00000000000000
+  trace    rt
+    13.0000000000000     14.0000000000000           5.00000000000000
+    1000.00000000000     5.00000000000000          0.000000000000000E+00
+  wrtmap    tmo
+    16.0000000000000
+  clear    iden
+  bye     end
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+
+From the contents of the \#menu component, one sees that each {\em menu}
+item has the following format:
+\begin{quotation} A ``name'' line giving the user specified name and type
+code mnemonic for an element or command. Names may contain up to 8
+characters.\index{name}
+
+One or more associated ``parameter'' lines following the ``name'' line.
+They specify the parameters required by the particular type code. Since
+\Mary reads file 11 in free format, the parameters may occur on separate
+lines, or may be grouped together. For convenience, PREP puts at most 3
+parameters on a line. If a particular type code requires no parameters,
+then there is no associated parameter line.
+\end{quotation}
+\subsection{Menu Editor} When in menu input mode, the contents of any menu
+item may be changed simply be re-entering its name and then following
+instructions. Thus, if a mistake is made while entering some menu item, one
+should
+\begin{itemize}
+\item complete entering that particular menu item and its parameters,
+\item then re-enter the name of that item and follow instructions.
+\end{itemize}
+
+There is also a simple {\em menu} editor to facilitate examination of the
+\#menu component. It is activated by typing `\#'. The available commands
+for the \#menu editor are listed below.
+\begin{table}[hbp]
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+\multicolumn{3}{|c|}{Menu Editor Commands}\\ \hline Command & Usage &
+Result\\ \hline p & p(CR) & {\underline p}rint the entire menu.\\ & &\\ pl
+& pl(CR) & {\underline p}rint menu {\underline l}ines (entries) m through
+n.\\ & m,n(CR) &\\ & &\\ i & i(CR) & Return to menu {\underline i}nput
+mode.\\ & &\\ ? & ?(CR) & Get help from PREP.\\ & &\\ ctrl & ctrl(CR) &
+Return to control mode.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Modifications in the \#menu component may be made at any time by returning
+to the {\em menu} mode by way of the {\em control} mode. If extensive
+modifications are required, it may be easier to make them by using a local
+Editor on files 10 or 11 after completion of a PREP run.
+
+\section{Line Mode} \index{lines} A {\em line} is a collection of elements and/or
+commands referenced by a single user specified name. All possible \#menu
+items, save for commands with type codes {\em bip}, {\em bop}, {\em tip},
+and {\em top}, may appear in a line. See sections 9.1, 9.2, 9.3, and 9.4
+Line names may contain up to 8 characters. (They must, however, not begin
+wih a number or with the symbols , + $-$ \# ! * .) All names must be
+unique. That is, {\em menu} entries, {\em lines}, {\em lumps}, and {\em
+loops} must all have different names. (See sections 5.7, 5.9, and 5.10 for
+a discussion of {\em menu} entries, {\em lumps}, and {\em loops},
+respectively.)
+
+The use of the lines feature of \Mary makes it possible to define
+superelements and supercommands.
+
+Lines may contain other lines up to a logical depth of 20. Lines may also
+contain {\em lumps}. (See section 5.9 for a discussion of {\em lumps}.) The
+contents of a line must meet the requirement that upon translation into a
+string of elements and/or commands, all items in the string must appear in
+the {\em menu} (or be {\em lumps}). (See section 5.7 for a description of
+the \#menu component of the Master Input File.)
+
+The user may define up to 100 lines, with up to 100 entries in each.
+(Actually, the total number of lines, lumps, and loops must not exceed
+100.)
+
+The \#lines component is an optional component of the Master Input File.
+For examples of the use of {\em lines}, see chapters 2 and 10.
+
+\subsection{Sample Conversation in Line Mode} Below is a sample
+conversation with PREP while in {\em line} mode. The user has defined three
+lines with the user specified names {\em cell}, {\em ring}, and {\em
+study}. The line {\em cell} contains a collection of elements drawn from
+the menu. The line {\em ring} is defined in terms of the line {\em cell},
+and contains 10 cells. The line {\em study} is a collection of elements and
+commands. Note that PREP first asks for the name of a {\em line}, and then
+for its contents. Return to {\em control} mode is made by way of the {\em
+line} editor.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+line
+line input mode
+input name for the next line (or type # to edit)
+cell
+input contents of cell    (use & to cont on next line):
+drl hdq drs bend drs hfq drl
+input name for the next line (or type # to edit)
+ring
+input contents of ring     (use & to cont on next line):
+10*cell
+input name for the next line (or type # to edit)
+study
+input contents of study    (use & to cont on next line):
+clear drl mapout hdq mapout clear
+input name for the next line (or type # to edit)
+#
+line edit mode
+type p, pl, i, ? or ctrl :
+ctrl
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+
+\subsection{Format of \#lines Component} If the {\em summ} command is
+issued at this point, one gets the results listed below for the proposed
+contents of the Master Input File.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl     drft
+   2.28000000000000
+ drs     drft
+  0.450000000000000
+ hfq    quad
+  0.500000000000000     2.70000000000000     1.00000000000000
+   1.00000000000000
+ hdq    quad
+  0.500000000000000    -1.90000000000000     1.00000000000000
+   1.00000000000000
+ bend    pbnd
+  36.00000000000000    0.0000000000000000E+00  0.5000000000000000
+   1.200000000000000
+ fileout    pmif
+   1.00000000000000     12.0000000000000     3.00000000000000
+ mapout    ptm
+   1.00000000000000     1.00000000000000     0.000000000000000E+00
+  0.000000000000000E+00     1.00000000000000
+ trace    rt
+  13.0000000000000     14.0000000000000     5.00000000000000
+  1000.00000000000     5.00000000000000      0.000000000000000E+00
+ wrtmap    tmo
+   16.0000000000000
+ clear    iden
+ bye    end
+#lines
+ cell
+     1*drl     1*hdq     1*drs     1*bend     1*drs     &
+     1*hfq     1*drl
+ ring
+     10*cell
+ study
+     1*clear     1*drl     1*mapout     1*hdq     1*mapout     &
+     1*clear
+#lumps
+#loops
+Control mode.
+\end{verbatim}
+\end{footnotesize} From the content of the \#lines component, one sees that
+each line has the following format:
+\begin{quotation} A ``name'' entry giving the user specified name of the
+line. Names may contain up to 8 characters.
+
+One or more associated ``contents'' entries on lines following the name
+entry line. These entries specify the contents of the {\em line}. Each such
+``contents'' entry line must end with an `\&' sign if it is to be followed
+by another ``contents'' entry line. Since \Mary reads file 11 in free
+format, the contents of a {\em line} may occur on separate entry lines, or
+may be grouped together. For convenience, PREP puts at most 5 entries on a
+line.
+\end{quotation}
+
+\subsection{Multiplicative Notation} \index{multiplicative notation} If a line contains several of the same
+items in a row, this fact may be represented by the use of a multiplicative
+(repetition number) notation. For example, if {\em hfq} is the user
+specified name for a particular quadrupole, then two such quadrupoles in a
+row may be specified by writing either hfq hfq or 2*hfq. By default, both
+in PREP and \Mary $\!\!$, hfq means the same as 1*hfq.
+
+Multiplicative notation may also be used with lines and lumps. For example
+if {\em name} is the user specified name of a line or a lump, then m*name
+(with m$>$ 0) has the same effect as m successive occurrences of name.
+
+If name is the user specified name for an element, command, line, or lump
+(within a line/lump), then 0*name has the same effect as omitting name.
+This feature is useful for temporarily ``commenting out'' an item.
+
+Negative repetition numbers may also be used. Their effect requires a more
+extensive description. First, by default in both PREP and \Mary, $-$name
+means the same thing as $-$1*name. Second, if name is an element, command,
+or {\em previously constructed} lump, then m*name and $-$m*name have the
+same effect. (See section 5.9 for a description of how and when lumps are
+constructed.)
+
+The case of lines and unmade lumps is somewhat more complicated. Suppose,
+for example, that {\em name} is a line with entries a,b,c where a,b,c are
+elements and/or commands. Then, as described above, 2*name is equivalent to
+the sequence a b c a b c. However, $-$1*name is equivalent to the sequence
+c b a, and $-$2*name is equivalent to the sequence c b a c b a. That is, a
+negative repetition number for a line produces a {\em reversed} sequence.
+
+The situation with unmade lumps is similar. Suppose, for example, that name
+is a lump that has not been previously constructed, and that name has
+entries a,b,c where a,b,c are elements and/or commands. Then 1*name
+constructs and stores (and also concatenates) the map associated with the
+sequence a b c. Similarly 2*name produces the same map, but concatenates it
+twice. This, of course, is equivalent to concatenating the square of the
+map. By contrast, $-$1*name constructs, stores, and concatenates the map
+associated with the {\em reversed} sequence c b a.
+
+The use of negative repetition numbers with lines/lumps within other
+lines/lumps is still more complicated. Consider, for example, the case when
+the lines {\em line1}, {\em line2}, and {\em line3} are defined by the
+following \#line entries:
+
+\begin{footnotesize}
+\begin{verbatim}
+     #lines
+          line1
+               a b c
+          line2
+               -1*line1
+          line3
+               -1*line2
+\end{verbatim}
+\end{footnotesize} Here a,b,c are elements and/or commands as before. Then,
+as described above, {\em line2} is equivalent to the reversed sequence c b
+a. Correspondingly, {\em line3} is equivalent to the ``reversed reversed''
+sequence a b c. That is, lines/(unmade) lumps nested within other
+lines/(unmade) lumps ``inherit'' negative signs from the repetition numbers
+of the lines/(unmade) lumps they are nested within. The general rule for
+lines and unmade lumps is that nested repetition numbers (including their
+signs) behave as if they were simply multiplied together. One consequence
+of this rule is that the actual map that is produced and stored when a lump
+is constructed depends on the context in which the lump is found. In
+general, negative repetition numbers should be used with care.
+
+\subsection{Line Editor} When in {\em line} input mode, the name and
+contents of any {\em line} item may be changed simply by re-entering its
+name and then following instructions. Thus, if a mistake is made while
+entering a {\em line} item, one should
+\begin{itemize} \item complete entering the name of the line and at least
+one item in its contents, \item then re-enter the name of that line and
+follow instructions.
+\end{itemize}
+
+There is also a simple {\em line} editor to facilitate examination of the
+\#lines component. It is activated by typing `\#'. The available commands
+for the \#lines editor are listed below.
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+\multicolumn{3}{|c|}{Line Editor Commands}\\ \hline Command & Usage &
+Result\\ \hline p & p(CR) & {\underline p}rint the entire contents of\\ & &
+the \#lines component.\\ & &\\ pl & pl(CR) & {\underline p}rint {\underline
+l}ines m through n.\\ & m,n(CR) &\\ & &\\ i & i(CR) & Return to menu
+{\underline i}nput mode.\\ & &\\ ? & ?(CR) & Get help from PREP.\\ & &\\
+ctrl & ctrl(CR) & Return to {\em control} mode.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Modifications in the \#lines component may be made at any time by returning
+to the {\em line} mode by way of the {\em control} mode. If extensive
+modifications are required, it may be easier to make them by using a local
+Editor on files 10 or 11 after completion of a PREP run.
+
+\section{Lump Mode}\index{lumps} A {\em lump} is a collection of elements and/or
+commands whose ultimate result is the construction by \Mary of a map. This
+map is stored by
+\Maryend, and is available for later use. Each lump is given a user
+specified name, and each time the name of a particular lump is invoked, the
+corresponding map is recalled from memory.
+
+Lump names may contain up to 8 characters. (They must, however, not begin
+with a number or with the symbols , + $-$ \# ! * .) All names must be
+unique. That is, {\em menu} entries, {\em lines}, {\em lumps}, and {\em
+loops} must all have different names. (See sections 5.7, 5.8, and 5.10 for
+a discussion of {\em menu} entries, {\em lines}, and {\em loops},
+respectively.)
+
+Lumps may contain lines and other lumps up to a logical depth of 20. (See
+section 5.8 for a description of the \#lines component of the Master Input
+File.) A lump must meet the requirement that upon translation into a string
+of elements and/or commands, all items in the string must appear in the
+{\em menu} or be other lumps. (See section 5.7 for a description of the
+\#menu component of the Master Input File.)
+
+\Mary constructs the map associated with a lump as follows:
+\begin{itemize} \item A storage area is set aside for the map to be
+associated with the lump, and the identity map is initially stored in this
+area. \item The contents of the lump are translated into a string of
+elements and/or commands. Each time an element is encountered in the
+string, the map for that element is computed and concatenated with whatever
+map is in the storage area. The map in the storage area is then replaced by
+the result of this concatenation. (See section 3.11.2 for a description of
+the concatenation of maps.) Whenever another lump is encountered in the
+string, the map for that lump is concatenated with whatever map is in the
+storage area. The map in the storage area is then replaced by the result of
+this concatenation. Whenever a command is encountered in the string, it is
+examined to see whether or not it is of the type that acts on a map. If it
+is not, the command is ignored, and a message to this effect is written out
+by \Mary at the terminal. (A ray trace command is an example of a command
+that does not act on a map.) If the command is of the type that acts on a
+map, the command is applied to the map in the storage area. The map in the
+storage area is then replaced by the map resulting from the application of
+this command. [A square command (type code mnemonic {\em sqr}) is an
+example of a command that acts on a map.]
+\end{itemize} Thus after all the items in the string associated with the
+contents of the lump have been encountered, the result is a stored map.
+
+The user may define up to 100 lumps with up to 100 entries in each.
+(Actually, the total number of lines, lumps, and loops must not exceed
+100.) In actual operation, \Mary does not construct and store the map for a
+lump unless and until it is required as a result of some entry in the
+\#labor component of the Master Input File. See section 5.11. As presently
+configured, at any given moment the total allowed number of stored maps
+associated with lumps is 20. If the user tries to construct more than 20
+lumps, some of the existing (already constructed) lumps are destroyed on a
+first made first destroyed basis. The assumption is that recently
+constructed lumps are more likely to be required for subsequent
+calculations than ancient lumps. Section 5.9.3 describes how the user may
+control the destruction of lumps in a completely flexible way if required.
+
+The \#lumps component is an optional component of the Master Input File.
+For examples of the use of {\em lumps}, see sections 2.7 and 10.4.
+
+\subsection{Sample Conversation in Lump Mode} Below is a sample
+conversation with PREP while in {\em lump} mode. The user has defined two
+lumps called {\em lmpbend} and {\em lmpcell}. The lump {\em lmpbend}
+consists of the map for the element {\em bend} listed in \#menu. The lump
+{\em lmpcell} consists of the map corresponding to all the elements in the
+line {\em cell} when their individual maps are concatenated together. The
+line {\em cell} is assumed to be defined in the \#lines component of the
+Master Input File. Note that PREP first asks for the name of a {\em lump},
+and then for its contents. Return to {\em control} mode is made by the way
+of the {\em lump} editor.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+lump
+lump input mode
+input name for the next lump (or type # to edit)
+lmpbend
+input contents of lmpbend (use & to cont on next line):
+bend
+input name for the next lump (or type # to edit)
+lmpcell
+input contents of lmpcell (use & to cont on next line):
+cell
+input name for the next lump (or type # to edit)
+#
+lump edit mode
+type p, pl, i, ? or ctrl :
+ctrl
+Control Mode.
+\end{verbatim}
+\end{footnotesize}
+
+\subsection{Format of the \#lumps Component} If the {\em summ} command is
+issued at this point, one gets the results listed below for the proposed
+contents of the Master Input File.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl    drft
+   2.28000000000000
+ drs drft
+  0.450000000000000
+ hfq   quad
+  0.500000000000000     2.70000000000000     1.00000000000000
+   1.00000000000000
+ hdq   quad
+  0.500000000000000    -1.90000000000000     1.00000000000000
+   1.00000000000000
+ bend    pbn
+  36.00000000000000     0.0000000000000000E+00     0.5000000000000000
+  1.200000000000000
+ fileout    pmif
+   1.00000000000000     12.0000000000000     3.00000000000000
+ mapout    ptm
+   1.00000000000000    1.00000000000000    0.000000000000000E+00
+  0.000000000000000E+00     1.00000000000000
+ trace    rt
+   13.0000000000000     14.0000000000000     5.00000000000000
+   1000.00000000000     5.00000000000000      0.000000000000000E+00
+ wrtmap tmo
+   16.0000000000000
+ clear   iden
+ bye end
+#lines
+ cell
+     1*drl     1*hdq     1*drs     1*bend     1*drs     &
+     1*hfq     1*drl
+ ring
+    10*cell
+ study
+     1*clear     1*drl     1*mapout     1*hdq     1*mapout     &
+     1*clear
+#lumps
+ lmpbend
+     1*bend
+ lmpcell
+     1*cell
+#loops
+Control mode.
+\end{verbatim}
+\end{footnotesize} From the content of the \#lumps component one sees that
+each lump has the following format:
+\begin{quotation} A ``name'' line giving the user specified name of the
+{\em lump}. Names may contain up to 8 characters.
+
+One or more associated ``contents'' lines following the name line. These
+lines specify the contents of the {\em lump}. Each such ``contents'' line
+must end with an `\&' sign if it is to be followed by another ``contents''
+line. Since \Mary reads file 11 in free format, the contents of a {\em
+lump} may occur on separate entry lines, or may be grouped together. For
+convenience, PREP puts at most 5 entries on a line.
+\end{quotation}
+
+\subsection{Multiplicative Notation}\index{multiplicative notation} If a lump appears repeatedly, then it
+may either be written repeatedly, or a repetition number may be used. For
+example, if {\em name} is a lump, then 2*name is equivalent to name name.
+By default, both in PREP and in \Mary, name means the same as 1*name.
+
+The case of 0*name, when {\em name} is a lump, is more complicated. If
+0*name appears within a line, lump, or a loop, then it is ignored. The same
+is true if 0*name appears in \#labor (see section 5.11) and {\em name} has
+{\em not} actually been constructed. (See section 5.9 for a description of
+how and when lumps are constructed.) This feature is useful for temporarily
+``commenting out'' a lump.
+
+By contrast, if {\em name} has been constructed previously and 0*name
+appears in \#labor, then the map for this lump is destroyed at that point
+in the \Mary run, and its associated storage allocation is made available
+for the construction and storage of the map for another lump. This \Mary
+feature places the construction and destruction of lumps (actually their
+associated maps) under the direct control of the user.
+
+Negative repetition may also be used (with care) for lumps. See section
+5.8.3.
+
+\subsection{Lump Editor} When in {\em lump} input mode, the name and
+contents of any {\em lump} item may be changed simply by re-entering its
+name and then following instructions. Thus, if a mistake is made while
+entering a {\em lump} item, one should
+\begin{itemize} \item complete entering the name of the lump and at least
+one item in its contents, \item then re-enter the name of that lump and
+follow instructions.
+\end{itemize}
+
+There is also a simple {\em lump} editor to facilitate examination of the
+\#lumps component. It is activated by typing `\#'. The available commands
+for the \#lumps editor are listed below.
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|l|l|}\hline
+\multicolumn{3}{|c|}{Lump Editor Commands}\\ \hline Command & Usage &
+Result\\ \hline p & p(CR) & {\underline p}rint the entire contents of\\ & &
+the \#lumps component.\\ & &\\ pl & pl(CR) & {\underline p}rint {\underline
+l}ines m through n.\\ & m,n(CR) &\\ & &\\ i & i(CR) & Return to lumps
+{\underline i}nput mode.\\ & &\\ ? & ?(CR) & Get help from PREP.\\ & &\\
+ctrl & ctrl(CR) & Return to {\em control} mode.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Modifications in the \#lumps component may be made at any time by returning
+to the {\em lump} mode by way of the {\em control} mode. If extensive
+modifications are required, it may be easier to make them by using a local
+Editor on files 10 or 11 after completion of a PREP run.
+\vspace{1in}
+\pagebreak
+
+\section{Loop Mode}\index{loops} A {\em loop} is a collection of elements, lines, and/or
+lumps to be used for tracking or other studies. (See section 5.8 for a
+description of {\em lines}, and section 5.9 for a description of {\em
+lumps}.) The loop feature of \Mary permits tracking using more than one
+transfer map. See sections 2.7, 10.3, 10.4, and 10.8. The loop feature also
+is used in the computation of the geometry of a beamline or circular
+machine. See sections 10.9 and 10.11 through 10.14.
+
+Each loop is given a user specified name. Names may contain up to 8
+characters. (They must, however, not begin with a number or with the
+symbols , + $-$ \# ! * .) All names must be unique. That is, {\em menu}
+entries, {\em lines}, {\em lumps}, and {\em loops} must all have different
+names. (See sections 5.7, 5.8, and 5.9 for a discussion of {\em menu}
+entries, {\em lines}, and {\em lumps}, respectively.)
+
+A loop must meet the requirement that upon translation into a string of
+elements and/or commands and/or lumps, all items in the string must either
+appear in the {\em menu} or be lumps. (See section 5.7 for a description of
+\#menu.) Although commands may appear either implicitly or explicitly in a
+loop, they are, in fact, all ignored except for those that act on
+phase-space data and those that occur within the definitions of lumps.
+Loops may contain other loops up to a logical depth of 20.
+
+As presently configured, the user may define up to 100 loops with up to 100
+entries in each. (Actually, the total number of lines, lumps, and loops
+must not exceed 100.) When a loop is completely translated into a string as
+described above, the total number of resulting items must be less than
+1000.
+
+The \#loops component is an optional component of the Master Input File.
+Loops are used in conjunction with commands having the type code mnemonics
+{\em circ}, {\em wcl}, and {\em geom}. See sections 7.3, 7.33, and 8.38.
+For examples of the use of {\em loops}, see Chapters 2 and 10.
+
+\subsection{Sample Conversation in Loop Mode} Below is a sample
+conversation with PREP while in {\em loop} mode. The user has defined two
+loops with the names {\em turtle} and {\em hare}. The loop {\em turtle }
+contains the line {\em cell}, and the loop {\em hare} contains the lump
+{\em lmpcell}. The line {\em cell} is assumed to be defined in the \#lines
+component of the Master Input File, and the lump {\em lmpcell} is assumed
+to be defined in the \#lumps component of the Master Input File. Note that
+PREP first asks for the name of a {\em loop}, and then for its contents.
+Return to {\em control} mode is made by way of the {\em loop} editor.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+loop
+loop input mode
+input name for the next loop (or type # to edit)
+turtle
+input contents of turtle   (use & to cont on next line):
+cell
+input name for the next loop (or type # to edit)
+hare
+input contents of hare     (use & to cont on next line):
+lmpcell
+input name for the next loop (or type # to edit)
+#
+loop edit mode
+type p, pl, i, ? or ctrl :
+ctrl
+control mode.
+\end{verbatim}
+\end{footnotesize}
+
+\subsection{Format of the \#loops Component} If the {\em summ} command is
+issued at this point, one gets the results listed below for the proposed
+contents of the Master Input File.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl    drft
+   2.28000000000000
+ drs    drft
+  0.450000000000000
+ hfq    quad
+  0.500000000000000     2.70000000000000     1.00000000000000
+   1.00000000000000
+ hdq    quad
+  0.500000000000000     -1.90000000000000     1.00000000000000
+   1.00000000000000
+ bend    pbnd
+   36.00000000000000     0.0000000000000000E+00     0.5000000000000000
+   1.200000000000000
+ fileout    pmif
+   1.00000000000000     12.0000000000000    3.00000000000000
+ mapout    ptm
+   1.00000000000000     1.00000000000000    0.000000000000000E+00
+  0.000000000000000E+00     1.00000000000000
+ trace    rt
+   13.0000000000000     14.0000000000000     5.00000000000000
+   1000.00000000000    5.00000000000000     0.000000000000000E+00
+ wrtmap tmo
+   16.0000000000000
+ clear    iden
+ bye      end
+#lines
+ cell
+     1*drl     1*hdq     1*drs     1*bend     1*drs     &
+     1*hfq    1*drl
+ ring
+    10*cell
+ study
+     1*clear     1*drl    1*mapout     1*hdq     1*mapout     &
+     1*clear
+#lumps
+ lmpbend
+     1*bend
+ lmpcell
+     1*cell
+#loops
+ turtle
+     1*cell
+  hare
+     1*lmpcell
+Control mode.
+\end{verbatim}
+\end{footnotesize} From the content of the \#loops component, one sees that
+each loop has the following format:
+\begin{quotation} A ``name'' line giving the user specified name of the
+{\em loop}. Names may contain up to 8 characters.
+
+One or more associated ``contents'' lines following the name line. These
+lines specify the contents of the {\em loop}. Each such ``contents'' line
+must end with an `\&' sign if it is to be followed by another ``contents''
+line. Since \Mary reads file 11 in free format, the contents of a {\em
+loop} may occur on separate entry lines, or may be grouped together. For
+convenience, PREP puts at most 5 entries on a line.
+\end{quotation}
+
+\subsection{Multiplicative Notation}\index{multiplicative notation} There is no reason for a loop to
+appear repeatedly in the \#labor component of the Master Input File. See
+section 5.11. Consequently, if {\em name} is a loop and m is a positive
+integer, then m*name has the same effect as 1*name when appearing in
+\#labor. The only exception is that an entry of the form 0*name is ignored.
+Finally, by default both in PREP and \Mary, name means the same as 1*name.
+
+Negative repetition numbers may be used with loops with care. By default,
+$-$name has the same effect as $-$1*name.
+
+If {\em name} is a loop and $-$name (or $-$1*name) appears in \#labor, the
+effect is that {\em name} is constructed in reverse order. Also, consistent
+with the description above, $-$m*name has the same effect as $-$1*name.
+Note that if a loop has a negative repetition number, then lines, {\em
+unmade} lumps, and loops inside this loop will inherit the negative sign
+associated with the negative repetition number. See section 5.8.3.
+
+It is possible to have repeated loops inside other loops. In this case,
+$-$m*name gives the same results as taking the contents of m*name in
+reversed order (providing that whatever lumps are referenced have not been
+constructed previously). Specifically, repetition numbers for loops within
+other loops behave just as they do for nested lines. See section 5.8.3.
+
+\subsection{Loop Editor} When in {\em loop} input mode, the name and
+contents of any {\em loop} item may be changed simply by re-entering its
+name and then following instructions. Thus, if a mistake is made while
+entering a {\em loop} item, one should
+\begin{itemize} \item complete entering the name of the {\em loop} and at
+least one item in its contents, \item then re-enter the name of that {\em
+loop} and follow instructions.
+\end{itemize}
+
+There is also a simple {\em loop} editor to facilitate examination of the
+\#loops component. It is activated by typing `\#'. The available commands
+for the \#loops editor are listed below.
+
+\begin{table}[hb]
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+\multicolumn{3}{|c|}{Loop Editor Commands}\\ \hline Command & Usage &
+Result\\ \hline p & p(CR) & {\underline p}rint the entire contents of\\ & &
+the \#loops component.\\ & &\\ pl & pl(CR) & {\underline p}rint {\underline
+l}ines m through n.\\ & m,n(CR) &\\ & &\\ i & i(CR) & Return to loops
+{\underline i}nput mode.\\ & &\\ ? & ?(CR) & Get help from PREP.\\ & &\\
+ctrl & ctrl(CR) & Return to {\em control} mode.\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Modifications in the \#loops component may be made at any time by returning
+to the {\em loop} mode by way of the {\em control} mode. If extensive
+modifications are required, it may be easier to make them by using a local
+Editor on files 10 or 11 after completion of a PREP run.
+
+\section{Labor Mode}\index{labor} As indicated earlier, the \#labor component specifies
+the actual system to be studied and what operations are actually to be
+carried out. Thus, the \#labor component is a list of elements, commands,
+procedures, lines, lumps, and loops. As presently configured, this list may
+contain up to 1000 entries.
+
+The entries in the \#labor component are drawn from the \#menu, \#lines,
+\#lumps, and \#loops components. That is, all entries in the \#labor
+component must also occur elsewhere as user specified names in at least one
+of the \#menu, \#lines, \#lumps, and \#loops components. PREP checks to
+make sure that this is the case. {\em Moreover, the user specified names of
+all entries in the \#menu, \#lines, \#lumps, and \#loops components must be
+unique}.
+
+During program execution, \Mary reads the entries in the labor list
+sequentially. It is the entries of the \#labor component that determine
+what will actually be done in a given \Mary run. For this reason, the
+\#labor component is a required component for every Master Input File.
+
+Throughout a run, \Mary keeps in memory a transfer map that will be
+referred to as the {\em total transfer map}.\index{transfer map} \index{total transfer map} The map consists of matrix and
+Lie generator parts plus path length. At the beginning of a run, the total
+transfer map is set equal to the identity map. When \Mary encounters the
+name of an {\em element} as it reads the labor list, it calculates the
+transfer map for that element (based on the parameters specified for that
+element in \#menu). Specifically, it computes the numerical values for the
+entries of the matrix $R$ and the polynomials $f_3$ and $f_4$ that
+represent the transfer map. It also computes path length and stores the
+result in $f(0)$. Next, it concatenates this map with the {\em total
+transfer map}, and stores the result as the {\em new total transfer map}.
+Path length is also accumulated. (See section 3.11.2 for a description of
+the concatenation of maps.) Finally, \Mary discards both the transfer map
+for the element it has just encountered and the previous total transfer
+map, and retains only the new total transfer map. Thus,
+\begin{quote}
+\bf MaryLie concatenates as it steps through the labor list, maintains the
+new (current) total transfer map in storage, and discards all previous
+maps.
+\end{quote} Following concatenation, the next entry will be read from the
+labor list.\index{concatenation}
+
+Similarly, when \Mary reads the name of a lump in the labor list, it
+computes (or recalls from memory if previously computed) the transfer map
+for that lump. The transfer map for the lump is then concatenated with the
+total transfer map to give a new transfer map.
+
+When \Mary reads an entry that is a {\em command}, it will do whatever
+operation is requested (e.g., a ray trace or a map manipulation). It then
+again reads the next entry from the labor list.
+
+If \Mary encounters the name of a line in the labor list, it carries out
+all commands and concatenates all successive maps associated with this
+line.
+
+This whole process stops when \Mary encounters an entry in the labor list
+with the type code {\em end}. (See section 7.1.) Thus, each labor list must
+have somewhere an entry with the type code {\em end}. Usually this is the
+last entry in the list. However, it may occur earlier. In that case, all
+subsequent entries in the labor list are ignored.
+
+At the beginning of this section, it was pointed out that it is the entries
+of the \#labor component that determine what will actually be done in a
+given \Mary run. This feature of \Mary makes it possible for the
+\#menu, \#lines, \#lumps, and \#loops components to have entries that are
+{\em not} used in a given \Mary run. Indeed, \Mary is organized in such a
+way that maps for elements in \#menu are not computed unless they are
+referenced either explicitly or implicitly in \#labor. Similarly, lumps are
+not constructed, lines are not translated, etc., unless they are actually
+needed. Thus, the user may make a variety of \Mary runs simply by changing
+the contents of the \#labor component.
+
+For examples of various \Mary runs, and how they are specified by the
+contents of \#labor, see chapters 2 and 10.
+
+\subsection{Sample Conversation in Labor Mode} Below is a sample
+conversation with PREP while in {\em labor} mode. The user has specified a
+\Mary run that computes a variety of maps, some of which are written on an
+external file for later use, and then repeatedly traces rays through a
+simple cell.
+
+Note that PREP asks for the entries in the labor list one at a time. Return
+to {\em control} mode is made by way of the {\em labor} editor.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+labor
+labor input mode:
+input next labor entry (type '#' to edit)
+fileout
+input next labor entry (type '#' to edit)
+study
+input next labor entry (type '#' to edit)
+ring
+input next labor entry (type '#' to edit)
+wrtmap
+input next labor entry (type '#' to edit)
+clear
+input next labor entry (type '#' to edit)
+lmpcell
+input next labor entry (type '#' to edit)
+wrtmap
+input next labor entry (type '#' to edit)
+trace
+input next labor entry (type '#' to edit)
+bye
+input next labor entry (type '#' to edit)
+#
+labor edit mode
+type p,pc,pl,u,n,d,dl,i,ib,?, or ctrl :
+ctrl
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+\subsection{Format of the \#labor Component} If the {\em summ} command is
+issued at this point, one gets the results listed below for the proposed
+contents of the Master Input File.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is a demonstration of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl    drft
+   2.28000000000000
+ drs    drft
+  0.450000000000000
+ hfq    quad
+  0.500000000000000      2.70000000000000      1.00000000000000
+   1.00000000000000
+ hdq    quad
+  0.500000000000000     -1.90000000000000     1.00000000000000
+   1.00000000000000
+ bend    pbnd
+  36.00000000000000     0.0000000000000000E+00     0.5000000000000000
+  1.200000000000000
+ fileout    pmif
+   1.00000000000000      12.0000000000000      3.00000000000000
+ mapout    ptm
+   1.00000000000000      1.00000000000000      0.000000000000000E+00
+  0.000000000000000E+00      1.00000000000000
+ trace    rt
+   13.0000000000000      14.0000000000000      5.00000000000000
+   1000.00000000000      5.00000000000000      0.000000000000000E+00
+ wrtmap    tmo
+   16.0000000000000
+ clear   iden
+ bye     end
+#lines
+ cell
+     1*drl     1*hdq     1*drs     1*bend     1*drs     &
+     1*hfq      1*drl
+ ring
+    10*cell
+ study
+     1*clear     1*drl     1*mapout     1*hdq     1*mapout     &
+     1*clear
+#lumps
+ lmpbend
+      1*bend
+ lmpcell
+      1*cell
+#loops
+ turtle
+     1*cell
+ hare
+     1*lmpcell
+#labor
+    1*fileout
+    1*study
+    1*ring
+    1*wrtmap
+    1*clear
+    1*lmpcell
+    1*wrtmap
+    1*trace
+    1*bye
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+From the contents of the \#labor component, one sees that it consists of a
+simple list with {\em one} entry on each line. Indeed, \Mary reads the
+\#labor component one line at a time, and expects only one entry on each
+line. Thus, unlike other components of the Master Input File, the {\em
+\#labor component must have only one entry on each line}. Since \Mary reads
+each line in free format, the entry may begin anywhere on the line.
+
+\subsection{Multiplicative Notation}\index{multiplicative notation} As described previously, menu entries,
+lines, lumps, and (by mistake) loops may appear repeatedly in \#labor. This
+can be achieved more compactly by writing m*name where m is an integer and
+{\em name} is a menu entry, line, lump, or loop. See sections 5.8.3, 5.9.3,
+and 5.10.3 for more detail. Finally, name means the same as 1*name.
+
+\subsection{Labor Editor} PREP has a simple line editor for correcting
+mistakes in the \#labor component. To assist the user, the editor has a
+``viewing window'' that sits over what is referred to as the ``current''
+line. The editor for \#labor is activated by typing `\#'. The available
+commands for the \#labor editor are listed below.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|l|l|} \hline
+\multicolumn{3}{|c|}{Labor Editor Commands} \\ \hline
+ Command &   Usage     & Result \\ \hline
+    p    &   p(CR)     & {\underline p}rint all of \#labor component with line \\
+         &             & numbers.  After this command is executed \\
+         &             & the current line is the last line. \\
+         &             & \\
+   pc    &   pc(CR)    & {\underline p}rint {\underline c}urrent line. \\
+         &             & \\
+   pl    &   pl(CR)    & {\underline p}rint {\underline l}ines m through n. After this \\
+         &   m,n(CR)   & command is executed, the current line  \\
+         &             & is line n.  Thus, this command may be  \\
+         &             & used with m=n to place the viewing \\
+         &             & window over line n. \\
+         &             & \\
+    u    &   u(CR)     & Move viewing window {\underline u}p one line. \\
+         &             & \\
+    n    &   n(CR)     & Move viewing window to the {\underline n}ext line. \\
+         &             & \\
+    d    &   d(CR)     & {\underline d}elete the current line.  Viewing  \\
+         &             & window now sits over the next line.  \\
+         &             & \\
+   dl    &   dl(CR)    & {\underline d}elete {\underline l}ines m through n.  Viewing \\
+         &   m,n(CR)   & window now sits over the old line n+1. \\
+         &             & \\
+    i    &   i(CR)     & {\underline i}nput after the current line.  PREP  \\
+         &             & goes into {\em labor} input mode.  To \\
+         &             & return to the {\em labor} editor, type \#. \\
+         &             & \\
+   ib    &   ib(CR)    & {\underline i}nput {\underline b}efore line m. PREP goes into\\
+         &   m(CR)     & {\em labor} input mode.  To return to the \\
+         &             & {\em labor} editor, type \#. \\
+         &             & \\
+    ?    &   ?(CR)     & Get help from PREP. \\
+         &             & \\
+  ctrl   &   ctrl(CR)  & Return to {\em control} mode. \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+     To leave the {\em labor} editor and return to {\em control} mode,
+type {\em ctrl}.
+Modifications in the \#labor component may be made at any time by returning
+to the {\em labor} mode by way of the {\em control} mode.
+
+     If extensive changes in the \#labor component are required, it may be
+easier to make them by using a local Editor on files 10 or 11 after
+completion of a PREP run.
+
+\section{Use of the Summary Command in PREP}
+     While in {\em control} mode, the user may type {\em summ} to obtain a listing of
+what has been accomplished to date in a PREP session.  Illustrations of the
+use of the {\em summ} command are given in sections 5.6.3, 5.7.2, 5.8.2, 5.9.2,
+5.10.2, and 5.11.2.  In essence, the {\em summ} command gives a listing of what
+PREP has prepared to date to put on file 10.
+
+\section{Use of the File Command in PREP}
+     While in {\em control} mode, the user may type the command {\em file} at any time
+during a PREP run.  This command causes file 10 to be rewound, and then
+causes PREP to write on file 10 whatever has been specified to date about
+the \#comment, \#beam, \#menu, \#lines, \#lumps, \#loops, and \#labor components
+of the Master Input File.  When a PREP run is terminated by means of the
+{\em exit} command, the final results of the PREP run are automatically written
+on file 10.  If a PREP run is terminated with the {\em abort} command, this final
+writing on file 10 is bypassed.
+
+     It is recommended that the {\em file} command be entered from time to time
+in the course of a PREP run.  Then, should the computer crash, all that
+might be lost are the entries put in after the last {\em file} command.
+
+     An example of the use of the {\em file} command is shown below.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+file
+master input file written on file 10
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+\section{Terminating and Resuming a PREP Run}
+     A PREP run may be terminated by entering the commands {\em exit} or {\em abort}
+while in {\em control} mode.  Use of the {\em exit} command is shown below.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+exit
+master input file written on file 10
+End of PREP.
+\end{verbatim}
+\end{footnotesize}
+As explained in section 5.13, use of the {\em exit} command automatically results
+in the issuing of a final {\em file} command before termination.  Use of the
+{\em abort} command causes termination without the issue of a final {\em file} command.
+
+     A partially satisfactory or partially complete file 10 or 11 can be
+used as input at the beginning of a PREP run.  In this way, PREP can be
+used to edit or complete a file 10.  The user simply copies the existing
+file 10 or 11 into file 9, and then reads file 9 at the beginning of a PREP
+run.  See section 5.3.  Shown below is a sample PREP conversation in which
+use has been made of file 9.
+
+\begin{footnotesize}
+\begin{verbatim}
+Do you want instructions? (y,n) <n>
+n
+Read a PREP data set from file 9? (y,n,?) <n>
+y
+file 9 read in.
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+
+     If the {\em summ} command is issued at this point, one obtains the output
+shown below thus indicating that PREP has been informed of the current
+state of the Master Input File, and is ready to receive corrections and/or
+additions.
+
+\begin{footnotesize}
+\begin{verbatim}
+Type cmts,beam,menu,line,lump,loop,labor,summ,file,exit,abort or ?:
+summ
+#comment
+ This is an example of the use of PREP.
+#beam
+  4.881030646470486
+ 0.8526309382400936
+  1.000000000000000
+  2.000000000000000
+#menu
+ drl      drft
+   2.28000000000000
+ drs      drft
+  0.450000000000000
+ hfq      quad
+  0.500000000000000       2.70000000000000       1.00000000000000
+   1.00000000000000
+ hdq      quad
+  0.500000000000000      -1.90000000000000       1.00000000000000
+   1.00000000000000
+ bend     pbnd
+  36.00000000000000      0.0000000000000000E+00  0.5000000000000000
+  1.200000000000000
+ fileout  pmif
+   1.00000000000000       12.0000000000000       3.00000000000000
+ mapout   ptm
+   1.00000000000000       1.00000000000000      0.000000000000000E+00
+  0.000000000000000E+00   1.00000000000000
+ trace    rt
+   13.0000000000000       14.0000000000000       5.00000000000000
+   1000.00000000000       5.00000000000000      0.000000000000000E+00
+ wrtmap   tmo
+   16.0000000000000
+ clear    iden
+ bye      end
+#lines
+ cell
+     1*drl         1*hdq         1*drs         1*bend        1*drs      &
+     1*hfq         1*drl
+ ring
+    10*cell
+ study
+     1*clear       1*drl         1*mapout      1*hdq         1*mapout   &
+     1*clear
+#lumps
+ lmpbend
+     1*bend
+ lmpcell
+     1*cell
+#loops
+ turtle
+     1*cell
+ hare
+     1*lmpcell
+#labor
+    1*fileout
+    1*study
+    1*ring
+    1*wrtmap
+    1*clear
+    1*lmpcell
+    1*wrtmap
+    1*trace
+    1*bye
+Control mode.
+\end{verbatim}
+\end{footnotesize}
+

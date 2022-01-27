@@ -1,0 +1,148 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+%\blankpage
+\chapter{Introduction to MaryLie}
+
+\section{Brief Program Description}
+\Mary 3.0 is the first version of the MARYland LIE algebraic particle beam
+transport and tracking program.  It is named after Henrietta Maria, wife of England's King Charles I, and Sophus Lie.  Lord Baltimore called the English colony that was to become the state of Maryland ``Terra Maria''.  Sophus Lie was the discoverer of Lie algebras and Lie groups.  The purpose of \Mary is to aid in the design
+and evaluation of both linear charged particle beam transport systems and
+circulating storage rings.  The program employs algorithms based on a Lie
+algebraic formulation of charged particle trajectory calculations, and is able to
+compute transfer maps for and trace rays through single or multiple beam-line
+elements.  This is done for the full 6-dimensional phase space {\em without} the
+use of numerical integration or traditional matrix methods.  All nonlinearities,
+including chromatic effects, through third (octupole) order are included.  Thus
+\Mary 3.0 includes effects one order higher than those usually handled by existing
+matrix-based programs.  In addition, \Mary is exactly symplectic (canonical)
+through all orders.  The version of \Mary described in this manual consists of approximately 40,000 lines of code organized into approximately 500 routines.
+
+\section{Program Performance and Accuracy}
+\Mary may be used both for particle tracking around or through a lattice and for
+analysis of linear and nonlinear lattice properties.  It may also be used
+to transport moments without the need for particle tracking.  When used for tracking, it
+is both versatile and extremely fast.  Tracking can be performed element by
+element, lump by lump, or any mixture of the two.  (A lump is a collection of
+elements combined together and treated by a single transfer map.)  The speed for
+element by element tracking is comparable to that of other tracking codes.  When
+collections of elements can be lumped together to form single transfer maps,
+tracking speeds can be orders of magnitude faster.
+
+Major portions of \Mary 3.0 have been benchmarked against numerical integration.
+All were verified to be exact through third order.  When properly used \Mary has
+an absolute accuracy of four or more significant figures.  (In many cases,
+depending on the amplitude of  betatron oscillations, the absolute accuracy is six
+or more significant figures.)  That is, \Mary has an accuracy comparable to or
+better than the accuracy with which accelerator and beamline components are
+currently measured.
+
+\Mary also has extremely powerful analytic tools.  They include the calculation of
+tunes and first and second-order chromaticities and anharmonicities  (dependence of tunes on betatron
+amplitudes) and first, second, and third-order temporal dispersion
+(dependence of closed-orbit transit time on energy, sometimes called the
+phase-slip factor, and related to momentum compaction, the dependence of
+the closed-orbit  length on energy);  first, second, and third-order
+ordinary dispersion, and all other linear lattice functions and their energy dependence
+through second order; nonlinear lattice functions; nonlinear phase-space distortion; transfer map normal forms;
+nonlinear resonance driving terms; nonlinear invariants; expected Fourier
+coefficients for tracking data; and moment data including eigenemittances
+and high-order moments.
+
+To facilitate actual machine design, \Mary has extensive fitting,  scanning, and
+optimization routines.  These routines make it possible to  fit, scan, or optimize
+essentially all quantities that can be computed by \Mary including those computed
+in user written subroutines.  \Mary also provides full geometrical
+information including the orientation and location of beamline elements
+in 3-dimensional space.
+
+Finally, \Mary can be used to give an explicit representation for the linear and
+nonlinear properties of the total transfer map of a system.  This information can
+be used to evaluate or improve the optical quality of a single pass system such as
+a beam transport line or linear collider.  For a circulating system such as a
+storage ring, it is hoped that the explicit knowledge in this case of the one-turn
+transfer map can eventually be used to predict the dynamic aperture without the
+need for extensive long-term tracking.
+
+\section{Future Versions of MaryLie}
+Because \Mary 3.0 is the first version of a Lie algebraic code, it does not have
+all the features one might possibly desire.  For example, \Mary 3.0 does not treat
+beam element placement, alignment, and powering errors.
+
+     Future versions of \Mary will have features not found in this first version.
+Possible improvements include the treatment of additional beam-line elements;
+handling of magnet placement, alignment, and powering errors; acceleration;
+space-charge effects; etc.  These future versions will become available later as
+\Mary 3.1, \Mary 3.2, etc.
+
+     One of the advantages of the Lie algebraic method is that it is readily
+extended, in principle, to higher orders.  It is expected that it will eventually
+be possible to go to fifth order.  This will be the subject of \Mary 5.0 and its
+later versions, 5.1, 5.2, etc.  Even higher order calculations appear possible,
+but will require considerably more work.  There is no insurmountable difficulty in treating idealized beam-line elements in higher order.  The major problem is the realistic treatment of fringe-field and magnet error effects, etc., which is essential for high-order expansions to make sense.
+
+
+\section{Auxiliary Programs}
+\Mary has been written to make use of several external files both for input and
+output.  This feature makes it possible to design and use other computer programs
+both to prepare input for \Mary and to postprocess \Mary output.  Currently
+several such programs exist or are in preparation.  A brief list of these programs
+is given below.  Users may also wish to write additional programs of their own.
+
+%\numberbysubsection
+\subsection{Programs for Preparation of MaryLie Input}
+\begin{itemize}
+\item  PREP\@.  This program may be used to prepare the Master Input File
+         for \Maryend.  Its operation is described in later chapters of this
+         manual.\index{PREP}
+\item   MADMARY and MARYMAD\@.  MADMARY takes a lattice, as specified in MAD
+         format, and translates it into the current \Mary format.
+         MARYMAD does the reverse.  \index{MAD}
+\item   GENMAP\@.\index{GENMAP}  In normal operation, \Mary uses an internal library of
+         idealized beamline elements.  However, \Mary also has the
+         capability to read in and use externally specified transfer maps.
+         GENMAP refers to a series of programs that take as input real
+         (calculated or measured) magnetic and/or electric field data for
+         some beam-line element, and then generate by numerical
+         integration the transfer map describing motion through
+         that element.  This transfer map can
+         subsequently be used by \Maryend.  In this way, it is possible to
+         use \Mary to treat real beamline elements including the effect
+         of fringe fields, magnetic imperfections, etc.  \Mary also has a
+		 built-in GENMAP routines that are used for various purposes.  See
+		 sections 6.8, 6.23, 6.27, and 8.7.  Finally, the user can in principle
+		 write routines of his/her own that call the internal GENMAP routines.
+		 See section 6.21
+\end{itemize}
+
+\subsection{Programs for Processing of MaryLie Output}
+\begin{itemize}
+\item  GENERAL PLOTTING\@.  When performing ray traces, \Mary reads phase-space
+         initial conditions from an external file and writes the final
+         phase-space coordinates on another external file.  \Mary also
+		 writes various other kinds of data to external files.  All these
+		 quantities can be plotted against each other to make phase-space or
+		 other kinds of plots by use of any of the commonly available plotting
+		 programs that read data files in columnar form.  See sections 2.2
+		 through 2.7, 10.3, 10.4, 10.7, 10.8, 10.9, 10.11, and 10.12.
+
+\item  POSTER is a general purpose Post-Script plotting program written
+by C. Thomas Mottershead.\index{POSTER}  As such, it can be used to produce the general
+kinds of plots described above.  In addition, POSTER can read files
+produced by the \Mary {\em geom} command.  See section 8.38.  With this
+capacity POSTER can be used to produce composite plots that include a
+schematic representation of the underlying beamline, and to produce
+beamline layout drawings.  See sections 10.13 and 10.14.
+\end{itemize}
+
+%\numberbysection
+\section{Program Availability}
+Both \Mary and PREP are written in {\sc Fortran 77}.  Serial scalar versions
+are currently available for any computer that supports {\sc Fortran 77}.  In addition vectorized and/or parallel versions of \Mary (and
+serial versions of PREP) are available for certain vectorized/parallel
+machines.
+
+All of \Mary 3.0 is believed to conform to Fortran 77 standards except for the use of {\em include} statements (which are supported by most Fortran 77 computers) and the timing routine {\em cputime}.  The latter is invoked by the \Mary command {\em time} (see section 7.29).  It is machine dependent, and must be set up by the user if it is to be employed.
+
+
+

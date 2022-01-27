@@ -1,0 +1,101 @@
+ %%!TEX program = pdflatexmk
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+\documentclass[titlepage,twoside,12pt]{report}
+\usepackage{dsat}
+
+%\includeonly{
+%    chap01,
+%    chap02,
+%    chap03,
+%    chap04,
+%    chap05,
+%    chap06a,
+%    chap06b,
+%    chap07,
+%    chap08,
+%    chap09,
+%    chap10,
+%    chap11,
+%    chap12,
+%    chap13,
+%    chap14,
+%    chap15,
+%    chap16,
+%}
+
+
+\usepackage{makeidx}
+\makeindex
+
+\def\Mary{{\sc MaryLie\ }}
+\def\Maryend{{\sc MaryLie\@}}
+\def\Lieop(#1){:\!\! #1 \!\!:}
+\def\blankpage{\newpage
+\vspace*{\fill}
+\begin{center}
+This page is intentionally left blank.
+\end{center}
+\vspace*{\fill}}
+
+
+% Makes \section reset 'equation' counter.
+\makeatletter
+\@addtoreset{equation}{section}
+\@addtoreset{figure}{section}
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\def\thefootnote{\fnsymbol{footnote}}
+%\cfoot{\thepage}
+
+\makeatletter
+%\renewcommand{\@chapapp}{} % uncomment this line to remove "CHAPTER from left hand pages
+\makeatother 
+
+\usepackage{graphicx}
+\graphicspath{%
+  {./figures/},%
+  {./figures/chap02/},%
+  {./figures/chap03/},%
+  {./figures/chap06a/},%
+  {./figures/chap06b/},%
+  {./figures/chap08/},%
+  {./figures/chap10/}%
+}
+\DeclareGraphicsExtensions{.png,.pdf,.eps}
+
+\begin{document}
+%\makeindex
+\pagestyle{headings}
+%\markboth{LEFT}{RIGHT}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\include{title}
+%\include{title2}
+%\include{title3}
+\pagenumbering{roman}
+\setcounter{page}{3}
+\include{toc}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{chap01}
+\include{chap02}
+\include{chap03}
+\include{chap04}
+\include{chap05}
+\include{chap06a}
+\include{chap06b}
+\include{chap07}
+\include{chap08}
+\include{chap09}
+\include{chap10}
+\include{chap11}
+\include{chap12}
+\include{chap13}
+\include{chap14}
+\include{chap15}
+\include{chap16}
+
+\printindex
+\end{document}

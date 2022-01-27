@@ -1,0 +1,437 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter{Input/Output Preparation and Formats}
+
+\section{General Considerations}
+
+%\numberbysubsection
+\subsection{Units and Constants}\index{fundamental constants}
+     \Mary uses MKSA units, unless noted otherwise.\index{constants} \index{units}  On input, beam-line
+element parameters should be specified as follows:
+\begin{center}
+\begin{tabular}{lcl}
+     angle               & : & degrees  \\
+     length              & : & meters \\
+     frequency           & : & Hertz   \\
+     magnetic induction  & : & Tesla   \\
+     voltage             & : & Volts
+\end{tabular}
+\end{center}
+ Fundamental constants used in \Mary and PREP are taken from the references listed in Chapter 11, and are shown below:\index{mass}
+\begin{tabbing}
+\underline{\Mary} \underline{and} \underline{PREP} \underline{Constants} \\
+\hspace{.375in}\= $\pi$ \= = \= 4.d0 $\ast$ atan(1.d0)    \\
+     \> $c$ \> = \> 2.99 792 458 x $10^8$  m/s     \\
+ \> $e$ \= = \= 1.60 217 733 $\times$ 10$^{-19}$ coulomb     \\
+\\
+\hspace{.3in}\= $m_e$ \= = \= 0.510 999 06 MeV/$c^2$\hspace{.2in}\=
+$m_p$ \= = \= 938.272 31 MeV/$c^2$\hspace{.2in}\=$m_d$ \= = \=
+1875.613 39 MeV/$c^2$ \\
+\hspace{.3in}\= $m_{h-}$ \= = \=  $m_p + 2m_e - m_{bind}$ \= = \= 939.294
+29 MeV/$c^2$\hspace{.2in}\= [$m_{bind}$ \= = \= (13.59811 + .7542)
+eV/$c^2$] \\
+\hspace{.3in}\= $m_{\mu}$ \= = \= 105.658 387
+MeV/$c^2$\hspace{.2in}\=$m_{\pi}$  \= = \= 139.567 5 MeV/$c^2$
+\end{tabbing}
+
+\subsection{Scaling and Dimensionless Variables for Phase Space}\index{variables}
+     Let $x,y,z$ be the Cartesian coordinates of a particle having rest
+mass $m$, and let $p_x, p_y$, $p_z$ be the corresponding relativistic
+mechanical momenta.  They are defined by the relations
+\begin{equation}
+      p_x = \gamma m v_x \ , \ p_y = \gamma m v_y \ , \ p_z = \gamma m v_z,
+\end{equation}
+where $\gamma$ is the usual relativistic factor,\index{gamma}
+\begin{equation}
+\gamma = [1 - (v^2/c^2)]^{-1/2}.
+\end{equation}
+The magnitude $p$ of the mechanical momentum is defined by the relation
+\begin{equation}
+p = (p^2_x + p^2_y + p^2_z)^{1/2} = \gamma mv.
+\end{equation}
+Suppose the design momentum is denoted by the quantity $p^0$.\index{design momentum}  (See Section 5.6.3).  Define a
+momentum deviation variable $\delta$ by the relation \index{momentum deviation} \index{delta}
+\begin{equation}
+p = (1 + \delta) p^0.
+\end{equation}
+Also, let $p_t$ be the {\em negative} of the total energy.  It is defined by
+the relation
+\begin{equation}
+p_t = -(m^2c^4 + p^2c^2)^{1/2} = -\gamma mc^2.
+\end{equation}
+Corresponding to the design momentum $p^0$, there is a design value
+$p^0_t$ for $p_t$ given by the relation\index{design energy}
+\begin{equation}
+p^0_t = -[m^2c^4 + (p^0c)^2]^{1/2}.
+\end{equation}
+
+     As explained in section 3.6, it is useful to work with deviation
+variables.\index{deviation variables}  For the transverse coordinates, the quantities $x,y,p_x,p_y$
+can themselves be viewed as deviation variables since they all have the
+value zero on the design orbit.  The case of longitudinal deviation variables is
+more complicated.  For one of them we select $\tilde{p}_t$, the deviation
+in $p_t$.  It is defined by the relation\index{energy deviation}
+\begin{equation}
+\tilde{p}_t = p_t - p_t^0.
+\end{equation}
+For the second we chose $\tilde{t}$, the difference in the time of flight
+between an actual particle and a particle on the design orbit with the
+design momentum (energy).  It can be shown that the variables
+($x,p_x,y,p_y,\tilde{t},\tilde{p}_t$) form a canonical set.\index{design orbit} \index{time of flight}
+
+	 Rather than working with the phase-space variables
+$(x,p_x,y,p_y,\tilde{t},\tilde{p}_t)$,
+\Mary uses dimensionless variables given by \index{dimensionless variables}
+\begin{equation}
+\begin{array}{rcl}
+       X = x/l & , & P_x = p_x/p^0,  \\
+                       &   &              \\
+       Y = y/l & , & P_y = p_y/p^0   ,    \\
+                       &   &              \\
+       \tau = c\tilde{t}/l & , & P_{\tau} = \tilde{p}_t/(p^0c).
+\end{array}
+\end{equation}
+The scale length $l$ is chosen by the user and given as input.\index{scale length}  See
+section 5.6.3.  The differential transit time $\tilde{t}$ is
+scaled by $l/c$, the light travel time across the scale length.  Momenta are
+scaled by the design momentum, $p^0$, and $\tilde{p}_t$ is scaled by
+$p^0c$.  The variables $(X, P_x, Y, P_y, \tau, P_{\tau})$ also form a
+canonical set.\index{phase-space variables} \index{canonical} \index{beta}
+
+	As might be imagined, there is a relation between $P_{\tau}$ and
+$\delta$.\index{tau} \index{P$_{\tau}$} One finds from (4.1.4), (4.1.6), (4.1.7), and (4.1.8)
+the relations
+\begin{eqnarray}
+P_{\tau} &=& -(1/\beta_0) \{ [1 + (2\delta + \delta^2)\beta^2_0]^{1/2} -
+1\} \nonumber \\
+&=& -\beta_0 \delta + (\delta^2/2)(\beta^3_0 - \beta_0) -
+(\delta^3/2)(\beta^5_0 - \beta^3_0) + \cdots,
+\end{eqnarray}
+\begin{equation}
+\delta = [1 - 2P_{\tau}/\beta_0 + P_{\tau}^2]^{1/2} - 1 = -P_{\tau}/\beta_0 + (P^2_{\tau}/2) (1 - \beta^{-2}_0) + \cdots.
+\end{equation}
+Here $\beta_0$ is the usual relativistic factor evaluated on the design
+orbit,
+\begin{equation}
+\beta_0 = v^0/c = -p^0c/p^0_t.
+\end{equation}
+
+Many codes provide expansions of various
+quantities as power series in $\delta$.  These quantities include closed
+orbit location (dispersion), tunes, and Twiss parameters.  To facilitate
+easy comparison, \Mary also
+provides such expansions.  However, from a Lie algebraic perspective,
+expansions in $P_{\tau}$ are more natural.  One might argue that such
+expansions are also of greater physical interest since it is energy
+deviations that are produced by RF cavities.  Moreover, beams are often
+characterized by their energy spread.  For these reasons, \Mary also
+provides expansions of the usual quantities as a power series in
+$P_{\tau}$.  Since it is natural to do so in a Lie algebraic code, \Mary
+also provides expansions of several additional quantities as power series
+in $P_{\tau}$.  Of course, given any expansion in $P_{\tau}$, one can
+always find a related expansion in $\delta$, and vice versa, by use of
+the relations (4.1.9) and (4.1.10).  Indeed, the \Mary $\delta$
+expansions are found in this way.
+
+Consider particle motion in a drift space.  The Hamiltonian $K$ for such
+motion with $z$ as the independent variable and the quantities ($x, p_x,
+y, p_y, t, p_t$) as dependent variables is given by the relation
+\begin{equation}
+K = -(p^2_t/c^2 - m^2c^2 - p^2_x - p^2_y)^{1/2}.
+\end{equation}
+Correspondingly, the Hamiltonian $H$ for such motion with $z$ as the
+independent variable and the deviation variables (4.1.2.8) as dependent
+variables is given by the relation
+\begin{equation}
+H = -(1/\ell )\{ [1-(2P_{\tau}/\beta_0) +P^2_{\tau} - P^2_x -
+P^2_y]^{1/2} + (P_{\tau}/\beta_0) - (1/\beta^2_0)\}.
+\end{equation}
+By using the Hamiltonian $H$ we find the result
+\begin{eqnarray}
+x^{\prime} & = & dx/dz = \ell \ dX/dz = \ell \ \partial H/\partial P_x
+\nonumber \\
+& = & P_x [1-(2P_{\tau}/\beta_0) + P^2_{\tau} - P^2_x - P^2_y]^{-1/2}
+\nonumber \\
+& = & P_x + P_xP_{\tau}/\beta_0 + (1/2)P_x[P^2_{\tau} (3\beta_0^{-2} -1)
++ P^2_x + P^2_y] + \cdots.
+\end{eqnarray}
+We see that $x^{\prime}$ (the usual TRANSPORT type variable) agrees with
+$P_x$ in lowest order; but there are second-order chromatic
+differences, and third- and higher-order geometric and chromatic
+differences.  Also, $X$ and $x^{\prime}$ are {\em not} canonically conjugate,
+$[X,x^{\prime}] \neq 1$.\index{TRANSPORT}
+
+%\numberbysection
+\section{Input and Output Files}
+     Because \Mary processes and produces a large amount of data, it
+employs several input and output files (tapes).  Most of these files may be
+chosen at will by the user.\index{files}  However, a few of these files have fixed
+designations.  Such files, and their use, are listed below:
+
+
+\vspace{3 mm}
+\begin{tabbing}
+\noindent Input \= Files\hspace{1cm}\= \\
+\vspace{2 mm} \\
+\>\underline{Name}  \>  \underline{Purpose} \\
+\>       file 5    \>    Terminal input to \Maryend.  Used primarily in  \\
+\>                 \>    fitting and optimization.  See Chapter 9. \\
+                      \\
+\>       file 11   \>    This is the Master Input File.\index{master input file}  It describes a  \\
+\>                 \>    collection of beam-line elements and commands and \\
+\>                 \>    the calculations to be performed.  See sections \\
+\>                 \>    4.3.1, 4.4.1, and Chapter 5. \\
+                    \\
+\>       file 13,  \>    These files may be used at will.  Generally, it is \\
+\>       l5, etc.  \>    convenient to use odd numbered files for input and \\
+\>                 \>    even numbered files for output.
+
+\vspace{3 mm} \\
+\noindent Output Files \\
+\vspace{2 mm} \\
+\>\underline{Name}   \> \underline{Purpose} \\
+\>       file  6      \> This file is sent to the user's terminal or printer. \\
+\>                    \> It contains information about the progress made by \\
+\>                    \> \Mary during the course of computation, and \\
+\>                    \> results of various calculations requested by the \\
+\>                    \> user.  See sections 7.2, 7.3, 7.4, and 7.7. \\
+                      \\
+\>       file 12      \> If \Mary is requested to provide extensive output, \\
+\>                    \> this output may be sent to file 12 rather than file \\
+\>                    \> 6.  The results of a \Mary run can then be \\
+\>                    \> examined using an Editor.  See sections 7.2, 7.3, \\
+\>                    \> 7.4, and 7.7.  If desired, file 12 can be replaced \\
+\>                    \> by some other file.  See section 7.30.\\
+                      \\
+\>       file 14,     \> These files may be used at will.  Generally, it \\
+\>       16, etc.     \> is convenient to use even numbered files for output, \\
+\>                    \> and odd numbered files for input.
+\end{tabbing}
+
+\section{Preparation of Files}
+
+%\numberbysubsection
+\subsection{The Program PREP}
+     File 11 is the Master Input File for \Maryend.  It may be prepared
+directly by the user with the aid of a local Editor.  However, for a beginner, it may be much more easily prepared with the aid
+of the interactive program PREP.\index{PREP}  The use of this program is described in
+Chapter 5.
+
+\subsection{Free Format Input}\index{free format} \index{format}
+
+     Unless as noted elsewhere, both \Mary and PREP read all input in
+``free field'' format, for which the following rules apply:
+\begin{itemize}
+     \item  Numbers may be input anywhere on a line.
+
+     \item  Sequences of numbers are read in from left to right; they must be
+         separated by a comma and/or blanks.
+
+     \item  A sequence of numbers may continue from one line to the next, but
+         an individual number may not.
+
+     \item  Blanks are {\em not} read in as zeroes.
+
+     \item  Real numbers do not need a decimal point if the number is a whole
+         number.
+
+     \item  Floating point numbers are in double precision.
+\end{itemize}
+The following are all valid representations of the real number 23.41:
+\begin{tabbing}
+\hspace{1.75in}\=23.41 \\
+              \>23.41D0         \\
+              \>0.2341D+2
+\end{tabbing}
+Warning: At least with some operating systems, there is a format problem with free format writes on the CRAY when running in double (128 bit) precision.  Suppose one wishes to write various numbers on a file, and then reread these numbers for subsequent use in the same or later \Mary run.  (This may be done, for example, in connection with the {\em rt}, {\em tmi}, and {\em tmo } commands.  See sections 7.2, 7.5, and 7.6.)  The problem is that when the CRAY writes numbers out to files, all significant figures appear as desired, but with an E format rather than a D format.  Then, when and if these numbers are read back in, the E format causes them to be treated as single precision. Consequently their double precision accuracy is lost.  There is an awkward solution to this problem if these numbers are to be used in a subsequent \Mary run:  one uses an editor to change the E's to D's in such files before the numbers are read back in.  There does not seem to be any simple solution to this problem if the numbers are to be read back in during the same \Mary run.
+
+%\numberbysection
+\section{Input File Structures}
+%\numberbysubsection
+\subsection{File 11 (Master Input File)}\index{file 11} \index{master input file}
+     File 11 contains 7 major components.  Each component begins with the
+(sharp or number or pound) symbol \# followed by the name of the component.  The
+components are \#comment, \#beam, \#menu, \#lines, \#lumps, \#loops, and \#labor.
+Subsequent lines in a given component describe its contents.  Thus, the
+general structure of file 11 is as shown below:
+\begin{center}
+\begin{tabular}{c}
+        \#comment \\
+       $\vdots$    \\
+        \#beam    \\
+       $\vdots$    \\
+        \#menu    \\
+       $\vdots$    \\
+        \#lines   \\
+       $\vdots$    \\
+        \#lumps   \\
+       $\vdots$    \\
+        \#loops   \\
+       $\vdots$    \\
+        \#labor   \\
+       $\vdots$
+\end{tabular}
+\end{center}
+The \#comment, \#lines, \#lumps, and \#loops components are optional.  The
+\#beam, \#menu, and \#labor components are required.
+
+     Complete detail about each of these components and its contents is
+given in Chapter 5.  For the present the brief summary below, which states
+the purpose of each component and the section reference for further
+information, is sufficient.  At this point, the reader is also encouraged
+to examine or re-examine some of the examples in Chapter 2. \index{comment} \index{beam} \index{menu} \index{lines} \index{lumps} \index{loops} \index{labor}
+\begin{center}
+\begin{tabular}{|c|l|}   \hline
+\multicolumn{1}{|c}{Component} &
+\multicolumn{1}{|c|}{Purpose/Section} \\ \hline
+   \#comment   &         Allows the user to write comments about the system \\
+                &       under study and the computations to be made.  \\
+                &       Section 5.5. \\
+                & \\
+     \#beam    &       Specifies magnetic rigidity and relativistic $\beta$ and  \\
+                &       $\gamma$ factors and charge of the beam.  Also specifies  \\
+                &       scale length.  Section 5.6. \\
+                & \\
+     \#menu    &       Contains a list of beam-line elements, commands,\\
+                &      and procedures.  Section 5.7. \\
+                & \\
+    \#lines    &         Contains a list of names for collections of \\
+                &       elements and/or commands and/or procedures \\
+                &       drawn from the menu. Section 5.8. \\
+                & \\
+    \#lumps    &         Contains a list of items from the menu and/or lines \\
+                &       that are to be combined together to form individual \\
+                &       maps.  Section 5.9. \\
+                & \\
+    \#loops    &         Contains information about special tracking or \\
+                &       other operations.  Section 5.10. \\
+                & \\
+    \#labor    &         Specifies the system to be studied, and the actual \\
+                &       operations and calculations to be performed. \\
+                &       Section 5.11.\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Initial Conditions File for Ray Traces or Tracking}
+     Initial conditions are read in prior to ray tracing or tracking.\index{ray trace} \index{tracking} \index{initial conditions} \index{final conditions}  See
+sections 7.2 and 7.3.  As usually configured, \Mary can store up to 10,000 rays (i.e.
+sets of initial conditions).  The order of the input variables is:
+     \[(X^{{\scriptsize in}}, P_x^{\mbox{\scriptsize in}}, Y^{\mbox{\scriptsize in}}, P_{y}^{\mbox{\scriptsize in}}, {\tau}^{\mbox{\scriptsize in}}, P_{\tau}^{\mbox{\scriptsize in}})\]
+The input variables must be in {\em dimensionless form} (as described in section
+4.1.2), and may be entered in free format as described in section 4.3.2.
+\begin{center}
+\begin{tabular}{ll}
+     Example:           &        .1,0,0,0,0,0 \\
+                        &        0,.6,0,0,0,0 \\
+                        &        0,0,.4,.1,0,0
+\end{tabular}
+\end{center}
+The above specifies initial conditions for 3 rays.
+
+     Note that because \Mary reads the Initial Conditions File in free
+format, the format of one number per line is acceptable as well as the
+format described above.  See sections 7.2 and 7.3.  If desired, final and
+initial conditions may be written in full precision.  Thus it is possible
+to restart a tracking calculation.  See section 4.5.2.
+
+\subsection{Matrix and Polynomial Input File}
+
+     The use of this file is explained in sections 7.5 and 7.6 under type
+codes {\em tmi} and {\em tmo}.\index{input} \index{map input}  Each line of the file may be in free format as illustrated below:
+\[\begin{array}{rl}
+\left. \begin{array}{rrr}
+       I_1, & J_1, & R(I_1,J_1) \\
+       I_2, & J_2, & R(I_2,J_2) \\
+              & \vdots &                \\
+       6, & 6, & R(6,6)
+       \end{array} \right\}     &
+       \begin{tabular}{l}
+       nonzero matrix \\
+       elements
+       \end{tabular} \\
+\left. \begin{array}{rl}
+       N_1, & P(N_1)  \\
+       N_2, & P(N_2)   \\
+              & \vdots        \\
+       209, & P(209) \\
+       \end{array} \right\}     &
+       \begin{tabular}{l}
+       nonzero polynomial \\
+       coefficients
+       \end{tabular}
+\end{array}\]
+
+
+Here the $N_i$ are integers (called \Mary indices) between 0 and 209.\index{index}  The quantity $P(0)$ is the
+path length or zeroth order moment.  See sections 7.43 and 8.37.  The remaining $P(N_i)$ correspond to
+$1^{\mbox{\scriptsize st}}$ through $4^{\mbox{\scriptsize th}}$ order
+polynomial coefficients.  See section 3.10 and Chapter 14.
+
+     The above sequence may be repeated as many times as desired.  The
+(6,6) matrix element must always be the last element listed, even if it is
+zero. Also, the last polynomial entry \{209,$P(209)$\} must be listed, even if
+it is zero.  An example is shown below:
+
+\begin{center}
+\begin{tabular}{ll}
+         $1,1,1.346$             & \\
+         $1,2,5.135D-02$         & \\
+         $1,6,-6.084D+01$        & \\
+         $2,1,-18.36$            & \\
+         $2,2,.04246$            & \\
+         $2,6,-.3988$            & \\
+         $3,3,6.203$             & \\
+         $3,4,4.991D-02$         & \\
+         $5,5,1.0$               & \\
+         $6,6,1.0$               & \\
+         $28,-.3916D+03$         & $(X^3)$ \\
+         $29,.8192D-02$          & $(X^2P_x)$ \\
+         $95,-.2660D+03$         & $(X^2P_xP_{\tau})$ \\
+         $104,-.6151D+03$        & $(X^2Y^2)$ \\
+         $140,.9753$             & $(P^4_x)$ \\
+         $144,4.361$             & $(P^3_xP_{\tau})$ \\
+         $209,0.$                & $(P^4_{\tau})$
+\end{tabular}
+\end{center}
+Note:  The quantities shown in parentheses are not actually entered.  They
+are displayed only for the reader's convenience in this example.  See
+section 3.10 and Chapter 14.
+
+\subsection{Input Data for Random Elements}
+     See section 6.19 for use of files in connection with inputing data for
+random elements.
+
+\subsection{Input Data for Procedures and Fitting and Optimization Commands}
+     See sections 9.5 and 9.6.
+
+%\numberbysection
+\section{Output File Structures}
+%\numberbysubsection
+\subsection{Files 6 and 12}
+     The exact formats of these files are not expected to be of interest to
+the general reader.\index{output}  They may be inferred either by looking at examples or
+from the FORTRAN listing of \Maryend.
+
+\subsection{Final Conditions from a Ray Trace or Tracking}
+
+     At the user's option, \Mary writes the results of a ray trace on
+file 6 (the user's terminal or printer) or file 12.  See sections 7.2 and
+7.3.  It also writes the final conditions of every ray trace on a user
+assigned final conditions file.\index{final conditions}  (Recall that in a single ray trace \Mary
+will trace all the initial rays.)  This data may then be used by plotting
+routines, or various other analysis routines, including the current or
+subsequent runs of \Mary itself.  The format of the final conditions file
+is 6(1x,1pe12.5).  This gives a 6 column format for the 6 phase-space
+variables (see section 4.4.2), and each entry has 6 digit precision.  If
+desired, final conditions can also be written out in full precision.  See
+sections 7.2 and 7.3.
+
+\subsection{Matrix and Polynomial Output File}
+
+     The use of this file is explained in section 7.6 under type code {\em tmo}.
+The output format is the same as the input format for the Matrix and
+Polynomial Input File described in section 4.4.3.  Output is in full
+precision.\index{map output}
+
+%\numberbysection

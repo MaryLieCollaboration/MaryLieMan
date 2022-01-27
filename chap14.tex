@@ -1,0 +1,793 @@
+%%!TEX root = ./marylie.tex
+%%--.----1----.----2----.----3----.----4----.----5----.----6----.----7----.-!
+
+\chapter{Tables of Indices, Exponents, and Basis Elements}\index{MaryLie index} \index{cartesian basis} \index{index} \index{exponents} \index{basis elements}
+Monomials in the usual Cartesian basis are labelled by an index (called the
+MaryLie index) using the Giorgilli scheme.  (See the references in
+Chapter 11.)  Consider the monomial
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+\begin{equation}
+X^{j_1}P^{j_2}_xY^{j_3}P^{j_4}_y\tau^{j_5} P^{j_6}_{\tau},
+\end{equation}
+where the exponents $j_1$ through $j_6$ are integers.  For $\ell$ taking
+the values 1 through 6, define integers $n(\ell ; j_1, \cdots j_6)$
+by the relation
+\begin{equation}
+n(\ell ; j_1, \cdots j_6) = \ell - 1 + \sum^{\ell - 1}_{k=0} j_{6-k}.
+\end{equation}
+Then the monomial (14.1) is given an index $i$ by the rule
+\begin{equation}
+i(j_1, \cdots j_6) = \sum^6_{\ell = 1} \ {\rm Binomial} \ [n(\ell ; j_1,
+\cdots j_6), \ell].
+\end{equation}
+Here the quantities
+\begin{equation}
+{\rm Binomial} \ [n, \ell ] = \left( \begin{array}{c} n \\
+\ell \end{array} \right) = \left\{ \begin{array}{cc} 0 & n < \ell \\
+\frac{n!}{\ell !(n-\ell ) !} & n \geq \ell \end{array} \right.
+\end{equation}
+are the usual binomial coefficients.  The rule (14.3) establishes a one-to-one
+correspondence between the set $\{j_1, \cdots j_6\}$ of exponents and
+the positive integers $i$.  Each index $i(j_1, \cdots j_6)$ corresponds to
+a unique 6-tuple of exponents $(j_1, \cdots j_6)$ and vice versa.  These indices and their associated exponents are tabulated in section 14.1.
+
+Static ($\tau$ independent) polynomials in the static resonance basis are
+designated using the notation
+\[
+Rabcde = {\rm Re} [(X + iP_x)^a (X - iP_x)^b (Y + iP_y)^c (Y - iP_y)^d
+P^e_{\tau}],
+\]
+\begin{equation}
+Iabcde = {\rm Im} [(X + iP_x)^a (X - iP_x)^b (Y + iP_y)^c (Y - iP_y)^d
+P^e_{\tau}] .
+\end{equation}
+Here the quantities (exponents) $a$ through $e$ are integers.\index{resonance bases} \index{static resonance basis}  If a term contains $\tau$, the Cartesian basis is employed, and the
+monomial is designated by all six exponents $j_1$ through $j_6$ just as in the
+Cartesian case.  The polynomials in the static resonance basis, along
+with their static resonance MaryLie indices, are listed in section 14.2.
+The static resonance MaryLie indices have been assigned in such a way
+that various related resonant terms appear consecutively.
+
+Polynomials in the dynamic resonance basis are designated by the notation
+\[
+Rabcdef = {\rm Re} [(X + iP_x)^a (X - iP_x)^b (Y + iP_y)^c (Y - iP_y)^d (\tau +
+iP_{\tau})^e (\tau - iP_{\tau})^f] ,
+\]
+\begin{equation}
+Iabcdef = {\rm Im} [(X + iP_x)^a (X - iP_x)^b (Y + iP_y)^c (Y - iP_y)^d (\tau +
+iP_{\tau})^e (\tau - iP_{\tau})^f] .
+\end{equation}
+The polynomials in the dynamic resonance basis, along with their dynamic
+resonance MaryLie indices, are listed in section 14.3.  The dynamic
+resonance MaryLie indices have been assigned in such a way that various
+related resonant terms appear consecutively.\index{dynamic resonance basis}
+
+\clearpage
+\section{MaryLie Indices for Monomials in Cartesian Basis}
+{\normalsize
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_{\tau}$\\
+1\hspace*{.125in}&1 0&0 0&0 0\\
+2\hspace*{.125in}&0 1&0 0&0 0\\
+3\hspace*{.125in}&0 0&1 0&0 0\\
+4\hspace*{.125in}&0 0&0 1&0 0\\
+5\hspace*{.125in}&0 0&0 0&1 0\\
+6\hspace*{.125in}&0 0&0 0&0 1\\
+7\hspace*{.125in}&2 0&0 0&0 0\\
+8\hspace*{.125in}&1 1&0 0&0 0\\
+9\hspace*{.125in}&1 0&1 0&0 0\\
+10\hspace*{.125in}&1 0&0 1&0 0\\
+11\hspace*{.125in}&1 0&0 0&1 0\\
+12\hspace*{.125in}&1 0&0 0&0 1\\
+13\hspace*{.125in}&0 2&0 0&0 0\\
+14\hspace*{.125in}&0 1&1 0&0 0\\
+15\hspace*{.125in}&0 1&0 1&0 0\\
+16\hspace*{.125in}&0 1&0 0&1 0\\
+17\hspace*{.125in}&0 1&0 0&0 1\\
+18\hspace*{.125in}&0 0&2 0&0 0\\
+19\hspace*{.125in}&0 0&1 1&0 0\\
+20\hspace*{.125in}&0 0&1 0&1 0\\
+21\hspace*{.125in}&0 0&1 0&0 1\\
+22\hspace*{.125in}&0 0&0 2&0 0\\
+23\hspace*{.125in}&0 0&0 1&1 0\\
+24\hspace*{.125in}&0 0&0 1&0 1\\
+25\hspace*{.125in}&0 0&0 0&2 0\\
+26\hspace*{.125in}&0 0&0 0&1 1\\
+27\hspace*{.125in}&0 0&0 0&0 2\\
+28\hspace*{.125in}&3 0&0 0&0 0\\
+29\hspace*{.125in}&2 1&0 0&0 0\\
+30\hspace*{.125in}&2 0&1 0&0 0\\
+31\hspace*{.125in}&2 0&0 1&0 0\\
+32\hspace*{.125in}&2 0&0 0&1 0\\
+33\hspace*{.125in}&2 0&0 0&0 1\\
+34\hspace*{.125in}&1 2&0 0&0 0\\
+35\hspace*{.125in}&1 1&1 0&0 0
+\end{tabular} & \hspace*{1in} &
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_\tau$\\
+36\hspace*{.125in}&1 1&0 1&0 0\\
+37\hspace*{.125in}&1 1&0 0&1 0\\
+38\hspace*{.125in}&1 1&0 0&0 1\\
+39\hspace*{.125in}&1 0&2 0&0 0\\
+40\hspace*{.125in}&1 0&1 1&0 0\\
+41\hspace*{.125in}&1 0&1 0&1 0\\
+42\hspace*{.125in}&1 0&1 0&0 1\\
+43\hspace*{.125in}&1 0&0 2&0 0\\
+44\hspace*{.125in}&1 0&0 1&1 0\\
+45\hspace*{.125in}&1 0&0 1&0 1\\
+46\hspace*{.125in}&1 0&0 0&2 0\\
+47\hspace*{.125in}&1 0&0 0&1 1\\
+48\hspace*{.125in}&1 0&0 0&0 2\\
+49\hspace*{.125in}&0 3&0 0&0 0\\
+50\hspace*{.125in}&0 2&1 0&0 0\\
+51\hspace*{.125in}&0 2&0 1&0 0\\
+52\hspace*{.125in}&0 2&0 0&1 0\\
+53\hspace*{.125in}&0 2&0 0&0 1\\
+54\hspace*{.125in}&0 1&2 0&0 0\\
+55\hspace*{.125in}&0 1&1 1&0 0\\
+56\hspace*{.125in}&0 1&1 0&1 0\\
+57\hspace*{.125in}&0 1&1 0&0 1\\
+58\hspace*{.125in}&0 1&0 2&0 0\\
+59\hspace*{.125in}&0 1&0 1&1 0\\
+60\hspace*{.125in}&0 1&0 1&0 1\\
+61\hspace*{.125in}&0 1&0 0&2 0\\
+62\hspace*{.125in}&0 1&0 0&1 1\\
+63\hspace*{.125in}&0 1&0 0&0 2\\
+64\hspace*{.125in}&0 0&3 0&0 0\\
+65\hspace*{.125in}&0 0&2 1&0 0\\
+66\hspace*{.125in}&0 0&2 0&1 0\\
+67\hspace*{.125in}&0 0&2 0&0 1\\
+68\hspace*{.125in}&0 0&1 2&0 0\\
+69\hspace*{.125in}&0 0&1 1&1 0\\
+70\hspace*{.125in}&0 0&1 1&0 1
+\end{tabular}
+\end{tabular}
+
+\newpage
+\begin{tabular}{ccc}
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_\tau$\\
+71\hspace*{.125in}&0 0&1 0&2 0\\
+72\hspace*{.125in}&0 0&1 0&1 1\\
+73\hspace*{.125in}&0 0&1 0&0 2\\
+74\hspace*{.125in}&0 0&0 3&0 0\\
+75\hspace*{.125in}&0 0&0 2&1 0\\
+76\hspace*{.125in}&0 0&0 2&0 1\\
+77\hspace*{.125in}&0 0&0 1&2 0\\
+78\hspace*{.125in}&0 0&0 1&1 1\\
+79\hspace*{.125in}&0 0&0 1&0 2\\
+80\hspace*{.125in}&0 0&0 0&3 0\\
+81\hspace*{.125in}&0 0&0 0&2 1\\
+82\hspace*{.125in}&0 0&0 0&1 2\\
+83\hspace*{.125in}&0 0&0 0&0 3\\
+84\hspace*{.125in}&4 0&0 0&0 0\\
+85\hspace*{.125in}&3 1&0 0&0 0\\
+86\hspace*{.125in}&3 0&1 0&0 0\\
+87\hspace*{.125in}&3 0&0 1&0 0\\
+88\hspace*{.125in}&3 0&0 0&1 0\\
+89\hspace*{.125in}&3 0&0 0&0 1\\
+90\hspace*{.125in}&2 2&0 0&0 0\\
+91\hspace*{.125in}&2 1&1 0&0 0\\
+92\hspace*{.125in}&2 1&0 1&0 0\\
+93\hspace*{.125in}&2 1&0 0&1 0\\
+94\hspace*{.125in}&2 1&0 0&0 1\\
+95\hspace*{.125in}&2 0&2 0&0 0\\
+96\hspace*{.125in}&2 0&1 1&0 0\\
+97\hspace*{.125in}&2 0&1 0&1 0\\
+98\hspace*{.125in}&2 0&1 0&0 1\\
+99\hspace*{.125in}&2 0&0 2&0 0\\
+100\hspace*{.125in}&2 0&0 1&1 0\\
+101\hspace*{.125in}&2 0&0 1&0 1\\
+102\hspace*{.125in}&2 0&0 0&2 0\\
+103\hspace*{.125in}&2 0&0 0&1 1\\
+104\hspace*{.125in}&2 0&0 0&0 2\\
+105\hspace*{.125in}&1 3&0 0&0 0
+\end{tabular} & \hspace*{1in} &
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_\tau$\\
+106\hspace*{.125in}&1 2&1 0&0 0\\
+107\hspace*{.125in}&1 2&0 1&0 0\\
+108\hspace*{.125in}&1 2&0 0&1 0\\
+109\hspace*{.125in}&1 2&0 0&0 1\\
+110\hspace*{.125in}&1 1&2 0&0 0\\
+111\hspace*{.125in}&1 1&1 1&0 0\\
+112\hspace*{.125in}&1 1&1 0&1 0\\
+113\hspace*{.125in}&1 1&1 0&0 1\\
+114\hspace*{.125in}&1 1&0 2&0 0\\
+115\hspace*{.125in}&1 1&0 1&1 0\\
+116\hspace*{.125in}&1 1&0 1&0 1\\
+117\hspace*{.125in}&1 1&0 0&2 0\\
+118\hspace*{.125in}&1 1&0 0&1 1\\
+119\hspace*{.125in}&1 1&0 0&0 2\\
+120\hspace*{.125in}&1 0&3 0&0 0\\
+121\hspace*{.125in}&1 0&2 1&0 0\\
+122\hspace*{.125in}&1 0&2 0&1 0\\
+123\hspace*{.125in}&1 0&2 0&0 1\\
+124\hspace*{.125in}&1 0&1 2&0 0\\
+125\hspace*{.125in}&1 0&1 1&1 0\\
+126\hspace*{.125in}&1 0&1 1&0 1\\
+127\hspace*{.125in}&1 0&1 0&2 0\\
+128\hspace*{.125in}&1 0&1 0&1 1\\
+129\hspace*{.125in}&1 0&1 0&0 2\\
+130\hspace*{.125in}&1 0&0 3&0 0\\
+131\hspace*{.125in}&1 0&0 2&1 0\\
+132\hspace*{.125in}&1 0&0 2&0 1\\
+133\hspace*{.125in}&1 0&0 1&2 0\\
+134\hspace*{.125in}&1 0&0 1&1 1\\
+135\hspace*{.125in}&1 0&0 1&0 2\\
+136\hspace*{.125in}&1 0&0 0&3 0\\
+137\hspace*{.125in}&1 0&0 0&2 1\\
+138\hspace*{.125in}&1 0&0 0&1 2\\
+139\hspace*{.125in}&1 0&0 0&0 3\\
+140\hspace*{.125in}&0 4&0 0&0 0
+\end{tabular}
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{ccc}
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_\tau$\\
+141\hspace*{.125in}&0 3&1 0&0 0\\
+142\hspace*{.125in}&0 3&0 1&0 0\\
+143\hspace*{.125in}&0 3&0 0&1 0\\
+144\hspace*{.125in}&0 3&0 0&0 1\\
+145\hspace*{.125in}&0 2&2 0&0 0\\
+146\hspace*{.125in}&0 2&1 1&0 0\\
+147\hspace*{.125in}&0 2&1 0&1 0\\
+148\hspace*{.125in}&0 2&1 0&0 1\\
+149\hspace*{.125in}&0 2&0 2&0 0\\
+150\hspace*{.125in}&0 2&0 1&1 0\\
+151\hspace*{.125in}&0 2&0 1&0 1\\
+152\hspace*{.125in}&0 2&0 0&2 0\\
+153\hspace*{.125in}&0 2&0 0&1 1\\
+154\hspace*{.125in}&0 2&0 0&0 2\\
+155\hspace*{.125in}&0 1&3 0&0 0\\
+156\hspace*{.125in}&0 1&2 1&0 0\\
+157\hspace*{.125in}&0 1&2 0&1 0\\
+158\hspace*{.125in}&0 1&2 0&0 1\\
+159\hspace*{.125in}&0 1&1 2&0 0\\
+160\hspace*{.125in}&0 1&1 1&1 0\\
+161\hspace*{.125in}&0 1&1 1&0 1\\
+162\hspace*{.125in}&0 1&1 0&2 0\\
+163\hspace*{.125in}&0 1&1 0&1 1\\
+164\hspace*{.125in}&0 1&1 0&0 2\\
+165\hspace*{.125in}&0 1&0 3&0 0\\
+166\hspace*{.125in}&0 1&0 2&1 0\\
+167\hspace*{.125in}&0 1&0 2&0 1\\
+168\hspace*{.125in}&0 1&0 1&2 0\\
+169\hspace*{.125in}&0 1&0 1&1 1\\
+170\hspace*{.125in}&0 1&0 1&0 2\\
+171\hspace*{.125in}&0 1&0 0&3 0\\
+172\hspace*{.125in}&0 1&0 0&2 1\\
+173\hspace*{.125in}&0 1&0 0&1 2\\
+174\hspace*{.125in}&0 1&0 0&0 3\\
+175\hspace*{.125in}&0 0&4 0&0 0
+\end{tabular} & \hspace*{1in} &
+\begin{tabular}{rccc}
+\multicolumn{1}{c}{Index} &
+\multicolumn{3}{c}{Exponents of}\\
+&$X\:P_x$&$Y\:P_y$&$\tau\:P_\tau$\\
+176\hspace*{.125in}&0 0&3 1&0 0\\
+177\hspace*{.125in}&0 0&3 0&1 0\\
+178\hspace*{.125in}&0 0&3 0&0 1\\
+179\hspace*{.125in}&0 0&2 2&0 0\\
+180\hspace*{.125in}&0 0&2 1&1 0\\
+181\hspace*{.125in}&0 0&2 1&0 1\\
+182\hspace*{.125in}&0 0&2 0&2 0\\
+183\hspace*{.125in}&0 0&2 0&1 1\\
+184\hspace*{.125in}&0 0&2 0&0 2\\
+185\hspace*{.125in}&0 0&1 3&0 0\\
+186\hspace*{.125in}&0 0&1 2&1 0\\
+187\hspace*{.125in}&0 0&1 2&0 1\\
+188\hspace*{.125in}&0 0&1 1&2 0\\
+189\hspace*{.125in}&0 0&1 1&1 1\\
+190\hspace*{.125in}&0 0&1 1&0 2\\
+191\hspace*{.125in}&0 0&1 0&3 0\\
+192\hspace*{.125in}&0 0&1 0&2 1\\
+193\hspace*{.125in}&0 0&1 0&1 2\\
+194\hspace*{.125in}&0 0&1 0&0 3\\
+195\hspace*{.125in}&0 0&0 4&0 0\\
+196\hspace*{.125in}&0 0&0 3&1 0\\
+197\hspace*{.125in}&0 0&0 3&0 1\\
+198\hspace*{.125in}&0 0&0 2&2 0\\
+199\hspace*{.125in}&0 0&0 2&1 1\\
+200\hspace*{.125in}&0 0&0 2&0 2\\
+201\hspace*{.125in}&0 0&0 1&3 0\\
+202\hspace*{.125in}&0 0&0 1&2 1\\
+203\hspace*{.125in}&0 0&0 1&1 2\\
+204\hspace*{.125in}&0 0&0 1&0 3\\
+205\hspace*{.125in}&0 0&0 0&4 0\\
+206\hspace*{.125in}&0 0&0 0&3 1\\
+207\hspace*{.125in}&0 0&0 0&2 2\\
+208\hspace*{.125in}&0 0&0 0&1 3\\
+209\hspace*{.125in}&0 0&0 0&0 4\\
+\end{tabular}
+\end{tabular}
+\end{center}
+
+\clearpage
+\section{MaryLie Indices for Polynomials in Static Resonance Basis}
+{\rm
+\begin{center}
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+    1&6&{\tt R00001}&$P_\tau$\\
+    2&1&{\tt R10000}&$X$\\
+    3&2&{\tt I10000}&$P_x$\\
+    4&3&{\tt R00100}&$Y$\\
+    5&4&{\tt I00100}&$P_y$\\
+    6&5&{\tt 000010}&$\tau$\\
+    7&-&{\tt R11000}&$X^2+P_x^2$\\
+    8&-&{\tt R00110}&$Y^2+P_y^2$\\
+    9&27&{\tt R00002}&$P_{\tau}^2$\\
+   10&21&{\tt R10001}&$XP_{\tau}$\\
+   11&17&{\tt I10001}&$P_xP_{\tau}$\\
+   12&21&{\tt R00101}&$YP_{\tau}$\\
+   13&24&{\tt I00101}&$P_yP_{\tau}$\\
+   14&-&{\tt R20000}&$X^2-P_x^2$\\
+   15&-&{\tt I20000}&$2XP_x$\\
+   16&-&{\tt R00200}&$Y^2-P_y^2$\\
+   17&-&{\tt I00200}&$2YP_y$\\
+   18&-&{\tt R10100}&$XY-P_xP_y$\\
+   19&-&{\tt I10100}&$XP_y+YP_x$\\
+   20&-&{\tt R10010}&$XY+P_xP_y$\\
+   21&-&{\tt I10010}&$-XP_y+YP_x$\\
+   22&11&{\tt 100010}&$X{\tau}$\\
+   23&16&{\tt 010010}&$P_x{\tau}$\\
+   24&20&{\tt 001010}&$Y{\tau}$\\
+   25&23&{\tt 000110}&$P_y{\tau}$\\
+   26&25&{\tt 000020}&${\tau}^2$\\
+   27&26&{\tt 000011}&${\tau}P_{\tau}$\\
+   28&-&{\tt R11001}&$(X^2+P_x^2)P_{\tau}$\\
+   29&-&{\tt R00111}&$(Y^2+P_y^2)P_{\tau}$\\
+   30&83&{\tt R00003}&$P_{\tau}^3$\\
+   31&48&{\tt R10002}&$XP_{\tau}^2$\\
+   32&63&{\tt I10002}&$P_xP_{\tau}^2$\\
+   33&73&{\tt R00102}&$YP_{\tau}^2$\\
+   34&79&{\tt I00102}&$P_yP_{\tau}^2$\\
+   35&-&{\tt R20001}&$(X^2-P_x^2)P_{\tau}$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+   36&-&{\tt I20001}&$2XP_xP_{\tau}$\\
+   37&-&{\tt R00201}&$(Y^2-P_y^2)P_{\tau}$\\
+   38&-&{\tt I00201}&$2YP_yP_{\tau}$\\
+   39&-&{\tt R10101}&$(XY-P_xP_y)P_{\tau}$\\
+   40&-&{\tt I10101}&$(XP_y+YP_x)P_{\tau}$\\
+   41&-&{\tt R10011}&$(XY+P_xP_y)P_{\tau}$\\
+   42&-&{\tt I10011}&$(-XP_y+YP_x)P_{\tau}$\\
+   43&-&{\tt R21000}&$X(X^2+P_x^2)$\\
+   44&-&{\tt I21000}&$P_x(X^2+P_x^2)$\\
+   45&-&{\tt R00210}&$Y(Y^2+P_y^2)$\\
+   46&-&{\tt I00210}&$P_y(Y^2+P_y^2)$\\
+   47&-&{\tt R10110}&$X(Y^2+P_y^2)$\\
+   48&-&{\tt I10110}&$P_x(Y^2+P_y^2)$\\
+   49&-&{\tt R11100}&$Y(X^2+P_x^2)$\\
+   50&-&{\tt I11100}&$P_y(X^2+P_x^2)$\\
+   51&-&{\tt R30000}&$X^3-3XP_x^2$\\
+   52&-&{\tt I30000}&$3X^2P_x-P_x^3$\\
+   53&-&{\tt R00300}&$Y^3-3YP_y^2$\\
+   54&-&{\tt I00300}&$3Y^2P_y-P_y^3$\\
+   55&-&{\tt R20100}&$X^2Y-P_x^2Y-2XP_xP_y$\\
+   56&-&{\tt I20100}&$X^2P_y-P_x^2P_y+2XP_xY$\\
+   57&-&{\tt R10200}&$XY^2-XP_y^2-2P_xYP_y$\\
+   58&-&{\tt I10200}&$P_xY^2-P_xP_y^2+2XYP_y$\\
+   59&-&{\tt R20010}&$X^2Y-P_x^2Y+2XP_xP_y$\\
+   60&-&{\tt I20010}&$-X^2P_y+P_x^2P_y+2XP_xY$\\
+   61&-&{\tt R01200}&$XY^2-XP_y^2+2P_xYP_y$\\
+   62&-&{\tt I01200}&$-P_xY^2+P_xP_y^2+2XYP_y$\\
+   63&32&{\tt 200010}&$X^2{\tau}$\\
+   64&37&{\tt 110010}&$XP_x{\tau}$\\
+   65&41&{\tt 101010}&$XY{\tau}$\\
+   66&44&{\tt 100110}&$XP_y{\tau}$\\
+   67&46&{\tt 100020}&$X{\tau}^2$\\
+   68&47&{\tt 100011}&$X{\tau}P_{\tau}$\\
+   69&52&{\tt 020010}&$P_x^2{\tau}$\\
+   70&56&{\tt 011010}&$P_xY{\tau}$\\
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+   71&59&{\tt 010110}&$P_xP_y{\tau}$\\
+   72&61&{\tt 010020}&$P_x{\tau}^2$\\
+   73&62&{\tt 010011}&$P_x{\tau}P_{\tau}$\\
+   74&66&{\tt 002010}&$Y^2{\tau}$\\
+   75&69&{\tt 001110}&$YP_y{\tau}$\\
+   76&71&{\tt 001020}&$Y{\tau}^2$\\
+   77&72&{\tt 001011}&$Y{\tau}P_{\tau}$\\
+   78&75&{\tt 000210}&$P_y^2{\tau}$\\
+   79&77&{\tt 000120}&$P_y{\tau}^2$\\
+   80&78&{\tt 000111}&$P_y{\tau}P_{\tau}$\\
+   81&80&{\tt 000030}&${\tau}^3$\\
+   82&81&{\tt 000021}&${\tau}^2P_{\tau}$\\
+   83&82&{\tt 000012}&${\tau}P_{\tau}^2$\\
+   84&-&{\tt R11002}&$(X^2+P_x^2)P_{\tau}^2$\\
+   85&-&{\tt R00112}&$(Y^2+P_y^2)P_{\tau}^2$\\
+   86&209&{\tt R00004}&$P_{\tau}^4$\\
+   87&-&{\tt R22000}&$(X^2+P_x^2)^2$\\
+   88&-&{\tt R00220}&$(Y^2+P_y^2)^2$\\
+   89&-&{\tt R11110}&$(X^2+P_x^2)(Y^2+P_y^2)$\\
+   90&139&{\tt R10003}&$XP_{\tau}^3$\\
+   91&174&{\tt I10003}&$P_xP_{\tau}^3$\\
+   92&194&{\tt R00103}&$YP_{\tau}^3$\\
+   93&204&{\tt I00103}&$P_yP_{\tau}^3$\\
+94&-&{\tt R20002}&$(X^2-P_x^2)P_{\tau}^2$\\
+95&-&{\tt I20002}&$2XP_xP_{\tau}^2$\\
+96&-&{\tt R00202}&$(Y^2-P_y^2)P_{\tau}^2$\\
+97&-&{\tt I00202}&$2YP_yP_{\tau}^2$\\
+98&-&{\tt R10102}&$(XY-P_xP_y)P_{\tau}^2$\\
+99&-&{\tt I10102}&$(XP_y+YP_x)P_{\tau}^2$\\
+100&-&{\tt R10012}&$(XY+P_xP_y)P_{\tau}^2$\\
+101&-&{\tt I10012}&$(-XP_y+YP_x)P_{\tau}^2$\\
+  102&-&{\tt R21001}&$X(X^2+P_x^2)P_{\tau}$\\
+  103&-&{\tt I21001}&$P_x(X^2+P_x^2)P_{\tau}$\\
+  104&-&{\tt R00211}&$Y(Y^2+P_y^2)P_{\tau}$\\
+  105&-&{\tt I00211}&$P_y(Y^2+P_y^2)P_{\tau}$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+  106&-&{\tt R10111}&$X(Y^2+P_y^2)P_{\tau}$\\
+  107&-&{\tt I10111}&$P_x(Y^2+P_y^2)P_{\tau}$\\
+  108&-&{\tt R11101}&$Y(X^2+P_x^2)P_{\tau}$\\
+  109&-&{\tt I11101}&$P_y(X^2+P_x^2)P_{\tau}$\\
+  110&-&{\tt R30001}&$(X^3-3XP_x^2)P_{\tau}$\\
+  111&-&{\tt I30001}&$(3X^2P_x-P_x^3)P_{\tau}$\\
+  112&-&{\tt R00301}&$(Y^3-3YP_y^2)P_{\tau}$\\
+  113&-&{\tt I00301}&$(3Y^2P_y{\tau}-P_y^3)P_{\tau}$\\
+  114&-&{\tt R20101}&$(X^2Y-P_x^2Y-2XP_xP_y)P_{\tau}$\\
+  115&-&{\tt I20101}&$(X^2P_y-P_x^2P_y+2XP_xP_y)P_{\tau}$\\
+  116&-&{\tt R10201}&$(XY^2-XP_y^2-2P_xYP_y)P_{\tau}$\\
+  117&-&{\tt I10201}&$(P_xY^2-P_xP_y^2+2XYP_y)P_{\tau}$\\
+  118&-&{\tt R20011}&$(X^2Y-P_x^2Y+2XP_xP_y)P_{\tau}$\\
+  119&-&{\tt I20011}&$(-X^2P_y+P_x^2P_y+2XP_xY)P_{\tau}$\\
+  120&-&{\tt R01201}&$(XY^2-XP_y^2+2P_xYP_y)P_{\tau}$\\
+  121&-&{\tt I01201}&$(-P_xY^2+P_xP_y^2+2XYP_y0P_{\tau}$\\
+  122&-&{\tt R31000}&$X^4-P_x^4$\\
+  123&-&{\tt I31000}&$2X^3P_x+2XP_x^3$\\
+  124&-&{\tt R00310}&$Y^4-P_y^4$\\
+  125&-&{\tt I00310}&$2Y^3P_y+2YP_y^3$\\
+  126&-&{\tt R20110}&$(X^2-P_x^2)(Y^2+P_y^2)$\\
+  127&-&{\tt I20110}&$2XP_x(Y^2P_y^2)$\\
+  128&-&{\tt R11200}&$(X^2+P_x^2)(Y^2-P_y^2)$\\
+  129&-&{\tt I11200}&$2(X^2+P_x^2)YP_y$\\
+  130&-&{\tt R21100}&$(X^2+P_x^2)(XY-P_xP_y)$\\
+  131&-&{\tt I21100}&$(X^2+P_x^2)(XP_y+YP_x)$\\
+  132&-&{\tt R10210}&$(Y^2+P_y^2)(XY-P_xP_y)$\\
+  133&-&{\tt I10210}&$(Y^2+P_y^2)(XP_y+YP_x)$\\
+  134&-&{\tt R21010}&$(X^2+P_x^2)(XY+P_xP_y)$\\
+  135&-&{\tt I21010}&$(X^2+P_x^2)(-XP_y+YP_x)$\\
+  136&-&{\tt R01210}&$(Y^2+P_y^2)(XY+P_xP_y)$\\
+  137&-&{\tt I01210}&$(Y^2+P_y^2)(XP_y-YP_x)$\\
+  138&-&{\tt R40000}&$X^4-6X^2P_x^2+P_x^4$\\
+  139&-&{\tt I40000}&$4X^3P_x-4XP_x^3$\\
+  140&-&{\tt R00400}&$Y^4-6Y^2P_y^2+P_y^4$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+  141&-&{\tt I00400}&$4Y^3P_y-4YP_y^3$\\
+  142&-&{\tt R30100}&$X^3Y-3XP_x^2Y-3X^2P_xP_y+P_x^3P_y$\\
+  143&-&{\tt I30100}&$X^3P_y+3X^2P_xY-3XP_x^2P_y-P_x^3Y$\\
+  144&-&{\tt R10300}&$XY^3-3P_xY^2P_y-3XYP_y^2+P_xP_y^3$\\
+  145&-&{\tt I10300}&$P_xY^3+3XY^2P_y-3P_xYP_y^2-XP_y^3$\\
+  146&-&{\tt R30010}&$X^3Y-3XP_x^2Y+3X^2P_xP_y-P_x^3P_y$\\
+  147&-&{\tt I30010}&$-X^3P_y+3X^2P_xY+3XP_x^2P_y-P_x^3Y$\\
+  148&-&{\tt R01300}&$XY^3+3P_xY^2P_y-3XYP_y^2-P_xP_y^3$\\
+  149&-&{\tt I01300}&$-P_xY^3+3XY^2P_y+3P_xYP_y^2-XP_y^3$\\
+  150&-&{\tt R20200}&$X^2Y^2-P_x^2Y^2-X^2P_y^2+P_x^2P_y^2-4XP_xYP_y$\\
+  151&-&{\tt I20200}&$2XP_xY^2+2X^2YP_y-2P_x^2YP_y-2XP_xP_y^2$\\
+  152&-&{\tt R20020}&$X^2Y^2-P_x^2Y^2-X^2P_y^2+P_x^2P_y^2+4XP_xYP_y$\\
+  153&-&{\tt I20020}&$2XP_xY^2-2X^2YP_y+2P_x^2YP_y-2XP_xP_y^2$\\
+  154&88&{\tt 300010}&$x^3{\tau}$\\
+  155&93&{\tt 210010}&$x^2P_x{\tau}$\\
+  156&97&{\tt 201010}&$x^2Y{\tau}$\\
+  157&100&{\tt 200110}&$x^2P_y{\tau}$\\
+  158&102&{\tt 200020}&$x^2{\tau}^{2}$\\
+  159&103&{\tt 200011}&$x^2{\tau}P_{\tau}$\\
+  160&108&{\tt 120010}&$XP_x^2{\tau}$\\
+  161&112&{\tt 111010}&$XP_xY{\tau}$\\
+  162&115&{\tt 110110}&$XP_xP_y{\tau}$\\
+  163&117&{\tt 110020}&$XP_x{\tau}^2$\\
+  164&118&{\tt 110011}&$XP_x{\tau}P_{\tau}$\\
+  165&122&{\tt 102010}&$XY^2{\tau}$\\
+  166&125&{\tt 101110}&$XYP_y{\tau}$\\
+  167&127&{\tt 101020}&$XY{\tau}^2$\\
+  168&128&{\tt 101011}&$XY{\tau}P_{\tau}$\\
+  169&131&{\tt 100210}&$XP_y^2{\tau}$\\
+  170&133&{\tt 100120}&$XP_y{\tau}^2$\\
+  171&134&{\tt 100111}&$XP_y{\tau}P_{\tau}$\\
+  172&136&{\tt 100030}&$X{\tau}^3$\\
+  173&137&{\tt 100021}&$X{\tau}^2P_{\tau}$\\
+  174&138&{\tt 100012}&$X{\tau}P_{\tau}^2$\\
+  175&143&{\tt 030010}&$P_X^3{\tau}$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{cccc}
+SR Index&Cart Index&Designation&Element\\ \hline
+  176&147&{\tt 021010}&$P_x^2Y{\tau}$\\
+  177&150&{\tt 020110}&$P_x^2P_Y{\tau}$\\
+  178&152&{\tt 020020}&$P_x^2{\tau}^{2}$\\
+  179&153&{\tt 020011}&$P_x^2{\tau}P_{\tau}$\\
+  180&157&{\tt 012010}&$P_xY^2{\tau}$\\
+  181&160&{\tt 011110}&$P_xYP_y{\tau}$\\
+  182&162&{\tt 011020}&$P_xY{\tau}^2$\\
+  183&163&{\tt 011011}&$P_xY{\tau}P_{\tau}$\\
+  184&166&{\tt 010210}&$P_xP_y^2{\tau}$\\
+  185&168&{\tt 010120}&$P_XP_y{\tau}^2$\\
+  186&169&{\tt 010111}&$P_xP_y{\tau}P_{\tau}$\\
+  187&171&{\tt 010030}&$P_x{\tau}^3$\\
+  188&172&{\tt 010021}&$P_x{\tau}^2P_{\tau}$\\
+  189&173&{\tt 010012}&$P_x{\tau}P_{\tau}^2$\\
+  190&177&{\tt 003010}&$Y^3{\tau}$\\
+  191&180&{\tt 002110}&$Y^2P_y{\tau}$\\
+  192&182&{\tt 002020}&$Y^2{\tau}^2$\\
+  193&183&{\tt 002011}&$Y^2{\tau}P_{\tau}$\\
+  194&186&{\tt 001210}&$YP_y^2{\tau}$\\
+  195&188&{\tt 001120}&$YP_y{\tau}^2$\\
+  196&189&{\tt 001111}&$YP_y{\tau}P_{\tau}$\\
+  197&191&{\tt 001030}&$Y{\tau}^3$\\
+  198&192&{\tt 001021}&$Y{\tau}^2P_{\tau}$\\
+  199&193&{\tt 001012}&$Y{\tau}P_{\tau}^2$\\
+  200&196&{\tt 000310}&$P_y^3{\tau}$\\
+  201&198&{\tt 000220}&$P_y^2{\tau}^2$\\
+  202&199&{\tt 000211}&$P_y^2{\tau}P_{\tau}$\\
+  203&201&{\tt 000130}&$P_y{\tau}^3$\\
+  204&202&{\tt 000121}&$P_y{\tau}^2P_{\tau}$\\
+  205&203&{\tt 000112}&$P_y{\tau}P_{\tau}^2$\\
+  206&205&{\tt 000040}&${\tau}^4$\\
+  207&206&{\tt 000031}&${\tau}^3P_{\tau}$\\
+  208&207&{\tt 000022}&${\tau}^2P_{\tau}^2$\\
+  209&208&{\tt 000013}&${\tau}P_{\tau}^3$\\
+\end{tabular}
+\end{center}
+}
+
+\clearpage
+
+\section{MaryLie Indices for Polynomials in Dynamic Resonance Basis}
+{\rm
+\begin{center}
+\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+    1&{\tt R100000}&$X$\\
+    2&{\tt I100000}&$P_x$\\
+    3&{\tt R001000}&$Y$\\
+    4&{\tt I001000}&$P_y$\\
+    5&{\tt R000010}&${\tau}$\\
+    6&{\tt I000010}&$P_{\tau}$\\
+    7&{\tt R110000}&$X^2+P_x^2$\\
+    8&{\tt R001100}&$Y^2+P_y^2$\\
+    9&{\tt R000011}&${\tau}^2+P_{\tau}^2$\\
+   10&{\tt R000020}&${\tau}^2-P_{\tau}^2$\\
+   11&{\tt I000020}&$2{\tau}P_{\tau}$\\
+   12&{\tt R100010}&$X{\tau}-P_xP_{\tau}$\\
+   13&{\tt I100010}&$XP_{\tau}+P_x{\tau}$\\
+   14&{\tt R100001}&$X{\tau}+P_xP_{\tau}$\\
+   15&{\tt I100001}&$-XP_{\tau}+P_x{\tau}$\\
+   16&{\tt R001010}&$Y{\tau}-P_yP_{\tau}$\\
+   17&{\tt I001010}&$YP_{\tau}+P_y{\tau}$\\
+   18&{\tt R001001}&$Y{\tau}+P_yP_{\tau}$\\
+   19&{\tt I001001}&$-YP_{\tau}+P_y{\tau}$\\
+   20&{\tt R200000}&$X^2-P_x^2$\\
+   21&{\tt I200000}&$2XP_x$\\
+   22&{\tt R002000}&$Y^2-P_y^2$\\
+   23&{\tt I002000}&$2YP_y$\\
+   24&{\tt R101000}&$XY-P_xP_y$\\
+   25&{\tt I101000}&$XP_y+P_xY$\\
+   26&{\tt R100100}&$XY+P_xP_y$\\
+   27&{\tt I100100}&$-XP_y+P_xY$\\
+   28&{\tt R110010}&$X^2{\tau}+P_x^2{\tau}$\\
+   29&{\tt I110010}&$X^2P_{\tau}+P_x^2P_{\tau}$\\
+   30&{\tt R001110}&$Y^2{\tau}+P_y^2{\tau}$\\
+   31&{\tt I001110}&$Y^2P_{\tau}+P_y^2P_{\tau}$\\
+   32&{\tt R000030}&${\tau}^3-3{\tau}P_{\tau}^2$\\
+   33&{\tt I000030}&$3{\tau}^{2}P_{\tau}-P_{\tau}^{3}$\\
+   34&{\tt R000021}&${\tau}^{3}+{\tau}P_{\tau}^{2}$\\
+   35&{\tt I000021}&${\tau}^{2}P_{\tau}+P_{\tau}^{3}$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+   36&{\tt R100011}&$X{\tau}^{2}+XP_{\tau}^{2}$\\
+   37&{\tt I100011}&$P_x{\tau}^{2}+P_xP_{\tau}^{2}$\\
+   38&{\tt R001011}&$Y{\tau}^{2}+YP_{\tau}^{2}$\\
+   39&{\tt I001011}&$P_y{\tau}^{2}+P_yP_{\tau}^{2}$\\
+   40&{\tt R100020}&$X{\tau}^{2}-XP_{\tau}^{2}-2P_x{\tau}P_{\tau}$\\
+   41&{\tt I100020}&$2X{\tau}P_{\tau}+P_x{\tau}^{2}-P_xP_{\tau}^{2}$\\
+   42&{\tt R100002}&$X{\tau}^{2}-XP_{\tau}^{2}+2P_x{\tau}P_{\tau}$\\
+   43&{\tt I100002}&$-2X{\tau}P_{\tau}+P_x{\tau}^{2}-P_xP_{\tau}^{2}$\\
+   44&{\tt R001020}&$Y{\tau}^{2}-YP_{\tau}^{2}-2P_y{\tau}P_{\tau}$\\
+   45&{\tt I001020}&$2Y{\tau}P_{\tau}+P_y{\tau}^{2}-P_yP_{\tau}^{2}$\\
+   46&{\tt R001002}&$Y{\tau}^{2}-YP_{\tau}^{2}+2P_y{\tau}P_{\tau}$\\
+   47&{\tt I001002}&$-2Y{\tau}P_{\tau}+P_y{\tau}^{2}-P_yP_{\tau}^{2}$\\
+   48&{\tt R200010}&$X^{2}{\tau}-2XP_xP_{\tau}-P_x^{2}{\tau}$\\
+   49&{\tt I200010}&$X^{2}P_{\tau}+2XP_x{\tau}-P_x^{2}P_{\tau}$\\
+   50&{\tt R200001}&$X^{2}{\tau}+2XP_xP_{\tau}-P_x^{2}{\tau}$\\
+   51&{\tt I200001}&$-X^{2}P_{\tau}+2XP_x{\tau}+P_x^{2}P_{\tau}$\\
+   52&{\tt R002010}&$Y^{2}{\tau}-2YP_yP_{\tau}-P_y^{2}{\tau}$\\
+   53&{\tt I002010}&$Y^{2}P_{\tau}+2YP_y{\tau}-P_y^{2}P_{\tau}$\\
+   54&{\tt R002001}&$Y^{2}{\tau}+2YP_yP_{\tau}-P_y^{2}{\tau}$\\
+   55&{\tt I002001}&$-Y^{2}P_{\tau}+2YP_y{\tau}+P_y^{2}P_{\tau}$\\
+   56&{\tt R101010}&$XY{\tau}-XP_yP_{\tau}-P_xYP_{\tau}-P_xP_y{\tau}$\\
+   57&{\tt I101010}&$XYP_{\tau}+XP_y{\tau}+P_xY{\tau}-P_xP_yP_{\tau}$\\
+   58&{\tt R101001}&$XY{\tau}+XP_yP_{\tau}+P_xYP_{\tau}-P_xP_y{\tau}$\\
+   59&{\tt I101001}&$-XYP_{\tau}+XP_y{\tau}+P_xY{\tau}+P_xP_yP_{\tau}$\\
+   60&{\tt R100110}&$XY{\tau}+XP_yP_{\tau}-P_xYP_{\tau}+P_xP_y{\tau}$\\
+   61&{\tt I100110}&$XYP_{\tau}-XP_y{\tau}+P_xY{\tau}+P_xP_yP_{\tau}$\\
+   62&{\tt R100101}&$XY{\tau}-XP_yP_{\tau}+P_xYP_{\tau}+P_xP_y{\tau}$\\
+   63&{\tt I100101}&$-XYP_{\tau}-XP_y{\tau}+P_xY{\tau}-P_xP_yP_{\tau}$\\
+   64&{\tt R210000}&$X^{3}+XP_x^{2}$\\
+   65&{\tt I210000}&$X^{2}P_x+P_x^{3}$\\
+   66&{\tt R002100}&$Y^{3}+YP_y^{2}$\\
+   67&{\tt I002100}&$Y^{2}P_y+P_y^{3}$\\
+   68&{\tt R101100}&$XY^{2}+XP_y^{2}$\\
+   69&{\tt I101100}&$P_xY^{2}+P_xP_y^{2}$\\
+   70&{\tt R111000}&$X^{2}Y+P_x^{2}Y$
+\end{tabular}
+
+
+\newpage
+\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+   71&{\tt I111000}&$X^{2}P_y+P_x^{2}P_y$\\
+   72&{\tt R300000}&$X^{3}-3XP_x^{2}$\\
+   73&{\tt I300000}&$3X^{2}P_x-P_x^{3}$\\
+   74&{\tt R003000}&$Y^{3}-3YP_y^{2}$\\
+   75&{\tt I003000}&$3Y^{2}P_y-P_y^{3}$\\
+   76&{\tt R201000}&$X^{2}Y-2XP_xP_y-P_x^{2}Y$\\
+   77&{\tt I201000}&$X^{2}P_y+2XP_xY-P_x^{2}P_y$\\
+   78&{\tt R102000}&$XY^{2}-XP_y^{2}-2P_xYP_y$\\
+   79&{\tt I102000}&$2XYP_y+P_xY^{2}-P_xP_y^{2}$\\
+   80&{\tt R200100}&$X^{2}Y+2XP_xP_y-P_x^{2}Y$\\
+   81&{\tt I200100}&$-X^{2}P_y+2XP_xY+P_x^{2}P_y$\\
+   82&{\tt R100200}&$XY^{2}-XP_y^{2}+2P_xYP_y$\\
+   83&{\tt I100200}&$-2XYP_y+P_xY^{2}-P_xP_y^{2}$\\
+   84&{\tt R220000}&$X^{4}+2X^{2}P_x^{2}+P_x^{4}$\\
+   85&{\tt R002200}&$Y^{4}+2Y^{2}P_y^{2}+P_y^{4}$\\
+   86&{\tt R000022}&${\tau}^{4}+2{\tau}^{2}P_{\tau}^{2}+P_{\tau}^{4}$\\
+   87&{\tt R111100}&$X^{2}Y^{2}+X^{2}P_y^{2}+P_x^{2}Y^{2}+P_x^{2}P_y^{2}$\\
+   88&{\tt R110011}&$X^{2}{\tau}^{2}+X^{2}P_{\tau}^{2}+P_x^{2}{\tau}^{2}+P_x^{2}P_{\tau}^{2}$\\
+   89&{\tt R001111}&$Y^{2}{\tau}^{2}+Y^{2}P_{\tau}^{2}+P_y^{2}{\tau}^{2}+P_y^{2}P_{\tau}^{2}$\\
+   90&{\tt R110020}&$X^{2}{\tau}^{2}-X^{2}P_{\tau}^{2}+P_x^{2}{\tau}^{2}-P_x^{2}P_{\tau}^{2}$\\
+   91&{\tt I110020}&$2X^{2}{\tau}P_{\tau}+2P_x^{2}{\tau}P_{\tau}$\\
+   92&{\tt R001120}&$Y^{2}{\tau}^{2}-Y^{2}P_{\tau}^{2}+P_y^{2}{\tau}^{2}-P_y^{2}P_{\tau}^{2}$\\
+   93&{\tt I001120}&$2Y^{2}{\tau}P_{\tau}+2P_y^{2}{\tau}P_{\tau}$\\
+   94&{\tt R000040}&${\tau}^{4}-6{\tau}^{2}P_{\tau}^{2}+P_{\tau}^{4}$\\
+   95&{\tt I000040}&$4{\tau}^{3}P_{\tau}-4{\tau}P_{\tau}^{3}$\\
+   96&{\tt R000031}&${\tau}^{4}-P_{\tau}^{4}$\\
+   97&{\tt I000031}&$2{\tau}^{3}P_{\tau}+2{\tau}P_{\tau}^{3}$\\
+   98&{\tt R100030}&$X{\tau}^{3}-3X{\tau}P_{\tau}^{2}-3P_x{\tau}^{2}P_{\tau}+P_xP_{\tau}^{3}$\\
+   99&{\tt I100030}&$3X{\tau}^{2}P_{\tau}-XP_{\tau}^{3}+P_x{\tau}^{3}-3P_x{\tau}P_{\tau}^{2}$\\
+  100&{\tt R100003}&$X{\tau}^{3}-3X{\tau}P_{\tau}^{2}+3P_x{\tau}^{2}P_{\tau}-P_xP_{\tau}^{3}$\\
+  101&{\tt I100003}&$-3X{\tau}^{2}P_{\tau}+XP_{\tau}^{3}+P_x{\tau}^{3}-3P_x{\tau}P_{\tau}^{2}$\\
+  102&{\tt R001030}&$Y{\tau}^{3}-3Y{\tau}P_{\tau}^{2}-3P_y{\tau}^{2}P_{\tau}+P_yP_{\tau}^{3}$\\
+  103&{\tt I001030}&$3Y{\tau}^{2}P_{\tau}-YP_{\tau}^{3}+P_y{\tau}^{3}-3P_y{\tau}P_{\tau}^{2}$\\
+  104&{\tt R001003}&$Y{\tau}^{3}-3Y{\tau}P_{\tau}^{2}+3P_y{\tau}^{2}P_{\tau}-P_yP_{\tau}^{3}$\\
+  105&{\tt I001003}&$-3Y{\tau}^{2}P_{\tau}+YP_{\tau}^{3}+P_y{\tau}^{3}-3P_y{\tau}P_{\tau}^{2}$
+\end{tabular}
+
+
+\newpage
+\hspace*{-.5in}\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+  106&{\tt R100021}&$X{\tau}^{3}+X{\tau}P_{\tau}^{2}-P_x{\tau}^{2}P_{\tau}-P_xP_{\tau}^{3}$\\
+  107&{\tt I100021}&$X{\tau}^{2}P_{\tau}+XP_{\tau}^{3}+P_x{\tau}^{3}+P_x{\tau}P_{\tau}^{2}$\\
+  108&{\tt R100012}&$X{\tau}^{3}+X{\tau}P_{\tau}^{2}+P_x{\tau}^{2}P_{\tau}+P_xP_{\tau}^{3}$\\
+  109&{\tt I100012}&$-X{\tau}^{2}P_{\tau}-XP_{\tau}^{3}+P_x{\tau}^{3}+P_x{\tau}P_{\tau}^{2}$\\
+  110&{\tt R001021}&$Y{\tau}^{3}+Y{\tau}P_{\tau}^{2}-P_y{\tau}^{2}P_{\tau}-P_yP_{\tau}^{3}$\\
+  111&{\tt I001021}&$Y{\tau}^{2}P_{\tau}+YP_{\tau}^{3}+P_y{\tau}^{3}+P_y{\tau}P_{\tau}^{2}$\\
+  112&{\tt R001012}&$Y{\tau}^{3}+Y{\tau}P_{\tau}^{2}+P_y{\tau}^{2}P_{\tau}+P_yP_{\tau}^{3}$\\
+  113&{\tt I001012}&$-Y{\tau}^{2}P_{\tau}-YP_{\tau}^{3}+P_y{\tau}^{3}+P_y{\tau}P_{\tau}^{2}$\\
+  114&{\tt R200011}&$X^{2}{\tau}^{2}+X^{2}P_{\tau}^{2}-P_x^{2}{\tau}^{2}-P_x^{2}P_{\tau}^{2}$\\
+  115&{\tt I200011}&$2XP_x{\tau}^{2}+2XP_xP_{\tau}^{2}$\\
+  116&{\tt R002011}&$Y^{2}{\tau}^{2}+Y^{2}P_{\tau}^{2}-P_y^{2}{\tau}^{2}-P_y^{2}P_{\tau}^{2}$\\
+  117&{\tt I002011}&$2YP_y{\tau}^{2}+2YP_yP_{\tau}^{2}$\\
+118&{\tt R200020}&$X^{2}{\tau}^{2}-X^{2}P_{\tau}^{2}-4XP_x{\tau}P_{\tau}-P_x^{2}{\tau}^{2}+P_x^{2}P_{\tau}^{2}$\\  119&{\tt I200020}&$2X^{2}{\tau}P_{\tau}+2XP_x{\tau}^{2}-2XP_xP_{\tau}^{2}-2P_x^{2}{\tau}P_{\tau}$\\  120&{\tt R200002}&$X^{2}{\tau}^{2}-X^{2}P_{\tau}^{2}+4XP_x{\tau}P_{\tau}-P_x^{2}{\tau}^{2}+P_x^{2}P_{\tau}^{2}$\\
+121&{\tt I200002}&$-2X^{2}{\tau}P_{\tau}+2XP_x{\tau}^{2}-2XP_xP_{\tau}^{2}+2P_x^{2}{\tau}P_{\tau}$\\  122&{\tt R002020}&$Y^{2}{\tau}^{2}-Y^{2}P_{\tau}^{2}-4YP_y{\tau}P_{\tau}-P_y^{2}{\tau}^{2}+P_y^{2}P_{\tau}^{2}$\\  123&{\tt I002020}&$2Y^{2}{\tau}P_{\tau}+2YP_y{\tau}^{2}-2YP_yP_{\tau}^{2}-2P_y^{2}{\tau}P_{\tau}$\\  124&{\tt R002002}&$Y^{2}{\tau}^{2}-Y^{2}P_{\tau}^{2}+4YP_y{\tau}P_{\tau}-P_y^{2}{\tau}^{2}+P_y^{2}P_{\tau}^{2}$\\  125&{\tt I002002}&$-2Y^{2}{\tau}P_{\tau}+2YP_y{\tau}^{2}-2YP_yP_{\tau}^{2}+2P_y^{2}{\tau}P_{\tau}$\\
+  126&{\tt R101011}&$XY{\tau}^{2}+XYP_{\tau}^{2}-P_xP_y{\tau}^{2}-P_xP_yP_{\tau}^{2}$\\
+  127&{\tt I101011}&$XP_y{\tau}^{2}+XP_yP_{\tau}^{2}+P_xY{\tau}^{2}+P_xYP_{\tau}^{2}$\\
+  128&{\tt R100111}&$XY{\tau}^{2}+XYP_{\tau}^{2}+P_xP_y{\tau}^{2}+P_xP_yP_{\tau}^{2}$\\
+  129&{\tt I100111}&$-XP_y{\tau}^{2}-XP_yP_{\tau}^{2}+P_xY{\tau}^{2}+P_xYP_{\tau}^{2}$\\  130&{\tt R101020}&$XY{\tau}^{2}-XYP_{\tau}^{2}-2XP_y{\tau}P_{\tau}-2P_xY{\tau}P_{\tau}-P_xP_y{\tau}^{2}+P_xP_yP_{\tau}^{2}$\\  131&{\tt I101020}&$2XY{\tau}P_{\tau}+XP_y{\tau}^{2}-XP_yP_{\tau}^{2}+P_xY{\tau}^{2}-P_xYP_{\tau}^{2}-2P_xP_y{\tau}P_{\tau}$\\  132&{\tt R101002}&$XY{\tau}^{2}-XYP_{\tau}^{2}+2XP_y{\tau}P_{\tau}+2P_xY{\tau}P_{\tau}-P_xP_y{\tau}^{2}+P_xP_yP_{\tau}^{2}$\\
+133&{\tt I101002}&$-2XY{\tau}P_{\tau}+XP_y{\tau}^{2}-XP_yP_{\tau}^{2}+P_xY{\tau}^{2}-P_xYP_{\tau}^{2}+2P_xP_y{\tau}P_{\tau}$\\  134&{\tt R100120}&$XY{\tau}^{2}-XYP_{\tau}^{2}+2XP_y{\tau}P_{\tau}-2P_xY{\tau}P_{\tau}+P_xP_y{\tau}^{2}-P_xP_yP_{\tau}^{2}$\\  135&{\tt I100120}&$2XY{\tau}P_{\tau}-XP_y{\tau}^{2}+XP_yP_{\tau}^{2}+P_xY{\tau}^{2}-P_xYP_{\tau}^{2}+2P_xP_y{\tau}P_{\tau}$\\  136&{\tt R100102}&$XY{\tau}^{2}-XYP_{\tau}^{2}-2XP_y{\tau}P_{\tau}+2P_xY{\tau}P_{\tau}+P_xP_y{\tau}^{2}-P_xP_yP_{\tau}^{2}$\\  137&{\tt I100102}&$-2XY{\tau}P_{\tau}-XP_y{\tau}^{2}+XP_yP_{\tau}^{2}+P_xY{\tau}^{2}-P_xYP_{\tau}^{2}-2P_xP_y{\tau}P_{\tau}$\\
+  138&{\tt R210010}&$X^{3}{\tau}-X^{2}P_xP_{\tau}+XP_x^{2}{\tau}-P_x^{3}P_{\tau}$\\
+  139&{\tt I210010}&$X^{3}P_{\tau}+X^{2}P_x{\tau}+XP_x^{2}P_{\tau}+P_x^{3}{\tau}$\\
+  140&{\tt R210001}&$X^{3}{\tau}+X^{2}P_xP_{\tau}+XP_x^{2}{\tau}+P_x^{3}P_{\tau}$
+\end{tabular}
+
+
+\newpage
+\hspace*{-.25in}
+\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+  141&{\tt I210001}&$-X^{3}P_{\tau}+X^{2}P_x{\tau}-XP_x^{2}P_{\tau}+P_x^{3}{\tau}$\\
+  142&{\tt R002110}&$Y^{3}{\tau}-Y^{2}P_yP_{\tau}+YP_y^{2}{\tau}-P_y^{3}P_{\tau}$\\
+  143&{\tt I002110}&$Y^{3}P_{\tau}+Y^{2}P_y{\tau}+YP_y^{2}P_{\tau}+P_y^{3}{\tau}$\\
+  144&{\tt R002101}&$Y^{3}{\tau}+Y^{2}P_yP_{\tau}+YP_y^{2}{\tau}+P_y^{3}P_{\tau}$\\
+  145&{\tt I002101}&$-Y^{3}P_{\tau}+Y^{2}P_y{\tau}-YP_y^{2}P_{\tau}+P_y^{3}{\tau}$\\
+  146&{\tt R101110}&$XY^{2}{\tau}+XP_y^{2}{\tau}-P_xY^{2}P_{\tau}-P_xP_y^{2}P_{\tau}$\\
+  147&{\tt I101110}&$XY^{2}P_{\tau}+XP_y^{2}P_{\tau}+P_xY^{2}{\tau}+P_xP_y^{2}{\tau}$\\
+  148&{\tt R101101}&$XY^{2}{\tau}+XP_y^{2}{\tau}+P_xY^{2}P_{\tau}+P_xP_y^{2}P_{\tau}$\\
+  149&{\tt I101101}&$-XY^{2}P_{\tau}-XP_y^{2}P_{\tau}+P_xY^{2}{\tau}+P_xP_y^{2}{\tau}$\\
+  150&{\tt R111010}&$X^{2}Y{\tau}-X^{2}P_yP_{\tau}+P_x^{2}Y{\tau}-P_x^{2}P_yP_{\tau}$\\
+  151&{\tt I111010}&$X^{2}YP_{\tau}+X^{2}P_y{\tau}+P_x^{2}YP_{\tau}+P_x^{2}P_y{\tau}$\\
+  152&{\tt R111001}&$X^{2}Y{\tau}+X^{2}P_yP_{\tau}+P_x^{2}Y{\tau}+P_x^{2}P_yP_{\tau}$\\
+  153&{\tt I111001}&$-X^{2}YP_{\tau}+X^{2}P_y{\tau}-P_x^{2}YP_{\tau}+P_x^{2}P_y{\tau}$\\
+  154&{\tt R300010}&$X^{3}{\tau}-3X^{2}P_xP_{\tau}-3XP_x^{2}{\tau}+P_x^{3}P_{\tau}$\\
+  155&{\tt I300010}&$X^{3}P_{\tau}+3X^{2}P_x{\tau}-3XP_x^{2}P_{\tau}-P_x^{3}{\tau}$\\
+  156&{\tt R300001}&$X^{3}{\tau}+3X^{2}P_xP_{\tau}-3XP_x^{2}{\tau}-P_x^{3}P_{\tau}$\\
+  157&{\tt I300001}&$-X^{3}P_{\tau}+3X^{2}P_x{\tau}+3XP_x^{2}P_{\tau}-P_x^{3}{\tau}$\\
+  158&{\tt R003010}&$Y^{3}{\tau}-3Y^{2}P_yP_{\tau}-3YP_y^{2}{\tau}+P_y^{3}P_{\tau}$\\
+  159&{\tt I003010}&$Y^{3}P_{\tau}+3Y^{2}P_y{\tau}-3YP_y^{2}P_{\tau}-P_y^{3}{\tau}$\\
+  160&{\tt R003001}&$Y^{3}{\tau}+3Y^{2}P_yP_{\tau}-3YP_y^{2}{\tau}-P_y^{3}P_{\tau}$\\
+  161&{\tt I003001}&$-Y^{3}P_{\tau}+3Y^{2}P_y{\tau}+3YP_y^{2}P_{\tau}-P_y^{3}{\tau}$\\  162&{\tt R201010}&$X^{2}Y{\tau}-X^{2}P_yP_{\tau}-2XP_xYP_{\tau}-2XP_xP_y{\tau}-P_x^{2}Y{\tau}+P_x^{2}P_yP_{\tau}$\\  163&{\tt I201010}&$X^{2}YP_{\tau}+X^{2}P_y{\tau}+2XP_xY{\tau}-2XP_xP_yP_{\tau}-P_x^{2}YP_{\tau}-P_x^{2}P_y{\tau}$\\  164&{\tt R201001}&$X^{2}Y{\tau}+X^{2}P_yP_{\tau}+2XP_xYP_{\tau}-2XP_xP_y{\tau}-P_x^{2}Y{\tau}-P_x^{2}P_yP_{\tau}$\\  165&{\tt I201001}&$-X^{2}YP_{\tau}+X^{2}P_y{\tau}+2XP_xY{\tau}+2XP_xP_yP_{\tau}+P_x^{2}YP_{\tau}-P_x^{2}P_y{\tau}$\\  166&{\tt R102010}&$XY^{2}{\tau}-2XYP_yP_{\tau}-XP_y^{2}{\tau}-P_xY^{2}P_{\tau}-2P_xYP_y{\tau}+P_xP_y^{2}P_{\tau}$\\  167&{\tt I102010}&$XY^{2}P_{\tau}+2XYP_y{\tau}-XP_y^{2}P_{\tau}+P_xY^{2}{\tau}-2P_xYP_yP_{\tau}-P_xP_y^{2}{\tau}$\\  168&{\tt R102001}&$XY^{2}{\tau}+2XYP_yP_{\tau}-XP_y^{2}{\tau}+P_xY^{2}P_{\tau}-2P_xYP_y{\tau}-P_xP_y^{2}P_{\tau}$\\  169&{\tt I102001}&$-XY^{2}P_{\tau}+2XYP_y{\tau}+XP_y^{2}P_{\tau}+P_xY^{2}{\tau}+2P_xYP_yP_{\tau}-P_xP_y^{2}{\tau}$\\  170&{\tt R200110}&$X^{2}Y{\tau}+X^{2}P_yP_{\tau}-2XP_xYP_{\tau}+2XP_xP_y{\tau}-P_x^{2}Y{\tau}-P_x^{2}P_yP_{\tau}$\\  171&{\tt I200110}&$X^{2}YP_{\tau}-X^{2}P_y{\tau}+2XP_xY{\tau}+2XP_xP_yP_{\tau}-P_x^{2}YP_{\tau}+P_x^{2}P_y{\tau}$\\  172&{\tt R200101}&$X^{2}Y{\tau}-X^{2}P_yP_{\tau}+2XP_xYP_{\tau}+2XP_xP_y{\tau}-P_x^{2}Y{\tau}+P_x^{2}P_yP_{\tau}$\\  173&{\tt I200101}&$-X^{2}YP_{\tau}-X^{2}P_y{\tau}+2XP_xY{\tau}-2XP_xP_yP_{\tau}+P_x^{2}YP_{\tau}+P_x^{2}P_y{\tau}$\\  174&{\tt R100201}&$XY^{2}{\tau}-2XYP_yP_{\tau}-XP_y^{2}{\tau}+P_xY^{2}P_{\tau}+2P_xYP_y{\tau}-P_xP_y^{2}P_{\tau}$\\  175&{\tt I100201}&$-XY^{2}P_{\tau}-2XYP_y{\tau}+XP_y^{2}P_{\tau}+P_xY^{2}{\tau}-2P_xYP_yP_{\tau}-P_xP_y^{2}{\tau}$
+\end{tabular}
+
+
+\newpage
+\hspace*{-.75in}
+\begin{tabular}{ccc}
+DR Index&Designation&Element\\ \hline
+176&{\tt R100210}&$XY^{2}{\tau}+2XYP_yP_{\tau}-XP_y^{2}{\tau}-P_xY^{2}P_{\tau}+2P_xYP_y{\tau}+P_xP_y^{2}P_{\tau}$\\  177&{\tt I100210}&$XY^{2}P_{\tau}-2XYP_y{\tau}-XP_y^{2}P_{\tau}+P_xY^{2}{\tau}+2P_xYP_yP_{\tau}-P_xP_y^{2}{\tau}$\\
+  178&{\tt R310000}&$X^{4}-P_x^{4}$\\
+  179&{\tt I310000}&$2X^{3}P_x+2XP_x^{3}$\\
+  180&{\tt R003100}&$Y^{4}-P_y^{4}$\\
+  181&{\tt I003100}&$2Y^{3}P_y+2YP_y^{3}$\\
+  182&{\tt R201100}&$X^{2}Y^{2}+X^{2}P_y^{2}-P_x^{2}Y^{2}-P_x^{2}P_y^{2}$\\
+  183&{\tt I201100}&$2XP_xY^{2}+2XP_xP_y^{2}$\\
+  184&{\tt R112000}&$X^{2}Y^{2}-X^{2}P_y^{2}+P_x^{2}Y^{2}-P_x^{2}P_y^{2}$\\
+  185&{\tt I112000}&$2X^{2}YP_y+2P_x^{2}YP_y$\\
+  186&{\tt R211000}&$X^{3}Y-X^{2}P_xP_y+XP_x^{2}Y-P_x^{3}P_y$\\
+  187&{\tt I211000}&$X^{3}P_y+X^{2}P_xY+XP_x^{2}P_y+P_x^{3}Y$\\
+  188&{\tt R102100}&$XY^{3}+XYP_y^{2}-P_xY^{2}P_y-P_xP_y^{3}$\\
+  189&{\tt I102100}&$XY^{2}P_y+XP_y^{3}+P_xY^{3}+P_xYP_y^{2}$\\
+  190&{\tt R210100}&$X^{3}Y+X^{2}P_xP_y+XP_x^{2}Y+P_x^{3}P_y$\\
+  191&{\tt I210100}&$-X^{3}P_y+X^{2}P_xY-XP_x^{2}P_y+P_x^{3}Y$\\
+  192&{\tt R101200}&$XY^{3}+XYP_y^{2}+P_xY^{2}P_y+P_xP_y^{3}$\\
+  193&{\tt I101200}&$-XY^{2}P_y-XP_y^{3}+P_xY^{3}+P_xYP_y^{2}$\\
+  194&{\tt R400000}&$X^{4}-6X^{2}P_x^{2}+P_x^{4}$\\
+  195&{\tt I400000}&$4X^{3}P_x-4XP_x^{3}$\\
+  196&{\tt R004000}&$Y^{4}-6Y^{2}P_y^{2}+P_y^{4}$\\
+  197&{\tt I004000}&$4Y^{3}P_y-4YP_y^{3}$\\
+  198&{\tt R301000}&$X^{3}Y-3X^{2}P_xP_y-3XP_x^{2}Y+P_x^{3}P_y$\\
+  199&{\tt I301000}&$X^{3}P_y+3X^{2}P_xY-3XP_x^{2}P_y-P_x^{3}Y$\\
+  200&{\tt R103000}&$XY^{3}-3XYP_y^{2}-3P_xY^{2}P_y+P_xP_y^{3}$\\
+  201&{\tt I103000}&$3XY^{2}P_y-XP_y^{3}+P_xY^{3}-3P_xYP_y^{2}$\\
+  202&{\tt R300100}&$X^{3}Y+3X^{2}P_xP_y-3XP_x^{2}Y-P_x^{3}P_y$\\
+  203&{\tt I300100}&$-X^{3}P_y+3X^{2}P_xY+3XP_x^{2}P_y-P_x^{3}Y$\\
+  204&{\tt R100300}&$XY^{3}-3XYP_y^{2}+3P_xY^{2}P_y-P_xP_y^{3}$\\
+  205&{\tt I100300}&$-3XY^{2}P_y+XP_y^{3}+P_xY^{3}-3P_xYP_y^{2}$\\
+  206&{\tt R202000}&$X^{2}Y^{2}-X^{2}P_y^{2}-4XP_xYP_y-P_x^{2}Y^{2}+P_x^{2}P_y^{2}$\\
+  207&{\tt I202000}&$2X^{2}YP_y+2XP_xY^{2}-2XP_xP_y^{2}-2P_x^{2}YP_y$\\
+  208&{\tt R200200}&$X^{2}Y^{2}-X^{2}P_y^{2}+4XP_xYP_y-P_x^{2}Y^{2}+P_x^{2}P_y^{2}$\\
+  209&{\tt I200200}&$-2X^{2}YP_y+2XP_xY^{2}-2XP_xP_y^{2}+2P_x^{2}YP_y$
+\end{tabular}
+\end{center}
+}
+
